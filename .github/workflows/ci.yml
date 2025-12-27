@@ -38,9 +38,9 @@ jobs:
     - name: Import sanity check
       run: |
         python - <<'PY'
-import sys
-sys.path.insert(0, '.')
-import netapp
-import netapp.santricity
-print('import ok')
-PY
+          import sys
+          sys.path.insert(0, '.')
+          import netapp
+          import netapp.santricity
+          print('import ok')
+        PY
