@@ -38,11 +38,4 @@ jobs:
         run: python -m compileall netapp
 
       - name: Import sanity check
-        run: |
-          python - <<'PY'
-            import sys
-            sys.path.insert(0, '.')
-            import netapp
-            import netapp.santricity
-            print('import ok')
-          PY
+        run: python -c "import sys; sys.path.insert(0, '.'); import netapp; import netapp.santricity; print('import ok')"
