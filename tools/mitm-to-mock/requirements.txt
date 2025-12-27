@@ -1,0 +1,3 @@
+mitmproxy>=8.0.0
+Flask>=2.0
+requests>=2.0

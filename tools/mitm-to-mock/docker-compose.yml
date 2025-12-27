@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mitm:
+    image: mitmproxy/mitmproxy:latest
+    command: mitmproxy --mode regular --listen-port 8080
+    ports:
+      - "8080:8080"   # proxy port for HTTP/HTTPS
+      - "8081:8081"   # mitmweb UI
+    volumes:
+      - ./data:/home/mitmproxy
+    restart: unless-stopped
+
+  mountebank:
+    image: bbyars/mountebank:2.6.0
+    ports:
+      - "2525:2525"   # admin API
+    command: mb --allowInjection --logLevel debug
+    restart: unless-stopped
+
+  test-runner:
+    image: python:3.10-slim
+    working_dir: /workspace
+    volumes:
+      - ../..:/workspace:cached
+      - ./data:/home/mitmproxy
+    environment:
+      HTTP_PROXY: "http://mitm:8080"
+      HTTPS_PROXY: "http://mitm:8080"
+      REQUESTS_CA_BUNDLE: "/home/mitmproxy/mitmproxy-ca-cert.pem"
+      SANTRICITY_HOST: "http://mountebank:5000"
+    depends_on:
+      - mitm
+      - mountebank
+    entrypoint: ["/bin/sh", "-c"]
+    command: "pip install -r /workspace/tools/mitm-to-mock/requirements.txt && cd /workspace && python tools/mitm-to-mock/run_tests_with_host.py"

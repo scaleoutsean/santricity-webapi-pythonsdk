@@ -1,10 +1,12 @@
 #NetApp SANtricity WebAPI - Python SDK
 
-[![Build Status](https://travis-ci.org/NetApp/santricity-webapi-pythonsdk.svg?branch=master)](https://travis-ci.org/NetApp/santricity-webapi-pythonsdk)
+[![Build Status](https://github.com/scaleoutsean/santricity-webapi-pythonsdk/actions/workflows/mountebank-ci.yml/badge.svg)](https://github.com/scaleoutsean/santricity-webapi-pythonsdk/actions/workflows/mountebank-ci.yml)
 
 ##Requirements
 
-The NetApp SANtricity WebAPI - Python SDK client library requires Python 2.7 or later.
+The NetApp SANtricity WebAPI - Python SDK client library requires current Python 3.
+
+**NOTE:** the SDK is unlikely to work until latest SANtricity API without adjustments and fixes. The idea is to fix what we need 
 
 ##Installation
 
@@ -37,7 +39,7 @@ Here's a sample code for using NetApp SANtricity WebAPI - Python SDK:
 
 
 ```python
-#/usr/bin/python
+#/usr/bin/env python3
 
 from netapp.santricity.configuration import Configuration
 from netapp.santricity.api_client import ApiClient
@@ -46,7 +48,7 @@ from netapp.santricity.models.v2.storage_system_response import StorageSystemRes
 from pprint import pprint
 
 config = Configuration()
-config.host = "http://localhost:8080" #
+config.host = "http://localhost:8443" #
 config.username = "rw"
 config.password = "rw"
 
@@ -87,5 +89,5 @@ make -f Makefile html
 #### Prerequisites
 * Python3 interpreter
 * urllib3
-* Sphinx (apt-get install python-sphinx)
+* Sphinx (sudo apt-get install python-sphinx -y)
 

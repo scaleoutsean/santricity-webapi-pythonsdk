@@ -1,0 +1,87 @@
+name: Mountebank CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test-with-mountebank:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9, 3.10, 3.11]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install repo requirements
+      run: |
+        python -m pip install -U pip
+        pip install -r requirements.txt || true
+
+    - name: Start Mountebank (docker)
+      run: |
+        docker run -d --name mb -p 2525:2525 bbyars/mountebank:2.6.0 mb --allowInjection
+        sleep 3
+
+    - name: Install mitm-to-mock requirements
+      run: |
+        python -m pip install -r tools/mitm-to-mock/requirements.txt
+
+    - name: Run mitm-to-mock unit tests
+      run: |
+        python -m unittest discover -s tools/mitm-to-mock/tests -v
+
+    - name: Post imposter if mappings exist
+      run: |
+        if [ -f tools/mitm-to-mock/data/mappings.sanitized.json ]; then
+          python tools/mitm-to-mock/convert_to_mountebank.py || true
+        elif [ -f tools/mitm-to-mock/data/mappings.json ]; then
+          python tools/mitm-to-mock/sanitize_mappings.py && python tools/mitm-to-mock/convert_to_mountebank.py || true
+        else
+          echo "No mappings found; skipping imposter posting"
+        fi
+
+    - name: Create example fixture
+      run: |
+        python tools/mitm-to-mock/create_example_fixture.py || true
+
+    - name: Commit example fixture (create branch + PR)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        if [ -f tools/mitm-to-mock/example_mappings.json ]; then
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b example-fixtures || git checkout example-fixtures
+          git add tools/mitm-to-mock/example_mappings.json
+          git commit -m "Add example mappings fixture" || echo "No changes to commit"
+          git push --set-upstream origin example-fixtures --force
+          # create a PR via GitHub API
+          repo="$GITHUB_REPOSITORY"
+          title="Add example mappings fixture"
+          body="Auto-generated fixture from mappings.sanitized.json"
+          curl -s -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$repo/pulls" -d "{\"title\":\"$title\",\"head\":\"example-fixtures\",\"base\":\"master\",\"body\":\"$body\"}" || true
+        else
+          echo "No example fixture generated"
+        fi
+
+    - name: Run tests pointing SDK at Mountebank
+      env:
+        SANTRICITY_HOST: http://localhost:5000
+      run: |
+        python -c "from netapp.santricity.configuration import Configuration; Configuration().host='http://localhost:5000'"
+        nosetests -q || true
+
+    - name: Stop Mountebank
+      if: always()
+      run: |
+        docker rm -f mb || true
