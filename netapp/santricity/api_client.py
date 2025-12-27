@@ -21,7 +21,6 @@ from .rest import ApiException
 import os
 import re
 import sys
-import six.moves.urllib.request, six.moves.urllib.parse, six.moves.urllib.error
 import json
 import mimetypes
 import random
@@ -31,16 +30,7 @@ import threading
 from datetime import datetime
 from datetime import date
 
-# python 2 and python 3 compatibility library
-from six import iteritems
-import six
-
-try:
-    # for python3
-    from urllib.parse import quote
-except ImportError:
-    # for python2
-    from urllib.parse import quote
+from urllib.parse import quote
 
 from .configuration import Configuration
 
@@ -187,8 +177,6 @@ class ApiClient:
         :return: The serialized form of data.
         """
         types = (str, int, float, bool, tuple)
-        if sys.version_info < (3,0):
-            types = types + (str,)
         if isinstance(obj, type(None)):
             return None
         elif isinstance(obj, types):

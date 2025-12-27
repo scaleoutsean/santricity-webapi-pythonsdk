@@ -77,7 +77,7 @@ Samples and the test-runner now prefer direct SANtricity access by default. Use 
 - `SANTRICITY_HOST`: full URL to the SANtricity controller (e.g. `https://10.0.0.5:8443`)
 - `SANTRICITY_USER`: username (default `admin`)
 - `SANTRICITY_PASS`: password (default `YOURPASS`)
-- `SANTRICITY_ID`: system id for embedded mode (default `1`)
+- `SANTRICITY_ID`: system id for embedded mode (default `1`); we recommend to use `1` at most for initial authentication and the correct system_id (WWN) after that
 
 Optional proxy mode with WSP (not recommended):
 

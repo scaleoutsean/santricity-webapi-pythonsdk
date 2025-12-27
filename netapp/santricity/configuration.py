@@ -17,16 +17,9 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 import base64
 import urllib3
 
-try:
-    import six.moves.http_client
-except ImportError:
-    # for python3
-    import http.client as httplib
-
+import http.client as httplib
 import sys
 import logging
-
-from six import iteritems
 
 def singleton(cls, *args, **kw):
     instances = {}
@@ -152,14 +145,14 @@ class Configuration:
             for _, logger in self.logger.items():
                 logger.setLevel(logging.DEBUG)
             # turn on httplib debug
-            six.moves.http_client.HTTPConnection.debuglevel = 1
+            httplib.HTTPConnection.debuglevel = 1
         else:
             # if debug status is False, turn off debug logging,
             # setting log level to default `logging.WARNING`
             for _, logger in self.logger.items():
                 logger.setLevel(logging.WARNING)
             # turn off httplib debug
-            six.moves.http_client.HTTPConnection.debuglevel = 0
+            httplib.HTTPConnection.debuglevel = 0
 
     @property
     def logger_format(self):
