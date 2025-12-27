@@ -22,7 +22,6 @@ import sys
 import os
 
 # python 2 and python 3 compatibility library
-from six import iteritems
 
 from ....santricity.configuration import Configuration
 from ....santricity.api_client import ApiClient
