@@ -17,9 +17,7 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 import json
 import mimetypes
 import os
-import random
 import re
-import sys
 import tempfile
 import threading
 from datetime import date, datetime
@@ -171,7 +169,7 @@ class ApiClient:
 
         :return string: quoted value.
         """
-        if type(obj) == list:
+        if isinstance(obj, list):
             return ",".join(obj)
         else:
             return str(obj)
@@ -255,7 +253,7 @@ class ApiClient:
         if data is None:
             return None
 
-        if type(klass) == str:
+        if isinstance(klass, str):
             if klass.startswith("list["):
                 sub_kls = re.match(r"list\[(.*)\]", klass).group(1)
                 return [self.__deserialize(sub_data, sub_kls) for sub_data in data]

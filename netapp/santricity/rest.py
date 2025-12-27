@@ -19,7 +19,6 @@ import io
 import json
 import logging
 import ssl
-import sys
 
 import certifi
 
