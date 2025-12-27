@@ -10,7 +10,6 @@ wheel
 #
 ###### Requirements with Version Specifiers ######
 #
-urllib3 >= 1.10
-six >= 1.9
+urllib3 >= 2.5.0
 certifi
 #

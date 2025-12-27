@@ -21,7 +21,6 @@ from netapp.santricity.api_client import Configuration
 from netapp.santricity.api.symbol.g_api import GApi
 from netapp.santricity.api.v2.hardware_api import HardwareApi
 from pprint import pprint
-import six
 import os
 
 config = Configuration()
