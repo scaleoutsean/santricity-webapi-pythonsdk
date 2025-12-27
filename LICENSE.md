@@ -1,6 +1,7 @@
 The Clear BSD License
 
-Copyright (c) – 2016, NetApp, Inc. All rights reserved.
+Copyright (c) 2025+, github.com/scaleoutsean. All rights reserved.
+Copyright (c) <2016, NetApp, Inc. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:
 

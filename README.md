@@ -1,18 +1,28 @@
-#NetApp SANtricity WebAPI - Python SDK
+# NetApp SANtricity WebAPI - Python SDK
 
 [![Build Status](https://github.com/scaleoutsean/santricity-webapi-pythonsdk/actions/workflows/mountebank-ci.yml/badge.svg)](https://github.com/scaleoutsean/santricity-webapi-pythonsdk/actions/workflows/mountebank-ci.yml)
 
-##Requirements
+## What is this thing?
 
-The NetApp SANtricity WebAPI - Python SDK client library requires current Python 3.
+It's an unofficial, revived fork of the old Python 2-based SDK.
 
-**NOTE:** 
-- This SDK is unlikely to work until latest SANtricity API without adjustments and fixes. The idea is to fix what we need, when we need it
-- The SDK used to default to using [WSP](https://hub.docker.com/r/netapp/eseries-webservices/) which was a [bad idea, so I routinely remove it when I see it](https://github.com/scaleoutsean/eseries-perf-analyzer) and is [even worse now](https://hub.docker.com/r/netapp/eseries-webservices/) (last updated some 3 years ago, must have a bunch of unaddressed CVEs)
+This SDK is unlikely to (fully) work with current SANtricity API without adjustments and fixes. The idea is to fix what we need, when we need it.
 
-##Installation
+Originaly (Python 2) this SDK used to default to using [WSP](https://hub.docker.com/r/netapp/eseries-webservices/) which was a [bad idea, so I routinely remove it when I see it](https://github.com/scaleoutsean/eseries-perf-analyzer) and is [even worse now](https://hub.docker.com/r/netapp/eseries-webservices/) - WSP was last updated "some 3 years ago" (according to Docker Hub) and must have a bunch of unaddressed CVEs making it completely unfit for production use.
 
-###setuptools Installation
+This SDK isn't fully "suitable for production use" either but if we test what works and use that in production, there no reason to not deploy it in production.
+
+This repository aims to make at least the basic volume-related operations usable (create, edit, delete).
+
+Bugs are expected and can be fixed. Submit pull requests (with tests) or bug reports to contribute. 
+
+## Requirements
+
+The NetApp SANtricity WebAPI - Python SDK client library requires current Python 3 and SANtricity >=11.90.
+
+## Installation
+
+### setuptools Installation
 
 Installation of the Python bindings can be performed through [setuptools](http://pypi.python.org/pypi/setuptools).
 
@@ -22,17 +32,15 @@ Once downloaded, enter the following command:
 pytho3 setup.py install
 ```
 
-###Manual Installation
+### Manual Installation
 
-If you chose not install the Python bindings through setuptools, you can perform the
-installation manually by first downloading the latest release of the package. Once
-downloaded, enter the following command to import the package:
+If you chose not install the Python bindings through setuptools, you can perform the installation manually by first downloading the latest release of the package. Once downloaded, enter the following command to import the package:
 
 ```python
 import netapp.santricity
 ```
 
-###Getting started
+### Getting started
 
 To get started using the NetApp SANtricity WebAPI - Python SDK, access the `api_client.py` file and specify
 the host URL for your REST service.
@@ -120,6 +128,7 @@ For all options run:
 ```sh
 make -f docs/Makefile help
 ```
+
 To generate html documentation:
 ```sh
 cd docs
