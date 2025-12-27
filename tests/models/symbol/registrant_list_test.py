@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.registrant_list import RegistrantList
+
 
 class RegistrantListTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RegistrantListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_registrant_list(self):
-          registrant_list_obj = RegistrantList()
-          self.assertNotEqual(registrant_list_obj, None)
-
-
+        registrant_list_obj = RegistrantList()
+        self.assertNotEqual(registrant_list_obj, None)

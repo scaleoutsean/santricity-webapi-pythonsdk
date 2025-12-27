@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.interconnect_cru import InterconnectCRU
+
 
 class InterconnectCRUTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class InterconnectCRUTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_interconnect_cru(self):
-          interconnect_cru_obj = InterconnectCRU()
-          self.assertNotEqual(interconnect_cru_obj, None)
-
-
+        interconnect_cru_obj = InterconnectCRU()
+        self.assertNotEqual(interconnect_cru_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.disk_pool_reduction_request import DiskPoolReductionRequest
+
+from netapp.santricity.models.v2.disk_pool_reduction_request import \
+    DiskPoolReductionRequest
+
 
 class DiskPoolReductionRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiskPoolReductionRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_reduction_request(self):
-          disk_pool_reduction_request_obj = DiskPoolReductionRequest()
-          self.assertNotEqual(disk_pool_reduction_request_obj, None)
-
-
+        disk_pool_reduction_request_obj = DiskPoolReductionRequest()
+        self.assertNotEqual(disk_pool_reduction_request_obj, None)

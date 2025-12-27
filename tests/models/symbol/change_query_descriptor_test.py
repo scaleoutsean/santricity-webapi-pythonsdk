@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.change_query_descriptor import ChangeQueryDescriptor
+
+from netapp.santricity.models.symbol.change_query_descriptor import \
+    ChangeQueryDescriptor
+
 
 class ChangeQueryDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ChangeQueryDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_change_query_descriptor(self):
-          change_query_descriptor_obj = ChangeQueryDescriptor()
-          self.assertNotEqual(change_query_descriptor_obj, None)
-
-
+        change_query_descriptor_obj = ChangeQueryDescriptor()
+        self.assertNotEqual(change_query_descriptor_obj, None)

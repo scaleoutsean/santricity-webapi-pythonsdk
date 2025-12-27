@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.schedule_ref_list import ScheduleRefList
+
 
 class ScheduleRefListTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ScheduleRefListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_schedule_ref_list(self):
-          schedule_ref_list_obj = ScheduleRefList()
-          self.assertNotEqual(schedule_ref_list_obj, None)
-
-
+        schedule_ref_list_obj = ScheduleRefList()
+        self.assertNotEqual(schedule_ref_list_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.env_card_log_data import EnvCardLogData
+
 
 class EnvCardLogDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class EnvCardLogDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_env_card_log_data(self):
-          env_card_log_data_obj = EnvCardLogData()
-          self.assertNotEqual(env_card_log_data_obj, None)
-
-
+        env_card_log_data_obj = EnvCardLogData()
+        self.assertNotEqual(env_card_log_data_obj, None)

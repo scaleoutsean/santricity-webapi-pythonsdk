@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.disk_pool_default_attributes import DiskPoolDefaultAttributes
+
+from netapp.santricity.models.symbol.disk_pool_default_attributes import \
+    DiskPoolDefaultAttributes
+
 
 class DiskPoolDefaultAttributesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiskPoolDefaultAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_default_attributes(self):
-          disk_pool_default_attributes_obj = DiskPoolDefaultAttributes()
-          self.assertNotEqual(disk_pool_default_attributes_obj, None)
-
-
+        disk_pool_default_attributes_obj = DiskPoolDefaultAttributes()
+        self.assertNotEqual(disk_pool_default_attributes_obj, None)

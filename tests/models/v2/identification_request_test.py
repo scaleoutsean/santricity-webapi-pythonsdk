@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.identification_request import IdentificationRequest
+
+from netapp.santricity.models.v2.identification_request import \
+    IdentificationRequest
+
 
 class IdentificationRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IdentificationRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_identification_request(self):
-          identification_request_obj = IdentificationRequest()
-          self.assertNotEqual(identification_request_obj, None)
-
-
+        identification_request_obj = IdentificationRequest()
+        self.assertNotEqual(identification_request_obj, None)

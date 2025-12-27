@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.device_alert_configuration import DeviceAlertConfiguration
+
+from netapp.santricity.models.v2.device_alert_configuration import \
+    DeviceAlertConfiguration
+
 
 class DeviceAlertConfigurationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DeviceAlertConfigurationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_device_alert_configuration(self):
-          device_alert_configuration_obj = DeviceAlertConfiguration()
-          self.assertNotEqual(device_alert_configuration_obj, None)
-
-
+        device_alert_configuration_obj = DeviceAlertConfiguration()
+        self.assertNotEqual(device_alert_configuration_obj, None)

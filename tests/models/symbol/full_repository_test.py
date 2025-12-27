@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.full_repository import FullRepository
+
 
 class FullRepositoryTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FullRepositoryTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_full_repository(self):
-          full_repository_obj = FullRepository()
-          self.assertNotEqual(full_repository_obj, None)
-
-
+        full_repository_obj = FullRepository()
+        self.assertNotEqual(full_repository_obj, None)

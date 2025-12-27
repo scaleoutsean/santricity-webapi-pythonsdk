@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sas_phy_error_counts import SasPhyErrorCounts
+
+from netapp.santricity.models.symbol.sas_phy_error_counts import \
+    SasPhyErrorCounts
+
 
 class SasPhyErrorCountsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SasPhyErrorCountsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_phy_error_counts(self):
-          sas_phy_error_counts_obj = SasPhyErrorCounts()
-          self.assertNotEqual(sas_phy_error_counts_obj, None)
-
-
+        sas_phy_error_counts_obj = SasPhyErrorCounts()
+        self.assertNotEqual(sas_phy_error_counts_obj, None)

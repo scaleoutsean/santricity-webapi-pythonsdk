@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_fault_indication import AsyncMirrorGroupFaultIndication
+
+from netapp.santricity.models.symbol.async_mirror_group_fault_indication import \
+    AsyncMirrorGroupFaultIndication
+
 
 class AsyncMirrorGroupFaultIndicationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorGroupFaultIndicationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_fault_indication(self):
-          async_mirror_group_fault_indication_obj = AsyncMirrorGroupFaultIndication()
-          self.assertNotEqual(async_mirror_group_fault_indication_obj, None)
-
-
+        async_mirror_group_fault_indication_obj = AsyncMirrorGroupFaultIndication()
+        self.assertNotEqual(async_mirror_group_fault_indication_obj, None)

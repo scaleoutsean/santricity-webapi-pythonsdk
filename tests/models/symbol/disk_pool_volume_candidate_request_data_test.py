@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.disk_pool_volume_candidate_request_data import DiskPoolVolumeCandidateRequestData
+
+from netapp.santricity.models.symbol.disk_pool_volume_candidate_request_data import \
+    DiskPoolVolumeCandidateRequestData
+
 
 class DiskPoolVolumeCandidateRequestDataTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class DiskPoolVolumeCandidateRequestDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_volume_candidate_request_data(self):
-          disk_pool_volume_candidate_request_data_obj = DiskPoolVolumeCandidateRequestData()
-          self.assertNotEqual(disk_pool_volume_candidate_request_data_obj, None)
-
-
+        disk_pool_volume_candidate_request_data_obj = (
+            DiskPoolVolumeCandidateRequestData()
+        )
+        self.assertNotEqual(disk_pool_volume_candidate_request_data_obj, None)

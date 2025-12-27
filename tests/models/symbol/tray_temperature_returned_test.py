@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.tray_temperature_returned import TrayTemperatureReturned
+
+from netapp.santricity.models.symbol.tray_temperature_returned import \
+    TrayTemperatureReturned
+
 
 class TrayTemperatureReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class TrayTemperatureReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_tray_temperature_returned(self):
-          tray_temperature_returned_obj = TrayTemperatureReturned()
-          self.assertNotEqual(tray_temperature_returned_obj, None)
-
-
+        tray_temperature_returned_obj = TrayTemperatureReturned()
+        self.assertNotEqual(tray_temperature_returned_obj, None)

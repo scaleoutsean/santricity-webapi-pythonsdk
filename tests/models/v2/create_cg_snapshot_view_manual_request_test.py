@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.create_cg_snapshot_view_manual_request import CreateCGSnapshotViewManualRequest
+
+from netapp.santricity.models.v2.create_cg_snapshot_view_manual_request import \
+    CreateCGSnapshotViewManualRequest
+
 
 class CreateCGSnapshotViewManualRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CreateCGSnapshotViewManualRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_create_cg_snapshot_view_manual_request(self):
-          create_cg_snapshot_view_manual_request_obj = CreateCGSnapshotViewManualRequest()
-          self.assertNotEqual(create_cg_snapshot_view_manual_request_obj, None)
-
-
+        create_cg_snapshot_view_manual_request_obj = CreateCGSnapshotViewManualRequest()
+        self.assertNotEqual(create_cg_snapshot_view_manual_request_obj, None)

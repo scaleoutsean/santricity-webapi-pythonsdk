@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.arvm_default_attributes import ARVMDefaultAttributes
+
+from netapp.santricity.models.symbol.arvm_default_attributes import \
+    ARVMDefaultAttributes
+
 
 class ARVMDefaultAttributesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ARVMDefaultAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_arvm_default_attributes(self):
-          arvm_default_attributes_obj = ARVMDefaultAttributes()
-          self.assertNotEqual(arvm_default_attributes_obj, None)
-
-
+        arvm_default_attributes_obj = ARVMDefaultAttributes()
+        self.assertNotEqual(arvm_default_attributes_obj, None)

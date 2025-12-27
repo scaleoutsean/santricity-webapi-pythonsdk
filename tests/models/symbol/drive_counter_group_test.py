@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_counter_group import DriveCounterGroup
+
+from netapp.santricity.models.symbol.drive_counter_group import \
+    DriveCounterGroup
+
 
 class DriveCounterGroupTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveCounterGroupTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_counter_group(self):
-          drive_counter_group_obj = DriveCounterGroup()
-          self.assertNotEqual(drive_counter_group_obj, None)
-
-
+        drive_counter_group_obj = DriveCounterGroup()
+        self.assertNotEqual(drive_counter_group_obj, None)

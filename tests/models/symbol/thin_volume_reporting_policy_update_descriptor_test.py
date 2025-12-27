@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thin_volume_reporting_policy_update_descriptor import ThinVolumeReportingPolicyUpdateDescriptor
+
+from netapp.santricity.models.symbol.thin_volume_reporting_policy_update_descriptor import \
+    ThinVolumeReportingPolicyUpdateDescriptor
+
 
 class ThinVolumeReportingPolicyUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class ThinVolumeReportingPolicyUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_reporting_policy_update_descriptor(self):
-          thin_volume_reporting_policy_update_descriptor_obj = ThinVolumeReportingPolicyUpdateDescriptor()
-          self.assertNotEqual(thin_volume_reporting_policy_update_descriptor_obj, None)
-
-
+        thin_volume_reporting_policy_update_descriptor_obj = (
+            ThinVolumeReportingPolicyUpdateDescriptor()
+        )
+        self.assertNotEqual(thin_volume_reporting_policy_update_descriptor_obj, None)

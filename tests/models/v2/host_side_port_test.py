@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.host_side_port import HostSidePort
+
 
 class HostSidePortTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class HostSidePortTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_side_port(self):
-          host_side_port_obj = HostSidePort()
-          self.assertNotEqual(host_side_port_obj, None)
-
-
+        host_side_port_obj = HostSidePort()
+        self.assertNotEqual(host_side_port_obj, None)

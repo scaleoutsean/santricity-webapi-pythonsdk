@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_consistency_group_rollback_start_descriptor import PITConsistencyGroupRollbackStartDescriptor
+
+from netapp.santricity.models.symbol.pit_consistency_group_rollback_start_descriptor import \
+    PITConsistencyGroupRollbackStartDescriptor
+
 
 class PITConsistencyGroupRollbackStartDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class PITConsistencyGroupRollbackStartDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_consistency_group_rollback_start_descriptor(self):
-          pit_consistency_group_rollback_start_descriptor_obj = PITConsistencyGroupRollbackStartDescriptor()
-          self.assertNotEqual(pit_consistency_group_rollback_start_descriptor_obj, None)
-
-
+        pit_consistency_group_rollback_start_descriptor_obj = (
+            PITConsistencyGroupRollbackStartDescriptor()
+        )
+        self.assertNotEqual(pit_consistency_group_rollback_start_descriptor_obj, None)

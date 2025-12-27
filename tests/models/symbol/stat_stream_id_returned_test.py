@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.stat_stream_id_returned import StatStreamIdReturned
+
+from netapp.santricity.models.symbol.stat_stream_id_returned import \
+    StatStreamIdReturned
+
 
 class StatStreamIdReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class StatStreamIdReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_stat_stream_id_returned(self):
-          stat_stream_id_returned_obj = StatStreamIdReturned()
-          self.assertNotEqual(stat_stream_id_returned_obj, None)
-
-
+        stat_stream_id_returned_obj = StatStreamIdReturned()
+        self.assertNotEqual(stat_stream_id_returned_obj, None)

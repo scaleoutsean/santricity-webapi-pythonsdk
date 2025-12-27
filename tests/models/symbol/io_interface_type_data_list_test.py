@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.io_interface_type_data_list import IOInterfaceTypeDataList
+
+from netapp.santricity.models.symbol.io_interface_type_data_list import \
+    IOInterfaceTypeDataList
+
 
 class IOInterfaceTypeDataListTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IOInterfaceTypeDataListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_io_interface_type_data_list(self):
-          io_interface_type_data_list_obj = IOInterfaceTypeDataList()
-          self.assertNotEqual(io_interface_type_data_list_obj, None)
-
-
+        io_interface_type_data_list_obj = IOInterfaceTypeDataList()
+        self.assertNotEqual(io_interface_type_data_list_obj, None)

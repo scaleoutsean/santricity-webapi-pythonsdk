@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.async_mirror_connections_response import AsyncMirrorConnectionsResponse
+
+from netapp.santricity.models.v2.async_mirror_connections_response import \
+    AsyncMirrorConnectionsResponse
+
 
 class AsyncMirrorConnectionsResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorConnectionsResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_connections_response(self):
-          async_mirror_connections_response_obj = AsyncMirrorConnectionsResponse()
-          self.assertNotEqual(async_mirror_connections_response_obj, None)
-
-
+        async_mirror_connections_response_obj = AsyncMirrorConnectionsResponse()
+        self.assertNotEqual(async_mirror_connections_response_obj, None)

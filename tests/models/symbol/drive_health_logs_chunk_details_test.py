@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_health_logs_chunk_details import DriveHealthLogsChunkDetails
+
+from netapp.santricity.models.symbol.drive_health_logs_chunk_details import \
+    DriveHealthLogsChunkDetails
+
 
 class DriveHealthLogsChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveHealthLogsChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_health_logs_chunk_details(self):
-          drive_health_logs_chunk_details_obj = DriveHealthLogsChunkDetails()
-          self.assertNotEqual(drive_health_logs_chunk_details_obj, None)
-
-
+        drive_health_logs_chunk_details_obj = DriveHealthLogsChunkDetails()
+        self.assertNotEqual(drive_health_logs_chunk_details_obj, None)

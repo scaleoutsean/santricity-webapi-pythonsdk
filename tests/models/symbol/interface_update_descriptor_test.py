@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.interface_update_descriptor import InterfaceUpdateDescriptor
+
+from netapp.santricity.models.symbol.interface_update_descriptor import \
+    InterfaceUpdateDescriptor
+
 
 class InterfaceUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class InterfaceUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_interface_update_descriptor(self):
-          interface_update_descriptor_obj = InterfaceUpdateDescriptor()
-          self.assertNotEqual(interface_update_descriptor_obj, None)
-
-
+        interface_update_descriptor_obj = InterfaceUpdateDescriptor()
+        self.assertNotEqual(interface_update_descriptor_obj, None)

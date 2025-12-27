@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.wlc_analytics_chunk_details import WlcAnalyticsChunkDetails
+
+from netapp.santricity.models.symbol.wlc_analytics_chunk_details import \
+    WlcAnalyticsChunkDetails
+
 
 class WlcAnalyticsChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class WlcAnalyticsChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_wlc_analytics_chunk_details(self):
-          wlc_analytics_chunk_details_obj = WlcAnalyticsChunkDetails()
-          self.assertNotEqual(wlc_analytics_chunk_details_obj, None)
-
-
+        wlc_analytics_chunk_details_obj = WlcAnalyticsChunkDetails()
+        self.assertNotEqual(wlc_analytics_chunk_details_obj, None)

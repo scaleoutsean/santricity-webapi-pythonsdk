@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_view_restart_descriptor import PITViewRestartDescriptor
+
+from netapp.santricity.models.symbol.pit_view_restart_descriptor import \
+    PITViewRestartDescriptor
+
 
 class PITViewRestartDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITViewRestartDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_view_restart_descriptor(self):
-          pit_view_restart_descriptor_obj = PITViewRestartDescriptor()
-          self.assertNotEqual(pit_view_restart_descriptor_obj, None)
-
-
+        pit_view_restart_descriptor_obj = PITViewRestartDescriptor()
+        self.assertNotEqual(pit_view_restart_descriptor_obj, None)

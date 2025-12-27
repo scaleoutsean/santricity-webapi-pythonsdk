@@ -20,377 +20,419 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.statistics_api import StatisticsApi
 
+from netapp.santricity.api.v2.statistics_api import StatisticsApi
+from netapp.santricity.rest import ApiException
 
 
 class StatisticsApiTest(unittest.TestCase):
-
-    
     def test_get_all_analysed_controller_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_all_analysed_controller_statistics(system_id="test")
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_all_analysed_controller_statistics(
+                system_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_all_analysed_drive_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
+        api = StatisticsApi()
+        statistics_api = None
+        try:
             statistics_api = api.get_all_analysed_drive_statistics(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_all_analysed_interface_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
+        api = StatisticsApi()
+        statistics_api = None
+        try:
             statistics_api = api.get_all_analysed_interface_statistics(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_all_analysed_volume_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_all_analysed_volume_statistics(system_id="test", idlist="test")
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_all_analysed_volume_statistics(
+                system_id="test", idlist="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_all_historical_raw_performance_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_all_historical_raw_performance_statistics(system_id="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_all_historical_raw_performance_statistics(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_all_live_performance_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_all_live_performance_statistics(system_id="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_all_live_performance_statistics(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_all_raw_disk_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_all_raw_disk_statistics(system_id="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_all_raw_disk_statistics(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_all_raw_volume_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_all_raw_volume_statistics(system_id="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_all_raw_volume_statistics(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_analysed_controller_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_analysed_controller_statistics(system_id="test", idlist="test")
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_analysed_controller_statistics(
+                system_id="test", idlist="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_analysed_drive_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_analysed_drive_statistics(system_id="test", idlist="test")
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_analysed_drive_statistics(
+                system_id="test", idlist="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_analysed_volume_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
+        api = StatisticsApi()
+        statistics_api = None
+        try:
             statistics_api = api.get_analysed_volume_statistics(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_analyzed_interface_stats(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_analyzed_interface_stats(system_id="test", idlist="test")
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_analyzed_interface_stats(
+                system_id="test", idlist="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_average_analyzed_statistics_types(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
+        api = StatisticsApi()
+        statistics_api = None
+        try:
             statistics_api = api.get_average_analyzed_statistics_types(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_averaged_historical_performance_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_averaged_historical_performance_statistics(system_id="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_averaged_historical_performance_statistics(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_historical_performance_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_historical_performance_statistics(system_id="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_historical_performance_statistics(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_historical_raw_performance_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_historical_raw_performance_statistics(system_id="test", idlist="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_historical_raw_performance_statistics(
+                system_id="test",
+                idlist="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_live_performance_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_live_performance_statistics(system_id="test", idlist="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_live_performance_statistics(
+                system_id="test",
+                idlist="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_raw_controller_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_raw_controller_statistics(system_id="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_raw_controller_statistics(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_raw_controller_statistics_using_list(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_raw_controller_statistics_using_list(system_id="test", idlist="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_raw_controller_statistics_using_list(
+                system_id="test",
+                idlist="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_raw_disk_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_raw_disk_statistics(system_id="test", idlist="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_raw_disk_statistics(
+                system_id="test",
+                idlist="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_raw_interface_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_raw_interface_statistics(system_id="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_raw_interface_statistics(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_raw_interface_statistics_with_list(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_raw_interface_statistics_with_list(system_id="test", idlist="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_raw_interface_statistics_with_list(
+                system_id="test",
+                idlist="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_raw_statistics_types(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
+        api = StatisticsApi()
+        statistics_api = None
+        try:
             statistics_api = api.get_raw_statistics_types(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_raw_volume_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_raw_volume_statistics(system_id="test", idlist="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_raw_volume_statistics(
+                system_id="test",
+                idlist="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_selected_historical_performance_statistics(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
-            statistics_api = api.get_selected_historical_performance_statistics(system_id="test", idlist="test", )
+        api = StatisticsApi()
+        statistics_api = None
+        try:
+            statistics_api = api.get_selected_historical_performance_statistics(
+                system_id="test",
+                idlist="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
+        self.assertNotEqual(statistics_api, None)
+
     def test_get_supported_statistics_types(self):
-       api = StatisticsApi()
-       statistics_api = None
-       try:
+        api = StatisticsApi()
+        statistics_api = None
+        try:
             statistics_api = api.get_supported_statistics_types(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if statistics_api is None:
                 statistics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             statistics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            statistics_api = 1
 
-       self.assertNotEqual(statistics_api, None)
-    
-
-
+        self.assertNotEqual(statistics_api, None)

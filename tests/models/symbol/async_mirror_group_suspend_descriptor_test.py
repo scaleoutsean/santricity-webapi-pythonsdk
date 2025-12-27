@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_suspend_descriptor import AsyncMirrorGroupSuspendDescriptor
+
+from netapp.santricity.models.symbol.async_mirror_group_suspend_descriptor import \
+    AsyncMirrorGroupSuspendDescriptor
+
 
 class AsyncMirrorGroupSuspendDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorGroupSuspendDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_suspend_descriptor(self):
-          async_mirror_group_suspend_descriptor_obj = AsyncMirrorGroupSuspendDescriptor()
-          self.assertNotEqual(async_mirror_group_suspend_descriptor_obj, None)
-
-
+        async_mirror_group_suspend_descriptor_obj = AsyncMirrorGroupSuspendDescriptor()
+        self.assertNotEqual(async_mirror_group_suspend_descriptor_obj, None)

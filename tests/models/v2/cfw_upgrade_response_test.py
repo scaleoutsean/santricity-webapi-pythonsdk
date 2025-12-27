@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.cfw_upgrade_response import CfwUpgradeResponse
+
 
 class CfwUpgradeResponseTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class CfwUpgradeResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cfw_upgrade_response(self):
-          cfw_upgrade_response_obj = CfwUpgradeResponse()
-          self.assertNotEqual(cfw_upgrade_response_obj, None)
-
-
+        cfw_upgrade_response_obj = CfwUpgradeResponse()
+        self.assertNotEqual(cfw_upgrade_response_obj, None)

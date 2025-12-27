@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.channel_diag_wr_rd_vfy_params import ChannelDiagWrRdVfyParams
+
+from netapp.santricity.models.symbol.channel_diag_wr_rd_vfy_params import \
+    ChannelDiagWrRdVfyParams
+
 
 class ChannelDiagWrRdVfyParamsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ChannelDiagWrRdVfyParamsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_channel_diag_wr_rd_vfy_params(self):
-          channel_diag_wr_rd_vfy_params_obj = ChannelDiagWrRdVfyParams()
-          self.assertNotEqual(channel_diag_wr_rd_vfy_params_obj, None)
-
-
+        channel_diag_wr_rd_vfy_params_obj = ChannelDiagWrRdVfyParams()
+        self.assertNotEqual(channel_diag_wr_rd_vfy_params_obj, None)

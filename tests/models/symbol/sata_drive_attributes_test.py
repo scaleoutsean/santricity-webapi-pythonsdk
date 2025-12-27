@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sata_drive_attributes import SataDriveAttributes
+
+from netapp.santricity.models.symbol.sata_drive_attributes import \
+    SataDriveAttributes
+
 
 class SataDriveAttributesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SataDriveAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sata_drive_attributes(self):
-          sata_drive_attributes_obj = SataDriveAttributes()
-          self.assertNotEqual(sata_drive_attributes_obj, None)
-
-
+        sata_drive_attributes_obj = SataDriveAttributes()
+        self.assertNotEqual(sata_drive_attributes_obj, None)

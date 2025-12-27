@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.volume_mapping_create_request import VolumeMappingCreateRequest
+
+from netapp.santricity.models.v2.volume_mapping_create_request import \
+    VolumeMappingCreateRequest
+
 
 class VolumeMappingCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeMappingCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_mapping_create_request(self):
-          volume_mapping_create_request_obj = VolumeMappingCreateRequest()
-          self.assertNotEqual(volume_mapping_create_request_obj, None)
-
-
+        volume_mapping_create_request_obj = VolumeMappingCreateRequest()
+        self.assertNotEqual(volume_mapping_create_request_obj, None)

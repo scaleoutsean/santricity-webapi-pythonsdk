@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.flash_cache_drive_info import FlashCacheDriveInfo
+
+from netapp.santricity.models.symbol.flash_cache_drive_info import \
+    FlashCacheDriveInfo
+
 
 class FlashCacheDriveInfoTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FlashCacheDriveInfoTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_flash_cache_drive_info(self):
-          flash_cache_drive_info_obj = FlashCacheDriveInfo()
-          self.assertNotEqual(flash_cache_drive_info_obj, None)
-
-
+        flash_cache_drive_info_obj = FlashCacheDriveInfo()
+        self.assertNotEqual(flash_cache_drive_info_obj, None)

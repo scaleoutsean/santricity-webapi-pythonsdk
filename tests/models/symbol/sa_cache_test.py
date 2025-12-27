@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sa_cache import SACache
+
 
 class SACacheTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SACacheTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sa_cache(self):
-          sa_cache_obj = SACache()
-          self.assertNotEqual(sa_cache_obj, None)
-
-
+        sa_cache_obj = SACache()
+        self.assertNotEqual(sa_cache_obj, None)

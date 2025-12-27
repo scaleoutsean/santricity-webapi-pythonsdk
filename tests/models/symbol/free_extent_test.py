@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.free_extent import FreeExtent
+
 
 class FreeExtentTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FreeExtentTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_free_extent(self):
-          free_extent_obj = FreeExtent()
-          self.assertNotEqual(free_extent_obj, None)
-
-
+        free_extent_obj = FreeExtent()
+        self.assertNotEqual(free_extent_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.minihub import Minihub
+
 
 class MinihubTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class MinihubTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_minihub(self):
-          minihub_obj = Minihub()
-          self.assertNotEqual(minihub_obj, None)
-
-
+        minihub_obj = Minihub()
+        self.assertNotEqual(minihub_obj, None)

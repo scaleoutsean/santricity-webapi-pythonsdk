@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.analyzed_workload_statistics import AnalyzedWorkloadStatistics
+
+from netapp.santricity.models.v2.analyzed_workload_statistics import \
+    AnalyzedWorkloadStatistics
+
 
 class AnalyzedWorkloadStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AnalyzedWorkloadStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_analyzed_workload_statistics(self):
-          analyzed_workload_statistics_obj = AnalyzedWorkloadStatistics()
-          self.assertNotEqual(analyzed_workload_statistics_obj, None)
-
-
+        analyzed_workload_statistics_obj = AnalyzedWorkloadStatistics()
+        self.assertNotEqual(analyzed_workload_statistics_obj, None)

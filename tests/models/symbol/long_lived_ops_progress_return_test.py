@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.long_lived_ops_progress_return import LongLivedOpsProgressReturn
+
+from netapp.santricity.models.symbol.long_lived_ops_progress_return import \
+    LongLivedOpsProgressReturn
+
 
 class LongLivedOpsProgressReturnTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class LongLivedOpsProgressReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_long_lived_ops_progress_return(self):
-          long_lived_ops_progress_return_obj = LongLivedOpsProgressReturn()
-          self.assertNotEqual(long_lived_ops_progress_return_obj, None)
-
-
+        long_lived_ops_progress_return_obj = LongLivedOpsProgressReturn()
+        self.assertNotEqual(long_lived_ops_progress_return_obj, None)

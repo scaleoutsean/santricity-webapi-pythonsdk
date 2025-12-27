@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.disk_pool_max_reserved_drive_count_return import DiskPoolMaxReservedDriveCountReturn
+
+from netapp.santricity.models.symbol.disk_pool_max_reserved_drive_count_return import \
+    DiskPoolMaxReservedDriveCountReturn
+
 
 class DiskPoolMaxReservedDriveCountReturnTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class DiskPoolMaxReservedDriveCountReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_max_reserved_drive_count_return(self):
-          disk_pool_max_reserved_drive_count_return_obj = DiskPoolMaxReservedDriveCountReturn()
-          self.assertNotEqual(disk_pool_max_reserved_drive_count_return_obj, None)
-
-
+        disk_pool_max_reserved_drive_count_return_obj = (
+            DiskPoolMaxReservedDriveCountReturn()
+        )
+        self.assertNotEqual(disk_pool_max_reserved_drive_count_return_obj, None)

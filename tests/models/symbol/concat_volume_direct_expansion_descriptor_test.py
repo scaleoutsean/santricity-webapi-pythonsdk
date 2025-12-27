@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.concat_volume_direct_expansion_descriptor import ConcatVolumeDirectExpansionDescriptor
+
+from netapp.santricity.models.symbol.concat_volume_direct_expansion_descriptor import \
+    ConcatVolumeDirectExpansionDescriptor
+
 
 class ConcatVolumeDirectExpansionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class ConcatVolumeDirectExpansionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_concat_volume_direct_expansion_descriptor(self):
-          concat_volume_direct_expansion_descriptor_obj = ConcatVolumeDirectExpansionDescriptor()
-          self.assertNotEqual(concat_volume_direct_expansion_descriptor_obj, None)
-
-
+        concat_volume_direct_expansion_descriptor_obj = (
+            ConcatVolumeDirectExpansionDescriptor()
+        )
+        self.assertNotEqual(concat_volume_direct_expansion_descriptor_obj, None)

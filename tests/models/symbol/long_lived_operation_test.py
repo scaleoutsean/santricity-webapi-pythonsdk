@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.long_lived_operation import LongLivedOperation
+
+from netapp.santricity.models.symbol.long_lived_operation import \
+    LongLivedOperation
+
 
 class LongLivedOperationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class LongLivedOperationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_long_lived_operation(self):
-          long_lived_operation_obj = LongLivedOperation()
-          self.assertNotEqual(long_lived_operation_obj, None)
-
-
+        long_lived_operation_obj = LongLivedOperation()
+        self.assertNotEqual(long_lived_operation_obj, None)

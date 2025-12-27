@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_resume_descriptor import AsyncMirrorGroupResumeDescriptor
+
+from netapp.santricity.models.symbol.async_mirror_group_resume_descriptor import \
+    AsyncMirrorGroupResumeDescriptor
+
 
 class AsyncMirrorGroupResumeDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorGroupResumeDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_resume_descriptor(self):
-          async_mirror_group_resume_descriptor_obj = AsyncMirrorGroupResumeDescriptor()
-          self.assertNotEqual(async_mirror_group_resume_descriptor_obj, None)
-
-
+        async_mirror_group_resume_descriptor_obj = AsyncMirrorGroupResumeDescriptor()
+        self.assertNotEqual(async_mirror_group_resume_descriptor_obj, None)

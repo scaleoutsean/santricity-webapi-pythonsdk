@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.workload_creation_descriptor import WorkloadCreationDescriptor
+
+from netapp.santricity.models.symbol.workload_creation_descriptor import \
+    WorkloadCreationDescriptor
+
 
 class WorkloadCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class WorkloadCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_workload_creation_descriptor(self):
-          workload_creation_descriptor_obj = WorkloadCreationDescriptor()
-          self.assertNotEqual(workload_creation_descriptor_obj, None)
-
-
+        workload_creation_descriptor_obj = WorkloadCreationDescriptor()
+        self.assertNotEqual(workload_creation_descriptor_obj, None)

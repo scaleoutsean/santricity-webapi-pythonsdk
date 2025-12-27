@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.component_removal_data import ComponentRemovalData
+
+from netapp.santricity.models.symbol.component_removal_data import \
+    ComponentRemovalData
+
 
 class ComponentRemovalDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ComponentRemovalDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_component_removal_data(self):
-          component_removal_data_obj = ComponentRemovalData()
-          self.assertNotEqual(component_removal_data_obj, None)
-
-
+        component_removal_data_obj = ComponentRemovalData()
+        self.assertNotEqual(component_removal_data_obj, None)

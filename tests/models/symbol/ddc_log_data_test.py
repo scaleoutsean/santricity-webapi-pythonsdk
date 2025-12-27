@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ddc_log_data import DdcLogData
+
 
 class DdcLogDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DdcLogDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ddc_log_data(self):
-          ddc_log_data_obj = DdcLogData()
-          self.assertNotEqual(ddc_log_data_obj, None)
-
-
+        ddc_log_data_obj = DdcLogData()
+        self.assertNotEqual(ddc_log_data_obj, None)

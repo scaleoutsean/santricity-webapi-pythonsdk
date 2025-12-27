@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.call_response import CallResponse
+
 
 class CallResponseTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class CallResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_call_response(self):
-          call_response_obj = CallResponse()
-          self.assertNotEqual(call_response_obj, None)
-
-
+        call_response_obj = CallResponse()
+        self.assertNotEqual(call_response_obj, None)

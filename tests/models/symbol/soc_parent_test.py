@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.soc_parent import SocParent
+
 
 class SocParentTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SocParentTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_soc_parent(self):
-          soc_parent_obj = SocParent()
-          self.assertNotEqual(soc_parent_obj, None)
-
-
+        soc_parent_obj = SocParent()
+        self.assertNotEqual(soc_parent_obj, None)

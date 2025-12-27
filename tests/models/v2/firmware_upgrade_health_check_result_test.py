@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.firmware_upgrade_health_check_result import FirmwareUpgradeHealthCheckResult
+
+from netapp.santricity.models.v2.firmware_upgrade_health_check_result import \
+    FirmwareUpgradeHealthCheckResult
+
 
 class FirmwareUpgradeHealthCheckResultTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FirmwareUpgradeHealthCheckResultTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_firmware_upgrade_health_check_result(self):
-          firmware_upgrade_health_check_result_obj = FirmwareUpgradeHealthCheckResult()
-          self.assertNotEqual(firmware_upgrade_health_check_result_obj, None)
-
-
+        firmware_upgrade_health_check_result_obj = FirmwareUpgradeHealthCheckResult()
+        self.assertNotEqual(firmware_upgrade_health_check_result_obj, None)

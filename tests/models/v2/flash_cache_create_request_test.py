@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.flash_cache_create_request import FlashCacheCreateRequest
+
+from netapp.santricity.models.v2.flash_cache_create_request import \
+    FlashCacheCreateRequest
+
 
 class FlashCacheCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FlashCacheCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_flash_cache_create_request(self):
-          flash_cache_create_request_obj = FlashCacheCreateRequest()
-          self.assertNotEqual(flash_cache_create_request_obj, None)
-
-
+        flash_cache_create_request_obj = FlashCacheCreateRequest()
+        self.assertNotEqual(flash_cache_create_request_obj, None)

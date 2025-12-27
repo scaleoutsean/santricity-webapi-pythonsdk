@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.utils.login_request import LoginRequest
+
 
 class LoginRequestTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class LoginRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_login_request(self):
-          login_request_obj = LoginRequest()
-          self.assertNotEqual(login_request_obj, None)
-
-
+        login_request_obj = LoginRequest()
+        self.assertNotEqual(login_request_obj, None)

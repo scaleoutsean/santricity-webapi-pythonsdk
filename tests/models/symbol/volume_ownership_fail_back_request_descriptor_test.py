@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_ownership_fail_back_request_descriptor import VolumeOwnershipFailBackRequestDescriptor
+
+from netapp.santricity.models.symbol.volume_ownership_fail_back_request_descriptor import \
+    VolumeOwnershipFailBackRequestDescriptor
+
 
 class VolumeOwnershipFailBackRequestDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class VolumeOwnershipFailBackRequestDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_ownership_fail_back_request_descriptor(self):
-          volume_ownership_fail_back_request_descriptor_obj = VolumeOwnershipFailBackRequestDescriptor()
-          self.assertNotEqual(volume_ownership_fail_back_request_descriptor_obj, None)
-
-
+        volume_ownership_fail_back_request_descriptor_obj = (
+            VolumeOwnershipFailBackRequestDescriptor()
+        )
+        self.assertNotEqual(volume_ownership_fail_back_request_descriptor_obj, None)

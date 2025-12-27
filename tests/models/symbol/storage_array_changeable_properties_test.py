@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.storage_array_changeable_properties import StorageArrayChangeableProperties
+
+from netapp.santricity.models.symbol.storage_array_changeable_properties import \
+    StorageArrayChangeableProperties
+
 
 class StorageArrayChangeablePropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class StorageArrayChangeablePropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_storage_array_changeable_properties(self):
-          storage_array_changeable_properties_obj = StorageArrayChangeableProperties()
-          self.assertNotEqual(storage_array_changeable_properties_obj, None)
-
-
+        storage_array_changeable_properties_obj = StorageArrayChangeableProperties()
+        self.assertNotEqual(storage_array_changeable_properties_obj, None)

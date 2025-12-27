@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.volume_usage_hint import VolumeUsageHint
+
 
 class VolumeUsageHintTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VolumeUsageHintTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_usage_hint(self):
-          volume_usage_hint_obj = VolumeUsageHint()
-          self.assertNotEqual(volume_usage_hint_obj, None)
-
-
+        volume_usage_hint_obj = VolumeUsageHint()
+        self.assertNotEqual(volume_usage_hint_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.scsi_protocol_endpoint import ScsiProtocolEndpoint
+
+from netapp.santricity.models.symbol.scsi_protocol_endpoint import \
+    ScsiProtocolEndpoint
+
 
 class ScsiProtocolEndpointTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ScsiProtocolEndpointTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_scsi_protocol_endpoint(self):
-          scsi_protocol_endpoint_obj = ScsiProtocolEndpoint()
-          self.assertNotEqual(scsi_protocol_endpoint_obj, None)
-
-
+        scsi_protocol_endpoint_obj = ScsiProtocolEndpoint()
+        self.assertNotEqual(scsi_protocol_endpoint_obj, None)

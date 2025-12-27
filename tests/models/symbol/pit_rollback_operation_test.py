@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_rollback_operation import PITRollbackOperation
+
+from netapp.santricity.models.symbol.pit_rollback_operation import \
+    PITRollbackOperation
+
 
 class PITRollbackOperationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITRollbackOperationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_rollback_operation(self):
-          pit_rollback_operation_obj = PITRollbackOperation()
-          self.assertNotEqual(pit_rollback_operation_obj, None)
-
-
+        pit_rollback_operation_obj = PITRollbackOperation()
+        self.assertNotEqual(pit_rollback_operation_obj, None)

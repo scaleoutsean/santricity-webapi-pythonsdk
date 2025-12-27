@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sa_view_password_digest_returned import SAViewPasswordDigestReturned
+
+from netapp.santricity.models.symbol.sa_view_password_digest_returned import \
+    SAViewPasswordDigestReturned
+
 
 class SAViewPasswordDigestReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SAViewPasswordDigestReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sa_view_password_digest_returned(self):
-          sa_view_password_digest_returned_obj = SAViewPasswordDigestReturned()
-          self.assertNotEqual(sa_view_password_digest_returned_obj, None)
-
-
+        sa_view_password_digest_returned_obj = SAViewPasswordDigestReturned()
+        self.assertNotEqual(sa_view_password_digest_returned_obj, None)

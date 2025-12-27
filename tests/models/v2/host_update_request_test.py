@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.host_update_request import HostUpdateRequest
+
 
 class HostUpdateRequestTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class HostUpdateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_update_request(self):
-          host_update_request_obj = HostUpdateRequest()
-          self.assertNotEqual(host_update_request_obj, None)
-
-
+        host_update_request_obj = HostUpdateRequest()
+        self.assertNotEqual(host_update_request_obj, None)

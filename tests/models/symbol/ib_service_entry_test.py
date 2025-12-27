@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ib_service_entry import IbServiceEntry
+
 
 class IbServiceEntryTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class IbServiceEntryTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_service_entry(self):
-          ib_service_entry_obj = IbServiceEntry()
-          self.assertNotEqual(ib_service_entry_obj, None)
-
-
+        ib_service_entry_obj = IbServiceEntry()
+        self.assertNotEqual(ib_service_entry_obj, None)

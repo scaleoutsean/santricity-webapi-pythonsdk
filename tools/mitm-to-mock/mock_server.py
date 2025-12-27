@@ -5,7 +5,8 @@ and serves responses for exact method+path matches.
 import json
 import os
 from urllib.parse import urlparse
-from flask import Flask, request, make_response
+
+from flask import Flask, make_response, request
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 MAPPINGS_FILE = os.path.join(DATA_DIR, "mappings.json")
@@ -44,12 +45,21 @@ def _load():
     load_mappings()
 
 
-@app.route('/', defaults={'u_path': ''}, methods=["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"])
-@app.route('/<path:u_path>', methods=["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"])
+@app.route(
+    "/",
+    defaults={"u_path": ""},
+    methods=["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
+)
+@app.route(
+    "/<path:u_path>",
+    methods=["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
+)
 def all_routes(u_path):
     full_path = "/" + u_path
     if request.query_string:
-        full_path = full_path + "?" + request.query_string.decode('utf-8', errors='replace')
+        full_path = (
+            full_path + "?" + request.query_string.decode("utf-8", errors="replace")
+        )
     mapping = match_mapping(request.method, full_path)
     if not mapping:
         return make_response(("Not found", 404))
@@ -60,4 +70,4 @@ def all_routes(u_path):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host="0.0.0.0", port=5000)

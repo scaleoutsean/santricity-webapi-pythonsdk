@@ -20,97 +20,98 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.workloads_api import WorkloadsApi
 
+from netapp.santricity.api.v2.workloads_api import WorkloadsApi
+from netapp.santricity.rest import ApiException
 
 
 class WorkloadsApiTest(unittest.TestCase):
-
-    
     def test_copy_workload(self):
-       api = WorkloadsApi()
-       workloads_api = None
-       try:
-            workloads_api = api.copy_workload(system_id="test", workload_id="test", data="test")
+        api = WorkloadsApi()
+        workloads_api = None
+        try:
+            workloads_api = api.copy_workload(
+                system_id="test", workload_id="test", data="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             workloads_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            workloads_api = 1
 
-       self.assertNotEqual(workloads_api, None)
-    
+        self.assertNotEqual(workloads_api, None)
+
     def test_get_all_defined_workloads(self):
-       api = WorkloadsApi()
-       workloads_api = None
-       try:
+        api = WorkloadsApi()
+        workloads_api = None
+        try:
             workloads_api = api.get_all_defined_workloads(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             workloads_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            workloads_api = 1
 
-       self.assertNotEqual(workloads_api, None)
-    
+        self.assertNotEqual(workloads_api, None)
+
     def test_get_defined_workloads(self):
-       api = WorkloadsApi()
-       workloads_api = None
-       try:
-            workloads_api = api.get_defined_workloads(system_id="test", workload_id="test")
+        api = WorkloadsApi()
+        workloads_api = None
+        try:
+            workloads_api = api.get_defined_workloads(
+                system_id="test", workload_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             workloads_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            workloads_api = 1
 
-       self.assertNotEqual(workloads_api, None)
-    
+        self.assertNotEqual(workloads_api, None)
+
     def test_new_workload(self):
-       api = WorkloadsApi()
-       workloads_api = None
-       try:
+        api = WorkloadsApi()
+        workloads_api = None
+        try:
             workloads_api = api.new_workload(system_id="test", data="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             workloads_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            workloads_api = 1
 
-       self.assertNotEqual(workloads_api, None)
-    
+        self.assertNotEqual(workloads_api, None)
+
     def test_remove_workload(self):
-       api = WorkloadsApi()
-       workloads_api = None
-       try:
+        api = WorkloadsApi()
+        workloads_api = None
+        try:
             workloads_api = api.remove_workload(system_id="test", workload_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             workloads_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            workloads_api = 1
 
-       self.assertNotEqual(workloads_api, None)
-    
+        self.assertNotEqual(workloads_api, None)
+
     def test_update_workload(self):
-       api = WorkloadsApi()
-       workloads_api = None
-       try:
-            workloads_api = api.update_workload(system_id="test", workload_id="test", data="test")
+        api = WorkloadsApi()
+        workloads_api = None
+        try:
+            workloads_api = api.update_workload(
+                system_id="test", workload_id="test", data="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             workloads_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            workloads_api = 1
 
-       self.assertNotEqual(workloads_api, None)
-    
-
-
+        self.assertNotEqual(workloads_api, None)

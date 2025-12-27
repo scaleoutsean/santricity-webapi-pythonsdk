@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.consistency_group_update_request import ConsistencyGroupUpdateRequest
+
+from netapp.santricity.models.v2.consistency_group_update_request import \
+    ConsistencyGroupUpdateRequest
+
 
 class ConsistencyGroupUpdateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ConsistencyGroupUpdateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_consistency_group_update_request(self):
-          consistency_group_update_request_obj = ConsistencyGroupUpdateRequest()
-          self.assertNotEqual(consistency_group_update_request_obj, None)
-
-
+        consistency_group_update_request_obj = ConsistencyGroupUpdateRequest()
+        self.assertNotEqual(consistency_group_update_request_obj, None)

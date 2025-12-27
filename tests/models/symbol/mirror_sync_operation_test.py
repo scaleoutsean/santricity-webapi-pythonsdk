@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mirror_sync_operation import MirrorSyncOperation
+
+from netapp.santricity.models.symbol.mirror_sync_operation import \
+    MirrorSyncOperation
+
 
 class MirrorSyncOperationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MirrorSyncOperationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mirror_sync_operation(self):
-          mirror_sync_operation_obj = MirrorSyncOperation()
-          self.assertNotEqual(mirror_sync_operation_obj, None)
-
-
+        mirror_sync_operation_obj = MirrorSyncOperation()
+        self.assertNotEqual(mirror_sync_operation_obj, None)

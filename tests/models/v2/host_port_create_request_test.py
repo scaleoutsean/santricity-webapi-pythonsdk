@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.host_port_create_request import HostPortCreateRequest
+
+from netapp.santricity.models.v2.host_port_create_request import \
+    HostPortCreateRequest
+
 
 class HostPortCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostPortCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_port_create_request(self):
-          host_port_create_request_obj = HostPortCreateRequest()
-          self.assertNotEqual(host_port_create_request_obj, None)
-
-
+        host_port_create_request_obj = HostPortCreateRequest()
+        self.assertNotEqual(host_port_create_request_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.tag_event import TagEvent
+
 
 class TagEventTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class TagEventTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_tag_event(self):
-          tag_event_obj = TagEvent()
-          self.assertNotEqual(tag_event_obj, None)
-
-
+        tag_event_obj = TagEvent()
+        self.assertNotEqual(tag_event_obj, None)

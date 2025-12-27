@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.reserve_support_data_returned import ReserveSupportDataReturned
+
+from netapp.santricity.models.symbol.reserve_support_data_returned import \
+    ReserveSupportDataReturned
+
 
 class ReserveSupportDataReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ReserveSupportDataReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_reserve_support_data_returned(self):
-          reserve_support_data_returned_obj = ReserveSupportDataReturned()
-          self.assertNotEqual(reserve_support_data_returned_obj, None)
-
-
+        reserve_support_data_returned_obj = ReserveSupportDataReturned()
+        self.assertNotEqual(reserve_support_data_returned_obj, None)

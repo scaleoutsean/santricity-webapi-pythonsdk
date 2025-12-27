@@ -20,55 +20,50 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.upgrade_api import UpgradeApi
 
+from netapp.santricity.api.v2.upgrade_api import UpgradeApi
+from netapp.santricity.rest import ApiException
 
 
 class UpgradeApiTest(unittest.TestCase):
-
-    
     def test_get_software_versions(self):
-       api = UpgradeApi()
-       upgrade_api = None
-       try:
+        api = UpgradeApi()
+        upgrade_api = None
+        try:
             upgrade_api = api.get_software_versions()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if upgrade_api is None:
                 upgrade_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             upgrade_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            upgrade_api = 1
 
-       self.assertNotEqual(upgrade_api, None)
-    
+        self.assertNotEqual(upgrade_api, None)
+
     def test_start_software_download(self):
-       api = UpgradeApi()
-       upgrade_api = None
-       try:
+        api = UpgradeApi()
+        upgrade_api = None
+        try:
             upgrade_api = api.start_software_download()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if upgrade_api is None:
                 upgrade_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             upgrade_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            upgrade_api = 1
 
-       self.assertNotEqual(upgrade_api, None)
-    
+        self.assertNotEqual(upgrade_api, None)
+
     def test_start_software_reload(self):
-       api = UpgradeApi()
-       upgrade_api = None
-       try:
+        api = UpgradeApi()
+        upgrade_api = None
+        try:
             upgrade_api = api.start_software_reload()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if upgrade_api is None:
                 upgrade_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             upgrade_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            upgrade_api = 1
 
-       self.assertNotEqual(upgrade_api, None)
-    
-
-
+        self.assertNotEqual(upgrade_api, None)

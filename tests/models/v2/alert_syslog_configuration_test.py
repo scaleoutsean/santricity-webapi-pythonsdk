@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.alert_syslog_configuration import AlertSyslogConfiguration
+
+from netapp.santricity.models.v2.alert_syslog_configuration import \
+    AlertSyslogConfiguration
+
 
 class AlertSyslogConfigurationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AlertSyslogConfigurationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_alert_syslog_configuration(self):
-          alert_syslog_configuration_obj = AlertSyslogConfiguration()
-          self.assertNotEqual(alert_syslog_configuration_obj, None)
-
-
+        alert_syslog_configuration_obj = AlertSyslogConfiguration()
+        self.assertNotEqual(alert_syslog_configuration_obj, None)

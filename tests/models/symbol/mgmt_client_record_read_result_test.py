@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mgmt_client_record_read_result import MgmtClientRecordReadResult
+
+from netapp.santricity.models.symbol.mgmt_client_record_read_result import \
+    MgmtClientRecordReadResult
+
 
 class MgmtClientRecordReadResultTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MgmtClientRecordReadResultTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mgmt_client_record_read_result(self):
-          mgmt_client_record_read_result_obj = MgmtClientRecordReadResult()
-          self.assertNotEqual(mgmt_client_record_read_result_obj, None)
-
-
+        mgmt_client_record_read_result_obj = MgmtClientRecordReadResult()
+        self.assertNotEqual(mgmt_client_record_read_result_obj, None)

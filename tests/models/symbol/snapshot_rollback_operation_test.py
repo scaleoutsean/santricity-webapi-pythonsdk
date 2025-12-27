@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.snapshot_rollback_operation import SnapshotRollbackOperation
+
+from netapp.santricity.models.symbol.snapshot_rollback_operation import \
+    SnapshotRollbackOperation
+
 
 class SnapshotRollbackOperationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SnapshotRollbackOperationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_rollback_operation(self):
-          snapshot_rollback_operation_obj = SnapshotRollbackOperation()
-          self.assertNotEqual(snapshot_rollback_operation_obj, None)
-
-
+        snapshot_rollback_operation_obj = SnapshotRollbackOperation()
+        self.assertNotEqual(snapshot_rollback_operation_obj, None)

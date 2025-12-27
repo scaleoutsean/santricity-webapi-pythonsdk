@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_channel_error_counts import DriveChannelErrorCounts
+
+from netapp.santricity.models.symbol.drive_channel_error_counts import \
+    DriveChannelErrorCounts
+
 
 class DriveChannelErrorCountsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveChannelErrorCountsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_channel_error_counts(self):
-          drive_channel_error_counts_obj = DriveChannelErrorCounts()
-          self.assertNotEqual(drive_channel_error_counts_obj, None)
-
-
+        drive_channel_error_counts_obj = DriveChannelErrorCounts()
+        self.assertNotEqual(drive_channel_error_counts_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.expansion_candidates_returned import ExpansionCandidatesReturned
+
+from netapp.santricity.models.symbol.expansion_candidates_returned import \
+    ExpansionCandidatesReturned
+
 
 class ExpansionCandidatesReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ExpansionCandidatesReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_expansion_candidates_returned(self):
-          expansion_candidates_returned_obj = ExpansionCandidatesReturned()
-          self.assertNotEqual(expansion_candidates_returned_obj, None)
-
-
+        expansion_candidates_returned_obj = ExpansionCandidatesReturned()
+        self.assertNotEqual(expansion_candidates_returned_obj, None)

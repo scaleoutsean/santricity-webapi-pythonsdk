@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mirror_write_mode_descriptor import MirrorWriteModeDescriptor
+
+from netapp.santricity.models.symbol.mirror_write_mode_descriptor import \
+    MirrorWriteModeDescriptor
+
 
 class MirrorWriteModeDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MirrorWriteModeDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mirror_write_mode_descriptor(self):
-          mirror_write_mode_descriptor_obj = MirrorWriteModeDescriptor()
-          self.assertNotEqual(mirror_write_mode_descriptor_obj, None)
-
-
+        mirror_write_mode_descriptor_obj = MirrorWriteModeDescriptor()
+        self.assertNotEqual(mirror_write_mode_descriptor_obj, None)

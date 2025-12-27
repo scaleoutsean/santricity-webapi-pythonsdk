@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.channel_location import ChannelLocation
+
 
 class ChannelLocationTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ChannelLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_channel_location(self):
-          channel_location_obj = ChannelLocation()
-          self.assertNotEqual(channel_location_obj, None)
-
-
+        channel_location_obj = ChannelLocation()
+        self.assertNotEqual(channel_location_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.network_interface import NetworkInterface
+
 
 class NetworkInterfaceTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class NetworkInterfaceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_network_interface(self):
-          network_interface_obj = NetworkInterface()
-          self.assertNotEqual(network_interface_obj, None)
-
-
+        network_interface_obj = NetworkInterface()
+        self.assertNotEqual(network_interface_obj, None)

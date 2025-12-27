@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.io_statistics_retrieve_chunk_details import IoStatisticsRetrieveChunkDetails
+
+from netapp.santricity.models.symbol.io_statistics_retrieve_chunk_details import \
+    IoStatisticsRetrieveChunkDetails
+
 
 class IoStatisticsRetrieveChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IoStatisticsRetrieveChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_io_statistics_retrieve_chunk_details(self):
-          io_statistics_retrieve_chunk_details_obj = IoStatisticsRetrieveChunkDetails()
-          self.assertNotEqual(io_statistics_retrieve_chunk_details_obj, None)
-
-
+        io_statistics_retrieve_chunk_details_obj = IoStatisticsRetrieveChunkDetails()
+        self.assertNotEqual(io_statistics_retrieve_chunk_details_obj, None)

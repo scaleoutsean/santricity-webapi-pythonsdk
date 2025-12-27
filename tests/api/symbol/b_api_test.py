@@ -20,27 +20,25 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.b_api import BApi
 
+from netapp.santricity.api.symbol.b_api import BApi
+from netapp.santricity.rest import ApiException
 
 
 class BApiTest(unittest.TestCase):
-
-    
     def test_symbol_bind_to_controller(self):
-       api = BApi()
-       b_api = None
-       try:
-            b_api = api.symbol_bind_to_controller(system_id="test", body="test", )
+        api = BApi()
+        b_api = None
+        try:
+            b_api = api.symbol_bind_to_controller(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if b_api is None:
                 b_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             b_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            b_api = 1
 
-       self.assertNotEqual(b_api, None)
-    
-
-
+        self.assertNotEqual(b_api, None)

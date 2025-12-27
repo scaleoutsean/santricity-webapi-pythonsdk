@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.remote_volume_mirror_create_request import RemoteVolumeMirrorCreateRequest
+
+from netapp.santricity.models.v2.remote_volume_mirror_create_request import \
+    RemoteVolumeMirrorCreateRequest
+
 
 class RemoteVolumeMirrorCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemoteVolumeMirrorCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_volume_mirror_create_request(self):
-          remote_volume_mirror_create_request_obj = RemoteVolumeMirrorCreateRequest()
-          self.assertNotEqual(remote_volume_mirror_create_request_obj, None)
-
-
+        remote_volume_mirror_create_request_obj = RemoteVolumeMirrorCreateRequest()
+        self.assertNotEqual(remote_volume_mirror_create_request_obj, None)

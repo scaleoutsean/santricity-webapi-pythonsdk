@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.optional_target_object import OptionalTargetObject
+
+from netapp.santricity.models.symbol.optional_target_object import \
+    OptionalTargetObject
+
 
 class OptionalTargetObjectTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class OptionalTargetObjectTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_optional_target_object(self):
-          optional_target_object_obj = OptionalTargetObject()
-          self.assertNotEqual(optional_target_object_obj, None)
-
-
+        optional_target_object_obj = OptionalTargetObject()
+        self.assertNotEqual(optional_target_object_obj, None)

@@ -20,97 +20,102 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.monitoring_api import MonitoringApi
 
+from netapp.santricity.api.v2.monitoring_api import MonitoringApi
+from netapp.santricity.rest import ApiException
 
 
 class MonitoringApiTest(unittest.TestCase):
-
-    
     def test_clear_mel_events(self):
-       api = MonitoringApi()
-       monitoring_api = None
-       try:
-            monitoring_api = api.clear_mel_events(system_id="test", )
+        api = MonitoringApi()
+        monitoring_api = None
+        try:
+            monitoring_api = api.clear_mel_events(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if monitoring_api is None:
                 monitoring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             monitoring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            monitoring_api = 1
 
-       self.assertNotEqual(monitoring_api, None)
-    
+        self.assertNotEqual(monitoring_api, None)
+
     def test_get_all_global_status_events(self):
-       api = MonitoringApi()
-       monitoring_api = None
-       try:
+        api = MonitoringApi()
+        monitoring_api = None
+        try:
             monitoring_api = api.get_all_global_status_events()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if monitoring_api is None:
                 monitoring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             monitoring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            monitoring_api = 1
 
-       self.assertNotEqual(monitoring_api, None)
-    
+        self.assertNotEqual(monitoring_api, None)
+
     def test_get_all_storage_device_status_events(self):
-       api = MonitoringApi()
-       monitoring_api = None
-       try:
-            monitoring_api = api.get_all_storage_device_status_events(system_id="test", )
+        api = MonitoringApi()
+        monitoring_api = None
+        try:
+            monitoring_api = api.get_all_storage_device_status_events(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if monitoring_api is None:
                 monitoring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             monitoring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            monitoring_api = 1
 
-       self.assertNotEqual(monitoring_api, None)
-    
+        self.assertNotEqual(monitoring_api, None)
+
     def test_get_event_availability(self):
-       api = MonitoringApi()
-       monitoring_api = None
-       try:
-            monitoring_api = api.get_event_availability(system_id="test", )
+        api = MonitoringApi()
+        monitoring_api = None
+        try:
+            monitoring_api = api.get_event_availability(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if monitoring_api is None:
                 monitoring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             monitoring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            monitoring_api = 1
 
-       self.assertNotEqual(monitoring_api, None)
-    
+        self.assertNotEqual(monitoring_api, None)
+
     def test_get_log_messages(self):
-       api = MonitoringApi()
-       monitoring_api = None
-       try:
-            monitoring_api = api.get_log_messages(system_id="test", )
+        api = MonitoringApi()
+        monitoring_api = None
+        try:
+            monitoring_api = api.get_log_messages(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if monitoring_api is None:
                 monitoring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             monitoring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            monitoring_api = 1
 
-       self.assertNotEqual(monitoring_api, None)
-    
+        self.assertNotEqual(monitoring_api, None)
+
     def test_get_mel_events(self):
-       api = MonitoringApi()
-       monitoring_api = None
-       try:
-            monitoring_api = api.get_mel_events(system_id="test", )
+        api = MonitoringApi()
+        monitoring_api = None
+        try:
+            monitoring_api = api.get_mel_events(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if monitoring_api is None:
                 monitoring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             monitoring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            monitoring_api = 1
 
-       self.assertNotEqual(monitoring_api, None)
-    
-
-
+        self.assertNotEqual(monitoring_api, None)

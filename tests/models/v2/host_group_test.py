@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.host_group import HostGroup
+
 
 class HostGroupTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class HostGroupTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_group(self):
-          host_group_obj = HostGroup()
-          self.assertNotEqual(host_group_obj, None)
-
-
+        host_group_obj = HostGroup()
+        self.assertNotEqual(host_group_obj, None)

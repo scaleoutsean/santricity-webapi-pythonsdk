@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.bundle_key import BundleKey
+
 
 class BundleKeyTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class BundleKeyTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_bundle_key(self):
-          bundle_key_obj = BundleKey()
-          self.assertNotEqual(bundle_key_obj, None)
-
-
+        bundle_key_obj = BundleKey()
+        self.assertNotEqual(bundle_key_obj, None)

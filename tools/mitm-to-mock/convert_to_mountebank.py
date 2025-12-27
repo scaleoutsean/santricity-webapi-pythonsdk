@@ -6,8 +6,9 @@ import argparse
 import json
 import os
 import sys
-import requests
 from urllib.parse import urlparse
+
+import requests
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 MAPPINGS_FILE = os.path.join(DATA_DIR, "mappings.json")
@@ -42,7 +43,7 @@ def _body_predicate(entry, strict_body=False):
             return {"deepEquals": {"body": parsed}}
         else:
             # permissive: convert back to compact JSON string equality
-            return {"equals": {"body": json.dumps(parsed, separators=(',', ':'))}}
+            return {"equals": {"body": json.dumps(parsed, separators=(",", ":"))}}
     except Exception:
         if strict_body:
             return {"equals": {"body": body}}
@@ -76,14 +77,17 @@ def to_stub(entry, strict_body=False, match_headers=None):
         "is": {
             "statusCode": int(entry.get("status", 200)),
             "headers": entry.get("headers", {}),
-            "body": entry.get("body", "")
+            "body": entry.get("body", ""),
         }
     }
     return {"predicates": predicates, "responses": [response]}
 
 
 def build_imposter(mappings, port=IMPOSTER_PORT, strict_body=False, match_headers=None):
-    stubs = [to_stub(m, strict_body=strict_body, match_headers=match_headers) for m in mappings]
+    stubs = [
+        to_stub(m, strict_body=strict_body, match_headers=match_headers)
+        for m in mappings
+    ]
     imposter = {
         "port": port,
         "protocol": "http",
@@ -100,12 +104,20 @@ def post_imposter(imposter, admin=MB_ADMIN):
 
 
 def parse_args(argv=None):
-    p = argparse.ArgumentParser(description='Convert mappings.json and post as Mountebank imposter')
-    p.add_argument('--mappings', default=MAPPINGS_FILE, help='mappings.json path')
-    p.add_argument('--admin', default=MB_ADMIN, help='Mountebank admin URL')
-    p.add_argument('--port', type=int, default=IMPOSTER_PORT, help='imposter port')
-    p.add_argument('--strict-body', action='store_true', help='Require deep body equality for JSON bodies')
-    p.add_argument('--match-headers', help='Comma-separated header names to include in predicates')
+    p = argparse.ArgumentParser(
+        description="Convert mappings.json and post as Mountebank imposter"
+    )
+    p.add_argument("--mappings", default=MAPPINGS_FILE, help="mappings.json path")
+    p.add_argument("--admin", default=MB_ADMIN, help="Mountebank admin URL")
+    p.add_argument("--port", type=int, default=IMPOSTER_PORT, help="imposter port")
+    p.add_argument(
+        "--strict-body",
+        action="store_true",
+        help="Require deep body equality for JSON bodies",
+    )
+    p.add_argument(
+        "--match-headers", help="Comma-separated header names to include in predicates"
+    )
     return p.parse_args(argv)
 
 
@@ -114,9 +126,16 @@ def main(argv=None):
     mappings = load_mappings(args.mappings)
     match_headers = None
     if args.match_headers:
-        match_headers = [h.strip() for h in args.match_headers.split(',') if h.strip()]
-    imp = build_imposter(mappings, port=args.port, strict_body=args.strict_body, match_headers=match_headers)
-    print(f"Posting imposter with {len(mappings)} stubs to {args.admin} on port {args.port}")
+        match_headers = [h.strip() for h in args.match_headers.split(",") if h.strip()]
+    imp = build_imposter(
+        mappings,
+        port=args.port,
+        strict_body=args.strict_body,
+        match_headers=match_headers,
+    )
+    print(
+        f"Posting imposter with {len(mappings)} stubs to {args.admin} on port {args.port}"
+    )
     r = post_imposter(imp, admin=args.admin)
     print("Posted imposter:", r)
 

@@ -18,2910 +18,2876 @@ StatisticsApi.py
   NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-import sys
 import os
+import sys
+
+from ....santricity.api_client import ApiClient
+from ....santricity.configuration import Configuration
 
 # python 2 and python 3 compatibility library
 
-from ....santricity.configuration import Configuration
-from ....santricity.api_client import ApiClient
-
 
 class StatisticsApi:
-
     def __init__(self, api_client=None):
         config = Configuration()
         if api_client:
             self.api_client = api_client
         else:
             if not config.api_client:
-                config.api_client = ApiClient(context_path='/devmgr/v2')
+                config.api_client = ApiClient(context_path="/devmgr/v2")
             self.api_client = config.api_client
-    
-    
+
     def get_all_analysed_controller_statistics(self, system_id, **kwargs):
-            """
-            Get all analysed controller statistics
-            Mode: Embedded only. 
+        """
+        Get all analysed controller statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_analysed_controller_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[AnalysedControllerStatistics]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_analysed_controller_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_analysed_controller_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_analysed_controller_statistics`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/analysed-controller-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[AnalysedControllerStatistics]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_analysed_controller_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_analysed_controller_statistics`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = (
+            "/storage-systems/{system-id}/analysed-controller-statistics".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[AnalysedControllerStatistics]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[AnalysedControllerStatistics]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_analysed_drive_statistics(self, system_id, **kwargs):
-            """
-            Get all analysed disk statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get all analysed disk statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_analysed_drive_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[AnalysedDiskStatistics]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_analysed_drive_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_analysed_drive_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_analysed_drive_statistics`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/analysed-drive-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[AnalysedDiskStatistics]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_analysed_drive_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_analysed_drive_statistics`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = (
+            "/storage-systems/{system-id}/analysed-drive-statistics".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[AnalysedDiskStatistics]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[AnalysedDiskStatistics]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_analysed_interface_statistics(self, system_id, **kwargs):
-            """
-            Get all analysed controller statistics
-            Mode: Embedded only. 
+        """
+        Get all analysed controller statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_analysed_interface_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[AnalyzedInterfaceStatistics]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_analysed_interface_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_analysed_interface_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_analysed_interface_statistics`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/analysed-interface-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[AnalyzedInterfaceStatistics]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_analysed_interface_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_analysed_interface_statistics`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = (
+            "/storage-systems/{system-id}/analysed-interface-statistics".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[AnalyzedInterfaceStatistics]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[AnalyzedInterfaceStatistics]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_analysed_volume_statistics(self, system_id, idlist, **kwargs):
-            """
-            Get all analysed volume statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get all analysed volume statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_analysed_volume_statistics(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str idlist: A comma separated list of volume ids (required)
-    
-            :return: list[AnalysedVolumeStatistics]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_analysed_volume_statistics(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_analysed_volume_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_analysed_volume_statistics`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_all_analysed_volume_statistics`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/analysed-volume-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param str idlist: A comma separated list of volume ids (required)
 
-            query_params = {}
-    
+        :return: list[AnalysedVolumeStatistics]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "idlist"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_analysed_volume_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_analysed_volume_statistics`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_all_analysed_volume_statistics`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = (
+            "/storage-systems/{system-id}/analysed-volume-statistics/{idlist}".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[AnalysedVolumeStatistics]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[AnalysedVolumeStatistics]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_historical_raw_performance_statistics(self, system_id, **kwargs):
-            """
-            Get historical performance raw statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get historical performance raw statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_historical_raw_performance_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str type: Statistics type
-    
-            :param int start: start time in milliseconds since the epoch
-    
-            :param int end: end time in milliseconds since the epoch
-    
-            :param int length: Length of time in ms.
-    
-            :return: RawStatsResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_historical_raw_performance_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'type', 'start', 'end', 'length']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_historical_raw_performance_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_historical_raw_performance_statistics`")
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/historical-statistics/raw'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param str type: Statistics type
 
-            query_params = {}
-    
-            if 'type' in params:
-                query_params['type'] = params['type']
-    
-            if 'start' in params:
-                query_params['start'] = params['start']
-    
-            if 'end' in params:
-                query_params['end'] = params['end']
-    
-            if 'length' in params:
-                query_params['length'] = params['length']
-    
+        :param int start: start time in milliseconds since the epoch
 
-            header_params = {}
-    
+        :param int end: end time in milliseconds since the epoch
 
-            form_params = []
-            local_var_files = {}
-    
+        :param int length: Length of time in ms.
 
-            body_params = None
-    
+        :return: RawStatsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        """
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        all_params = ["system_id", "type", "start", "end", "length"]
+        all_params.append("callback")
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_historical_raw_performance_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='RawStatsResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_historical_raw_performance_statistics`"
+            )
+
+        resource_path = (
+            "/storage-systems/{system-id}/historical-statistics/raw".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        query_params = {}
+
+        if "type" in params:
+            query_params["type"] = params["type"]
+
+        if "start" in params:
+            query_params["start"] = params["start"]
+
+        if "end" in params:
+            query_params["end"] = params["end"]
+
+        if "length" in params:
+            query_params["length"] = params["length"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="RawStatsResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_live_performance_statistics(self, system_id, **kwargs):
-            """
-            Get Live performance statistics
-            Mode: Embedded only. 
+        """
+        Get Live performance statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_live_performance_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str type: Statistics type
-    
-            :return: RawStatsResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_live_performance_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'type']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_live_performance_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_live_performance_statistics`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/live-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param str type: Statistics type
 
-            query_params = {}
-    
-            if 'type' in params:
-                query_params['type'] = params['type']
-    
+        :return: RawStatsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "type"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_live_performance_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_live_performance_statistics`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/live-statistics".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='RawStatsResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        if "type" in params:
+            query_params["type"] = params["type"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="RawStatsResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_raw_disk_statistics(self, system_id, **kwargs):
-            """
-            Get raw disk statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get raw disk statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_raw_disk_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param bool usecache: 
-    
-            :return: list[DiskIOStats]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_raw_disk_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'usecache']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_raw_disk_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_raw_disk_statistics`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/drive-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param bool usecache:
 
-            query_params = {}
-    
-            if 'usecache' in params:
-                query_params['usecache'] = params['usecache']
-    
+        :return: list[DiskIOStats]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "usecache"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_raw_disk_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_raw_disk_statistics`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/drive-statistics".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[DiskIOStats]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        if "usecache" in params:
+            query_params["usecache"] = params["usecache"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[DiskIOStats]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_raw_volume_statistics(self, system_id, **kwargs):
-            """
-            Get raw volume statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get raw volume statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_raw_volume_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param bool usecache: 
-    
-            :return: list[VolumeIOStats]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_raw_volume_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'usecache']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_raw_volume_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_raw_volume_statistics`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/volume-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param bool usecache:
 
-            query_params = {}
-    
-            if 'usecache' in params:
-                query_params['usecache'] = params['usecache']
-    
+        :return: list[VolumeIOStats]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "usecache"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_raw_volume_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_raw_volume_statistics`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/volume-statistics".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[VolumeIOStats]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        if "usecache" in params:
+            query_params["usecache"] = params["usecache"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[VolumeIOStats]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_analysed_controller_statistics(self, system_id, idlist, **kwargs):
-            """
-            Get a subset of analysed controller statistics
-            Mode: Embedded only. 
+        """
+        Get a subset of analysed controller statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_analysed_controller_statistics(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param list[str] idlist: A comma separated list of controller id's (required)
-    
-            :return: list[AnalysedControllerStatistics]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_analysed_controller_statistics(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_analysed_controller_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_analysed_controller_statistics`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_analysed_controller_statistics`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/analysed-controller-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param list[str] idlist: A comma separated list of controller id's (required)
 
-            query_params = {}
-    
+        :return: list[AnalysedControllerStatistics]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "idlist"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analysed_controller_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_analysed_controller_statistics`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_analysed_controller_statistics`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/analysed-controller-statistics/{idlist}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[AnalysedControllerStatistics]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[AnalysedControllerStatistics]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_analysed_drive_statistics(self, system_id, idlist, **kwargs):
-            """
-            Get a subset of analysed disk statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get a subset of analysed disk statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_analysed_drive_statistics(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param list[str] idlist: A comma separated list of disk ids (required)
-    
-            :return: list[AnalysedDiskStatistics]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_analysed_drive_statistics(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_analysed_drive_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_analysed_drive_statistics`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_analysed_drive_statistics`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/analysed-drive-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param list[str] idlist: A comma separated list of disk ids (required)
 
-            query_params = {}
-    
+        :return: list[AnalysedDiskStatistics]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "idlist"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analysed_drive_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_analysed_drive_statistics`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_analysed_drive_statistics`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = (
+            "/storage-systems/{system-id}/analysed-drive-statistics/{idlist}".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[AnalysedDiskStatistics]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[AnalysedDiskStatistics]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_analysed_volume_statistics(self, system_id, **kwargs):
-            """
-            Get a subset of the analysed volume statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get a subset of the analysed volume statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_analysed_volume_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[AnalysedVolumeStatistics]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_analysed_volume_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_analysed_volume_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_analysed_volume_statistics`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/analysed-volume-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[AnalysedVolumeStatistics]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analysed_volume_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_analysed_volume_statistics`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = (
+            "/storage-systems/{system-id}/analysed-volume-statistics".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[AnalysedVolumeStatistics]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[AnalysedVolumeStatistics]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_analyzed_interface_stats(self, system_id, idlist, **kwargs):
-            """
-            Get a subset of analysed controller statistics
-            Mode: Embedded only. 
+        """
+        Get a subset of analysed controller statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_analyzed_interface_stats(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param list[str] idlist: A comma separated list of interface id's (required)
-    
-            :return: list[AnalyzedInterfaceStatistics]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_analyzed_interface_stats(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_analyzed_interface_stats" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_analyzed_interface_stats`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_analyzed_interface_stats`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/analysed-interface-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param list[str] idlist: A comma separated list of interface id's (required)
 
-            query_params = {}
-    
+        :return: list[AnalyzedInterfaceStatistics]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "idlist"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analyzed_interface_stats" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_analyzed_interface_stats`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_analyzed_interface_stats`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/analysed-interface-statistics/{idlist}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[AnalyzedInterfaceStatistics]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[AnalyzedInterfaceStatistics]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_average_analyzed_statistics_types(self, system_id, **kwargs):
-            """
-            Get the list supported average analyzed statistics types
-            Mode: Both Embedded and Proxy. 
+        """
+        Get the list supported average analyzed statistics types
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_average_analyzed_statistics_types(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[str]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_average_analyzed_statistics_types(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_average_analyzed_statistics_types" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_average_analyzed_statistics_types`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/historical-statistics/supported-types/average'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_average_analyzed_statistics_types" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_average_analyzed_statistics_types`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/storage-systems/{system-id}/historical-statistics/supported-types/average".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[str]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[str]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_averaged_historical_performance_statistics(self, system_id, **kwargs):
-            """
-            Get historical performance statistics averaged over a time range.
-            Mode: Both Embedded and Proxy. 
+        """
+        Get historical performance statistics averaged over a time range.
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_averaged_historical_performance_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str type: Statistics type
-    
-            :param int length: Length of time in ms.
-    
-            :return: AverageAnalysedStatsResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_averaged_historical_performance_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'type', 'length']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_averaged_historical_performance_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_averaged_historical_performance_statistics`")
-    
-    
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/historical-statistics/average'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param str type: Statistics type
 
-            query_params = {}
-    
-            if 'type' in params:
-                query_params['type'] = params['type']
-    
-            if 'length' in params:
-                query_params['length'] = params['length']
-    
+        :param int length: Length of time in ms.
 
-            header_params = {}
-    
+        :return: AverageAnalysedStatsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
+        all_params = ["system_id", "type", "length"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_averaged_historical_performance_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_averaged_historical_performance_statistics`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = (
+            "/storage-systems/{system-id}/historical-statistics/average".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='AverageAnalysedStatsResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        query_params = {}
+
+        if "type" in params:
+            query_params["type"] = params["type"]
+
+        if "length" in params:
+            query_params["length"] = params["length"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="AverageAnalysedStatsResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_historical_performance_statistics(self, system_id, **kwargs):
-            """
-            Get historical performance statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get historical performance statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_historical_performance_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str type: Statistics type
-    
-            :param int start: start time in milliseconds since the epoch
-    
-            :param int end: end time in milliseconds since the epoch
-    
-            :return: HistoricalStatsResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_historical_performance_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'type', 'start', 'end']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_historical_performance_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_historical_performance_statistics`")
-    
-    
-    
-    
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/historical-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param str type: Statistics type
 
-            query_params = {}
-    
-            if 'type' in params:
-                query_params['type'] = params['type']
-    
-            if 'start' in params:
-                query_params['start'] = params['start']
-    
-            if 'end' in params:
-                query_params['end'] = params['end']
-    
+        :param int start: start time in milliseconds since the epoch
 
-            header_params = {}
-    
+        :param int end: end time in milliseconds since the epoch
 
-            form_params = []
-            local_var_files = {}
-    
+        :return: HistoricalStatsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            body_params = None
-    
+        """
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        all_params = ["system_id", "type", "start", "end"]
+        all_params.append("callback")
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_historical_performance_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_historical_performance_statistics`"
+            )
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HistoricalStatsResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        resource_path = "/storage-systems/{system-id}/historical-statistics".replace(
+            "{format}", "json"
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        query_params = {}
+
+        if "type" in params:
+            query_params["type"] = params["type"]
+
+        if "start" in params:
+            query_params["start"] = params["start"]
+
+        if "end" in params:
+            query_params["end"] = params["end"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HistoricalStatsResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_historical_raw_performance_statistics(self, system_id, idlist, **kwargs):
-            """
-            Get selected historical performance raw statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get selected historical performance raw statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_historical_raw_performance_statistics(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param list[str] idlist: A comma separated list of object ids (required)
-    
-            :param str type: Statistics type
-    
-            :param int start: start time in milliseconds since the epoch
-    
-            :param int end: end time in milliseconds since the epoch
-    
-            :param int length: Length of time in ms.
-    
-            :return: RawStatsResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_historical_raw_performance_statistics(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist', 'type', 'start', 'end', 'length']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_historical_raw_performance_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_historical_raw_performance_statistics`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_historical_raw_performance_statistics`")
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/historical-statistics/raw/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param list[str] idlist: A comma separated list of object ids (required)
 
-            query_params = {}
-    
-            if 'type' in params:
-                query_params['type'] = params['type']
-    
-            if 'start' in params:
-                query_params['start'] = params['start']
-    
-            if 'end' in params:
-                query_params['end'] = params['end']
-    
-            if 'length' in params:
-                query_params['length'] = params['length']
-    
+        :param str type: Statistics type
 
-            header_params = {}
-    
+        :param int start: start time in milliseconds since the epoch
 
-            form_params = []
-            local_var_files = {}
-    
+        :param int end: end time in milliseconds since the epoch
 
-            body_params = None
-    
+        :param int length: Length of time in ms.
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        :return: RawStatsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        """
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        all_params = ["system_id", "idlist", "type", "start", "end", "length"]
+        all_params.append("callback")
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='RawStatsResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_historical_raw_performance_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_historical_raw_performance_statistics`"
+            )
+
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_historical_raw_performance_statistics`"
+            )
+
+        resource_path = (
+            "/storage-systems/{system-id}/historical-statistics/raw/{idlist}".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        if "type" in params:
+            query_params["type"] = params["type"]
+
+        if "start" in params:
+            query_params["start"] = params["start"]
+
+        if "end" in params:
+            query_params["end"] = params["end"]
+
+        if "length" in params:
+            query_params["length"] = params["length"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="RawStatsResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_live_performance_statistics(self, system_id, idlist, **kwargs):
-            """
-            Get selected Live performance statistics
-            Mode: Embedded only. 
+        """
+        Get selected Live performance statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_live_performance_statistics(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param list[str] idlist: A comma separated list of object ids (required)
-    
-            :param str type: Statistics type
-    
-            :return: RawStatsResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_live_performance_statistics(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist', 'type']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_live_performance_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_live_performance_statistics`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_live_performance_statistics`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/live-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param list[str] idlist: A comma separated list of object ids (required)
 
-            query_params = {}
-    
-            if 'type' in params:
-                query_params['type'] = params['type']
-    
+        :param str type: Statistics type
 
-            header_params = {}
-    
+        :return: RawStatsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
+        all_params = ["system_id", "idlist", "type"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_live_performance_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_live_performance_statistics`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_live_performance_statistics`"
+            )
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='RawStatsResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        resource_path = "/storage-systems/{system-id}/live-statistics/{idlist}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        if "type" in params:
+            query_params["type"] = params["type"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="RawStatsResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_raw_controller_statistics(self, system_id, **kwargs):
-            """
-            Get raw controller statistics
-            Mode: Embedded only. 
+        """
+        Get raw controller statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_raw_controller_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id:  (required)
-    
-            :param bool usecache: 
-    
-            :return: list[ControllerStats]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_raw_controller_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'usecache']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_raw_controller_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_raw_controller_statistics`")
-    
-    
-    
-    
+        :param str system_id:  (required)
 
-            resource_path = '/storage-systems/{system-id}/controller-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param bool usecache:
 
-            query_params = {}
-    
-            if 'usecache' in params:
-                query_params['usecache'] = params['usecache']
-    
+        :return: list[ControllerStats]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "usecache"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_raw_controller_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_raw_controller_statistics`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/controller-statistics".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[ControllerStats]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        if "usecache" in params:
+            query_params["usecache"] = params["usecache"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[ControllerStats]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_raw_controller_statistics_using_list(self, system_id, idlist, **kwargs):
-            """
-            Get raw controller statistics
-            Mode: Embedded only. 
+        """
+        Get raw controller statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_raw_controller_statistics_using_list(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id:  (required)
-    
-            :param list[str] idlist: A comma separated list of controller id's (required)
-    
-            :param bool usecache: 
-    
-            :return: list[ControllerStats]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_raw_controller_statistics_using_list(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist', 'usecache']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_raw_controller_statistics_using_list" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_raw_controller_statistics_using_list`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_raw_controller_statistics_using_list`")
-    
-    
-    
-    
+        :param str system_id:  (required)
 
-            resource_path = '/storage-systems/{system-id}/controller-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param list[str] idlist: A comma separated list of controller id's (required)
 
-            query_params = {}
-    
-            if 'usecache' in params:
-                query_params['usecache'] = params['usecache']
-    
+        :param bool usecache:
 
-            header_params = {}
-    
+        :return: list[ControllerStats]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
+        all_params = ["system_id", "idlist", "usecache"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_raw_controller_statistics_using_list" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_raw_controller_statistics_using_list`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_raw_controller_statistics_using_list`"
+            )
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[ControllerStats]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        resource_path = (
+            "/storage-systems/{system-id}/controller-statistics/{idlist}".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        if "usecache" in params:
+            query_params["usecache"] = params["usecache"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[ControllerStats]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_raw_disk_statistics(self, system_id, idlist, **kwargs):
-            """
-            Get a subset of the raw disk statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get a subset of the raw disk statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_raw_disk_statistics(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param list[str] idlist: A comma separated list of disk ids (required)
-    
-            :param bool usecache: 
-    
-            :return: list[DiskIOStats]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_raw_disk_statistics(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist', 'usecache']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_raw_disk_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_raw_disk_statistics`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_raw_disk_statistics`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/drive-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param list[str] idlist: A comma separated list of disk ids (required)
 
-            query_params = {}
-    
-            if 'usecache' in params:
-                query_params['usecache'] = params['usecache']
-    
+        :param bool usecache:
 
-            header_params = {}
-    
+        :return: list[DiskIOStats]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
+        all_params = ["system_id", "idlist", "usecache"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_raw_disk_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_raw_disk_statistics`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_raw_disk_statistics`"
+            )
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[DiskIOStats]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        resource_path = (
+            "/storage-systems/{system-id}/drive-statistics/{idlist}".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        if "usecache" in params:
+            query_params["usecache"] = params["usecache"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[DiskIOStats]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_raw_interface_statistics(self, system_id, **kwargs):
-            """
-            Get raw interface statistics
-            Mode: Embedded only. 
+        """
+        Get raw interface statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_raw_interface_statistics(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id:  (required)
-    
-            :param bool usecache: 
-    
-            :return: list[InterfaceStats]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_raw_interface_statistics(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'usecache']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_raw_interface_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_raw_interface_statistics`")
-    
-    
-    
-    
+        :param str system_id:  (required)
 
-            resource_path = '/storage-systems/{system-id}/interface-statistics'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param bool usecache:
 
-            query_params = {}
-    
-            if 'usecache' in params:
-                query_params['usecache'] = params['usecache']
-    
+        :return: list[InterfaceStats]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "usecache"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_raw_interface_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_raw_interface_statistics`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/interface-statistics".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[InterfaceStats]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        if "usecache" in params:
+            query_params["usecache"] = params["usecache"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[InterfaceStats]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_raw_interface_statistics_with_list(self, system_id, idlist, **kwargs):
-            """
-            Get raw controller statistics
-            Mode: Embedded only. 
+        """
+        Get raw controller statistics
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_raw_interface_statistics_with_list(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id:  (required)
-    
-            :param list[str] idlist: A comma separated list of controller id's (required)
-    
-            :param bool usecache: 
-    
-            :return: list[InterfaceStats]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_raw_interface_statistics_with_list(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist', 'usecache']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_raw_interface_statistics_with_list" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_raw_interface_statistics_with_list`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_raw_interface_statistics_with_list`")
-    
-    
-    
-    
+        :param str system_id:  (required)
 
-            resource_path = '/storage-systems/{system-id}/interface-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param list[str] idlist: A comma separated list of controller id's (required)
 
-            query_params = {}
-    
-            if 'usecache' in params:
-                query_params['usecache'] = params['usecache']
-    
+        :param bool usecache:
 
-            header_params = {}
-    
+        :return: list[InterfaceStats]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
+        all_params = ["system_id", "idlist", "usecache"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_raw_interface_statistics_with_list" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_raw_interface_statistics_with_list`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_raw_interface_statistics_with_list`"
+            )
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[InterfaceStats]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        resource_path = (
+            "/storage-systems/{system-id}/interface-statistics/{idlist}".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        if "usecache" in params:
+            query_params["usecache"] = params["usecache"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[InterfaceStats]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_raw_statistics_types(self, system_id, **kwargs):
-            """
-            Get the list supported raw statistics types
-            Mode: Both Embedded and Proxy. 
+        """
+        Get the list supported raw statistics types
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_raw_statistics_types(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[str]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_raw_statistics_types(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_raw_statistics_types" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_raw_statistics_types`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/historical-statistics/supported-types/raw'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_raw_statistics_types" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_raw_statistics_types`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/storage-systems/{system-id}/historical-statistics/supported-types/raw".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[str]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[str]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_raw_volume_statistics(self, system_id, idlist, **kwargs):
-            """
-            Get raw volume statistics
-            Mode: Both Embedded and Proxy. 
+        """
+        Get raw volume statistics
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_raw_volume_statistics(system_id, idlist, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param list[str] idlist: A comma separated list of volume ids (required)
-    
-            :param bool usecache: 
-    
-            :return: list[VolumeIOStats]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_raw_volume_statistics(system_id, idlist, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'idlist', 'usecache']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_raw_volume_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_raw_volume_statistics`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_raw_volume_statistics`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/volume-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        :param list[str] idlist: A comma separated list of volume ids (required)
 
-            query_params = {}
-    
-            if 'usecache' in params:
-                query_params['usecache'] = params['usecache']
-    
+        :param bool usecache:
 
-            header_params = {}
-    
+        :return: list[VolumeIOStats]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
+        all_params = ["system_id", "idlist", "usecache"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_raw_volume_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_raw_volume_statistics`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_raw_volume_statistics`"
+            )
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[VolumeIOStats]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
-    def get_selected_historical_performance_statistics(self, system_id, idlist, **kwargs):
-            """
-            Get selected historical performance statistics
-            Mode: Both Embedded and Proxy. 
+        resource_path = (
+            "/storage-systems/{system-id}/volume-statistics/{idlist}".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_selected_historical_performance_statistics(system_id, idlist, callback=callback_function)
-    
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param list[str] idlist: A comma separated list of object ids (required)
-    
-            :param str type: Statistics type
-    
-            :param int start: start time in milliseconds since the epoch
-    
-            :param int end: end time in milliseconds since the epoch
-    
-            :return: HistoricalStatsResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
 
-            """
+        query_params = {}
 
-            all_params = ['system_id', 'idlist', 'type', 'start', 'end']
-            all_params.append('callback')
+        if "usecache" in params:
+            query_params["usecache"] = params["usecache"]
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_selected_historical_performance_statistics" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        header_params = {}
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_selected_historical_performance_statistics`")
-    
-    
-    
-            # verify the required parameter 'idlist' is set
-            if ('idlist' not in params) or (params['idlist'] is None):
-                raise ValueError("Missing the required parameter `idlist` when calling `get_selected_historical_performance_statistics`")
-    
-    
-    
-    
-    
-    
-    
-    
+        form_params = []
+        local_var_files = {}
 
-            resource_path = '/storage-systems/{system-id}/historical-statistics/{idlist}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'idlist' in params:
-                path_params['idlist'] = params['idlist']
-    
+        body_params = None
 
-            query_params = {}
-    
-            if 'type' in params:
-                query_params['type'] = params['type']
-    
-            if 'start' in params:
-                query_params['start'] = params['start']
-    
-            if 'end' in params:
-                query_params['end'] = params['end']
-    
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
 
-            header_params = {}
-    
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
-            form_params = []
-            local_var_files = {}
-    
+        # Authentication setting
+        auth_settings = ["basicAuth"]
 
-            body_params = None
-    
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[VolumeIOStats]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+    def get_selected_historical_performance_statistics(
+        self, system_id, idlist, **kwargs
+    ):
+        """
+        Get selected historical performance statistics
+        Mode: Both Embedded and Proxy.
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        >>> thread = api.get_selected_historical_performance_statistics(system_id, idlist, callback=callback_function)
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HistoricalStatsResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+
+        :param str system_id: The id of the storage-system (required)
+
+        :param list[str] idlist: A comma separated list of object ids (required)
+
+        :param str type: Statistics type
+
+        :param int start: start time in milliseconds since the epoch
+
+        :param int end: end time in milliseconds since the epoch
+
+        :return: HistoricalStatsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
+
+        """
+
+        all_params = ["system_id", "idlist", "type", "start", "end"]
+        all_params.append("callback")
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_selected_historical_performance_statistics" % key
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_selected_historical_performance_statistics`"
+            )
+
+        # verify the required parameter 'idlist' is set
+        if ("idlist" not in params) or (params["idlist"] is None):
+            raise ValueError(
+                "Missing the required parameter `idlist` when calling `get_selected_historical_performance_statistics`"
+            )
+
+        resource_path = (
+            "/storage-systems/{system-id}/historical-statistics/{idlist}".replace(
+                "{format}", "json"
+            )
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "idlist" in params:
+            path_params["idlist"] = params["idlist"]
+
+        query_params = {}
+
+        if "type" in params:
+            query_params["type"] = params["type"]
+
+        if "start" in params:
+            query_params["start"] = params["start"]
+
+        if "end" in params:
+            query_params["end"] = params["end"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HistoricalStatsResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_supported_statistics_types(self, system_id, **kwargs):
-            """
-            Get the list supported statistics types
-            Mode: Both Embedded and Proxy. 
+        """
+        Get the list supported statistics types
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_supported_statistics_types(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[str]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
-
-            """
-
-            all_params = ['system_id']
-            all_params.append('callback')
-
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_supported_statistics_types" % key
-                    )
-                params[key] = val
-            del params['kwargs']
-
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_supported_statistics_types`")
-    
-    
-
-            resource_path = '/storage-systems/{system-id}/historical-statistics/supported-types'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-
-            query_params = {}
-    
-
-            header_params = {}
-    
-
-            form_params = []
-            local_var_files = {}
-    
-
-            body_params = None
-    
-
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
-
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
-
-            # Authentication setting
-            auth_settings = ['basicAuth']
-
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[str]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        >>> thread = api.get_supported_statistics_types(system_id, callback=callback_function)
 
 
 
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
+        :param str system_id: The id of the storage-system (required)
 
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
+        """
 
+        all_params = ["system_id"]
+        all_params.append("callback")
 
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_supported_statistics_types" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_supported_statistics_types`"
+            )
+
+        resource_path = "/storage-systems/{system-id}/historical-statistics/supported-types".replace(
+            "{format}", "json"
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[str]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response

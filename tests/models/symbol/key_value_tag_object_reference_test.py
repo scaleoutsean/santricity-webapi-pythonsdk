@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.key_value_tag_object_reference import KeyValueTagObjectReference
+
+from netapp.santricity.models.symbol.key_value_tag_object_reference import \
+    KeyValueTagObjectReference
+
 
 class KeyValueTagObjectReferenceTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class KeyValueTagObjectReferenceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_key_value_tag_object_reference(self):
-          key_value_tag_object_reference_obj = KeyValueTagObjectReference()
-          self.assertNotEqual(key_value_tag_object_reference_obj, None)
-
-
+        key_value_tag_object_reference_obj = KeyValueTagObjectReference()
+        self.assertNotEqual(key_value_tag_object_reference_obj, None)

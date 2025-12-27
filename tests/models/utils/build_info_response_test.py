@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.utils.build_info_response import BuildInfoResponse
+
+from netapp.santricity.models.utils.build_info_response import \
+    BuildInfoResponse
+
 
 class BuildInfoResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class BuildInfoResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_build_info_response(self):
-          build_info_response_obj = BuildInfoResponse()
-          self.assertNotEqual(build_info_response_obj, None)
-
-
+        build_info_response_obj = BuildInfoResponse()
+        self.assertNotEqual(build_info_response_obj, None)

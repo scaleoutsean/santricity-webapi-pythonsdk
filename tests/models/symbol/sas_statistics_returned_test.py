@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sas_statistics_returned import SasStatisticsReturned
+
+from netapp.santricity.models.symbol.sas_statistics_returned import \
+    SasStatisticsReturned
+
 
 class SasStatisticsReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SasStatisticsReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_statistics_returned(self):
-          sas_statistics_returned_obj = SasStatisticsReturned()
-          self.assertNotEqual(sas_statistics_returned_obj, None)
-
-
+        sas_statistics_returned_obj = SasStatisticsReturned()
+        self.assertNotEqual(sas_statistics_returned_obj, None)

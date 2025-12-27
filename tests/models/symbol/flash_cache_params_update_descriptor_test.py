@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.flash_cache_params_update_descriptor import FlashCacheParamsUpdateDescriptor
+
+from netapp.santricity.models.symbol.flash_cache_params_update_descriptor import \
+    FlashCacheParamsUpdateDescriptor
+
 
 class FlashCacheParamsUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FlashCacheParamsUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_flash_cache_params_update_descriptor(self):
-          flash_cache_params_update_descriptor_obj = FlashCacheParamsUpdateDescriptor()
-          self.assertNotEqual(flash_cache_params_update_descriptor_obj, None)
-
-
+        flash_cache_params_update_descriptor_obj = FlashCacheParamsUpdateDescriptor()
+        self.assertNotEqual(flash_cache_params_update_descriptor_obj, None)

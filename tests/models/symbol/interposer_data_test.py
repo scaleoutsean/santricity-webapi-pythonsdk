@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.interposer_data import InterposerData
+
 
 class InterposerDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class InterposerDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_interposer_data(self):
-          interposer_data_obj = InterposerData()
-          self.assertNotEqual(interposer_data_obj, None)
-
-
+        interposer_data_obj = InterposerData()
+        self.assertNotEqual(interposer_data_obj, None)

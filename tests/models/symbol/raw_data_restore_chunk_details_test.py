@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.raw_data_restore_chunk_details import RawDataRestoreChunkDetails
+
+from netapp.santricity.models.symbol.raw_data_restore_chunk_details import \
+    RawDataRestoreChunkDetails
+
 
 class RawDataRestoreChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RawDataRestoreChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_raw_data_restore_chunk_details(self):
-          raw_data_restore_chunk_details_obj = RawDataRestoreChunkDetails()
-          self.assertNotEqual(raw_data_restore_chunk_details_obj, None)
-
-
+        raw_data_restore_chunk_details_obj = RawDataRestoreChunkDetails()
+        self.assertNotEqual(raw_data_restore_chunk_details_obj, None)

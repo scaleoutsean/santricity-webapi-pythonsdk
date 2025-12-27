@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.unassociated_host_port import UnassociatedHostPort
+
+from netapp.santricity.models.v2.unassociated_host_port import \
+    UnassociatedHostPort
+
 
 class UnassociatedHostPortTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class UnassociatedHostPortTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_unassociated_host_port(self):
-          unassociated_host_port_obj = UnassociatedHostPort()
-          self.assertNotEqual(unassociated_host_port_obj, None)
-
-
+        unassociated_host_port_obj = UnassociatedHostPort()
+        self.assertNotEqual(unassociated_host_port_obj, None)

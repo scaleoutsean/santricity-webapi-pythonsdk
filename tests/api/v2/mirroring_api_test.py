@@ -20,503 +20,550 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.mirroring_api import MirroringApi
 
+from netapp.santricity.api.v2.mirroring_api import MirroringApi
+from netapp.santricity.rest import ApiException
 
 
 class MirroringApiTest(unittest.TestCase):
-
-    
     def test_begin_synchronization_amg(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.begin_synchronization_amg(system_id="test", id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.begin_synchronization_amg(
+                system_id="test",
+                id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_complete_incomplete_amg(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.complete_incomplete_amg(system_id="test", incomplete_mirror_id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.complete_incomplete_amg(
+                system_id="test",
+                incomplete_mirror_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_all_amg_member_repository_stats(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_all_amg_member_repository_stats(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_all_amg_member_volumes(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.get_all_amg_member_volumes(system_id="test", mirror_id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.get_all_amg_member_volumes(
+                system_id="test", mirror_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_all_amg_members(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_all_amg_members(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_all_amg_sync_progress(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_all_amg_sync_progress(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_all_async_mirror_groups(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_all_async_mirror_groups(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_all_remote_volume_mirrors(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_all_remote_volume_mirrors(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_amg_member(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_amg_member(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_amg_member_repository_stats(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.get_amg_member_repository_stats(system_id="test", id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.get_amg_member_repository_stats(
+                system_id="test", id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_amg_member_volume(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.get_amg_member_volume(system_id="test", mirror_id="test", id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.get_amg_member_volume(
+                system_id="test", mirror_id="test", id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_amg_sync_progress(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.get_amg_sync_progress(system_id="test", mirror_group_id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.get_amg_sync_progress(
+                system_id="test", mirror_group_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_async_mirror_group(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_async_mirror_group(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_async_mirror_storage_system_list(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.get_async_mirror_storage_system_list(system_id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.get_async_mirror_storage_system_list(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_incomplete_amg(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_incomplete_amg(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_incomplete_amg_mirror_id(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.get_incomplete_amg_mirror_id(system_id="test", mirror_id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.get_incomplete_amg_mirror_id(
+                system_id="test", mirror_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_remote_amg_mirror_connections(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.get_remote_amg_mirror_connections(system_id="test", mirror_group_id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.get_remote_amg_mirror_connections(
+                system_id="test", mirror_group_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_remote_mirror_connections(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_remote_mirror_connections(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_remote_volume_mirror(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.get_remote_volume_mirror(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_remote_volume_mirror_candidates(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.get_remote_volume_mirror_candidates(system_id="test", volume_id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.get_remote_volume_mirror_candidates(
+                system_id="test", volume_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_get_remote_volume_mirror_sync_process(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.get_remote_volume_mirror_sync_process(system_id="test", id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.get_remote_volume_mirror_sync_process(
+                system_id="test", id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_new_amg_member(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.new_amg_member(system_id="test", mirror_id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.new_amg_member(
+                system_id="test",
+                mirror_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_new_async_mirror_group(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.new_async_mirror_group(system_id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.new_async_mirror_group(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_new_remote_volume_mirror(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.new_remote_volume_mirror(system_id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.new_remote_volume_mirror(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_remove_amg_member(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.remove_amg_member(system_id="test", mirror_id="test", id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.remove_amg_member(
+                system_id="test", mirror_id="test", id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_remove_async_mirror_group(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.remove_async_mirror_group(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_remove_incomplete_async_mirror_relationship(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.remove_incomplete_async_mirror_relationship(system_id="test", incomplete_mirror_id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.remove_incomplete_async_mirror_relationship(
+                system_id="test", incomplete_mirror_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_remove_remote_volume_mirror(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.remove_remote_volume_mirror(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_resume_synchronization_amg(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.resume_synchronization_amg(system_id="test", id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.resume_synchronization_amg(
+                system_id="test",
+                id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_suspend_synchronization_amg(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
+        api = MirroringApi()
+        mirroring_api = None
+        try:
             mirroring_api = api.suspend_synchronization_amg(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_test_connectivity_amg(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.test_connectivity_amg(system_id="test", id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.test_connectivity_amg(
+                system_id="test",
+                id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_test_remote_volume_mirror_communication(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.test_remote_volume_mirror_communication(system_id="test", id="test")
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.test_remote_volume_mirror_communication(
+                system_id="test", id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_update_async_mirror_group(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.update_async_mirror_group(system_id="test", id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.update_async_mirror_group(
+                system_id="test",
+                id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_update_mirror_role_amg(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.update_mirror_role_amg(system_id="test", id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.update_mirror_role_amg(
+                system_id="test",
+                id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
+        self.assertNotEqual(mirroring_api, None)
+
     def test_update_remote_volume_mirror(self):
-       api = MirroringApi()
-       mirroring_api = None
-       try:
-            mirroring_api = api.update_remote_volume_mirror(system_id="test", id="test", )
+        api = MirroringApi()
+        mirroring_api = None
+        try:
+            mirroring_api = api.update_remote_volume_mirror(
+                system_id="test",
+                id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mirroring_api is None:
                 mirroring_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mirroring_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mirroring_api = 1
 
-       self.assertNotEqual(mirroring_api, None)
-    
-
-
+        self.assertNotEqual(mirroring_api, None)

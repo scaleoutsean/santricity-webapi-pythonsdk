@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.nvsram_package_metadata import NvsramPackageMetadata
+
+from netapp.santricity.models.v2.nvsram_package_metadata import \
+    NvsramPackageMetadata
+
 
 class NvsramPackageMetadataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class NvsramPackageMetadataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_nvsram_package_metadata(self):
-          nvsram_package_metadata_obj = NvsramPackageMetadata()
-          self.assertNotEqual(nvsram_package_metadata_obj, None)
-
-
+        nvsram_package_metadata_obj = NvsramPackageMetadata()
+        self.assertNotEqual(nvsram_package_metadata_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_group_rollback_utilization_estimate import PITGroupRollbackUtilizationEstimate
+
+from netapp.santricity.models.symbol.pit_group_rollback_utilization_estimate import \
+    PITGroupRollbackUtilizationEstimate
+
 
 class PITGroupRollbackUtilizationEstimateTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class PITGroupRollbackUtilizationEstimateTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_group_rollback_utilization_estimate(self):
-          pit_group_rollback_utilization_estimate_obj = PITGroupRollbackUtilizationEstimate()
-          self.assertNotEqual(pit_group_rollback_utilization_estimate_obj, None)
-
-
+        pit_group_rollback_utilization_estimate_obj = (
+            PITGroupRollbackUtilizationEstimate()
+        )
+        self.assertNotEqual(pit_group_rollback_utilization_estimate_obj, None)

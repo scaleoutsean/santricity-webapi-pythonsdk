@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.debug_info_extent import DebugInfoExtent
+
 
 class DebugInfoExtentTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DebugInfoExtentTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_debug_info_extent(self):
-          debug_info_extent_obj = DebugInfoExtent()
-          self.assertNotEqual(debug_info_extent_obj, None)
-
-
+        debug_info_extent_obj = DebugInfoExtent()
+        self.assertNotEqual(debug_info_extent_obj, None)

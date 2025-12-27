@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.encrypted_password import EncryptedPassword
+
+from netapp.santricity.models.symbol.encrypted_password import \
+    EncryptedPassword
+
 
 class EncryptedPasswordTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EncryptedPasswordTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_encrypted_password(self):
-          encrypted_password_obj = EncryptedPassword()
-          self.assertNotEqual(encrypted_password_obj, None)
-
-
+        encrypted_password_obj = EncryptedPassword()
+        self.assertNotEqual(encrypted_password_obj, None)

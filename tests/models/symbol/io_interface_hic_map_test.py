@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.io_interface_hic_map import IoInterfaceHicMap
+
+from netapp.santricity.models.symbol.io_interface_hic_map import \
+    IoInterfaceHicMap
+
 
 class IoInterfaceHicMapTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IoInterfaceHicMapTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_io_interface_hic_map(self):
-          io_interface_hic_map_obj = IoInterfaceHicMap()
-          self.assertNotEqual(io_interface_hic_map_obj, None)
-
-
+        io_interface_hic_map_obj = IoInterfaceHicMap()
+        self.assertNotEqual(io_interface_hic_map_obj, None)

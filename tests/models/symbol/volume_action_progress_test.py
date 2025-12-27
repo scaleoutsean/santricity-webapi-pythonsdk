@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_action_progress import VolumeActionProgress
+
+from netapp.santricity.models.symbol.volume_action_progress import \
+    VolumeActionProgress
+
 
 class VolumeActionProgressTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeActionProgressTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_action_progress(self):
-          volume_action_progress_obj = VolumeActionProgress()
-          self.assertNotEqual(volume_action_progress_obj, None)
-
-
+        volume_action_progress_obj = VolumeActionProgress()
+        self.assertNotEqual(volume_action_progress_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.rule import Rule
+
 
 class RuleTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RuleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_rule(self):
-          rule_obj = Rule()
-          self.assertNotEqual(rule_obj, None)
-
-
+        rule_obj = Rule()
+        self.assertNotEqual(rule_obj, None)

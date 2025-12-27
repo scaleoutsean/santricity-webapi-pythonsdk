@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.time_zone_description import TimeZoneDescription
+
+from netapp.santricity.models.symbol.time_zone_description import \
+    TimeZoneDescription
+
 
 class TimeZoneDescriptionTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class TimeZoneDescriptionTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_time_zone_description(self):
-          time_zone_description_obj = TimeZoneDescription()
-          self.assertNotEqual(time_zone_description_obj, None)
-
-
+        time_zone_description_obj = TimeZoneDescription()
+        self.assertNotEqual(time_zone_description_obj, None)

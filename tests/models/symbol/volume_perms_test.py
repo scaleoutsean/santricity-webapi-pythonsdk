@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.volume_perms import VolumePerms
+
 
 class VolumePermsTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VolumePermsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_perms(self):
-          volume_perms_obj = VolumePerms()
-          self.assertNotEqual(volume_perms_obj, None)
-
-
+        volume_perms_obj = VolumePerms()
+        self.assertNotEqual(volume_perms_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.soc_command_descriptor import SocCommandDescriptor
+
+from netapp.santricity.models.symbol.soc_command_descriptor import \
+    SocCommandDescriptor
+
 
 class SocCommandDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SocCommandDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_soc_command_descriptor(self):
-          soc_command_descriptor_obj = SocCommandDescriptor()
-          self.assertNotEqual(soc_command_descriptor_obj, None)
-
-
+        soc_command_descriptor_obj = SocCommandDescriptor()
+        self.assertNotEqual(soc_command_descriptor_obj, None)

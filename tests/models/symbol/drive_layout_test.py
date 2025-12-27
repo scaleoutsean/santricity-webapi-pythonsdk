@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.drive_layout import DriveLayout
+
 
 class DriveLayoutTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DriveLayoutTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_layout(self):
-          drive_layout_obj = DriveLayout()
-          self.assertNotEqual(drive_layout_obj, None)
-
-
+        drive_layout_obj = DriveLayout()
+        self.assertNotEqual(drive_layout_obj, None)

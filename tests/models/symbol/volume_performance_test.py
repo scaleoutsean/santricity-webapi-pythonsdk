@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_performance import VolumePerformance
+
+from netapp.santricity.models.symbol.volume_performance import \
+    VolumePerformance
+
 
 class VolumePerformanceTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumePerformanceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_performance(self):
-          volume_performance_obj = VolumePerformance()
-          self.assertNotEqual(volume_performance_obj, None)
-
-
+        volume_performance_obj = VolumePerformance()
+        self.assertNotEqual(volume_performance_obj, None)

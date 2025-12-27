@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_miswire_error import ControllerMiswireError
+
+from netapp.santricity.models.symbol.controller_miswire_error import \
+    ControllerMiswireError
+
 
 class ControllerMiswireErrorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ControllerMiswireErrorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_miswire_error(self):
-          controller_miswire_error_obj = ControllerMiswireError()
-          self.assertNotEqual(controller_miswire_error_obj, None)
-
-
+        controller_miswire_error_obj = ControllerMiswireError()
+        self.assertNotEqual(controller_miswire_error_obj, None)

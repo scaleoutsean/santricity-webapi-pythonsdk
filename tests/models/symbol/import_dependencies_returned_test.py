@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.import_dependencies_returned import ImportDependenciesReturned
+
+from netapp.santricity.models.symbol.import_dependencies_returned import \
+    ImportDependenciesReturned
+
 
 class ImportDependenciesReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ImportDependenciesReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_import_dependencies_returned(self):
-          import_dependencies_returned_obj = ImportDependenciesReturned()
-          self.assertNotEqual(import_dependencies_returned_obj, None)
-
-
+        import_dependencies_returned_obj = ImportDependenciesReturned()
+        self.assertNotEqual(import_dependencies_returned_obj, None)

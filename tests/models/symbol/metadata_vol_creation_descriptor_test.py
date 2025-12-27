@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.metadata_vol_creation_descriptor import MetadataVolCreationDescriptor
+
+from netapp.santricity.models.symbol.metadata_vol_creation_descriptor import \
+    MetadataVolCreationDescriptor
+
 
 class MetadataVolCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MetadataVolCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_metadata_vol_creation_descriptor(self):
-          metadata_vol_creation_descriptor_obj = MetadataVolCreationDescriptor()
-          self.assertNotEqual(metadata_vol_creation_descriptor_obj, None)
-
-
+        metadata_vol_creation_descriptor_obj = MetadataVolCreationDescriptor()
+        self.assertNotEqual(metadata_vol_creation_descriptor_obj, None)

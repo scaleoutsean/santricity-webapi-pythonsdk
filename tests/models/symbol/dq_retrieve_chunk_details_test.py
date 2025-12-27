@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dq_retrieve_chunk_details import DqRetrieveChunkDetails
+
+from netapp.santricity.models.symbol.dq_retrieve_chunk_details import \
+    DqRetrieveChunkDetails
+
 
 class DqRetrieveChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DqRetrieveChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dq_retrieve_chunk_details(self):
-          dq_retrieve_chunk_details_obj = DqRetrieveChunkDetails()
-          self.assertNotEqual(dq_retrieve_chunk_details_obj, None)
-
-
+        dq_retrieve_chunk_details_obj = DqRetrieveChunkDetails()
+        self.assertNotEqual(dq_retrieve_chunk_details_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.scsi_alias import ScsiAlias
+
 
 class ScsiAliasTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ScsiAliasTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_scsi_alias(self):
-          scsi_alias_obj = ScsiAlias()
-          self.assertNotEqual(scsi_alias_obj, None)
-
-
+        scsi_alias_obj = ScsiAlias()
+        self.assertNotEqual(scsi_alias_obj, None)

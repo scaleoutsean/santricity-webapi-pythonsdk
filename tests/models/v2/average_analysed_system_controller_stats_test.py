@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.average_analysed_system_controller_stats import AverageAnalysedSystemControllerStats
+
+from netapp.santricity.models.v2.average_analysed_system_controller_stats import \
+    AverageAnalysedSystemControllerStats
+
 
 class AverageAnalysedSystemControllerStatsTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AverageAnalysedSystemControllerStatsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_average_analysed_system_controller_stats(self):
-          average_analysed_system_controller_stats_obj = AverageAnalysedSystemControllerStats()
-          self.assertNotEqual(average_analysed_system_controller_stats_obj, None)
-
-
+        average_analysed_system_controller_stats_obj = (
+            AverageAnalysedSystemControllerStats()
+        )
+        self.assertNotEqual(average_analysed_system_controller_stats_obj, None)

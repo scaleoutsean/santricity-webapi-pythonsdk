@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ctrl_ioc_dump_data import CtrlIOCDumpData
+
 
 class CtrlIOCDumpDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class CtrlIOCDumpDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ctrl_ioc_dump_data(self):
-          ctrl_ioc_dump_data_obj = CtrlIOCDumpData()
-          self.assertNotEqual(ctrl_ioc_dump_data_obj, None)
-
-
+        ctrl_ioc_dump_data_obj = CtrlIOCDumpData()
+        self.assertNotEqual(ctrl_ioc_dump_data_obj, None)

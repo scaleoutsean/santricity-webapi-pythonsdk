@@ -18,860 +18,820 @@ ConfigurationApi.py
   NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-import sys
 import os
+import sys
+
+from ....santricity.api_client import ApiClient
+from ....santricity.configuration import Configuration
 
 # python 2 and python 3 compatibility library
 
-from ....santricity.configuration import Configuration
-from ....santricity.api_client import ApiClient
-
 
 class ConfigurationApi:
-
     def __init__(self, api_client=None):
         config = Configuration()
         if api_client:
             self.api_client = api_client
         else:
             if not config.api_client:
-                config.api_client = ApiClient(context_path='/devmgr/v2')
+                config.api_client = ApiClient(context_path="/devmgr/v2")
             self.api_client = config.api_client
-    
-    
+
     def dispatch_asup_bundle(self, **kwargs):
-            """
-            Dispatch the ASUP bundle
-            Mode: Both Embedded and Proxy. 
+        """
+        Dispatch the ASUP bundle
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.dispatch_asup_bundle(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param AsupDispatchRequest body: 
-    
-            :return: AsupResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.dispatch_asup_bundle(callback=callback_function)
 
-            """
 
-            all_params = ['body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method dispatch_asup_bundle" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-    
+        :param AsupDispatchRequest body:
 
-            resource_path = '/asup/dispatch'.replace('{format}', 'json')
-            path_params = {}
-    
+        :return: AsupResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["body"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method dispatch_asup_bundle" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        resource_path = "/asup/dispatch".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        query_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        header_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        form_params = []
+        local_var_files = {}
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='AsupResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="AsupResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_asup_configuration_info(self, **kwargs):
-            """
-            Retrieve ASUP configuration info
-            Mode: Both Embedded and Proxy. 
+        """
+        Retrieve ASUP configuration info
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_asup_configuration_info(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :return: AsupResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_asup_configuration_info(callback=callback_function)
 
-            """
 
-            all_params = []
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_asup_configuration_info" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
+        :return: AsupResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            resource_path = '/asup'.replace('{format}', 'json')
-            path_params = {}
-    
+        """
 
-            query_params = {}
-    
+        all_params = []
+        all_params.append("callback")
 
-            header_params = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_asup_configuration_info" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            form_params = []
-            local_var_files = {}
-    
+        resource_path = "/asup".replace("{format}", "json")
+        path_params = {}
 
-            body_params = None
-    
+        query_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        header_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        form_params = []
+        local_var_files = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        body_params = None
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='AsupResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="AsupResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_configuration_result(self, **kwargs):
-            """
-            Get the current result data for the last operation, if no operation has been done, an empty body is returned
-            Mode: Both Embedded and Proxy. 
+        """
+        Get the current result data for the last operation, if no operation has been done, an empty body is returned
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_configuration_result(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :return: ConfigurationResult
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_configuration_result(callback=callback_function)
 
-            """
 
-            all_params = []
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_configuration_result" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
+        :return: ConfigurationResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            resource_path = '/configuration'.replace('{format}', 'json')
-            path_params = {}
-    
+        """
 
-            query_params = {}
-    
+        all_params = []
+        all_params.append("callback")
 
-            header_params = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_configuration_result" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            form_params = []
-            local_var_files = {}
-    
+        resource_path = "/configuration".replace("{format}", "json")
+        path_params = {}
 
-            body_params = None
-    
+        query_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        header_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        form_params = []
+        local_var_files = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        body_params = None
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='ConfigurationResult',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="ConfigurationResult",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_configuration_types(self, **kwargs):
-            """
-            Returns a list of known configuration items that can be used by this server
-            Mode: Both Embedded and Proxy. 
+        """
+        Returns a list of known configuration items that can be used by this server
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_configuration_types(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :return: list[str]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_configuration_types(callback=callback_function)
 
-            """
 
-            all_params = []
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_configuration_types" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            resource_path = '/configuration/validate'.replace('{format}', 'json')
-            path_params = {}
-    
+        """
 
-            query_params = {}
-    
+        all_params = []
+        all_params.append("callback")
 
-            header_params = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_configuration_types" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            form_params = []
-            local_var_files = {}
-    
+        resource_path = "/configuration/validate".replace("{format}", "json")
+        path_params = {}
 
-            body_params = None
-    
+        query_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        header_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        form_params = []
+        local_var_files = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        body_params = None
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[str]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[str]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def register_asup_bundle(self, **kwargs):
-            """
-            Register the ASUP bundle
-            Mode: Both Embedded and Proxy. 
+        """
+        Register the ASUP bundle
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.register_asup_bundle(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param AsupRegistrationRequest body: 
-    
-            :return: str
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.register_asup_bundle(callback=callback_function)
 
-            """
 
-            all_params = ['body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method register_asup_bundle" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-    
+        :param AsupRegistrationRequest body:
 
-            resource_path = '/asup/register'.replace('{format}', 'json')
-            path_params = {}
-    
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["body"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method register_asup_bundle" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        resource_path = "/asup/register".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        query_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        header_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        form_params = []
+        local_var_files = {}
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='str',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="str",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def start_configuration(self, **kwargs):
-            """
-            Starts a new bulk configuration operation. If an operation is already running a 200 is returned. If a new operation is started, a 201 is returned
-            Mode: Both Embedded and Proxy. 
+        """
+        Starts a new bulk configuration operation. If an operation is already running a 200 is returned. If a new operation is started, a 201 is returned
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.start_configuration(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param FileBasedConfigurationRequest body: 
-    
-            :return: ConfigurationResult
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.start_configuration(callback=callback_function)
 
-            """
 
-            all_params = ['body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method start_configuration" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-    
+        :param FileBasedConfigurationRequest body:
 
-            resource_path = '/configuration'.replace('{format}', 'json')
-            path_params = {}
-    
+        :return: ConfigurationResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["body"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method start_configuration" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        resource_path = "/configuration".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        query_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        header_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        form_params = []
+        local_var_files = {}
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='ConfigurationResult',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="ConfigurationResult",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def stop_configuration(self, **kwargs):
-            """
-            Interrupts any current configuration process
-            Mode: Both Embedded and Proxy. 
+        """
+        Interrupts any current configuration process
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.stop_configuration(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :return: None
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.stop_configuration(callback=callback_function)
 
-            """
 
-            all_params = []
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method stop_configuration" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            resource_path = '/configuration'.replace('{format}', 'json')
-            path_params = {}
-    
+        """
 
-            query_params = {}
-    
+        all_params = []
+        all_params.append("callback")
 
-            header_params = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method stop_configuration" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            form_params = []
-            local_var_files = {}
-    
+        resource_path = "/configuration".replace("{format}", "json")
+        path_params = {}
 
-            body_params = None
-    
+        query_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        header_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        form_params = []
+        local_var_files = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        body_params = None
 
-            response = self.api_client.call_api(resource_path, 'DELETE',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type=None,
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def update_asup_configuration_info(self, **kwargs):
-            """
-            Update ASUP configuration info
-            Mode: Both Embedded and Proxy. 
+        """
+        Update ASUP configuration info
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.update_asup_configuration_info(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param AsupUpdateRequest body: 
-    
-            :return: AsupResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.update_asup_configuration_info(callback=callback_function)
 
-            """
 
-            all_params = ['body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method update_asup_configuration_info" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-    
+        :param AsupUpdateRequest body:
 
-            resource_path = '/asup'.replace('{format}', 'json')
-            path_params = {}
-    
+        :return: AsupResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["body"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_asup_configuration_info" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        resource_path = "/asup".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        query_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        header_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        form_params = []
+        local_var_files = {}
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='AsupResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="AsupResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def validate_csv_file(self, **kwargs):
-            """
-            Used to validate an input CSV file previously uploaded
-            Mode: Both Embedded and Proxy. 
+        """
+        Used to validate an input CSV file previously uploaded
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.validate_csv_file(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param FileBasedConfigurationRequest body: 
-    
-            :return: ValidateConfiurationFileResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
-
-            """
-
-            all_params = ['body']
-            all_params.append('callback')
-
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method validate_csv_file" % key
-                    )
-                params[key] = val
-            del params['kwargs']
-
-    
-    
-    
-
-            resource_path = '/configuration/validate'.replace('{format}', 'json')
-            path_params = {}
-    
-
-            query_params = {}
-    
-
-            header_params = {}
-    
-
-            form_params = []
-            local_var_files = {}
-    
-
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
-
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
-
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
-
-            # Authentication setting
-            auth_settings = ['basicAuth']
-
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='ValidateConfiurationFileResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        >>> thread = api.validate_csv_file(callback=callback_function)
 
 
 
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
+        :param FileBasedConfigurationRequest body:
 
+        :return: ValidateConfiurationFileResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
+        """
 
+        all_params = ["body"]
+        all_params.append("callback")
 
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method validate_csv_file" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
+        resource_path = "/configuration/validate".replace("{format}", "json")
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="ValidateConfiurationFileResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.mel_entry import MelEntry
+
 
 class MelEntryTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class MelEntryTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mel_entry(self):
-          mel_entry_obj = MelEntry()
-          self.assertNotEqual(mel_entry_obj, None)
-
-
+        mel_entry_obj = MelEntry()
+        self.assertNotEqual(mel_entry_obj, None)

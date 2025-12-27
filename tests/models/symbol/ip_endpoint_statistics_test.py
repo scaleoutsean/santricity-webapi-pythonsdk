@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ip_endpoint_statistics import IpEndpointStatistics
+
+from netapp.santricity.models.symbol.ip_endpoint_statistics import \
+    IpEndpointStatistics
+
 
 class IpEndpointStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IpEndpointStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ip_endpoint_statistics(self):
-          ip_endpoint_statistics_obj = IpEndpointStatistics()
-          self.assertNotEqual(ip_endpoint_statistics_obj, None)
-
-
+        ip_endpoint_statistics_obj = IpEndpointStatistics()
+        self.assertNotEqual(ip_endpoint_statistics_obj, None)

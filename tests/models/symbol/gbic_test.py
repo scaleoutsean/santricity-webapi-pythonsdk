@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.gbic import Gbic
+
 
 class GbicTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class GbicTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_gbic(self):
-          gbic_obj = Gbic()
-          self.assertNotEqual(gbic_obj, None)
-
-
+        gbic_obj = Gbic()
+        self.assertNotEqual(gbic_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_sync_statistics_reset_descriptor import AsyncMirrorSyncStatisticsResetDescriptor
+
+from netapp.santricity.models.symbol.async_mirror_sync_statistics_reset_descriptor import \
+    AsyncMirrorSyncStatisticsResetDescriptor
+
 
 class AsyncMirrorSyncStatisticsResetDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AsyncMirrorSyncStatisticsResetDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_sync_statistics_reset_descriptor(self):
-          async_mirror_sync_statistics_reset_descriptor_obj = AsyncMirrorSyncStatisticsResetDescriptor()
-          self.assertNotEqual(async_mirror_sync_statistics_reset_descriptor_obj, None)
-
-
+        async_mirror_sync_statistics_reset_descriptor_obj = (
+            AsyncMirrorSyncStatisticsResetDescriptor()
+        )
+        self.assertNotEqual(async_mirror_sync_statistics_reset_descriptor_obj, None)

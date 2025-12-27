@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.alert_syslog_server import AlertSyslogServer
+
 
 class AlertSyslogServerTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class AlertSyslogServerTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_alert_syslog_server(self):
-          alert_syslog_server_obj = AlertSyslogServer()
-          self.assertNotEqual(alert_syslog_server_obj, None)
-
-
+        alert_syslog_server_obj = AlertSyslogServer()
+        self.assertNotEqual(alert_syslog_server_obj, None)

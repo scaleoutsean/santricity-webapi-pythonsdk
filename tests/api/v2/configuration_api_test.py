@@ -20,139 +20,134 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.configuration_api import ConfigurationApi
 
+from netapp.santricity.api.v2.configuration_api import ConfigurationApi
+from netapp.santricity.rest import ApiException
 
 
 class ConfigurationApiTest(unittest.TestCase):
-
-    
     def test_dispatch_asup_bundle(self):
-       api = ConfigurationApi()
-       configuration_api = None
-       try:
+        api = ConfigurationApi()
+        configuration_api = None
+        try:
             configuration_api = api.dispatch_asup_bundle()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if configuration_api is None:
                 configuration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             configuration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            configuration_api = 1
 
-       self.assertNotEqual(configuration_api, None)
-    
+        self.assertNotEqual(configuration_api, None)
+
     def test_get_asup_configuration_info(self):
-       api = ConfigurationApi()
-       configuration_api = None
-       try:
+        api = ConfigurationApi()
+        configuration_api = None
+        try:
             configuration_api = api.get_asup_configuration_info()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if configuration_api is None:
                 configuration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             configuration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            configuration_api = 1
 
-       self.assertNotEqual(configuration_api, None)
-    
+        self.assertNotEqual(configuration_api, None)
+
     def test_get_configuration_result(self):
-       api = ConfigurationApi()
-       configuration_api = None
-       try:
+        api = ConfigurationApi()
+        configuration_api = None
+        try:
             configuration_api = api.get_configuration_result()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if configuration_api is None:
                 configuration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             configuration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            configuration_api = 1
 
-       self.assertNotEqual(configuration_api, None)
-    
+        self.assertNotEqual(configuration_api, None)
+
     def test_get_configuration_types(self):
-       api = ConfigurationApi()
-       configuration_api = None
-       try:
+        api = ConfigurationApi()
+        configuration_api = None
+        try:
             configuration_api = api.get_configuration_types()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if configuration_api is None:
                 configuration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             configuration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            configuration_api = 1
 
-       self.assertNotEqual(configuration_api, None)
-    
+        self.assertNotEqual(configuration_api, None)
+
     def test_register_asup_bundle(self):
-       api = ConfigurationApi()
-       configuration_api = None
-       try:
+        api = ConfigurationApi()
+        configuration_api = None
+        try:
             configuration_api = api.register_asup_bundle()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if configuration_api is None:
                 configuration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             configuration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            configuration_api = 1
 
-       self.assertNotEqual(configuration_api, None)
-    
+        self.assertNotEqual(configuration_api, None)
+
     def test_start_configuration(self):
-       api = ConfigurationApi()
-       configuration_api = None
-       try:
+        api = ConfigurationApi()
+        configuration_api = None
+        try:
             configuration_api = api.start_configuration()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if configuration_api is None:
                 configuration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             configuration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            configuration_api = 1
 
-       self.assertNotEqual(configuration_api, None)
-    
+        self.assertNotEqual(configuration_api, None)
+
     def test_stop_configuration(self):
-       api = ConfigurationApi()
-       configuration_api = None
-       try:
+        api = ConfigurationApi()
+        configuration_api = None
+        try:
             configuration_api = api.stop_configuration()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if configuration_api is None:
                 configuration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             configuration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            configuration_api = 1
 
-       self.assertNotEqual(configuration_api, None)
-    
+        self.assertNotEqual(configuration_api, None)
+
     def test_update_asup_configuration_info(self):
-       api = ConfigurationApi()
-       configuration_api = None
-       try:
+        api = ConfigurationApi()
+        configuration_api = None
+        try:
             configuration_api = api.update_asup_configuration_info()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if configuration_api is None:
                 configuration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             configuration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            configuration_api = 1
 
-       self.assertNotEqual(configuration_api, None)
-    
+        self.assertNotEqual(configuration_api, None)
+
     def test_validate_csv_file(self):
-       api = ConfigurationApi()
-       configuration_api = None
-       try:
+        api = ConfigurationApi()
+        configuration_api = None
+        try:
             configuration_api = api.validate_csv_file()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if configuration_api is None:
                 configuration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             configuration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            configuration_api = 1
 
-       self.assertNotEqual(configuration_api, None)
-    
-
-
+        self.assertNotEqual(configuration_api, None)

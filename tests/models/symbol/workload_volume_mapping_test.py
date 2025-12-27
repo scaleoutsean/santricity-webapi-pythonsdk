@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.workload_volume_mapping import WorkloadVolumeMapping
+
+from netapp.santricity.models.symbol.workload_volume_mapping import \
+    WorkloadVolumeMapping
+
 
 class WorkloadVolumeMappingTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class WorkloadVolumeMappingTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_workload_volume_mapping(self):
-          workload_volume_mapping_obj = WorkloadVolumeMapping()
-          self.assertNotEqual(workload_volume_mapping_obj, None)
-
-
+        workload_volume_mapping_obj = WorkloadVolumeMapping()
+        self.assertNotEqual(workload_volume_mapping_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_negotiable_session_settings import IscsiNegotiableSessionSettings
+
+from netapp.santricity.models.symbol.iscsi_negotiable_session_settings import \
+    IscsiNegotiableSessionSettings
+
 
 class IscsiNegotiableSessionSettingsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiNegotiableSessionSettingsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_negotiable_session_settings(self):
-          iscsi_negotiable_session_settings_obj = IscsiNegotiableSessionSettings()
-          self.assertNotEqual(iscsi_negotiable_session_settings_obj, None)
-
-
+        iscsi_negotiable_session_settings_obj = IscsiNegotiableSessionSettings()
+        self.assertNotEqual(iscsi_negotiable_session_settings_obj, None)

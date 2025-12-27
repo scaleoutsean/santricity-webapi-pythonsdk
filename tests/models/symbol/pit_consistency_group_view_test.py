@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_consistency_group_view import PITConsistencyGroupView
+
+from netapp.santricity.models.symbol.pit_consistency_group_view import \
+    PITConsistencyGroupView
+
 
 class PITConsistencyGroupViewTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITConsistencyGroupViewTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_consistency_group_view(self):
-          pit_consistency_group_view_obj = PITConsistencyGroupView()
-          self.assertNotEqual(pit_consistency_group_view_obj, None)
-
-
+        pit_consistency_group_view_obj = PITConsistencyGroupView()
+        self.assertNotEqual(pit_consistency_group_view_obj, None)

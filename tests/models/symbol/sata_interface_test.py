@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sata_interface import SATAInterface
+
 
 class SATAInterfaceTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SATAInterfaceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sata_interface(self):
-          sata_interface_obj = SATAInterface()
-          self.assertNotEqual(sata_interface_obj, None)
-
-
+        sata_interface_obj = SATAInterface()
+        self.assertNotEqual(sata_interface_obj, None)

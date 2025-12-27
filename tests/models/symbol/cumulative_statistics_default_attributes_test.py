@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.cumulative_statistics_default_attributes import CumulativeStatisticsDefaultAttributes
+
+from netapp.santricity.models.symbol.cumulative_statistics_default_attributes import \
+    CumulativeStatisticsDefaultAttributes
+
 
 class CumulativeStatisticsDefaultAttributesTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class CumulativeStatisticsDefaultAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cumulative_statistics_default_attributes(self):
-          cumulative_statistics_default_attributes_obj = CumulativeStatisticsDefaultAttributes()
-          self.assertNotEqual(cumulative_statistics_default_attributes_obj, None)
-
-
+        cumulative_statistics_default_attributes_obj = (
+            CumulativeStatisticsDefaultAttributes()
+        )
+        self.assertNotEqual(cumulative_statistics_default_attributes_obj, None)

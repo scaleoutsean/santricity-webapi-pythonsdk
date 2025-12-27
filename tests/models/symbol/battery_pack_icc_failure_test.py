@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.battery_pack_icc_failure import BatteryPackICCFailure
+
+from netapp.santricity.models.symbol.battery_pack_icc_failure import \
+    BatteryPackICCFailure
+
 
 class BatteryPackICCFailureTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class BatteryPackICCFailureTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_battery_pack_icc_failure(self):
-          battery_pack_icc_failure_obj = BatteryPackICCFailure()
-          self.assertNotEqual(battery_pack_icc_failure_obj, None)
-
-
+        battery_pack_icc_failure_obj = BatteryPackICCFailure()
+        self.assertNotEqual(battery_pack_icc_failure_obj, None)

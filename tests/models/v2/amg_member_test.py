@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.amg_member import AmgMember
+
 
 class AmgMemberTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class AmgMemberTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_amg_member(self):
-          amg_member_obj = AmgMember()
-          self.assertNotEqual(amg_member_obj, None)
-
-
+        amg_member_obj = AmgMember()
+        self.assertNotEqual(amg_member_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.instance_returned import InstanceReturned
+
 
 class InstanceReturnedTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class InstanceReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_instance_returned(self):
-          instance_returned_obj = InstanceReturned()
-          self.assertNotEqual(instance_returned_obj, None)
-
-
+        instance_returned_obj = InstanceReturned()
+        self.assertNotEqual(instance_returned_obj, None)

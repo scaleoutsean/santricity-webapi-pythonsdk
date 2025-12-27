@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.utils.build_info_component import BuildInfoComponent
+
+from netapp.santricity.models.utils.build_info_component import \
+    BuildInfoComponent
+
 
 class BuildInfoComponentTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class BuildInfoComponentTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_build_info_component(self):
-          build_info_component_obj = BuildInfoComponent()
-          self.assertNotEqual(build_info_component_obj, None)
-
-
+        build_info_component_obj = BuildInfoComponent()
+        self.assertNotEqual(build_info_component_obj, None)

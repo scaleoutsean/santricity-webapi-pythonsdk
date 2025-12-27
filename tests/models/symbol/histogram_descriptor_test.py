@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.histogram_descriptor import HistogramDescriptor
+
+from netapp.santricity.models.symbol.histogram_descriptor import \
+    HistogramDescriptor
+
 
 class HistogramDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HistogramDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_histogram_descriptor(self):
-          histogram_descriptor_obj = HistogramDescriptor()
-          self.assertNotEqual(histogram_descriptor_obj, None)
-
-
+        histogram_descriptor_obj = HistogramDescriptor()
+        self.assertNotEqual(histogram_descriptor_obj, None)

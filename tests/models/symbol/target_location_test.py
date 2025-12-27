@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.target_location import TargetLocation
+
 
 class TargetLocationTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class TargetLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_target_location(self):
-          target_location_obj = TargetLocation()
-          self.assertNotEqual(target_location_obj, None)
-
-
+        target_location_obj = TargetLocation()
+        self.assertNotEqual(target_location_obj, None)

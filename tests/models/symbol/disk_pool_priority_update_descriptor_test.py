@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.disk_pool_priority_update_descriptor import DiskPoolPriorityUpdateDescriptor
+
+from netapp.santricity.models.symbol.disk_pool_priority_update_descriptor import \
+    DiskPoolPriorityUpdateDescriptor
+
 
 class DiskPoolPriorityUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiskPoolPriorityUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_priority_update_descriptor(self):
-          disk_pool_priority_update_descriptor_obj = DiskPoolPriorityUpdateDescriptor()
-          self.assertNotEqual(disk_pool_priority_update_descriptor_obj, None)
-
-
+        disk_pool_priority_update_descriptor_obj = DiskPoolPriorityUpdateDescriptor()
+        self.assertNotEqual(disk_pool_priority_update_descriptor_obj, None)

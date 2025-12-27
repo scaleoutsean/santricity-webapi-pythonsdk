@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.volume_candidate import VolumeCandidate
+
 
 class VolumeCandidateTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VolumeCandidateTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_candidate(self):
-          volume_candidate_obj = VolumeCandidate()
-          self.assertNotEqual(volume_candidate_obj, None)
-
-
+        volume_candidate_obj = VolumeCandidate()
+        self.assertNotEqual(volume_candidate_obj, None)

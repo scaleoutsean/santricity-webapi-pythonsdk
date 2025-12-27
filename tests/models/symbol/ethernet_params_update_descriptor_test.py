@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ethernet_params_update_descriptor import EthernetParamsUpdateDescriptor
+
+from netapp.santricity.models.symbol.ethernet_params_update_descriptor import \
+    EthernetParamsUpdateDescriptor
+
 
 class EthernetParamsUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EthernetParamsUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ethernet_params_update_descriptor(self):
-          ethernet_params_update_descriptor_obj = EthernetParamsUpdateDescriptor()
-          self.assertNotEqual(ethernet_params_update_descriptor_obj, None)
-
-
+        ethernet_params_update_descriptor_obj = EthernetParamsUpdateDescriptor()
+        self.assertNotEqual(ethernet_params_update_descriptor_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.change_state import ChangeState
+
 
 class ChangeStateTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ChangeStateTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_change_state(self):
-          change_state_obj = ChangeState()
-          self.assertNotEqual(change_state_obj, None)
-
-
+        change_state_obj = ChangeState()
+        self.assertNotEqual(change_state_obj, None)

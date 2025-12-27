@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.pending_host import PendingHost
+
 
 class PendingHostTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PendingHostTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pending_host(self):
-          pending_host_obj = PendingHost()
-          self.assertNotEqual(pending_host_obj, None)
-
-
+        pending_host_obj = PendingHost()
+        self.assertNotEqual(pending_host_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.io_interface import IoInterface
+
 
 class IoInterfaceTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class IoInterfaceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_io_interface(self):
-          io_interface_obj = IoInterface()
-          self.assertNotEqual(io_interface_obj, None)
-
-
+        io_interface_obj = IoInterface()
+        self.assertNotEqual(io_interface_obj, None)

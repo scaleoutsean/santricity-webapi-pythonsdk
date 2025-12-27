@@ -20,41 +20,42 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.w_api import WApi
 
+from netapp.santricity.api.symbol.w_api import WApi
+from netapp.santricity.rest import ApiException
 
 
 class WApiTest(unittest.TestCase):
-
-    
     def test_symbol_write_client_mgmt_records_no_password(self):
-       api = WApi()
-       w_api = None
-       try:
-            w_api = api.symbol_write_client_mgmt_records_no_password(system_id="test", body="test", )
+        api = WApi()
+        w_api = None
+        try:
+            w_api = api.symbol_write_client_mgmt_records_no_password(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if w_api is None:
                 w_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             w_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            w_api = 1
 
-       self.assertNotEqual(w_api, None)
-    
+        self.assertNotEqual(w_api, None)
+
     def test_symbol_write_mgmt_client_records(self):
-       api = WApi()
-       w_api = None
-       try:
-            w_api = api.symbol_write_mgmt_client_records(system_id="test", body="test", )
+        api = WApi()
+        w_api = None
+        try:
+            w_api = api.symbol_write_mgmt_client_records(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if w_api is None:
                 w_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             w_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            w_api = 1
 
-       self.assertNotEqual(w_api, None)
-    
-
-
+        self.assertNotEqual(w_api, None)

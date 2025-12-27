@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.initial_async_response import InitialAsyncResponse
+
+from netapp.santricity.models.v2.initial_async_response import \
+    InitialAsyncResponse
+
 
 class InitialAsyncResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class InitialAsyncResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_initial_async_response(self):
-          initial_async_response_obj = InitialAsyncResponse()
-          self.assertNotEqual(initial_async_response_obj, None)
-
-
+        initial_async_response_obj = InitialAsyncResponse()
+        self.assertNotEqual(initial_async_response_obj, None)

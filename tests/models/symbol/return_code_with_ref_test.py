@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.return_code_with_ref import ReturnCodeWithRef
+
+from netapp.santricity.models.symbol.return_code_with_ref import \
+    ReturnCodeWithRef
+
 
 class ReturnCodeWithRefTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ReturnCodeWithRefTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_return_code_with_ref(self):
-          return_code_with_ref_obj = ReturnCodeWithRef()
-          self.assertNotEqual(return_code_with_ref_obj, None)
-
-
+        return_code_with_ref_obj = ReturnCodeWithRef()
+        self.assertNotEqual(return_code_with_ref_obj, None)

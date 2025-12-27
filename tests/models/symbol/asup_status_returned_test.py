@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.asup_status_returned import AsupStatusReturned
+
+from netapp.santricity.models.symbol.asup_status_returned import \
+    AsupStatusReturned
+
 
 class AsupStatusReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsupStatusReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_asup_status_returned(self):
-          asup_status_returned_obj = AsupStatusReturned()
-          self.assertNotEqual(asup_status_returned_obj, None)
-
-
+        asup_status_returned_obj = AsupStatusReturned()
+        self.assertNotEqual(asup_status_returned_obj, None)

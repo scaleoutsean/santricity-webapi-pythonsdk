@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.version_content import VersionContent
+
 
 class VersionContentTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VersionContentTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_version_content(self):
-          version_content_obj = VersionContent()
-          self.assertNotEqual(version_content_obj, None)
-
-
+        version_content_obj = VersionContent()
+        self.assertNotEqual(version_content_obj, None)

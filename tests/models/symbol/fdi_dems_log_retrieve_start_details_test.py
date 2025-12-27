@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.fdi_dems_log_retrieve_start_details import FdiDemsLogRetrieveStartDetails
+
+from netapp.santricity.models.symbol.fdi_dems_log_retrieve_start_details import \
+    FdiDemsLogRetrieveStartDetails
+
 
 class FdiDemsLogRetrieveStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FdiDemsLogRetrieveStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fdi_dems_log_retrieve_start_details(self):
-          fdi_dems_log_retrieve_start_details_obj = FdiDemsLogRetrieveStartDetails()
-          self.assertNotEqual(fdi_dems_log_retrieve_start_details_obj, None)
-
-
+        fdi_dems_log_retrieve_start_details_obj = FdiDemsLogRetrieveStartDetails()
+        self.assertNotEqual(fdi_dems_log_retrieve_start_details_obj, None)

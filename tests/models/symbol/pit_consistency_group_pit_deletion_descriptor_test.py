@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_consistency_group_pit_deletion_descriptor import PITConsistencyGroupPITDeletionDescriptor
+
+from netapp.santricity.models.symbol.pit_consistency_group_pit_deletion_descriptor import \
+    PITConsistencyGroupPITDeletionDescriptor
+
 
 class PITConsistencyGroupPITDeletionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class PITConsistencyGroupPITDeletionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_consistency_group_pit_deletion_descriptor(self):
-          pit_consistency_group_pit_deletion_descriptor_obj = PITConsistencyGroupPITDeletionDescriptor()
-          self.assertNotEqual(pit_consistency_group_pit_deletion_descriptor_obj, None)
-
-
+        pit_consistency_group_pit_deletion_descriptor_obj = (
+            PITConsistencyGroupPITDeletionDescriptor()
+        )
+        self.assertNotEqual(pit_consistency_group_pit_deletion_descriptor_obj, None)

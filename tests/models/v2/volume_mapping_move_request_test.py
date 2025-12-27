@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.volume_mapping_move_request import VolumeMappingMoveRequest
+
+from netapp.santricity.models.v2.volume_mapping_move_request import \
+    VolumeMappingMoveRequest
+
 
 class VolumeMappingMoveRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeMappingMoveRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_mapping_move_request(self):
-          volume_mapping_move_request_obj = VolumeMappingMoveRequest()
-          self.assertNotEqual(volume_mapping_move_request_obj, None)
-
-
+        volume_mapping_move_request_obj = VolumeMappingMoveRequest()
+        self.assertNotEqual(volume_mapping_move_request_obj, None)

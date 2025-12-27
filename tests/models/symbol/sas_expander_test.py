@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sas_expander import SasExpander
+
 
 class SasExpanderTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SasExpanderTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_expander(self):
-          sas_expander_obj = SasExpander()
-          self.assertNotEqual(sas_expander_obj, None)
-
-
+        sas_expander_obj = SasExpander()
+        self.assertNotEqual(sas_expander_obj, None)

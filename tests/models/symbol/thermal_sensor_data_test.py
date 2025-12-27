@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thermal_sensor_data import ThermalSensorData
+
+from netapp.santricity.models.symbol.thermal_sensor_data import \
+    ThermalSensorData
+
 
 class ThermalSensorDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ThermalSensorDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thermal_sensor_data(self):
-          thermal_sensor_data_obj = ThermalSensorData()
-          self.assertNotEqual(thermal_sensor_data_obj, None)
-
-
+        thermal_sensor_data_obj = ThermalSensorData()
+        self.assertNotEqual(thermal_sensor_data_obj, None)

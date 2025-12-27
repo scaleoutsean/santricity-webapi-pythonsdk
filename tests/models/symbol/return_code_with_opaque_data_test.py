@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.return_code_with_opaque_data import ReturnCodeWithOpaqueData
+
+from netapp.santricity.models.symbol.return_code_with_opaque_data import \
+    ReturnCodeWithOpaqueData
+
 
 class ReturnCodeWithOpaqueDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ReturnCodeWithOpaqueDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_return_code_with_opaque_data(self):
-          return_code_with_opaque_data_obj = ReturnCodeWithOpaqueData()
-          self.assertNotEqual(return_code_with_opaque_data_obj, None)
-
-
+        return_code_with_opaque_data_obj = ReturnCodeWithOpaqueData()
+        self.assertNotEqual(return_code_with_opaque_data_obj, None)

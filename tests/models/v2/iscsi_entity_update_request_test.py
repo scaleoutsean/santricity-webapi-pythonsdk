@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.iscsi_entity_update_request import IscsiEntityUpdateRequest
+
+from netapp.santricity.models.v2.iscsi_entity_update_request import \
+    IscsiEntityUpdateRequest
+
 
 class IscsiEntityUpdateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiEntityUpdateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_entity_update_request(self):
-          iscsi_entity_update_request_obj = IscsiEntityUpdateRequest()
-          self.assertNotEqual(iscsi_entity_update_request_obj, None)
-
-
+        iscsi_entity_update_request_obj = IscsiEntityUpdateRequest()
+        self.assertNotEqual(iscsi_entity_update_request_obj, None)

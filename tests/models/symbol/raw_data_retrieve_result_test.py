@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.raw_data_retrieve_result import RawDataRetrieveResult
+
+from netapp.santricity.models.symbol.raw_data_retrieve_result import \
+    RawDataRetrieveResult
+
 
 class RawDataRetrieveResultTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RawDataRetrieveResultTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_raw_data_retrieve_result(self):
-          raw_data_retrieve_result_obj = RawDataRetrieveResult()
-          self.assertNotEqual(raw_data_retrieve_result_obj, None)
-
-
+        raw_data_retrieve_result_obj = RawDataRetrieveResult()
+        self.assertNotEqual(raw_data_retrieve_result_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.auth_method_type_data import AuthMethodTypeData
+
+from netapp.santricity.models.symbol.auth_method_type_data import \
+    AuthMethodTypeData
+
 
 class AuthMethodTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AuthMethodTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_auth_method_type_data(self):
-          auth_method_type_data_obj = AuthMethodTypeData()
-          self.assertNotEqual(auth_method_type_data_obj, None)
-
-
+        auth_method_type_data_obj = AuthMethodTypeData()
+        self.assertNotEqual(auth_method_type_data_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.ssc_volume_update_request import SscVolumeUpdateRequest
+
+from netapp.santricity.models.v2.ssc_volume_update_request import \
+    SscVolumeUpdateRequest
+
 
 class SscVolumeUpdateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SscVolumeUpdateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ssc_volume_update_request(self):
-          ssc_volume_update_request_obj = SscVolumeUpdateRequest()
-          self.assertNotEqual(ssc_volume_update_request_obj, None)
-
-
+        ssc_volume_update_request_obj = SscVolumeUpdateRequest()
+        self.assertNotEqual(ssc_volume_update_request_obj, None)

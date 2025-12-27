@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_params_update_descriptor import AsyncMirrorGroupParamsUpdateDescriptor
+
+from netapp.santricity.models.symbol.async_mirror_group_params_update_descriptor import \
+    AsyncMirrorGroupParamsUpdateDescriptor
+
 
 class AsyncMirrorGroupParamsUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AsyncMirrorGroupParamsUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_params_update_descriptor(self):
-          async_mirror_group_params_update_descriptor_obj = AsyncMirrorGroupParamsUpdateDescriptor()
-          self.assertNotEqual(async_mirror_group_params_update_descriptor_obj, None)
-
-
+        async_mirror_group_params_update_descriptor_obj = (
+            AsyncMirrorGroupParamsUpdateDescriptor()
+        )
+        self.assertNotEqual(async_mirror_group_params_update_descriptor_obj, None)

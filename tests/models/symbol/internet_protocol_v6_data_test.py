@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.internet_protocol_v6_data import InternetProtocolV6Data
+
+from netapp.santricity.models.symbol.internet_protocol_v6_data import \
+    InternetProtocolV6Data
+
 
 class InternetProtocolV6DataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class InternetProtocolV6DataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_internet_protocol_v6_data(self):
-          internet_protocol_v6_data_obj = InternetProtocolV6Data()
-          self.assertNotEqual(internet_protocol_v6_data_obj, None)
-
-
+        internet_protocol_v6_data_obj = InternetProtocolV6Data()
+        self.assertNotEqual(internet_protocol_v6_data_obj, None)

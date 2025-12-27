@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_sync_progress_list_returned import AsyncMirrorGroupSyncProgressListReturned
+
+from netapp.santricity.models.symbol.async_mirror_group_sync_progress_list_returned import \
+    AsyncMirrorGroupSyncProgressListReturned
+
 
 class AsyncMirrorGroupSyncProgressListReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AsyncMirrorGroupSyncProgressListReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_sync_progress_list_returned(self):
-          async_mirror_group_sync_progress_list_returned_obj = AsyncMirrorGroupSyncProgressListReturned()
-          self.assertNotEqual(async_mirror_group_sync_progress_list_returned_obj, None)
-
-
+        async_mirror_group_sync_progress_list_returned_obj = (
+            AsyncMirrorGroupSyncProgressListReturned()
+        )
+        self.assertNotEqual(async_mirror_group_sync_progress_list_returned_obj, None)

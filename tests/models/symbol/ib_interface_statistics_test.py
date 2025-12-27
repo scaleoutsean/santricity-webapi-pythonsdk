@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ib_interface_statistics import IbInterfaceStatistics
+
+from netapp.santricity.models.symbol.ib_interface_statistics import \
+    IbInterfaceStatistics
+
 
 class IbInterfaceStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IbInterfaceStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_interface_statistics(self):
-          ib_interface_statistics_obj = IbInterfaceStatistics()
-          self.assertNotEqual(ib_interface_statistics_obj, None)
-
-
+        ib_interface_statistics_obj = IbInterfaceStatistics()
+        self.assertNotEqual(ib_interface_statistics_obj, None)

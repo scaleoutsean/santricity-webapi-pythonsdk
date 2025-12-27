@@ -18,707 +18,677 @@ FileManagementApi.py
   NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-import sys
 import os
+import sys
+
+from ....santricity.api_client import ApiClient
+from ....santricity.configuration import Configuration
 
 # python 2 and python 3 compatibility library
 
-from ....santricity.configuration import Configuration
-from ....santricity.api_client import ApiClient
-
 
 class FileManagementApi:
-
     def __init__(self, api_client=None):
         config = Configuration()
         if api_client:
             self.api_client = api_client
         else:
             if not config.api_client:
-                config.api_client = ApiClient(context_path='/devmgr/v2')
+                config.api_client = ApiClient(context_path="/devmgr/v2")
             self.api_client = config.api_client
-    
-    
+
     def get_all_support_artifacts(self, **kwargs):
-            """
-            Retrieve the list of support artifacts by type
-            Mode: Both Embedded and Proxy. 
+        """
+        Retrieve the list of support artifacts by type
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_support_artifacts(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :return: list[SupportArtifacts]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_support_artifacts(callback=callback_function)
 
-            """
 
-            all_params = []
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_support_artifacts" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
+        :return: list[SupportArtifacts]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            resource_path = '/support-data/files'.replace('{format}', 'json')
-            path_params = {}
-    
+        """
 
-            query_params = {}
-    
+        all_params = []
+        all_params.append("callback")
 
-            header_params = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_support_artifacts" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            form_params = []
-            local_var_files = {}
-    
+        resource_path = "/support-data/files".replace("{format}", "json")
+        path_params = {}
 
-            body_params = None
-    
+        query_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        header_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        form_params = []
+        local_var_files = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        body_params = None
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[SupportArtifacts]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[SupportArtifacts]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_file_from_scratch_dir(self, filename, **kwargs):
-            """
-            Gets a file from the scratch directory 
-            Mode: Both Embedded and Proxy. The response type of this method is a file stream.
+        """
+        Gets a file from the scratch directory
+        Mode: Both Embedded and Proxy. The response type of this method is a file stream.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_file_from_scratch_dir(filename, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str filename:  (required)
-    
-            :param bool auto_delete: Automatically remove the file after the retrieval completes
-    
-            :return: File
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_file_from_scratch_dir(filename, callback=callback_function)
 
-            """
 
-            all_params = ['filename', 'auto_delete']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_file_from_scratch_dir" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'filename' is set
-            if ('filename' not in params) or (params['filename'] is None):
-                raise ValueError("Missing the required parameter `filename` when calling `get_file_from_scratch_dir`")
-    
-    
-    
-    
+        :param str filename:  (required)
 
-            resource_path = '/files/{filename}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'filename' in params:
-                path_params['filename'] = params['filename']
-    
+        :param bool auto_delete: Automatically remove the file after the retrieval completes
 
-            query_params = {}
-    
-            if 'auto_delete' in params:
-                query_params['auto-delete'] = params['auto_delete']
-    
+        :return: File
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["filename", "auto_delete"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_file_from_scratch_dir" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/octet-stream'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'filename' is set
+        if ("filename" not in params) or (params["filename"] is None):
+            raise ValueError(
+                "Missing the required parameter `filename` when calling `get_file_from_scratch_dir`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/files/{filename}".replace("{format}", "json")
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "filename" in params:
+            path_params["filename"] = params["filename"]
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='File',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        if "auto_delete" in params:
+            query_params["auto-delete"] = params["auto_delete"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/octet-stream"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="File",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_scratch_file(self, **kwargs):
-            """
-            Retrieve a file from the scratch directory
-            Mode: Both Embedded and Proxy. 
+        """
+        Retrieve a file from the scratch directory
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_scratch_file(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :return: list[FileInfo]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_scratch_file(callback=callback_function)
 
-            """
 
-            all_params = []
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_scratch_file" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
+        :return: list[FileInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            resource_path = '/files'.replace('{format}', 'json')
-            path_params = {}
-    
+        """
 
-            query_params = {}
-    
+        all_params = []
+        all_params.append("callback")
 
-            header_params = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scratch_file" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            form_params = []
-            local_var_files = {}
-    
+        resource_path = "/files".replace("{format}", "json")
+        path_params = {}
 
-            body_params = None
-    
+        query_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        header_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        form_params = []
+        local_var_files = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        body_params = None
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[FileInfo]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[FileInfo]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_support_artifacts(self, identifier, **kwargs):
-            """
-            Retrieve a specific support artifact.
-            Mode: Both Embedded and Proxy. 
+        """
+        Retrieve a specific support artifact.
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_support_artifacts(identifier, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str identifier:  (required)
-    
-            :return: File
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_support_artifacts(identifier, callback=callback_function)
 
-            """
 
-            all_params = ['identifier']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_support_artifacts" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'identifier' is set
-            if ('identifier' not in params) or (params['identifier'] is None):
-                raise ValueError("Missing the required parameter `identifier` when calling `get_support_artifacts`")
-    
-    
+        :param str identifier:  (required)
 
-            resource_path = '/support-data/files/{identifier}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'identifier' in params:
-                path_params['identifier'] = params['identifier']
-    
+        :return: File
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["identifier"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_support_artifacts" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'identifier' is set
+        if ("identifier" not in params) or (params["identifier"] is None):
+            raise ValueError(
+                "Missing the required parameter `identifier` when calling `get_support_artifacts`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/octet-stream'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/support-data/files/{identifier}".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "identifier" in params:
+            path_params["identifier"] = params["identifier"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='File',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/octet-stream"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="File",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def remove_scratch_file(self, filename, **kwargs):
-            """
-            Deletes a generic file 
-            Mode: Both Embedded and Proxy. 
+        """
+        Deletes a generic file
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.remove_scratch_file(filename, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str filename: Name of file to delete (required)
-    
-            :return: None
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.remove_scratch_file(filename, callback=callback_function)
 
-            """
 
-            all_params = ['filename']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method remove_scratch_file" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'filename' is set
-            if ('filename' not in params) or (params['filename'] is None):
-                raise ValueError("Missing the required parameter `filename` when calling `remove_scratch_file`")
-    
-    
+        :param str filename: Name of file to delete (required)
 
-            resource_path = '/files/{filename}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'filename' in params:
-                path_params['filename'] = params['filename']
-    
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["filename"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_scratch_file" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'filename' is set
+        if ("filename" not in params) or (params["filename"] is None):
+            raise ValueError(
+                "Missing the required parameter `filename` when calling `remove_scratch_file`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/files/{filename}".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "filename" in params:
+            path_params["filename"] = params["filename"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'DELETE',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type=None,
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def remove_support_artifact(self, identifier, **kwargs):
-            """
-            Deletes a specific support artifact.
-            Mode: Both Embedded and Proxy. 
+        """
+        Deletes a specific support artifact.
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.remove_support_artifact(identifier, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str identifier:  (required)
-    
-            :return: None
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.remove_support_artifact(identifier, callback=callback_function)
 
-            """
 
-            all_params = ['identifier']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method remove_support_artifact" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'identifier' is set
-            if ('identifier' not in params) or (params['identifier'] is None):
-                raise ValueError("Missing the required parameter `identifier` when calling `remove_support_artifact`")
-    
-    
+        :param str identifier:  (required)
 
-            resource_path = '/support-data/files/{identifier}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'identifier' in params:
-                path_params['identifier'] = params['identifier']
-    
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["identifier"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_support_artifact" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'identifier' is set
+        if ("identifier" not in params) or (params["identifier"] is None):
+            raise ValueError(
+                "Missing the required parameter `identifier` when calling `remove_support_artifact`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/support-data/files/{identifier}".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "identifier" in params:
+            path_params["identifier"] = params["identifier"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'DELETE',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type=None,
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def upload_file(self, **kwargs):
-            """
-            Upload a generic file for later reference in an API call.
-            Mode: Both Embedded and Proxy. If your multipart form has non-file data, it will be ignored and only the files handled.
+        """
+        Upload a generic file for later reference in an API call.
+        Mode: Both Embedded and Proxy. If your multipart form has non-file data, it will be ignored and only the files handled.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.upload_file(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param file file: file
-    
-            :return: list[FileInfo]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
-
-            """
-
-            all_params = ['file']
-            all_params.append('callback')
-
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method upload_file" % key
-                    )
-                params[key] = val
-            del params['kwargs']
-
-    
-    
-    
-
-            resource_path = '/files'.replace('{format}', 'json')
-            path_params = {}
-    
-
-            query_params = {}
-    
-
-            header_params = {}
-    
-
-            form_params = []
-            local_var_files = {}
-    
-            if 'file' in params:
-                local_var_files['file'] = params['file']
-    
-
-            body_params = None
-    
-
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
-
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['multipart/form-data'])
-
-            # Authentication setting
-            auth_settings = ['basicAuth']
-
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[FileInfo]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        >>> thread = api.upload_file(callback=callback_function)
 
 
 
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
+        :param file file: file
 
+        :return: list[FileInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
+        """
 
+        all_params = ["file"]
+        all_params.append("callback")
 
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method upload_file" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
+        resource_path = "/files".replace("{format}", "json")
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        if "file" in params:
+            local_var_files["file"] = params["file"]
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["multipart/form-data"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[FileInfo]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response

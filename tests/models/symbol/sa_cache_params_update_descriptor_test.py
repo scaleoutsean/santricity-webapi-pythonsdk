@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sa_cache_params_update_descriptor import SACacheParamsUpdateDescriptor
+
+from netapp.santricity.models.symbol.sa_cache_params_update_descriptor import \
+    SACacheParamsUpdateDescriptor
+
 
 class SACacheParamsUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SACacheParamsUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sa_cache_params_update_descriptor(self):
-          sa_cache_params_update_descriptor_obj = SACacheParamsUpdateDescriptor()
-          self.assertNotEqual(sa_cache_params_update_descriptor_obj, None)
-
-
+        sa_cache_params_update_descriptor_obj = SACacheParamsUpdateDescriptor()
+        self.assertNotEqual(sa_cache_params_update_descriptor_obj, None)

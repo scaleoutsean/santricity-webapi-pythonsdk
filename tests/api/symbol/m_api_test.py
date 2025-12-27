@@ -20,83 +20,93 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.m_api import MApi
 
+from netapp.santricity.api.symbol.m_api import MApi
+from netapp.santricity.rest import ApiException
 
 
 class MApiTest(unittest.TestCase):
-
-    
     def test_symbol_modify_schedule_list(self):
-       api = MApi()
-       m_api = None
-       try:
-            m_api = api.symbol_modify_schedule_list(system_id="test", body="test", )
+        api = MApi()
+        m_api = None
+        try:
+            m_api = api.symbol_modify_schedule_list(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if m_api is None:
                 m_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             m_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            m_api = 1
 
-       self.assertNotEqual(m_api, None)
-    
+        self.assertNotEqual(m_api, None)
+
     def test_symbol_move_host(self):
-       api = MApi()
-       m_api = None
-       try:
-            m_api = api.symbol_move_host(system_id="test", body="test", )
+        api = MApi()
+        m_api = None
+        try:
+            m_api = api.symbol_move_host(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if m_api is None:
                 m_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             m_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            m_api = 1
 
-       self.assertNotEqual(m_api, None)
-    
+        self.assertNotEqual(m_api, None)
+
     def test_symbol_move_host_port(self):
-       api = MApi()
-       m_api = None
-       try:
-            m_api = api.symbol_move_host_port(system_id="test", body="test", )
+        api = MApi()
+        m_api = None
+        try:
+            m_api = api.symbol_move_host_port(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if m_api is None:
                 m_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             m_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            m_api = 1
 
-       self.assertNotEqual(m_api, None)
-    
+        self.assertNotEqual(m_api, None)
+
     def test_symbol_move_lun_mapping(self):
-       api = MApi()
-       m_api = None
-       try:
-            m_api = api.symbol_move_lun_mapping(system_id="test", body="test", )
+        api = MApi()
+        m_api = None
+        try:
+            m_api = api.symbol_move_lun_mapping(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if m_api is None:
                 m_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             m_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            m_api = 1
 
-       self.assertNotEqual(m_api, None)
-    
+        self.assertNotEqual(m_api, None)
+
     def test_symbol_move_sa_port(self):
-       api = MApi()
-       m_api = None
-       try:
-            m_api = api.symbol_move_sa_port(system_id="test", body="test", )
+        api = MApi()
+        m_api = None
+        try:
+            m_api = api.symbol_move_sa_port(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if m_api is None:
                 m_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             m_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            m_api = 1
 
-       self.assertNotEqual(m_api, None)
-    
-
-
+        self.assertNotEqual(m_api, None)

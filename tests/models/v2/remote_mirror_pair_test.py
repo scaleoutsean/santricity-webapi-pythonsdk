@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.remote_mirror_pair import RemoteMirrorPair
+
 
 class RemoteMirrorPairTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RemoteMirrorPairTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_mirror_pair(self):
-          remote_mirror_pair_obj = RemoteMirrorPair()
-          self.assertNotEqual(remote_mirror_pair_obj, None)
-
-
+        remote_mirror_pair_obj = RemoteMirrorPair()
+        self.assertNotEqual(remote_mirror_pair_obj, None)

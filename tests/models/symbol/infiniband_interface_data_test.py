@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.infiniband_interface_data import InfinibandInterfaceData
+
+from netapp.santricity.models.symbol.infiniband_interface_data import \
+    InfinibandInterfaceData
+
 
 class InfinibandInterfaceDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class InfinibandInterfaceDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_infiniband_interface_data(self):
-          infiniband_interface_data_obj = InfinibandInterfaceData()
-          self.assertNotEqual(infiniband_interface_data_obj, None)
-
-
+        infiniband_interface_data_obj = InfinibandInterfaceData()
+        self.assertNotEqual(infiniband_interface_data_obj, None)

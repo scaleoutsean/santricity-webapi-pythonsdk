@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_lost_redundancy_failure import DriveLostRedundancyFailure
+
+from netapp.santricity.models.symbol.drive_lost_redundancy_failure import \
+    DriveLostRedundancyFailure
+
 
 class DriveLostRedundancyFailureTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveLostRedundancyFailureTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_lost_redundancy_failure(self):
-          drive_lost_redundancy_failure_obj = DriveLostRedundancyFailure()
-          self.assertNotEqual(drive_lost_redundancy_failure_obj, None)
-
-
+        drive_lost_redundancy_failure_obj = DriveLostRedundancyFailure()
+        self.assertNotEqual(drive_lost_redundancy_failure_obj, None)

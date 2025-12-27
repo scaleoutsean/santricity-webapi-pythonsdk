@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.processor_memory_dimm import ProcessorMemoryDimm
+
+from netapp.santricity.models.symbol.processor_memory_dimm import \
+    ProcessorMemoryDimm
+
 
 class ProcessorMemoryDimmTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ProcessorMemoryDimmTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_processor_memory_dimm(self):
-          processor_memory_dimm_obj = ProcessorMemoryDimm()
-          self.assertNotEqual(processor_memory_dimm_obj, None)
-
-
+        processor_memory_dimm_obj = ProcessorMemoryDimm()
+        self.assertNotEqual(processor_memory_dimm_obj, None)

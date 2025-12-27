@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_flash_cache_descriptor import VolumeFlashCacheDescriptor
+
+from netapp.santricity.models.symbol.volume_flash_cache_descriptor import \
+    VolumeFlashCacheDescriptor
+
 
 class VolumeFlashCacheDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeFlashCacheDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_flash_cache_descriptor(self):
-          volume_flash_cache_descriptor_obj = VolumeFlashCacheDescriptor()
-          self.assertNotEqual(volume_flash_cache_descriptor_obj, None)
-
-
+        volume_flash_cache_descriptor_obj = VolumeFlashCacheDescriptor()
+        self.assertNotEqual(volume_flash_cache_descriptor_obj, None)

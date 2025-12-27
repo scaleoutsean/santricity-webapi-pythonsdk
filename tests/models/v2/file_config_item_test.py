@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.file_config_item import FileConfigItem
+
 
 class FileConfigItemTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FileConfigItemTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_file_config_item(self):
-          file_config_item_obj = FileConfigItem()
-          self.assertNotEqual(file_config_item_obj, None)
-
-
+        file_config_item_obj = FileConfigItem()
+        self.assertNotEqual(file_config_item_obj, None)

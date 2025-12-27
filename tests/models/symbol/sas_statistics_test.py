@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sas_statistics import SasStatistics
+
 
 class SasStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SasStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_statistics(self):
-          sas_statistics_obj = SasStatistics()
-          self.assertNotEqual(sas_statistics_obj, None)
-
-
+        sas_statistics_obj = SasStatistics()
+        self.assertNotEqual(sas_statistics_obj, None)

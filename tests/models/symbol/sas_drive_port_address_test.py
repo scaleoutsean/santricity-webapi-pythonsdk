@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sas_drive_port_address import SasDrivePortAddress
+
+from netapp.santricity.models.symbol.sas_drive_port_address import \
+    SasDrivePortAddress
+
 
 class SasDrivePortAddressTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SasDrivePortAddressTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_drive_port_address(self):
-          sas_drive_port_address_obj = SasDrivePortAddress()
-          self.assertNotEqual(sas_drive_port_address_obj, None)
-
-
+        sas_drive_port_address_obj = SasDrivePortAddress()
+        self.assertNotEqual(sas_drive_port_address_obj, None)

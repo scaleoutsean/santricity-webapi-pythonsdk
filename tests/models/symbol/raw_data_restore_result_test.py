@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.raw_data_restore_result import RawDataRestoreResult
+
+from netapp.santricity.models.symbol.raw_data_restore_result import \
+    RawDataRestoreResult
+
 
 class RawDataRestoreResultTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RawDataRestoreResultTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_raw_data_restore_result(self):
-          raw_data_restore_result_obj = RawDataRestoreResult()
-          self.assertNotEqual(raw_data_restore_result_obj, None)
-
-
+        raw_data_restore_result_obj = RawDataRestoreResult()
+        self.assertNotEqual(raw_data_restore_result_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.path_degraded_failure import PathDegradedFailure
+
+from netapp.santricity.models.symbol.path_degraded_failure import \
+    PathDegradedFailure
+
 
 class PathDegradedFailureTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PathDegradedFailureTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_path_degraded_failure(self):
-          path_degraded_failure_obj = PathDegradedFailure()
-          self.assertNotEqual(path_degraded_failure_obj, None)
-
-
+        path_degraded_failure_obj = PathDegradedFailure()
+        self.assertNotEqual(path_degraded_failure_obj, None)

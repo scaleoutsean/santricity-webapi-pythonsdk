@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dual_mirror_primary import DualMirrorPrimary
+
+from netapp.santricity.models.symbol.dual_mirror_primary import \
+    DualMirrorPrimary
+
 
 class DualMirrorPrimaryTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DualMirrorPrimaryTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dual_mirror_primary(self):
-          dual_mirror_primary_obj = DualMirrorPrimary()
-          self.assertNotEqual(dual_mirror_primary_obj, None)
-
-
+        dual_mirror_primary_obj = DualMirrorPrimary()
+        self.assertNotEqual(dual_mirror_primary_obj, None)

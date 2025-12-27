@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.repair_policy import RepairPolicy
+
 
 class RepairPolicyTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RepairPolicyTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_repair_policy(self):
-          repair_policy_obj = RepairPolicy()
-          self.assertNotEqual(repair_policy_obj, None)
-
-
+        repair_policy_obj = RepairPolicy()
+        self.assertNotEqual(repair_policy_obj, None)

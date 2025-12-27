@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.iscsi_entity_data import IscsiEntityData
+
 
 class IscsiEntityDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class IscsiEntityDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_entity_data(self):
-          iscsi_entity_data_obj = IscsiEntityData()
-          self.assertNotEqual(iscsi_entity_data_obj, None)
-
-
+        iscsi_entity_data_obj = IscsiEntityData()
+        self.assertNotEqual(iscsi_entity_data_obj, None)

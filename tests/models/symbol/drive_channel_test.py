@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.drive_channel import DriveChannel
+
 
 class DriveChannelTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DriveChannelTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_channel(self):
-          drive_channel_obj = DriveChannel()
-          self.assertNotEqual(drive_channel_obj, None)
-
-
+        drive_channel_obj = DriveChannel()
+        self.assertNotEqual(drive_channel_obj, None)

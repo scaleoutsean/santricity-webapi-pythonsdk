@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_link_bandwidth_test_results import AsyncMirrorGroupLinkBandwidthTestResults
+
+from netapp.santricity.models.symbol.async_mirror_group_link_bandwidth_test_results import \
+    AsyncMirrorGroupLinkBandwidthTestResults
+
 
 class AsyncMirrorGroupLinkBandwidthTestResultsTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AsyncMirrorGroupLinkBandwidthTestResultsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_link_bandwidth_test_results(self):
-          async_mirror_group_link_bandwidth_test_results_obj = AsyncMirrorGroupLinkBandwidthTestResults()
-          self.assertNotEqual(async_mirror_group_link_bandwidth_test_results_obj, None)
-
-
+        async_mirror_group_link_bandwidth_test_results_obj = (
+            AsyncMirrorGroupLinkBandwidthTestResults()
+        )
+        self.assertNotEqual(async_mirror_group_link_bandwidth_test_results_obj, None)

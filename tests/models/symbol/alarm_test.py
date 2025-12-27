@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.alarm import Alarm
+
 
 class AlarmTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class AlarmTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_alarm(self):
-          alarm_obj = Alarm()
-          self.assertNotEqual(alarm_obj, None)
-
-
+        alarm_obj = Alarm()
+        self.assertNotEqual(alarm_obj, None)

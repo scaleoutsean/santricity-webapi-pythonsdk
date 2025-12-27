@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.extended_component_location import ExtendedComponentLocation
+
+from netapp.santricity.models.symbol.extended_component_location import \
+    ExtendedComponentLocation
+
 
 class ExtendedComponentLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ExtendedComponentLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_extended_component_location(self):
-          extended_component_location_obj = ExtendedComponentLocation()
-          self.assertNotEqual(extended_component_location_obj, None)
-
-
+        extended_component_location_obj = ExtendedComponentLocation()
+        self.assertNotEqual(extended_component_location_obj, None)

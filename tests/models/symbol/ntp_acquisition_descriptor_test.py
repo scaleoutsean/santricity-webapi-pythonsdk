@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ntp_acquisition_descriptor import NtpAcquisitionDescriptor
+
+from netapp.santricity.models.symbol.ntp_acquisition_descriptor import \
+    NtpAcquisitionDescriptor
+
 
 class NtpAcquisitionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class NtpAcquisitionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ntp_acquisition_descriptor(self):
-          ntp_acquisition_descriptor_obj = NtpAcquisitionDescriptor()
-          self.assertNotEqual(ntp_acquisition_descriptor_obj, None)
-
-
+        ntp_acquisition_descriptor_obj = NtpAcquisitionDescriptor()
+        self.assertNotEqual(ntp_acquisition_descriptor_obj, None)

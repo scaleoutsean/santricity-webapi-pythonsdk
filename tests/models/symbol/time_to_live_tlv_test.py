@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.time_to_live_tlv import TimeToLiveTLV
+
 
 class TimeToLiveTLVTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class TimeToLiveTLVTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_time_to_live_tlv(self):
-          time_to_live_tlv_obj = TimeToLiveTLV()
-          self.assertNotEqual(time_to_live_tlv_obj, None)
-
-
+        time_to_live_tlv_obj = TimeToLiveTLV()
+        self.assertNotEqual(time_to_live_tlv_obj, None)

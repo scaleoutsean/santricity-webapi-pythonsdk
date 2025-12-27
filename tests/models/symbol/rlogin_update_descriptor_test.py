@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.rlogin_update_descriptor import RloginUpdateDescriptor
+
+from netapp.santricity.models.symbol.rlogin_update_descriptor import \
+    RloginUpdateDescriptor
+
 
 class RloginUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RloginUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_rlogin_update_descriptor(self):
-          rlogin_update_descriptor_obj = RloginUpdateDescriptor()
-          self.assertNotEqual(rlogin_update_descriptor_obj, None)
-
-
+        rlogin_update_descriptor_obj = RloginUpdateDescriptor()
+        self.assertNotEqual(rlogin_update_descriptor_obj, None)

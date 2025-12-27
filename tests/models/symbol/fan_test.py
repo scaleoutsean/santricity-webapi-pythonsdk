@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.fan import Fan
+
 
 class FanTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FanTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fan(self):
-          fan_obj = Fan()
-          self.assertNotEqual(fan_obj, None)
-
-
+        fan_obj = Fan()
+        self.assertNotEqual(fan_obj, None)

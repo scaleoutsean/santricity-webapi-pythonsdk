@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.port_idtlv import PortIDTLV
+
 
 class PortIDTLVTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PortIDTLVTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_port_idtlv(self):
-          port_idtlv_obj = PortIDTLV()
-          self.assertNotEqual(port_idtlv_obj, None)
-
-
+        port_idtlv_obj = PortIDTLV()
+        self.assertNotEqual(port_idtlv_obj, None)

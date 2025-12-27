@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.storage_device_health_check import StorageDeviceHealthCheck
+
+from netapp.santricity.models.v2.storage_device_health_check import \
+    StorageDeviceHealthCheck
+
 
 class StorageDeviceHealthCheckTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class StorageDeviceHealthCheckTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_storage_device_health_check(self):
-          storage_device_health_check_obj = StorageDeviceHealthCheck()
-          self.assertNotEqual(storage_device_health_check_obj, None)
-
-
+        storage_device_health_check_obj = StorageDeviceHealthCheck()
+        self.assertNotEqual(storage_device_health_check_obj, None)

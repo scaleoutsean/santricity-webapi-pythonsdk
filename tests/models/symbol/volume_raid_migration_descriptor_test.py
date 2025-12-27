@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_raid_migration_descriptor import VolumeRAIDMigrationDescriptor
+
+from netapp.santricity.models.symbol.volume_raid_migration_descriptor import \
+    VolumeRAIDMigrationDescriptor
+
 
 class VolumeRAIDMigrationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeRAIDMigrationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_raid_migration_descriptor(self):
-          volume_raid_migration_descriptor_obj = VolumeRAIDMigrationDescriptor()
-          self.assertNotEqual(volume_raid_migration_descriptor_obj, None)
-
-
+        volume_raid_migration_descriptor_obj = VolumeRAIDMigrationDescriptor()
+        self.assertNotEqual(volume_raid_migration_descriptor_obj, None)

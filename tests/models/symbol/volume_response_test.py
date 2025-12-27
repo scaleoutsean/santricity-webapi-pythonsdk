@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.volume_response import VolumeResponse
+
 
 class VolumeResponseTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VolumeResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_response(self):
-          volume_response_obj = VolumeResponse()
-          self.assertNotEqual(volume_response_obj, None)
-
-
+        volume_response_obj = VolumeResponse()
+        self.assertNotEqual(volume_response_obj, None)

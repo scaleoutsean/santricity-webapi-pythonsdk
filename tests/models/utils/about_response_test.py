@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.utils.about_response import AboutResponse
+
 
 class AboutResponseTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class AboutResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_about_response(self):
-          about_response_obj = AboutResponse()
-          self.assertNotEqual(about_response_obj, None)
-
-
+        about_response_obj = AboutResponse()
+        self.assertNotEqual(about_response_obj, None)

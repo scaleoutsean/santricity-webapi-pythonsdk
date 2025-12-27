@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_remote_target_connections import IscsiRemoteTargetConnections
+
+from netapp.santricity.models.symbol.iscsi_remote_target_connections import \
+    IscsiRemoteTargetConnections
+
 
 class IscsiRemoteTargetConnectionsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiRemoteTargetConnectionsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_remote_target_connections(self):
-          iscsi_remote_target_connections_obj = IscsiRemoteTargetConnections()
-          self.assertNotEqual(iscsi_remote_target_connections_obj, None)
-
-
+        iscsi_remote_target_connections_obj = IscsiRemoteTargetConnections()
+        self.assertNotEqual(iscsi_remote_target_connections_obj, None)

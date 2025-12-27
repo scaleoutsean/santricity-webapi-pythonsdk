@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.isns_server_location import IsnsServerLocation
+
+from netapp.santricity.models.symbol.isns_server_location import \
+    IsnsServerLocation
+
 
 class IsnsServerLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IsnsServerLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_isns_server_location(self):
-          isns_server_location_obj = IsnsServerLocation()
-          self.assertNotEqual(isns_server_location_obj, None)
-
-
+        isns_server_location_obj = IsnsServerLocation()
+        self.assertNotEqual(isns_server_location_obj, None)

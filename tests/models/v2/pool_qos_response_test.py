@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.pool_qos_response import PoolQosResponse
+
 
 class PoolQosResponseTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PoolQosResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pool_qos_response(self):
-          pool_qos_response_obj = PoolQosResponse()
-          self.assertNotEqual(pool_qos_response_obj, None)
-
-
+        pool_qos_response_obj = PoolQosResponse()
+        self.assertNotEqual(pool_qos_response_obj, None)

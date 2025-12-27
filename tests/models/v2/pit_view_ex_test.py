@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.pit_view_ex import PitViewEx
+
 
 class PitViewExTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PitViewExTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_view_ex(self):
-          pit_view_ex_obj = PitViewEx()
-          self.assertNotEqual(pit_view_ex_obj, None)
-
-
+        pit_view_ex_obj = PitViewEx()
+        self.assertNotEqual(pit_view_ex_obj, None)

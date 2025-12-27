@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.cluster_performance_limitation_values_descriptor import ClusterPerformanceLimitationValuesDescriptor
+
+from netapp.santricity.models.symbol.cluster_performance_limitation_values_descriptor import \
+    ClusterPerformanceLimitationValuesDescriptor
+
 
 class ClusterPerformanceLimitationValuesDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class ClusterPerformanceLimitationValuesDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cluster_performance_limitation_values_descriptor(self):
-          cluster_performance_limitation_values_descriptor_obj = ClusterPerformanceLimitationValuesDescriptor()
-          self.assertNotEqual(cluster_performance_limitation_values_descriptor_obj, None)
-
-
+        cluster_performance_limitation_values_descriptor_obj = (
+            ClusterPerformanceLimitationValuesDescriptor()
+        )
+        self.assertNotEqual(cluster_performance_limitation_values_descriptor_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.remote_vol_wwn_change_failed import RemoteVolWWNChangeFailed
+
+from netapp.santricity.models.symbol.remote_vol_wwn_change_failed import \
+    RemoteVolWWNChangeFailed
+
 
 class RemoteVolWWNChangeFailedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemoteVolWWNChangeFailedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_vol_wwn_change_failed(self):
-          remote_vol_wwn_change_failed_obj = RemoteVolWWNChangeFailed()
-          self.assertNotEqual(remote_vol_wwn_change_failed_obj, None)
-
-
+        remote_vol_wwn_change_failed_obj = RemoteVolWWNChangeFailed()
+        self.assertNotEqual(remote_vol_wwn_change_failed_obj, None)

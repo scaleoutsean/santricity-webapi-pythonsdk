@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.not_on_preferred_path import NotOnPreferredPath
+
+from netapp.santricity.models.symbol.not_on_preferred_path import \
+    NotOnPreferredPath
+
 
 class NotOnPreferredPathTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class NotOnPreferredPathTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_not_on_preferred_path(self):
-          not_on_preferred_path_obj = NotOnPreferredPath()
-          self.assertNotEqual(not_on_preferred_path_obj, None)
-
-
+        not_on_preferred_path_obj = NotOnPreferredPath()
+        self.assertNotEqual(not_on_preferred_path_obj, None)

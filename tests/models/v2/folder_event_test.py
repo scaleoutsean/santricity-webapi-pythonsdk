@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.folder_event import FolderEvent
+
 
 class FolderEventTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FolderEventTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_folder_event(self):
-          folder_event_obj = FolderEvent()
-          self.assertNotEqual(folder_event_obj, None)
-
-
+        folder_event_obj = FolderEvent()
+        self.assertNotEqual(folder_event_obj, None)

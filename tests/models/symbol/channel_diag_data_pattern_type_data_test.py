@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.channel_diag_data_pattern_type_data import ChannelDiagDataPatternTypeData
+
+from netapp.santricity.models.symbol.channel_diag_data_pattern_type_data import \
+    ChannelDiagDataPatternTypeData
+
 
 class ChannelDiagDataPatternTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ChannelDiagDataPatternTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_channel_diag_data_pattern_type_data(self):
-          channel_diag_data_pattern_type_data_obj = ChannelDiagDataPatternTypeData()
-          self.assertNotEqual(channel_diag_data_pattern_type_data_obj, None)
-
-
+        channel_diag_data_pattern_type_data_obj = ChannelDiagDataPatternTypeData()
+        self.assertNotEqual(channel_diag_data_pattern_type_data_obj, None)

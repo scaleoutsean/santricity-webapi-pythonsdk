@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.snapshot_conversion_label import SnapshotConversionLabel
+
+from netapp.santricity.models.symbol.snapshot_conversion_label import \
+    SnapshotConversionLabel
+
 
 class SnapshotConversionLabelTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SnapshotConversionLabelTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_conversion_label(self):
-          snapshot_conversion_label_obj = SnapshotConversionLabel()
-          self.assertNotEqual(snapshot_conversion_label_obj, None)
-
-
+        snapshot_conversion_label_obj = SnapshotConversionLabel()
+        self.assertNotEqual(snapshot_conversion_label_obj, None)

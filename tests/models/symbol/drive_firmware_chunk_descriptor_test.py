@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_firmware_chunk_descriptor import DriveFirmwareChunkDescriptor
+
+from netapp.santricity.models.symbol.drive_firmware_chunk_descriptor import \
+    DriveFirmwareChunkDescriptor
+
 
 class DriveFirmwareChunkDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveFirmwareChunkDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_firmware_chunk_descriptor(self):
-          drive_firmware_chunk_descriptor_obj = DriveFirmwareChunkDescriptor()
-          self.assertNotEqual(drive_firmware_chunk_descriptor_obj, None)
-
-
+        drive_firmware_chunk_descriptor_obj = DriveFirmwareChunkDescriptor()
+        self.assertNotEqual(drive_firmware_chunk_descriptor_obj, None)

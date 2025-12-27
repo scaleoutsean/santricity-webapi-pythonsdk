@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.management_configuration_request import ManagementConfigurationRequest
+
+from netapp.santricity.models.v2.management_configuration_request import \
+    ManagementConfigurationRequest
+
 
 class ManagementConfigurationRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ManagementConfigurationRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_management_configuration_request(self):
-          management_configuration_request_obj = ManagementConfigurationRequest()
-          self.assertNotEqual(management_configuration_request_obj, None)
-
-
+        management_configuration_request_obj = ManagementConfigurationRequest()
+        self.assertNotEqual(management_configuration_request_obj, None)

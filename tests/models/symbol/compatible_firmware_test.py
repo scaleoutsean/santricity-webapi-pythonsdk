@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.compatible_firmware import CompatibleFirmware
+
+from netapp.santricity.models.symbol.compatible_firmware import \
+    CompatibleFirmware
+
 
 class CompatibleFirmwareTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CompatibleFirmwareTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_compatible_firmware(self):
-          compatible_firmware_obj = CompatibleFirmware()
-          self.assertNotEqual(compatible_firmware_obj, None)
-
-
+        compatible_firmware_obj = CompatibleFirmware()
+        self.assertNotEqual(compatible_firmware_obj, None)

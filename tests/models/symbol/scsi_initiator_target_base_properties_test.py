@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.scsi_initiator_target_base_properties import ScsiInitiatorTargetBaseProperties
+
+from netapp.santricity.models.symbol.scsi_initiator_target_base_properties import \
+    ScsiInitiatorTargetBaseProperties
+
 
 class ScsiInitiatorTargetBasePropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ScsiInitiatorTargetBasePropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_scsi_initiator_target_base_properties(self):
-          scsi_initiator_target_base_properties_obj = ScsiInitiatorTargetBaseProperties()
-          self.assertNotEqual(scsi_initiator_target_base_properties_obj, None)
-
-
+        scsi_initiator_target_base_properties_obj = ScsiInitiatorTargetBaseProperties()
+        self.assertNotEqual(scsi_initiator_target_base_properties_obj, None)

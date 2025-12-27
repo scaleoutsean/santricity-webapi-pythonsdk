@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ip_v6_address_data_bundle import IpV6AddressDataBundle
+
+from netapp.santricity.models.symbol.ip_v6_address_data_bundle import \
+    IpV6AddressDataBundle
+
 
 class IpV6AddressDataBundleTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IpV6AddressDataBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ip_v6_address_data_bundle(self):
-          ip_v6_address_data_bundle_obj = IpV6AddressDataBundle()
-          self.assertNotEqual(ip_v6_address_data_bundle_obj, None)
-
-
+        ip_v6_address_data_bundle_obj = IpV6AddressDataBundle()
+        self.assertNotEqual(ip_v6_address_data_bundle_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.rtr_attributes import RTRAttributes
+
 
 class RTRAttributesTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RTRAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_rtr_attributes(self):
-          rtr_attributes_obj = RTRAttributes()
-          self.assertNotEqual(rtr_attributes_obj, None)
-
-
+        rtr_attributes_obj = RTRAttributes()
+        self.assertNotEqual(rtr_attributes_obj, None)

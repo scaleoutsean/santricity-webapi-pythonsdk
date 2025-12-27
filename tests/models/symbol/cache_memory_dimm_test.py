@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.cache_memory_dimm import CacheMemoryDimm
+
 
 class CacheMemoryDimmTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class CacheMemoryDimmTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cache_memory_dimm(self):
-          cache_memory_dimm_obj = CacheMemoryDimm()
-          self.assertNotEqual(cache_memory_dimm_obj, None)
-
-
+        cache_memory_dimm_obj = CacheMemoryDimm()
+        self.assertNotEqual(cache_memory_dimm_obj, None)

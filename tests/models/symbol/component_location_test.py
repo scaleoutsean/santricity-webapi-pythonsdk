@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.component_location import ComponentLocation
+
+from netapp.santricity.models.symbol.component_location import \
+    ComponentLocation
+
 
 class ComponentLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ComponentLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_component_location(self):
-          component_location_obj = ComponentLocation()
-          self.assertNotEqual(component_location_obj, None)
-
-
+        component_location_obj = ComponentLocation()
+        self.assertNotEqual(component_location_obj, None)

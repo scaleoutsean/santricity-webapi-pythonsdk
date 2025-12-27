@@ -2,9 +2,5 @@
 
 
 from netapp.santricity.api.utils.about_api import AboutApi
-
 from netapp.santricity.api.utils.build_info_api import BuildInfoApi
-
 from netapp.santricity.api.utils.login_api import LoginApi
-
-

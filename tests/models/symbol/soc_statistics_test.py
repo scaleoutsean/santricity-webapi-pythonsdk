@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.soc_statistics import SocStatistics
+
 
 class SocStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SocStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_soc_statistics(self):
-          soc_statistics_obj = SocStatistics()
-          self.assertNotEqual(soc_statistics_obj, None)
-
-
+        soc_statistics_obj = SocStatistics()
+        self.assertNotEqual(soc_statistics_obj, None)

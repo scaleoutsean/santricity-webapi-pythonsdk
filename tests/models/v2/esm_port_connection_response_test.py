@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.esm_port_connection_response import EsmPortConnectionResponse
+
+from netapp.santricity.models.v2.esm_port_connection_response import \
+    EsmPortConnectionResponse
+
 
 class EsmPortConnectionResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EsmPortConnectionResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_esm_port_connection_response(self):
-          esm_port_connection_response_obj = EsmPortConnectionResponse()
-          self.assertNotEqual(esm_port_connection_response_obj, None)
-
-
+        esm_port_connection_response_obj = EsmPortConnectionResponse()
+        self.assertNotEqual(esm_port_connection_response_obj, None)

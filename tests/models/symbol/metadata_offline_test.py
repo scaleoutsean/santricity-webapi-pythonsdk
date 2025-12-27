@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.metadata_offline import MetadataOffline
+
 
 class MetadataOfflineTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class MetadataOfflineTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_metadata_offline(self):
-          metadata_offline_obj = MetadataOffline()
-          self.assertNotEqual(metadata_offline_obj, None)
-
-
+        metadata_offline_obj = MetadataOffline()
+        self.assertNotEqual(metadata_offline_obj, None)

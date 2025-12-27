@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.cfw_activation_request import CfwActivationRequest
+
+from netapp.santricity.models.v2.cfw_activation_request import \
+    CfwActivationRequest
+
 
 class CfwActivationRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CfwActivationRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cfw_activation_request(self):
-          cfw_activation_request_obj = CfwActivationRequest()
-          self.assertNotEqual(cfw_activation_request_obj, None)
-
-
+        cfw_activation_request_obj = CfwActivationRequest()
+        self.assertNotEqual(cfw_activation_request_obj, None)

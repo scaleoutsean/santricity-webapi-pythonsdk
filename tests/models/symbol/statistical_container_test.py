@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.statistical_container import StatisticalContainer
+
+from netapp.santricity.models.symbol.statistical_container import \
+    StatisticalContainer
+
 
 class StatisticalContainerTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class StatisticalContainerTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_statistical_container(self):
-          statistical_container_obj = StatisticalContainer()
-          self.assertNotEqual(statistical_container_obj, None)
-
-
+        statistical_container_obj = StatisticalContainer()
+        self.assertNotEqual(statistical_container_obj, None)

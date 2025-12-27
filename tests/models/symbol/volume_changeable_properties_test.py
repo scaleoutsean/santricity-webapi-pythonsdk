@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_changeable_properties import VolumeChangeableProperties
+
+from netapp.santricity.models.symbol.volume_changeable_properties import \
+    VolumeChangeableProperties
+
 
 class VolumeChangeablePropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeChangeablePropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_changeable_properties(self):
-          volume_changeable_properties_obj = VolumeChangeableProperties()
-          self.assertNotEqual(volume_changeable_properties_obj, None)
-
-
+        volume_changeable_properties_obj = VolumeChangeableProperties()
+        self.assertNotEqual(volume_changeable_properties_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.remote_vol_no_fabric import RemoteVolNoFabric
+
+from netapp.santricity.models.symbol.remote_vol_no_fabric import \
+    RemoteVolNoFabric
+
 
 class RemoteVolNoFabricTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemoteVolNoFabricTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_vol_no_fabric(self):
-          remote_vol_no_fabric_obj = RemoteVolNoFabric()
-          self.assertNotEqual(remote_vol_no_fabric_obj, None)
-
-
+        remote_vol_no_fabric_obj = RemoteVolNoFabric()
+        self.assertNotEqual(remote_vol_no_fabric_obj, None)

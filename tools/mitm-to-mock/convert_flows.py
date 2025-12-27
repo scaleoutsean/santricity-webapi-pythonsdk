@@ -4,7 +4,8 @@ Mappings are naive: exact method + path matching. Use as a starting point.
 """
 import json
 import os
-from mitmproxy import io, http
+
+from mitmproxy import http, io
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 FLOWS_FILE = os.path.join(DATA_DIR, "flows.mitm")
@@ -16,7 +17,7 @@ def body_text(resp):
         return resp.get_text(strict=False)
     except Exception:
         try:
-            return resp.content.decode('utf-8', errors='replace')
+            return resp.content.decode("utf-8", errors="replace")
         except Exception:
             return ""
 

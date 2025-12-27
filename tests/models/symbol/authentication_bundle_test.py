@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.authentication_bundle import AuthenticationBundle
+
+from netapp.santricity.models.symbol.authentication_bundle import \
+    AuthenticationBundle
+
 
 class AuthenticationBundleTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AuthenticationBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_authentication_bundle(self):
-          authentication_bundle_obj = AuthenticationBundle()
-          self.assertNotEqual(authentication_bundle_obj, None)
-
-
+        authentication_bundle_obj = AuthenticationBundle()
+        self.assertNotEqual(authentication_bundle_obj, None)

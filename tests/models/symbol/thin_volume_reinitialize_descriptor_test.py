@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thin_volume_reinitialize_descriptor import ThinVolumeReinitializeDescriptor
+
+from netapp.santricity.models.symbol.thin_volume_reinitialize_descriptor import \
+    ThinVolumeReinitializeDescriptor
+
 
 class ThinVolumeReinitializeDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ThinVolumeReinitializeDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_reinitialize_descriptor(self):
-          thin_volume_reinitialize_descriptor_obj = ThinVolumeReinitializeDescriptor()
-          self.assertNotEqual(thin_volume_reinitialize_descriptor_obj, None)
-
-
+        thin_volume_reinitialize_descriptor_obj = ThinVolumeReinitializeDescriptor()
+        self.assertNotEqual(thin_volume_reinitialize_descriptor_obj, None)

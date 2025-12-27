@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.validate_confiuration_file_response import ValidateConfiurationFileResponse
+
+from netapp.santricity.models.v2.validate_confiuration_file_response import \
+    ValidateConfiurationFileResponse
+
 
 class ValidateConfiurationFileResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ValidateConfiurationFileResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_validate_confiuration_file_response(self):
-          validate_confiuration_file_response_obj = ValidateConfiurationFileResponse()
-          self.assertNotEqual(validate_confiuration_file_response_obj, None)
-
-
+        validate_confiuration_file_response_obj = ValidateConfiurationFileResponse()
+        self.assertNotEqual(validate_confiuration_file_response_obj, None)

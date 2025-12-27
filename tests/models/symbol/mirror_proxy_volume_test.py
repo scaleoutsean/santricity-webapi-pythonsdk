@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mirror_proxy_volume import MirrorProxyVolume
+
+from netapp.santricity.models.symbol.mirror_proxy_volume import \
+    MirrorProxyVolume
+
 
 class MirrorProxyVolumeTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MirrorProxyVolumeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mirror_proxy_volume(self):
-          mirror_proxy_volume_obj = MirrorProxyVolume()
-          self.assertNotEqual(mirror_proxy_volume_obj, None)
-
-
+        mirror_proxy_volume_obj = MirrorProxyVolume()
+        self.assertNotEqual(mirror_proxy_volume_obj, None)

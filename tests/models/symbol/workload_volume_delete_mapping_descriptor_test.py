@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.workload_volume_delete_mapping_descriptor import WorkloadVolumeDeleteMappingDescriptor
+
+from netapp.santricity.models.symbol.workload_volume_delete_mapping_descriptor import \
+    WorkloadVolumeDeleteMappingDescriptor
+
 
 class WorkloadVolumeDeleteMappingDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class WorkloadVolumeDeleteMappingDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_workload_volume_delete_mapping_descriptor(self):
-          workload_volume_delete_mapping_descriptor_obj = WorkloadVolumeDeleteMappingDescriptor()
-          self.assertNotEqual(workload_volume_delete_mapping_descriptor_obj, None)
-
-
+        workload_volume_delete_mapping_descriptor_obj = (
+            WorkloadVolumeDeleteMappingDescriptor()
+        )
+        self.assertNotEqual(workload_volume_delete_mapping_descriptor_obj, None)

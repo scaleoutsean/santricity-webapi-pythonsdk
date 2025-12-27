@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.security_key_needed import SecurityKeyNeeded
+
+from netapp.santricity.models.symbol.security_key_needed import \
+    SecurityKeyNeeded
+
 
 class SecurityKeyNeededTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SecurityKeyNeededTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_security_key_needed(self):
-          security_key_needed_obj = SecurityKeyNeeded()
-          self.assertNotEqual(security_key_needed_obj, None)
-
-
+        security_key_needed_obj = SecurityKeyNeeded()
+        self.assertNotEqual(security_key_needed_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_redundancy_loss_details import HostRedundancyLossDetails
+
+from netapp.santricity.models.symbol.host_redundancy_loss_details import \
+    HostRedundancyLossDetails
+
 
 class HostRedundancyLossDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostRedundancyLossDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_redundancy_loss_details(self):
-          host_redundancy_loss_details_obj = HostRedundancyLossDetails()
-          self.assertNotEqual(host_redundancy_loss_details_obj, None)
-
-
+        host_redundancy_loss_details_obj = HostRedundancyLossDetails()
+        self.assertNotEqual(host_redundancy_loss_details_obj, None)

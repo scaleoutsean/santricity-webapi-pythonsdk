@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_interface_properties_update_descriptor import IscsiInterfacePropertiesUpdateDescriptor
+
+from netapp.santricity.models.symbol.iscsi_interface_properties_update_descriptor import \
+    IscsiInterfacePropertiesUpdateDescriptor
+
 
 class IscsiInterfacePropertiesUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class IscsiInterfacePropertiesUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_interface_properties_update_descriptor(self):
-          iscsi_interface_properties_update_descriptor_obj = IscsiInterfacePropertiesUpdateDescriptor()
-          self.assertNotEqual(iscsi_interface_properties_update_descriptor_obj, None)
-
-
+        iscsi_interface_properties_update_descriptor_obj = (
+            IscsiInterfacePropertiesUpdateDescriptor()
+        )
+        self.assertNotEqual(iscsi_interface_properties_update_descriptor_obj, None)

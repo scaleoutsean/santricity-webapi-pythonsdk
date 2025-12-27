@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.component_relative_location import ComponentRelativeLocation
+
+from netapp.santricity.models.symbol.component_relative_location import \
+    ComponentRelativeLocation
+
 
 class ComponentRelativeLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ComponentRelativeLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_component_relative_location(self):
-          component_relative_location_obj = ComponentRelativeLocation()
-          self.assertNotEqual(component_relative_location_obj, None)
-
-
+        component_relative_location_obj = ComponentRelativeLocation()
+        self.assertNotEqual(component_relative_location_obj, None)

@@ -81,7 +81,7 @@ By default this posts an imposter on port `5000`. Run `docker compose up -d test
 
 Security: sanitize `data/mappings.json` before committing; do not commit secrets or credentials.
 
-## Run example: full pipeline 
+## Run example: full pipeline
 
 ```sh
 cd tools/mitm-to-mock
@@ -90,7 +90,7 @@ python3 -m pip install -r requirements.txt
 python3 run_all.py
 ```
 
-Post with strict matching and header predicates: 
+Post with strict matching and header predicates:
 
 ```sh
 python3 convert_to_mountebank.py --mappings data/mappings.sanitized.json --strict-body --match-headers Authorization,Content-Type

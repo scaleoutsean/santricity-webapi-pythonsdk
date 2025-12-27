@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.registered_ports import RegisteredPorts
+
 
 class RegisteredPortsTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RegisteredPortsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_registered_ports(self):
-          registered_ports_obj = RegisteredPorts()
-          self.assertNotEqual(registered_ports_obj, None)
-
-
+        registered_ports_obj = RegisteredPorts()
+        self.assertNotEqual(registered_ports_obj, None)

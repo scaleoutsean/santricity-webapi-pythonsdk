@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thin_volume_default_attributes import ThinVolumeDefaultAttributes
+
+from netapp.santricity.models.symbol.thin_volume_default_attributes import \
+    ThinVolumeDefaultAttributes
+
 
 class ThinVolumeDefaultAttributesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ThinVolumeDefaultAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_default_attributes(self):
-          thin_volume_default_attributes_obj = ThinVolumeDefaultAttributes()
-          self.assertNotEqual(thin_volume_default_attributes_obj, None)
-
-
+        thin_volume_default_attributes_obj = ThinVolumeDefaultAttributes()
+        self.assertNotEqual(thin_volume_default_attributes_obj, None)

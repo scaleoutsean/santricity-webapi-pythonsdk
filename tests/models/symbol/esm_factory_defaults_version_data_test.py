@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.esm_factory_defaults_version_data import EsmFactoryDefaultsVersionData
+
+from netapp.santricity.models.symbol.esm_factory_defaults_version_data import \
+    EsmFactoryDefaultsVersionData
+
 
 class EsmFactoryDefaultsVersionDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EsmFactoryDefaultsVersionDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_esm_factory_defaults_version_data(self):
-          esm_factory_defaults_version_data_obj = EsmFactoryDefaultsVersionData()
-          self.assertNotEqual(esm_factory_defaults_version_data_obj, None)
-
-
+        esm_factory_defaults_version_data_obj = EsmFactoryDefaultsVersionData()
+        self.assertNotEqual(esm_factory_defaults_version_data_obj, None)

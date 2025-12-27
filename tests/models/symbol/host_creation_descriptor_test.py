@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_creation_descriptor import HostCreationDescriptor
+
+from netapp.santricity.models.symbol.host_creation_descriptor import \
+    HostCreationDescriptor
+
 
 class HostCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_creation_descriptor(self):
-          host_creation_descriptor_obj = HostCreationDescriptor()
-          self.assertNotEqual(host_creation_descriptor_obj, None)
-
-
+        host_creation_descriptor_obj = HostCreationDescriptor()
+        self.assertNotEqual(host_creation_descriptor_obj, None)

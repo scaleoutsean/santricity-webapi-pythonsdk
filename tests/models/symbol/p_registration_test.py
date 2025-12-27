@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.p_registration import PRegistration
+
 
 class PRegistrationTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PRegistrationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_p_registration(self):
-          p_registration_obj = PRegistration()
-          self.assertNotEqual(p_registration_obj, None)
-
-
+        p_registration_obj = PRegistration()
+        self.assertNotEqual(p_registration_obj, None)

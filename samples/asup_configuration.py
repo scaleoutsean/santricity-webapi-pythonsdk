@@ -14,41 +14,39 @@ Redistribution and use in source and binary forms, with or without modification,
 NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api_client import ApiClient
-from netapp.santricity.api_client import Configuration
-from netapp.santricity.api.v2.device_asup_api import DeviceASUPApi
-from netapp.santricity.models.v2.device_asup_update_request import DeviceAsupUpdateRequest
-
 import sys
 
+from netapp.santricity.api.v2.device_asup_api import DeviceASUPApi
+from netapp.santricity.api_client import ApiClient, Configuration
+from netapp.santricity.models.v2.device_asup_update_request import \
+    DeviceAsupUpdateRequest
+from netapp.santricity.rest import ApiException
 
-def process_asup_settings(host,username,passwd):
+
+def process_asup_settings(host, username, passwd):
     config = Configuration()
     # accept either a full URL (http(s)://...) or a bare host
-    if host.startswith('http://') or host.startswith('https://'):
+    if host.startswith("http://") or host.startswith("https://"):
         config.host = host
     else:
         config.host = "https://" + host
     config.username = username
     config.password = passwd
-    config.verify_ssl=False
+    config.verify_ssl = False
 
-    #If verify_ssl is true then the certificate file should me made available.
-    #This avoids insecure request warnings. Make the certificate available as illustrated below
+    # If verify_ssl is true then the certificate file should me made available.
+    # This avoids insecure request warnings. Make the certificate available as illustrated below
 
-    #config.ssl_ca_cert = "C:/prox-cert-export.pem"
+    # config.ssl_ca_cert = "C:/prox-cert-export.pem"
 
-
-    #Create a client object to use with the above defined configuration.
+    # Create a client object to use with the above defined configuration.
     api_client = ApiClient()
     config.api_client = api_client
 
-
-    dev_asup=DeviceASUPApi(api_client)
+    dev_asup = DeviceASUPApi(api_client)
 
     try:
-        #Get the config info
+        # Get the config info
         dev_asup_config = dev_asup.get_asup_configuration()
     except ApiException as ae:
         print("There was an exception: {}.".format(ae.reason))
@@ -57,36 +55,40 @@ def process_asup_settings(host,username,passwd):
     print(dev_asup_config)
     print("---------------------")
 
-    #Now Update config info
-    #Populate the required fileds as necessary and then call update_asup_configuration()
-    #The below example is for illustration only. change/populate asup_updt_req fileds as necessary.
+    # Now Update config info
+    # Populate the required fileds as necessary and then call update_asup_configuration()
+    # The below example is for illustration only. change/populate asup_updt_req fileds as necessary.
 
-    asup_updt_req= DeviceAsupUpdateRequest()
+    asup_updt_req = DeviceAsupUpdateRequest()
 
     asup_updt_req.asup_enabled = True
 
     try:
-        #Update config info
+        # Update config info
         asup_resp = dev_asup.update_asup_configuration(body=asup_updt_req)
 
     except ApiException as ae:
         print("There was an exception: {}.".format(ae.reason))
         sys.exit()
 
-#Reads the array info from a config file and processes asup config info as necessary.
-#It's assumed that the array and login details are as per this (asup_cfg.txt) sample file contents.
 
-fp= open("asup_cfg.txt")
+# Reads the array info from a config file and processes asup config info as necessary.
+# It's assumed that the array and login details are as per this (asup_cfg.txt) sample file contents.
 
-lines=fp.readlines()
+fp = open("asup_cfg.txt")
+
+lines = fp.readlines()
 for line in lines:
     if not line.startswith("#"):
-        fields=line.split()
-        process_asup_settings(fields[0],fields[1],fields[2])
-    
+        fields = line.split()
+        process_asup_settings(fields[0], fields[1], fields[2])
+
 # If environment variables are set, allow running directly without a config file
 import os
-if os.getenv('SANTRICITY_HOST'):
-    process_asup_settings(os.getenv('SANTRICITY_HOST'), os.getenv('SANTRICITY_USER','rw'), os.getenv('SANTRICITY_PASS','rw'))
 
-
+if os.getenv("SANTRICITY_HOST"):
+    process_asup_settings(
+        os.getenv("SANTRICITY_HOST"),
+        os.getenv("SANTRICITY_USER", "rw"),
+        os.getenv("SANTRICITY_PASS", "rw"),
+    )

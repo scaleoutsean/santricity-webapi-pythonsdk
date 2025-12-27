@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.software_versions import SoftwareVersions
+
 
 class SoftwareVersionsTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SoftwareVersionsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_software_versions(self):
-          software_versions_obj = SoftwareVersions()
-          self.assertNotEqual(software_versions_obj, None)
-
-
+        software_versions_obj = SoftwareVersions()
+        self.assertNotEqual(software_versions_obj, None)

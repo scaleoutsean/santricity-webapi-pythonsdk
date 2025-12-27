@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thin_volume_capacity_quota_update_descriptor import ThinVolumeCapacityQuotaUpdateDescriptor
+
+from netapp.santricity.models.symbol.thin_volume_capacity_quota_update_descriptor import \
+    ThinVolumeCapacityQuotaUpdateDescriptor
+
 
 class ThinVolumeCapacityQuotaUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class ThinVolumeCapacityQuotaUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_capacity_quota_update_descriptor(self):
-          thin_volume_capacity_quota_update_descriptor_obj = ThinVolumeCapacityQuotaUpdateDescriptor()
-          self.assertNotEqual(thin_volume_capacity_quota_update_descriptor_obj, None)
-
-
+        thin_volume_capacity_quota_update_descriptor_obj = (
+            ThinVolumeCapacityQuotaUpdateDescriptor()
+        )
+        self.assertNotEqual(thin_volume_capacity_quota_update_descriptor_obj, None)

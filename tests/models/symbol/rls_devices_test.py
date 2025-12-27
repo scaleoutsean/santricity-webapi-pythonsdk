@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.rls_devices import RLSDevices
+
 
 class RLSDevicesTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RLSDevicesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_rls_devices(self):
-          rls_devices_obj = RLSDevices()
-          self.assertNotEqual(rls_devices_obj, None)
-
-
+        rls_devices_obj = RLSDevices()
+        self.assertNotEqual(rls_devices_obj, None)

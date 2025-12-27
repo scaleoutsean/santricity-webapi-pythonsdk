@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.snmp_agent_bundle import SNMPAgentBundle
+
 
 class SNMPAgentBundleTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SNMPAgentBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snmp_agent_bundle(self):
-          snmp_agent_bundle_obj = SNMPAgentBundle()
-          self.assertNotEqual(snmp_agent_bundle_obj, None)
-
-
+        snmp_agent_bundle_obj = SNMPAgentBundle()
+        self.assertNotEqual(snmp_agent_bundle_obj, None)

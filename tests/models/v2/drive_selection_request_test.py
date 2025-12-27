@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.drive_selection_request import DriveSelectionRequest
+
+from netapp.santricity.models.v2.drive_selection_request import \
+    DriveSelectionRequest
+
 
 class DriveSelectionRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveSelectionRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_selection_request(self):
-          drive_selection_request_obj = DriveSelectionRequest()
-          self.assertNotEqual(drive_selection_request_obj, None)
-
-
+        drive_selection_request_obj = DriveSelectionRequest()
+        self.assertNotEqual(drive_selection_request_obj, None)

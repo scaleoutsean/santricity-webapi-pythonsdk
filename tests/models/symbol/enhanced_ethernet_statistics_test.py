@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.enhanced_ethernet_statistics import EnhancedEthernetStatistics
+
+from netapp.santricity.models.symbol.enhanced_ethernet_statistics import \
+    EnhancedEthernetStatistics
+
 
 class EnhancedEthernetStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EnhancedEthernetStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_enhanced_ethernet_statistics(self):
-          enhanced_ethernet_statistics_obj = EnhancedEthernetStatistics()
-          self.assertNotEqual(enhanced_ethernet_statistics_obj, None)
-
-
+        enhanced_ethernet_statistics_obj = EnhancedEthernetStatistics()
+        self.assertNotEqual(enhanced_ethernet_statistics_obj, None)

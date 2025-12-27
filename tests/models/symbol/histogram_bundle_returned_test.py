@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.histogram_bundle_returned import HistogramBundleReturned
+
+from netapp.santricity.models.symbol.histogram_bundle_returned import \
+    HistogramBundleReturned
+
 
 class HistogramBundleReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HistogramBundleReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_histogram_bundle_returned(self):
-          histogram_bundle_returned_obj = HistogramBundleReturned()
-          self.assertNotEqual(histogram_bundle_returned_obj, None)
-
-
+        histogram_bundle_returned_obj = HistogramBundleReturned()
+        self.assertNotEqual(histogram_bundle_returned_obj, None)

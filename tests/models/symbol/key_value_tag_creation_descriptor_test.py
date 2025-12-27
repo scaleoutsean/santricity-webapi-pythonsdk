@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.key_value_tag_creation_descriptor import KeyValueTagCreationDescriptor
+
+from netapp.santricity.models.symbol.key_value_tag_creation_descriptor import \
+    KeyValueTagCreationDescriptor
+
 
 class KeyValueTagCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class KeyValueTagCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_key_value_tag_creation_descriptor(self):
-          key_value_tag_creation_descriptor_obj = KeyValueTagCreationDescriptor()
-          self.assertNotEqual(key_value_tag_creation_descriptor_obj, None)
-
-
+        key_value_tag_creation_descriptor_obj = KeyValueTagCreationDescriptor()
+        self.assertNotEqual(key_value_tag_creation_descriptor_obj, None)

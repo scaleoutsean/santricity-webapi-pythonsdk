@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.upgrade_manager_response import UpgradeManagerResponse
+
+from netapp.santricity.models.v2.upgrade_manager_response import \
+    UpgradeManagerResponse
+
 
 class UpgradeManagerResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class UpgradeManagerResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_upgrade_manager_response(self):
-          upgrade_manager_response_obj = UpgradeManagerResponse()
-          self.assertNotEqual(upgrade_manager_response_obj, None)
-
-
+        upgrade_manager_response_obj = UpgradeManagerResponse()
+        self.assertNotEqual(upgrade_manager_response_obj, None)

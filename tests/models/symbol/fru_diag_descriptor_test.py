@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.fru_diag_descriptor import FruDiagDescriptor
+
+from netapp.santricity.models.symbol.fru_diag_descriptor import \
+    FruDiagDescriptor
+
 
 class FruDiagDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FruDiagDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fru_diag_descriptor(self):
-          fru_diag_descriptor_obj = FruDiagDescriptor()
-          self.assertNotEqual(fru_diag_descriptor_obj, None)
-
-
+        fru_diag_descriptor_obj = FruDiagDescriptor()
+        self.assertNotEqual(fru_diag_descriptor_obj, None)

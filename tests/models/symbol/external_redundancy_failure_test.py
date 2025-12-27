@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.external_redundancy_failure import ExternalRedundancyFailure
+
+from netapp.santricity.models.symbol.external_redundancy_failure import \
+    ExternalRedundancyFailure
+
 
 class ExternalRedundancyFailureTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ExternalRedundancyFailureTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_external_redundancy_failure(self):
-          external_redundancy_failure_obj = ExternalRedundancyFailure()
-          self.assertNotEqual(external_redundancy_failure_obj, None)
-
-
+        external_redundancy_failure_obj = ExternalRedundancyFailure()
+        self.assertNotEqual(external_redundancy_failure_obj, None)

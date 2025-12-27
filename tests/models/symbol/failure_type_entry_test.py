@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.failure_type_entry import FailureTypeEntry
+
 
 class FailureTypeEntryTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FailureTypeEntryTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_failure_type_entry(self):
-          failure_type_entry_obj = FailureTypeEntry()
-          self.assertNotEqual(failure_type_entry_obj, None)
-
-
+        failure_type_entry_obj = FailureTypeEntry()
+        self.assertNotEqual(failure_type_entry_obj, None)

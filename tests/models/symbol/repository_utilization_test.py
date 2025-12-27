@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.repository_utilization import RepositoryUtilization
+
+from netapp.santricity.models.symbol.repository_utilization import \
+    RepositoryUtilization
+
 
 class RepositoryUtilizationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RepositoryUtilizationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_repository_utilization(self):
-          repository_utilization_obj = RepositoryUtilization()
-          self.assertNotEqual(repository_utilization_obj, None)
-
-
+        repository_utilization_obj = RepositoryUtilization()
+        self.assertNotEqual(repository_utilization_obj, None)

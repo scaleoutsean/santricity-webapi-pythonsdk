@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dbm_rec_restore_start_details import DbmRecRestoreStartDetails
+
+from netapp.santricity.models.symbol.dbm_rec_restore_start_details import \
+    DbmRecRestoreStartDetails
+
 
 class DbmRecRestoreStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DbmRecRestoreStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dbm_rec_restore_start_details(self):
-          dbm_rec_restore_start_details_obj = DbmRecRestoreStartDetails()
-          self.assertNotEqual(dbm_rec_restore_start_details_obj, None)
-
-
+        dbm_rec_restore_start_details_obj = DbmRecRestoreStartDetails()
+        self.assertNotEqual(dbm_rec_restore_start_details_obj, None)

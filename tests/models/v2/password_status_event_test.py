@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.password_status_event import PasswordStatusEvent
+
+from netapp.santricity.models.v2.password_status_event import \
+    PasswordStatusEvent
+
 
 class PasswordStatusEventTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PasswordStatusEventTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_password_status_event(self):
-          password_status_event_obj = PasswordStatusEvent()
-          self.assertNotEqual(password_status_event_obj, None)
-
-
+        password_status_event_obj = PasswordStatusEvent()
+        self.assertNotEqual(password_status_event_obj, None)

@@ -18,304 +18,278 @@ UpgradeApi.py
   NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-import sys
 import os
+import sys
+
+from ....santricity.api_client import ApiClient
+from ....santricity.configuration import Configuration
 
 # python 2 and python 3 compatibility library
 
-from ....santricity.configuration import Configuration
-from ....santricity.api_client import ApiClient
-
 
 class UpgradeApi:
-
     def __init__(self, api_client=None):
         config = Configuration()
         if api_client:
             self.api_client = api_client
         else:
             if not config.api_client:
-                config.api_client = ApiClient(context_path='/devmgr/v2')
+                config.api_client = ApiClient(context_path="/devmgr/v2")
             self.api_client = config.api_client
-    
-    
+
     def get_software_versions(self, **kwargs):
-            """
-            This operation returns version information for the software that is currently running (same as /utils/about) and the version of any staged updates. If there are no updates, the array of version data is empty. 
-            Mode: Both Embedded and Proxy. 
+        """
+        This operation returns version information for the software that is currently running (same as /utils/about) and the version of any staged updates. If there are no updates, the array of version data is empty.
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_software_versions(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :return: SoftwareVersions
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_software_versions(callback=callback_function)
 
-            """
 
-            all_params = []
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_software_versions" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
+        :return: SoftwareVersions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            resource_path = '/upgrade'.replace('{format}', 'json')
-            path_params = {}
-    
+        """
 
-            query_params = {}
-    
+        all_params = []
+        all_params.append("callback")
 
-            header_params = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_software_versions" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            form_params = []
-            local_var_files = {}
-    
+        resource_path = "/upgrade".replace("{format}", "json")
+        path_params = {}
 
-            body_params = None
-    
+        query_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        header_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type([])
+        form_params = []
+        local_var_files = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        body_params = None
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='SoftwareVersions',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="SoftwareVersions",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def start_software_download(self, **kwargs):
-            """
-            Starts a download of software updates from the update server to the staging area.<br> This operation runs asynchronously. A set of events are posted to the event queue devmgr/v2/events that indicate the status of the process 
-            Mode: Both Embedded and Proxy. 
+        """
+        Starts a download of software updates from the update server to the staging area.<br> This operation runs asynchronously. A set of events are posted to the event queue devmgr/v2/events that indicate the status of the process
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.start_software_download(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str force: 
-    
-            :return: UpgradeManagerResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.start_software_download(callback=callback_function)
 
-            """
 
-            all_params = ['force']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method start_software_download" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-    
+        :param str force:
 
-            resource_path = '/upgrade/download'.replace('{format}', 'json')
-            path_params = {}
-    
+        :return: UpgradeManagerResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
-            if 'force' in params:
-                query_params['force'] = params['force']
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["force"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method start_software_download" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        resource_path = "/upgrade/download".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        query_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type([])
+        if "force" in params:
+            query_params["force"] = params["force"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        header_params = {}
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='UpgradeManagerResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="UpgradeManagerResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def start_software_reload(self, **kwargs):
-            """
-            Starts a reload of the software. If any updates are downloaded, they will be loaded.<br> This operation runs asynchronously. A set of events are posted to the event queue devmgr/v2/events that indicate the status of the process 
-            Mode: Both Embedded and Proxy. 
+        """
+        Starts a reload of the software. If any updates are downloaded, they will be loaded.<br> This operation runs asynchronously. A set of events are posted to the event queue devmgr/v2/events that indicate the status of the process
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.start_software_reload(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :return: UpgradeManagerResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
-
-            """
-
-            all_params = []
-            all_params.append('callback')
-
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method start_software_reload" % key
-                    )
-                params[key] = val
-            del params['kwargs']
-
-    
-
-            resource_path = '/upgrade/reload'.replace('{format}', 'json')
-            path_params = {}
-    
-
-            query_params = {}
-    
-
-            header_params = {}
-    
-
-            form_params = []
-            local_var_files = {}
-    
-
-            body_params = None
-    
-
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
-
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type([])
-
-            # Authentication setting
-            auth_settings = ['basicAuth']
-
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='UpgradeManagerResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        >>> thread = api.start_software_reload(callback=callback_function)
 
 
 
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
+        :return: UpgradeManagerResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
+        """
 
+        all_params = []
+        all_params.append("callback")
 
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method start_software_reload" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
+        resource_path = "/upgrade/reload".replace("{format}", "json")
+        path_params = {}
 
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="UpgradeManagerResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response

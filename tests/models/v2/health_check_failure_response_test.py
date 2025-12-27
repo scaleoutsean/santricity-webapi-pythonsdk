@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.health_check_failure_response import HealthCheckFailureResponse
+
+from netapp.santricity.models.v2.health_check_failure_response import \
+    HealthCheckFailureResponse
+
 
 class HealthCheckFailureResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HealthCheckFailureResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_health_check_failure_response(self):
-          health_check_failure_response_obj = HealthCheckFailureResponse()
-          self.assertNotEqual(health_check_failure_response_obj, None)
-
-
+        health_check_failure_response_obj = HealthCheckFailureResponse()
+        self.assertNotEqual(health_check_failure_response_obj, None)

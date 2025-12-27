@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_role_change_cancel_descriptor import AsyncMirrorGroupRoleChangeCancelDescriptor
+
+from netapp.santricity.models.symbol.async_mirror_group_role_change_cancel_descriptor import \
+    AsyncMirrorGroupRoleChangeCancelDescriptor
+
 
 class AsyncMirrorGroupRoleChangeCancelDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AsyncMirrorGroupRoleChangeCancelDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_role_change_cancel_descriptor(self):
-          async_mirror_group_role_change_cancel_descriptor_obj = AsyncMirrorGroupRoleChangeCancelDescriptor()
-          self.assertNotEqual(async_mirror_group_role_change_cancel_descriptor_obj, None)
-
-
+        async_mirror_group_role_change_cancel_descriptor_obj = (
+            AsyncMirrorGroupRoleChangeCancelDescriptor()
+        )
+        self.assertNotEqual(async_mirror_group_role_change_cancel_descriptor_obj, None)

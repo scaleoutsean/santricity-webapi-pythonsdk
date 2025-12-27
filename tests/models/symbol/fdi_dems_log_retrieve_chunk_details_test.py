@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.fdi_dems_log_retrieve_chunk_details import FdiDemsLogRetrieveChunkDetails
+
+from netapp.santricity.models.symbol.fdi_dems_log_retrieve_chunk_details import \
+    FdiDemsLogRetrieveChunkDetails
+
 
 class FdiDemsLogRetrieveChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FdiDemsLogRetrieveChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fdi_dems_log_retrieve_chunk_details(self):
-          fdi_dems_log_retrieve_chunk_details_obj = FdiDemsLogRetrieveChunkDetails()
-          self.assertNotEqual(fdi_dems_log_retrieve_chunk_details_obj, None)
-
-
+        fdi_dems_log_retrieve_chunk_details_obj = FdiDemsLogRetrieveChunkDetails()
+        self.assertNotEqual(fdi_dems_log_retrieve_chunk_details_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.drawer import Drawer
+
 
 class DrawerTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DrawerTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drawer(self):
-          drawer_obj = Drawer()
-          self.assertNotEqual(drawer_obj, None)
-
-
+        drawer_obj = Drawer()
+        self.assertNotEqual(drawer_obj, None)

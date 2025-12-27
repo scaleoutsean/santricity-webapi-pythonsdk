@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.configuration_db_validation_check import ConfigurationDbValidationCheck
+
+from netapp.santricity.models.v2.configuration_db_validation_check import \
+    ConfigurationDbValidationCheck
+
 
 class ConfigurationDbValidationCheckTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ConfigurationDbValidationCheckTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_configuration_db_validation_check(self):
-          configuration_db_validation_check_obj = ConfigurationDbValidationCheck()
-          self.assertNotEqual(configuration_db_validation_check_obj, None)
-
-
+        configuration_db_validation_check_obj = ConfigurationDbValidationCheck()
+        self.assertNotEqual(configuration_db_validation_check_obj, None)

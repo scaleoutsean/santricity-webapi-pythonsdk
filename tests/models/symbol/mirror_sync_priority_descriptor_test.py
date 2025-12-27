@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mirror_sync_priority_descriptor import MirrorSyncPriorityDescriptor
+
+from netapp.santricity.models.symbol.mirror_sync_priority_descriptor import \
+    MirrorSyncPriorityDescriptor
+
 
 class MirrorSyncPriorityDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MirrorSyncPriorityDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mirror_sync_priority_descriptor(self):
-          mirror_sync_priority_descriptor_obj = MirrorSyncPriorityDescriptor()
-          self.assertNotEqual(mirror_sync_priority_descriptor_obj, None)
-
-
+        mirror_sync_priority_descriptor_obj = MirrorSyncPriorityDescriptor()
+        self.assertNotEqual(mirror_sync_priority_descriptor_obj, None)

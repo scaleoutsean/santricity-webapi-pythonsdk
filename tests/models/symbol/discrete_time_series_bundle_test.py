@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.discrete_time_series_bundle import DiscreteTimeSeriesBundle
+
+from netapp.santricity.models.symbol.discrete_time_series_bundle import \
+    DiscreteTimeSeriesBundle
+
 
 class DiscreteTimeSeriesBundleTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiscreteTimeSeriesBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_discrete_time_series_bundle(self):
-          discrete_time_series_bundle_obj = DiscreteTimeSeriesBundle()
-          self.assertNotEqual(discrete_time_series_bundle_obj, None)
-
-
+        discrete_time_series_bundle_obj = DiscreteTimeSeriesBundle()
+        self.assertNotEqual(discrete_time_series_bundle_obj, None)

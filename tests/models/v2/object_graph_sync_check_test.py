@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.object_graph_sync_check import ObjectGraphSyncCheck
+
+from netapp.santricity.models.v2.object_graph_sync_check import \
+    ObjectGraphSyncCheck
+
 
 class ObjectGraphSyncCheckTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ObjectGraphSyncCheckTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_object_graph_sync_check(self):
-          object_graph_sync_check_obj = ObjectGraphSyncCheck()
-          self.assertNotEqual(object_graph_sync_check_obj, None)
-
-
+        object_graph_sync_check_obj = ObjectGraphSyncCheck()
+        self.assertNotEqual(object_graph_sync_check_obj, None)

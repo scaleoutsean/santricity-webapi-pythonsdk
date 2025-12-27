@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.export_dependency import ExportDependency
+
 
 class ExportDependencyTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ExportDependencyTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_export_dependency(self):
-          export_dependency_obj = ExportDependency()
-          self.assertNotEqual(export_dependency_obj, None)
-
-
+        export_dependency_obj = ExportDependency()
+        self.assertNotEqual(export_dependency_obj, None)

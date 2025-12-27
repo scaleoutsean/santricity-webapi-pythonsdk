@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_statistical_data import IscsiStatisticalData
+
+from netapp.santricity.models.symbol.iscsi_statistical_data import \
+    IscsiStatisticalData
+
 
 class IscsiStatisticalDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiStatisticalDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_statistical_data(self):
-          iscsi_statistical_data_obj = IscsiStatisticalData()
-          self.assertNotEqual(iscsi_statistical_data_obj, None)
-
-
+        iscsi_statistical_data_obj = IscsiStatisticalData()
+        self.assertNotEqual(iscsi_statistical_data_obj, None)

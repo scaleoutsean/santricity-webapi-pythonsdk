@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.raw_data_transfer_cancel_desc import RawDataTransferCancelDesc
+
+from netapp.santricity.models.symbol.raw_data_transfer_cancel_desc import \
+    RawDataTransferCancelDesc
+
 
 class RawDataTransferCancelDescTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RawDataTransferCancelDescTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_raw_data_transfer_cancel_desc(self):
-          raw_data_transfer_cancel_desc_obj = RawDataTransferCancelDesc()
-          self.assertNotEqual(raw_data_transfer_cancel_desc_obj, None)
-
-
+        raw_data_transfer_cancel_desc_obj = RawDataTransferCancelDesc()
+        self.assertNotEqual(raw_data_transfer_cancel_desc_obj, None)

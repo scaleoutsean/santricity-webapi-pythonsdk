@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.chassis_idtlv import ChassisIDTLV
+
 
 class ChassisIDTLVTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ChassisIDTLVTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_chassis_idtlv(self):
-          chassis_idtlv_obj = ChassisIDTLV()
-          self.assertNotEqual(chassis_idtlv_obj, None)
-
-
+        chassis_idtlv_obj = ChassisIDTLV()
+        self.assertNotEqual(chassis_idtlv_obj, None)

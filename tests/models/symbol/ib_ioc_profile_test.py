@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ib_ioc_profile import IbIocProfile
+
 
 class IbIocProfileTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class IbIocProfileTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_ioc_profile(self):
-          ib_ioc_profile_obj = IbIocProfile()
-          self.assertNotEqual(ib_ioc_profile_obj, None)
-
-
+        ib_ioc_profile_obj = IbIocProfile()
+        self.assertNotEqual(ib_ioc_profile_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.physical_drive_type_data import PhysicalDriveTypeData
+
+from netapp.santricity.models.symbol.physical_drive_type_data import \
+    PhysicalDriveTypeData
+
 
 class PhysicalDriveTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PhysicalDriveTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_physical_drive_type_data(self):
-          physical_drive_type_data_obj = PhysicalDriveTypeData()
-          self.assertNotEqual(physical_drive_type_data_obj, None)
-
-
+        physical_drive_type_data_obj = PhysicalDriveTypeData()
+        self.assertNotEqual(physical_drive_type_data_obj, None)

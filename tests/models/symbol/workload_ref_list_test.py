@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.workload_ref_list import WorkloadRefList
+
 
 class WorkloadRefListTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class WorkloadRefListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_workload_ref_list(self):
-          workload_ref_list_obj = WorkloadRefList()
-          self.assertNotEqual(workload_ref_list_obj, None)
-
-
+        workload_ref_list_obj = WorkloadRefList()
+        self.assertNotEqual(workload_ref_list_obj, None)

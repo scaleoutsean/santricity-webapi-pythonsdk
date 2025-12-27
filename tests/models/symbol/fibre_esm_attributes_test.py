@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.fibre_esm_attributes import FibreEsmAttributes
+
+from netapp.santricity.models.symbol.fibre_esm_attributes import \
+    FibreEsmAttributes
+
 
 class FibreEsmAttributesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FibreEsmAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fibre_esm_attributes(self):
-          fibre_esm_attributes_obj = FibreEsmAttributes()
-          self.assertNotEqual(fibre_esm_attributes_obj, None)
-
-
+        fibre_esm_attributes_obj = FibreEsmAttributes()
+        self.assertNotEqual(fibre_esm_attributes_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.remote_vol_no_array import RemoteVolNoArray
+
+from netapp.santricity.models.symbol.remote_vol_no_array import \
+    RemoteVolNoArray
+
 
 class RemoteVolNoArrayTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemoteVolNoArrayTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_vol_no_array(self):
-          remote_vol_no_array_obj = RemoteVolNoArray()
-          self.assertNotEqual(remote_vol_no_array_obj, None)
-
-
+        remote_vol_no_array_obj = RemoteVolNoArray()
+        self.assertNotEqual(remote_vol_no_array_obj, None)

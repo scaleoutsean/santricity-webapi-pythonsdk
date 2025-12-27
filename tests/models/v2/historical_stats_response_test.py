@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.historical_stats_response import HistoricalStatsResponse
+
+from netapp.santricity.models.v2.historical_stats_response import \
+    HistoricalStatsResponse
+
 
 class HistoricalStatsResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HistoricalStatsResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_historical_stats_response(self):
-          historical_stats_response_obj = HistoricalStatsResponse()
-          self.assertNotEqual(historical_stats_response_obj, None)
-
-
+        historical_stats_response_obj = HistoricalStatsResponse()
+        self.assertNotEqual(historical_stats_response_obj, None)

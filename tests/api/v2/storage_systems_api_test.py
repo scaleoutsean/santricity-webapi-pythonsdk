@@ -20,405 +20,418 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.storage_systems_api import StorageSystemsApi
 
+from netapp.santricity.api.v2.storage_systems_api import StorageSystemsApi
+from netapp.santricity.rest import ApiException
 
 
 class StorageSystemsApiTest(unittest.TestCase):
-
-    
     def test_cancel_discovery_operation(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.cancel_discovery_operation()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_configure_ethernet_interfaces(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
-            storage_systems_api = api.configure_ethernet_interfaces(system_id="test", )
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
+            storage_systems_api = api.configure_ethernet_interfaces(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_discover_storage_devices(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.discover_storage_devices()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_enable_feature_pack(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
-            storage_systems_api = api.enable_feature_pack(system_id="test", key_file="test")
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
+            storage_systems_api = api.enable_feature_pack(
+                system_id="test", key_file="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_enable_premium_feature(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
-            storage_systems_api = api.enable_premium_feature(system_id="test", )
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
+            storage_systems_api = api.enable_premium_feature(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_all_folders(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_all_folders()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_all_storage_systems(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_all_storage_systems()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_discovery_results(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_discovery_results()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_ethernet_interfaces(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_ethernet_interfaces(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_filtered_object_graph(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
-            storage_systems_api = api.get_filtered_object_graph(system_id="test", )
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
+            storage_systems_api = api.get_filtered_object_graph(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_folder(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_folder(folder_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_lockdown_status_response(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_lockdown_status_response(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_object_graph(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_object_graph(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_password_status(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_password_status(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_storage_device_with_folder(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_storage_device_with_folder(folder_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_storage_system(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_storage_system(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_get_storage_system_capabilities(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.get_storage_system_capabilities(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_new_folder(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.new_folder()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_new_storage_system(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.new_storage_system()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_remove_feature_pack(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.remove_feature_pack(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_remove_folder(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.remove_folder(folder_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_remove_premium_feature(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
-            storage_systems_api = api.remove_premium_feature(system_id="test", capability="test")
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
+            storage_systems_api = api.remove_premium_feature(
+                system_id="test", capability="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_remove_storage_system(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.remove_storage_system(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_set_password(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
-            storage_systems_api = api.set_password(system_id="test", )
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
+            storage_systems_api = api.set_password(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_update_folder(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
-            storage_systems_api = api.update_folder(folder_id="test", )
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
+            storage_systems_api = api.update_folder(
+                folder_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_update_storage_device_name(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
-            storage_systems_api = api.update_storage_device_name(system_id="test", )
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
+            storage_systems_api = api.update_storage_device_name(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_update_storage_system(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
-            storage_systems_api = api.update_storage_system(system_id="test", update_request="test")
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
+            storage_systems_api = api.update_storage_system(
+                system_id="test", update_request="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
+        self.assertNotEqual(storage_systems_api, None)
+
     def test_validate_storage_system_password(self):
-       api = StorageSystemsApi()
-       storage_systems_api = None
-       try:
+        api = StorageSystemsApi()
+        storage_systems_api = None
+        try:
             storage_systems_api = api.validate_storage_system_password(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if storage_systems_api is None:
                 storage_systems_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             storage_systems_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            storage_systems_api = 1
 
-       self.assertNotEqual(storage_systems_api, None)
-    
-
-
+        self.assertNotEqual(storage_systems_api, None)

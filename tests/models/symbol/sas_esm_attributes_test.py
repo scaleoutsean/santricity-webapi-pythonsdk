@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sas_esm_attributes import SasEsmAttributes
+
 
 class SasEsmAttributesTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SasEsmAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_esm_attributes(self):
-          sas_esm_attributes_obj = SasEsmAttributes()
-          self.assertNotEqual(sas_esm_attributes_obj, None)
-
-
+        sas_esm_attributes_obj = SasEsmAttributes()
+        self.assertNotEqual(sas_esm_attributes_obj, None)

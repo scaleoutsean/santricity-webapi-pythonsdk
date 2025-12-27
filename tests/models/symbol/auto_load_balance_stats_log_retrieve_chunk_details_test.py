@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.auto_load_balance_stats_log_retrieve_chunk_details import AutoLoadBalanceStatsLogRetrieveChunkDetails
+
+from netapp.santricity.models.symbol.auto_load_balance_stats_log_retrieve_chunk_details import \
+    AutoLoadBalanceStatsLogRetrieveChunkDetails
+
 
 class AutoLoadBalanceStatsLogRetrieveChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,9 @@ class AutoLoadBalanceStatsLogRetrieveChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_auto_load_balance_stats_log_retrieve_chunk_details(self):
-          auto_load_balance_stats_log_retrieve_chunk_details_obj = AutoLoadBalanceStatsLogRetrieveChunkDetails()
-          self.assertNotEqual(auto_load_balance_stats_log_retrieve_chunk_details_obj, None)
-
-
+        auto_load_balance_stats_log_retrieve_chunk_details_obj = (
+            AutoLoadBalanceStatsLogRetrieveChunkDetails()
+        )
+        self.assertNotEqual(
+            auto_load_balance_stats_log_retrieve_chunk_details_obj, None
+        )

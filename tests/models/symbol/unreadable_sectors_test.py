@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.unreadable_sectors import UnreadableSectors
+
+from netapp.santricity.models.symbol.unreadable_sectors import \
+    UnreadableSectors
+
 
 class UnreadableSectorsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class UnreadableSectorsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_unreadable_sectors(self):
-          unreadable_sectors_obj = UnreadableSectors()
-          self.assertNotEqual(unreadable_sectors_obj, None)
-
-
+        unreadable_sectors_obj = UnreadableSectors()
+        self.assertNotEqual(unreadable_sectors_obj, None)

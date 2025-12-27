@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.recover_volume_descriptor import RecoverVolumeDescriptor
+
+from netapp.santricity.models.symbol.recover_volume_descriptor import \
+    RecoverVolumeDescriptor
+
 
 class RecoverVolumeDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RecoverVolumeDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_recover_volume_descriptor(self):
-          recover_volume_descriptor_obj = RecoverVolumeDescriptor()
-          self.assertNotEqual(recover_volume_descriptor_obj, None)
-
-
+        recover_volume_descriptor_obj = RecoverVolumeDescriptor()
+        self.assertNotEqual(recover_volume_descriptor_obj, None)

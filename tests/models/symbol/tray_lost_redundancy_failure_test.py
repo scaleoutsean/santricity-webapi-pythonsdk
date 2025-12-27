@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.tray_lost_redundancy_failure import TrayLostRedundancyFailure
+
+from netapp.santricity.models.symbol.tray_lost_redundancy_failure import \
+    TrayLostRedundancyFailure
+
 
 class TrayLostRedundancyFailureTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class TrayLostRedundancyFailureTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_tray_lost_redundancy_failure(self):
-          tray_lost_redundancy_failure_obj = TrayLostRedundancyFailure()
-          self.assertNotEqual(tray_lost_redundancy_failure_obj, None)
-
-
+        tray_lost_redundancy_failure_obj = TrayLostRedundancyFailure()
+        self.assertNotEqual(tray_lost_redundancy_failure_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.wrapped_lock_key_list import WrappedLockKeyList
+
+from netapp.santricity.models.symbol.wrapped_lock_key_list import \
+    WrappedLockKeyList
+
 
 class WrappedLockKeyListTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class WrappedLockKeyListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_wrapped_lock_key_list(self):
-          wrapped_lock_key_list_obj = WrappedLockKeyList()
-          self.assertNotEqual(wrapped_lock_key_list_obj, None)
-
-
+        wrapped_lock_key_list_obj = WrappedLockKeyList()
+        self.assertNotEqual(wrapped_lock_key_list_obj, None)

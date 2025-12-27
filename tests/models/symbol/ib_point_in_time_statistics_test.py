@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ib_point_in_time_statistics import IbPointInTimeStatistics
+
+from netapp.santricity.models.symbol.ib_point_in_time_statistics import \
+    IbPointInTimeStatistics
+
 
 class IbPointInTimeStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IbPointInTimeStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_point_in_time_statistics(self):
-          ib_point_in_time_statistics_obj = IbPointInTimeStatistics()
-          self.assertNotEqual(ib_point_in_time_statistics_obj, None)
-
-
+        ib_point_in_time_statistics_obj = IbPointInTimeStatistics()
+        self.assertNotEqual(ib_point_in_time_statistics_obj, None)

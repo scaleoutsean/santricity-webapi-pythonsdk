@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.get_iscsi_sessions_filter import GetIscsiSessionsFilter
+
+from netapp.santricity.models.symbol.get_iscsi_sessions_filter import \
+    GetIscsiSessionsFilter
+
 
 class GetIscsiSessionsFilterTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class GetIscsiSessionsFilterTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_get_iscsi_sessions_filter(self):
-          get_iscsi_sessions_filter_obj = GetIscsiSessionsFilter()
-          self.assertNotEqual(get_iscsi_sessions_filter_obj, None)
-
-
+        get_iscsi_sessions_filter_obj = GetIscsiSessionsFilter()
+        self.assertNotEqual(get_iscsi_sessions_filter_obj, None)

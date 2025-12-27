@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thin_volume_threshold_update_descriptor import ThinVolumeThresholdUpdateDescriptor
+
+from netapp.santricity.models.symbol.thin_volume_threshold_update_descriptor import \
+    ThinVolumeThresholdUpdateDescriptor
+
 
 class ThinVolumeThresholdUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class ThinVolumeThresholdUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_threshold_update_descriptor(self):
-          thin_volume_threshold_update_descriptor_obj = ThinVolumeThresholdUpdateDescriptor()
-          self.assertNotEqual(thin_volume_threshold_update_descriptor_obj, None)
-
-
+        thin_volume_threshold_update_descriptor_obj = (
+            ThinVolumeThresholdUpdateDescriptor()
+        )
+        self.assertNotEqual(thin_volume_threshold_update_descriptor_obj, None)

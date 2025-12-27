@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.rtr_update_descriptor import RTRUpdateDescriptor
+
+from netapp.santricity.models.symbol.rtr_update_descriptor import \
+    RTRUpdateDescriptor
+
 
 class RTRUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RTRUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_rtr_update_descriptor(self):
-          rtr_update_descriptor_obj = RTRUpdateDescriptor()
-          self.assertNotEqual(rtr_update_descriptor_obj, None)
-
-
+        rtr_update_descriptor_obj = RTRUpdateDescriptor()
+        self.assertNotEqual(rtr_update_descriptor_obj, None)

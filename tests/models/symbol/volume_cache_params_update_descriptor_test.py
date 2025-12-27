@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_cache_params_update_descriptor import VolumeCacheParamsUpdateDescriptor
+
+from netapp.santricity.models.symbol.volume_cache_params_update_descriptor import \
+    VolumeCacheParamsUpdateDescriptor
+
 
 class VolumeCacheParamsUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeCacheParamsUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_cache_params_update_descriptor(self):
-          volume_cache_params_update_descriptor_obj = VolumeCacheParamsUpdateDescriptor()
-          self.assertNotEqual(volume_cache_params_update_descriptor_obj, None)
-
-
+        volume_cache_params_update_descriptor_obj = VolumeCacheParamsUpdateDescriptor()
+        self.assertNotEqual(volume_cache_params_update_descriptor_obj, None)

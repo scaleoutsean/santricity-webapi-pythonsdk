@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_connectivity_test_results import AsyncMirrorGroupConnectivityTestResults
+
+from netapp.santricity.models.symbol.async_mirror_group_connectivity_test_results import \
+    AsyncMirrorGroupConnectivityTestResults
+
 
 class AsyncMirrorGroupConnectivityTestResultsTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AsyncMirrorGroupConnectivityTestResultsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_connectivity_test_results(self):
-          async_mirror_group_connectivity_test_results_obj = AsyncMirrorGroupConnectivityTestResults()
-          self.assertNotEqual(async_mirror_group_connectivity_test_results_obj, None)
-
-
+        async_mirror_group_connectivity_test_results_obj = (
+            AsyncMirrorGroupConnectivityTestResults()
+        )
+        self.assertNotEqual(async_mirror_group_connectivity_test_results_obj, None)

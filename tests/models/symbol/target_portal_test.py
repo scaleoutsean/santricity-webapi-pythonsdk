@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.target_portal import TargetPortal
+
 
 class TargetPortalTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class TargetPortalTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_target_portal(self):
-          target_portal_obj = TargetPortal()
-          self.assertNotEqual(target_portal_obj, None)
-
-
+        target_portal_obj = TargetPortal()
+        self.assertNotEqual(target_portal_obj, None)

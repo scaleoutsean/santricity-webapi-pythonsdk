@@ -20,293 +20,305 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.mapping_api import MappingApi
 
+from netapp.santricity.api.v2.mapping_api import MappingApi
+from netapp.santricity.rest import ApiException
 
 
 class MappingApiTest(unittest.TestCase):
-
-    
     def test_get_all_host_groups(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_all_host_groups(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_all_host_port_types(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_all_host_port_types(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_all_host_type_values(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_all_host_type_values(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_all_host_types(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_all_host_types(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_all_hosts(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_all_hosts(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_host(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_host(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_host_group(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_host_group(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_host_port_type(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_host_port_type(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_host_type(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_host_type(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_host_type_values(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_host_type_values(system_id="test", index="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_get_unassociated_host_ports(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.get_unassociated_host_ports(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_move_host(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
-            mapping_api = api.move_host(system_id="test", host_id="test", )
+        api = MappingApi()
+        mapping_api = None
+        try:
+            mapping_api = api.move_host(
+                system_id="test",
+                host_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_new_host(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
-            mapping_api = api.new_host(system_id="test", )
+        api = MappingApi()
+        mapping_api = None
+        try:
+            mapping_api = api.new_host(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_new_host_group(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
-            mapping_api = api.new_host_group(system_id="test", )
+        api = MappingApi()
+        mapping_api = None
+        try:
+            mapping_api = api.new_host_group(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_remove_host(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.remove_host(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_remove_host_group(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
+        api = MappingApi()
+        mapping_api = None
+        try:
             mapping_api = api.remove_host_group(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_set_host_port_type_default(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
-            mapping_api = api.set_host_port_type_default(system_id="test", )
+        api = MappingApi()
+        mapping_api = None
+        try:
+            mapping_api = api.set_host_port_type_default(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_set_host_type_default(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
-            mapping_api = api.set_host_type_default(system_id="test", )
+        api = MappingApi()
+        mapping_api = None
+        try:
+            mapping_api = api.set_host_type_default(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_update_host(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
-            mapping_api = api.update_host(system_id="test", id="test", )
+        api = MappingApi()
+        mapping_api = None
+        try:
+            mapping_api = api.update_host(
+                system_id="test",
+                id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
+        self.assertNotEqual(mapping_api, None)
+
     def test_update_host_group(self):
-       api = MappingApi()
-       mapping_api = None
-       try:
-            mapping_api = api.update_host_group(system_id="test", id="test", )
+        api = MappingApi()
+        mapping_api = None
+        try:
+            mapping_api = api.update_host_group(
+                system_id="test",
+                id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if mapping_api is None:
                 mapping_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             mapping_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            mapping_api = 1
 
-       self.assertNotEqual(mapping_api, None)
-    
-
-
+        self.assertNotEqual(mapping_api, None)

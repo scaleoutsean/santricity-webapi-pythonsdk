@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.disk_pool_reduction_drive_count_return import DiskPoolReductionDriveCountReturn
+
+from netapp.santricity.models.symbol.disk_pool_reduction_drive_count_return import \
+    DiskPoolReductionDriveCountReturn
+
 
 class DiskPoolReductionDriveCountReturnTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiskPoolReductionDriveCountReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_reduction_drive_count_return(self):
-          disk_pool_reduction_drive_count_return_obj = DiskPoolReductionDriveCountReturn()
-          self.assertNotEqual(disk_pool_reduction_drive_count_return_obj, None)
-
-
+        disk_pool_reduction_drive_count_return_obj = DiskPoolReductionDriveCountReturn()
+        self.assertNotEqual(disk_pool_reduction_drive_count_return_obj, None)

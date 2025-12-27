@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thin_volume_ref_list import ThinVolumeRefList
+
+from netapp.santricity.models.symbol.thin_volume_ref_list import \
+    ThinVolumeRefList
+
 
 class ThinVolumeRefListTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ThinVolumeRefListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_ref_list(self):
-          thin_volume_ref_list_obj = ThinVolumeRefList()
-          self.assertNotEqual(thin_volume_ref_list_obj, None)
-
-
+        thin_volume_ref_list_obj = ThinVolumeRefList()
+        self.assertNotEqual(thin_volume_ref_list_obj, None)

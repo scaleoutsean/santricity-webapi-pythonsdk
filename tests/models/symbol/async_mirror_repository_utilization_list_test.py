@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_repository_utilization_list import AsyncMirrorRepositoryUtilizationList
+
+from netapp.santricity.models.symbol.async_mirror_repository_utilization_list import \
+    AsyncMirrorRepositoryUtilizationList
+
 
 class AsyncMirrorRepositoryUtilizationListTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AsyncMirrorRepositoryUtilizationListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_repository_utilization_list(self):
-          async_mirror_repository_utilization_list_obj = AsyncMirrorRepositoryUtilizationList()
-          self.assertNotEqual(async_mirror_repository_utilization_list_obj, None)
-
-
+        async_mirror_repository_utilization_list_obj = (
+            AsyncMirrorRepositoryUtilizationList()
+        )
+        self.assertNotEqual(async_mirror_repository_utilization_list_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.nvsram_region_id_and_host_index import NVSRAMRegionIdAndHostIndex
+
+from netapp.santricity.models.symbol.nvsram_region_id_and_host_index import \
+    NVSRAMRegionIdAndHostIndex
+
 
 class NVSRAMRegionIdAndHostIndexTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class NVSRAMRegionIdAndHostIndexTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_nvsram_region_id_and_host_index(self):
-          nvsram_region_id_and_host_index_obj = NVSRAMRegionIdAndHostIndex()
-          self.assertNotEqual(nvsram_region_id_and_host_index_obj, None)
-
-
+        nvsram_region_id_and_host_index_obj = NVSRAMRegionIdAndHostIndex()
+        self.assertNotEqual(nvsram_region_id_and_host_index_obj, None)

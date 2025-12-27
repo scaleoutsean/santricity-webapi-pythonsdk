@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.level import Level
+
 
 class LevelTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class LevelTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_level(self):
-          level_obj = Level()
-          self.assertNotEqual(level_obj, None)
-
-
+        level_obj = Level()
+        self.assertNotEqual(level_obj, None)

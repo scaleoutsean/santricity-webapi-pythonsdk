@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.power_supply import PowerSupply
+
 
 class PowerSupplyTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PowerSupplyTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_power_supply(self):
-          power_supply_obj = PowerSupply()
-          self.assertNotEqual(power_supply_obj, None)
-
-
+        power_supply_obj = PowerSupply()
+        self.assertNotEqual(power_supply_obj, None)

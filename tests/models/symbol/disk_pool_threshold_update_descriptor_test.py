@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.disk_pool_threshold_update_descriptor import DiskPoolThresholdUpdateDescriptor
+
+from netapp.santricity.models.symbol.disk_pool_threshold_update_descriptor import \
+    DiskPoolThresholdUpdateDescriptor
+
 
 class DiskPoolThresholdUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiskPoolThresholdUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_threshold_update_descriptor(self):
-          disk_pool_threshold_update_descriptor_obj = DiskPoolThresholdUpdateDescriptor()
-          self.assertNotEqual(disk_pool_threshold_update_descriptor_obj, None)
-
-
+        disk_pool_threshold_update_descriptor_obj = DiskPoolThresholdUpdateDescriptor()
+        self.assertNotEqual(disk_pool_threshold_update_descriptor_obj, None)

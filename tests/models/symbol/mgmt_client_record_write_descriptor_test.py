@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mgmt_client_record_write_descriptor import MgmtClientRecordWriteDescriptor
+
+from netapp.santricity.models.symbol.mgmt_client_record_write_descriptor import \
+    MgmtClientRecordWriteDescriptor
+
 
 class MgmtClientRecordWriteDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MgmtClientRecordWriteDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mgmt_client_record_write_descriptor(self):
-          mgmt_client_record_write_descriptor_obj = MgmtClientRecordWriteDescriptor()
-          self.assertNotEqual(mgmt_client_record_write_descriptor_obj, None)
-
-
+        mgmt_client_record_write_descriptor_obj = MgmtClientRecordWriteDescriptor()
+        self.assertNotEqual(mgmt_client_record_write_descriptor_obj, None)

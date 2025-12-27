@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.enhanced_ib_baselined_statistics import EnhancedIbBaselinedStatistics
+
+from netapp.santricity.models.symbol.enhanced_ib_baselined_statistics import \
+    EnhancedIbBaselinedStatistics
+
 
 class EnhancedIbBaselinedStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EnhancedIbBaselinedStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_enhanced_ib_baselined_statistics(self):
-          enhanced_ib_baselined_statistics_obj = EnhancedIbBaselinedStatistics()
-          self.assertNotEqual(enhanced_ib_baselined_statistics_obj, None)
-
-
+        enhanced_ib_baselined_statistics_obj = EnhancedIbBaselinedStatistics()
+        self.assertNotEqual(enhanced_ib_baselined_statistics_obj, None)

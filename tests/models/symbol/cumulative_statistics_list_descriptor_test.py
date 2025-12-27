@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.cumulative_statistics_list_descriptor import CumulativeStatisticsListDescriptor
+
+from netapp.santricity.models.symbol.cumulative_statistics_list_descriptor import \
+    CumulativeStatisticsListDescriptor
+
 
 class CumulativeStatisticsListDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CumulativeStatisticsListDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cumulative_statistics_list_descriptor(self):
-          cumulative_statistics_list_descriptor_obj = CumulativeStatisticsListDescriptor()
-          self.assertNotEqual(cumulative_statistics_list_descriptor_obj, None)
-
-
+        cumulative_statistics_list_descriptor_obj = CumulativeStatisticsListDescriptor()
+        self.assertNotEqual(cumulative_statistics_list_descriptor_obj, None)

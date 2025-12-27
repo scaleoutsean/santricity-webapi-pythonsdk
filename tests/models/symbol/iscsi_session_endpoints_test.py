@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_session_endpoints import IscsiSessionEndpoints
+
+from netapp.santricity.models.symbol.iscsi_session_endpoints import \
+    IscsiSessionEndpoints
+
 
 class IscsiSessionEndpointsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiSessionEndpointsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_session_endpoints(self):
-          iscsi_session_endpoints_obj = IscsiSessionEndpoints()
-          self.assertNotEqual(iscsi_session_endpoints_obj, None)
-
-
+        iscsi_session_endpoints_obj = IscsiSessionEndpoints()
+        self.assertNotEqual(iscsi_session_endpoints_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.channel_port_pair import ChannelPortPair
+
 
 class ChannelPortPairTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ChannelPortPairTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_channel_port_pair(self):
-          channel_port_pair_obj = ChannelPortPair()
-          self.assertNotEqual(channel_port_pair_obj, None)
-
-
+        channel_port_pair_obj = ChannelPortPair()
+        self.assertNotEqual(channel_port_pair_obj, None)

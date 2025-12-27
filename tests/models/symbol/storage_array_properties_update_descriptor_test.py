@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.storage_array_properties_update_descriptor import StorageArrayPropertiesUpdateDescriptor
+
+from netapp.santricity.models.symbol.storage_array_properties_update_descriptor import \
+    StorageArrayPropertiesUpdateDescriptor
+
 
 class StorageArrayPropertiesUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class StorageArrayPropertiesUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_storage_array_properties_update_descriptor(self):
-          storage_array_properties_update_descriptor_obj = StorageArrayPropertiesUpdateDescriptor()
-          self.assertNotEqual(storage_array_properties_update_descriptor_obj, None)
-
-
+        storage_array_properties_update_descriptor_obj = (
+            StorageArrayPropertiesUpdateDescriptor()
+        )
+        self.assertNotEqual(storage_array_properties_update_descriptor_obj, None)

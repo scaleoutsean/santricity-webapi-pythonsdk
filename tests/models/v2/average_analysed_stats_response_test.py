@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.average_analysed_stats_response import AverageAnalysedStatsResponse
+
+from netapp.santricity.models.v2.average_analysed_stats_response import \
+    AverageAnalysedStatsResponse
+
 
 class AverageAnalysedStatsResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AverageAnalysedStatsResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_average_analysed_stats_response(self):
-          average_analysed_stats_response_obj = AverageAnalysedStatsResponse()
-          self.assertNotEqual(average_analysed_stats_response_obj, None)
-
-
+        average_analysed_stats_response_obj = AverageAnalysedStatsResponse()
+        self.assertNotEqual(average_analysed_stats_response_obj, None)

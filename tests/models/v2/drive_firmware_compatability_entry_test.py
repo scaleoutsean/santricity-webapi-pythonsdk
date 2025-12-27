@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.drive_firmware_compatability_entry import DriveFirmwareCompatabilityEntry
+
+from netapp.santricity.models.v2.drive_firmware_compatability_entry import \
+    DriveFirmwareCompatabilityEntry
+
 
 class DriveFirmwareCompatabilityEntryTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveFirmwareCompatabilityEntryTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_firmware_compatability_entry(self):
-          drive_firmware_compatability_entry_obj = DriveFirmwareCompatabilityEntry()
-          self.assertNotEqual(drive_firmware_compatability_entry_obj, None)
-
-
+        drive_firmware_compatability_entry_obj = DriveFirmwareCompatabilityEntry()
+        self.assertNotEqual(drive_firmware_compatability_entry_obj, None)

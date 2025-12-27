@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.volume_cache import VolumeCache
+
 
 class VolumeCacheTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VolumeCacheTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_cache(self):
-          volume_cache_obj = VolumeCache()
-          self.assertNotEqual(volume_cache_obj, None)
-
-
+        volume_cache_obj = VolumeCache()
+        self.assertNotEqual(volume_cache_obj, None)

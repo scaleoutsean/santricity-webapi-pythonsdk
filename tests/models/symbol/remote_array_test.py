@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.remote_array import RemoteArray
+
 
 class RemoteArrayTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RemoteArrayTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_array(self):
-          remote_array_obj = RemoteArray()
-          self.assertNotEqual(remote_array_obj, None)
-
-
+        remote_array_obj = RemoteArray()
+        self.assertNotEqual(remote_array_obj, None)

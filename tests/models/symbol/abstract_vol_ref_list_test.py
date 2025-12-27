@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.abstract_vol_ref_list import AbstractVolRefList
+
+from netapp.santricity.models.symbol.abstract_vol_ref_list import \
+    AbstractVolRefList
+
 
 class AbstractVolRefListTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AbstractVolRefListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_abstract_vol_ref_list(self):
-          abstract_vol_ref_list_obj = AbstractVolRefList()
-          self.assertNotEqual(abstract_vol_ref_list_obj, None)
-
-
+        abstract_vol_ref_list_obj = AbstractVolRefList()
+        self.assertNotEqual(abstract_vol_ref_list_obj, None)

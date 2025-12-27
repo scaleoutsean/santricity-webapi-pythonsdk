@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.add_batch_cg_members_request import AddBatchCGMembersRequest
+
+from netapp.santricity.models.v2.add_batch_cg_members_request import \
+    AddBatchCGMembersRequest
+
 
 class AddBatchCGMembersRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AddBatchCGMembersRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_add_batch_cg_members_request(self):
-          add_batch_cg_members_request_obj = AddBatchCGMembersRequest()
-          self.assertNotEqual(add_batch_cg_members_request_obj, None)
-
-
+        add_batch_cg_members_request_obj = AddBatchCGMembersRequest()
+        self.assertNotEqual(add_batch_cg_members_request_obj, None)

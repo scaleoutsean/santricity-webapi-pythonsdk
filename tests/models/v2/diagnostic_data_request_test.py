@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.diagnostic_data_request import DiagnosticDataRequest
+
+from netapp.santricity.models.v2.diagnostic_data_request import \
+    DiagnosticDataRequest
+
 
 class DiagnosticDataRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiagnosticDataRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_diagnostic_data_request(self):
-          diagnostic_data_request_obj = DiagnosticDataRequest()
-          self.assertNotEqual(diagnostic_data_request_obj, None)
-
-
+        diagnostic_data_request_obj = DiagnosticDataRequest()
+        self.assertNotEqual(diagnostic_data_request_obj, None)

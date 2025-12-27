@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.disk_pool_data import DiskPoolData
+
 
 class DiskPoolDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DiskPoolDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_data(self):
-          disk_pool_data_obj = DiskPoolData()
-          self.assertNotEqual(disk_pool_data_obj, None)
-
-
+        disk_pool_data_obj = DiskPoolData()
+        self.assertNotEqual(disk_pool_data_obj, None)

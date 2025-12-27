@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_group_deletion_descriptor import PITGroupDeletionDescriptor
+
+from netapp.santricity.models.symbol.pit_group_deletion_descriptor import \
+    PITGroupDeletionDescriptor
+
 
 class PITGroupDeletionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITGroupDeletionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_group_deletion_descriptor(self):
-          pit_group_deletion_descriptor_obj = PITGroupDeletionDescriptor()
-          self.assertNotEqual(pit_group_deletion_descriptor_obj, None)
-
-
+        pit_group_deletion_descriptor_obj = PITGroupDeletionDescriptor()
+        self.assertNotEqual(pit_group_deletion_descriptor_obj, None)

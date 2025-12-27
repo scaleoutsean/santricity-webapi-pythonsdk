@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.initiator_location import InitiatorLocation
+
+from netapp.santricity.models.symbol.initiator_location import \
+    InitiatorLocation
+
 
 class InitiatorLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class InitiatorLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_initiator_location(self):
-          initiator_location_obj = InitiatorLocation()
-          self.assertNotEqual(initiator_location_obj, None)
-
-
+        initiator_location_obj = InitiatorLocation()
+        self.assertNotEqual(initiator_location_obj, None)

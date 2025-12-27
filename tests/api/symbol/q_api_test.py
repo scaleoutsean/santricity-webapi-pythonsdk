@@ -20,27 +20,25 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.q_api import QApi
 
+from netapp.santricity.api.symbol.q_api import QApi
+from netapp.santricity.rest import ApiException
 
 
 class QApiTest(unittest.TestCase):
-
-    
     def test_symbol_quiesce_controller(self):
-       api = QApi()
-       q_api = None
-       try:
-            q_api = api.symbol_quiesce_controller(system_id="test", body="test", )
+        api = QApi()
+        q_api = None
+        try:
+            q_api = api.symbol_quiesce_controller(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if q_api is None:
                 q_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             q_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            q_api = 1
 
-       self.assertNotEqual(q_api, None)
-    
-
-
+        self.assertNotEqual(q_api, None)

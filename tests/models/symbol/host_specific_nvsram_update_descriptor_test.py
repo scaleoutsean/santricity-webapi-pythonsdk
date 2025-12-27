@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_specific_nvsram_update_descriptor import HostSpecificNVSRAMUpdateDescriptor
+
+from netapp.santricity.models.symbol.host_specific_nvsram_update_descriptor import \
+    HostSpecificNVSRAMUpdateDescriptor
+
 
 class HostSpecificNVSRAMUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class HostSpecificNVSRAMUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_specific_nvsram_update_descriptor(self):
-          host_specific_nvsram_update_descriptor_obj = HostSpecificNVSRAMUpdateDescriptor()
-          self.assertNotEqual(host_specific_nvsram_update_descriptor_obj, None)
-
-
+        host_specific_nvsram_update_descriptor_obj = (
+            HostSpecificNVSRAMUpdateDescriptor()
+        )
+        self.assertNotEqual(host_specific_nvsram_update_descriptor_obj, None)

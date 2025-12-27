@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.cfw_package_metadata import CFWPackageMetadata
+
 
 class CFWPackageMetadataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class CFWPackageMetadataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cfw_package_metadata(self):
-          cfw_package_metadata_obj = CFWPackageMetadata()
-          self.assertNotEqual(cfw_package_metadata_obj, None)
-
-
+        cfw_package_metadata_obj = CFWPackageMetadata()
+        self.assertNotEqual(cfw_package_metadata_obj, None)

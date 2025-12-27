@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.password_set_request import PasswordSetRequest
+
 
 class PasswordSetRequestTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PasswordSetRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_password_set_request(self):
-          password_set_request_obj = PasswordSetRequest()
-          self.assertNotEqual(password_set_request_obj, None)
-
-
+        password_set_request_obj = PasswordSetRequest()
+        self.assertNotEqual(password_set_request_obj, None)

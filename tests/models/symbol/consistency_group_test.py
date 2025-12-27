@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.consistency_group import ConsistencyGroup
+
 
 class ConsistencyGroupTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ConsistencyGroupTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_consistency_group(self):
-          consistency_group_obj = ConsistencyGroup()
-          self.assertNotEqual(consistency_group_obj, None)
-
-
+        consistency_group_obj = ConsistencyGroup()
+        self.assertNotEqual(consistency_group_obj, None)

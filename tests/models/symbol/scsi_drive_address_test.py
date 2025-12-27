@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.scsi_drive_address import SCSIDriveAddress
+
 
 class SCSIDriveAddressTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SCSIDriveAddressTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_scsi_drive_address(self):
-          scsi_drive_address_obj = SCSIDriveAddress()
-          self.assertNotEqual(scsi_drive_address_obj, None)
-
-
+        scsi_drive_address_obj = SCSIDriveAddress()
+        self.assertNotEqual(scsi_drive_address_obj, None)

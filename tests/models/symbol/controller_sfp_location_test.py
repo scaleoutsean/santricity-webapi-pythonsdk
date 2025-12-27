@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_sfp_location import ControllerSfpLocation
+
+from netapp.santricity.models.symbol.controller_sfp_location import \
+    ControllerSfpLocation
+
 
 class ControllerSfpLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ControllerSfpLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_sfp_location(self):
-          controller_sfp_location_obj = ControllerSfpLocation()
-          self.assertNotEqual(controller_sfp_location_obj, None)
-
-
+        controller_sfp_location_obj = ControllerSfpLocation()
+        self.assertNotEqual(controller_sfp_location_obj, None)

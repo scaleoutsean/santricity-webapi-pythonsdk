@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.esm_lost_redundancy_failure import EsmLostRedundancyFailure
+
+from netapp.santricity.models.symbol.esm_lost_redundancy_failure import \
+    EsmLostRedundancyFailure
+
 
 class EsmLostRedundancyFailureTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EsmLostRedundancyFailureTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_esm_lost_redundancy_failure(self):
-          esm_lost_redundancy_failure_obj = EsmLostRedundancyFailure()
-          self.assertNotEqual(esm_lost_redundancy_failure_obj, None)
-
-
+        esm_lost_redundancy_failure_obj = EsmLostRedundancyFailure()
+        self.assertNotEqual(esm_lost_redundancy_failure_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.remote_communication_data import RemoteCommunicationData
+
+from netapp.santricity.models.v2.remote_communication_data import \
+    RemoteCommunicationData
+
 
 class RemoteCommunicationDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemoteCommunicationDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_communication_data(self):
-          remote_communication_data_obj = RemoteCommunicationData()
-          self.assertNotEqual(remote_communication_data_obj, None)
-
-
+        remote_communication_data_obj = RemoteCommunicationData()
+        self.assertNotEqual(remote_communication_data_obj, None)

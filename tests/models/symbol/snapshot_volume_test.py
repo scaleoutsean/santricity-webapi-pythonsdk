@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.snapshot_volume import SnapshotVolume
+
 
 class SnapshotVolumeTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SnapshotVolumeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_volume(self):
-          snapshot_volume_obj = SnapshotVolume()
-          self.assertNotEqual(snapshot_volume_obj, None)
-
-
+        snapshot_volume_obj = SnapshotVolume()
+        self.assertNotEqual(snapshot_volume_obj, None)

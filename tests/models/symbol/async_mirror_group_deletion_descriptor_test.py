@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_deletion_descriptor import AsyncMirrorGroupDeletionDescriptor
+
+from netapp.santricity.models.symbol.async_mirror_group_deletion_descriptor import \
+    AsyncMirrorGroupDeletionDescriptor
+
 
 class AsyncMirrorGroupDeletionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AsyncMirrorGroupDeletionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_deletion_descriptor(self):
-          async_mirror_group_deletion_descriptor_obj = AsyncMirrorGroupDeletionDescriptor()
-          self.assertNotEqual(async_mirror_group_deletion_descriptor_obj, None)
-
-
+        async_mirror_group_deletion_descriptor_obj = (
+            AsyncMirrorGroupDeletionDescriptor()
+        )
+        self.assertNotEqual(async_mirror_group_deletion_descriptor_obj, None)

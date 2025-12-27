@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.application_awareness_bundle import ApplicationAwarenessBundle
+
+from netapp.santricity.models.symbol.application_awareness_bundle import \
+    ApplicationAwarenessBundle
+
 
 class ApplicationAwarenessBundleTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ApplicationAwarenessBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_application_awareness_bundle(self):
-          application_awareness_bundle_obj = ApplicationAwarenessBundle()
-          self.assertNotEqual(application_awareness_bundle_obj, None)
-
-
+        application_awareness_bundle_obj = ApplicationAwarenessBundle()
+        self.assertNotEqual(application_awareness_bundle_obj, None)

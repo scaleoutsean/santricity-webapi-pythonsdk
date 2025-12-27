@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.asup_dispatch_request import AsupDispatchRequest
+
+from netapp.santricity.models.v2.asup_dispatch_request import \
+    AsupDispatchRequest
+
 
 class AsupDispatchRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsupDispatchRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_asup_dispatch_request(self):
-          asup_dispatch_request_obj = AsupDispatchRequest()
-          self.assertNotEqual(asup_dispatch_request_obj, None)
-
-
+        asup_dispatch_request_obj = AsupDispatchRequest()
+        self.assertNotEqual(asup_dispatch_request_obj, None)

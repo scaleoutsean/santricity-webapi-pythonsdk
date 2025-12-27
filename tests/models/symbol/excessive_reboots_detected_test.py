@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.excessive_reboots_detected import ExcessiveRebootsDetected
+
+from netapp.santricity.models.symbol.excessive_reboots_detected import \
+    ExcessiveRebootsDetected
+
 
 class ExcessiveRebootsDetectedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ExcessiveRebootsDetectedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_excessive_reboots_detected(self):
-          excessive_reboots_detected_obj = ExcessiveRebootsDetected()
-          self.assertNotEqual(excessive_reboots_detected_obj, None)
-
-
+        excessive_reboots_detected_obj = ExcessiveRebootsDetected()
+        self.assertNotEqual(excessive_reboots_detected_obj, None)

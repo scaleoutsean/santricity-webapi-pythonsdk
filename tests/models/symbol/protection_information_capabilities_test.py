@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.protection_information_capabilities import ProtectionInformationCapabilities
+
+from netapp.santricity.models.symbol.protection_information_capabilities import \
+    ProtectionInformationCapabilities
+
 
 class ProtectionInformationCapabilitiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ProtectionInformationCapabilitiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_protection_information_capabilities(self):
-          protection_information_capabilities_obj = ProtectionInformationCapabilities()
-          self.assertNotEqual(protection_information_capabilities_obj, None)
-
-
+        protection_information_capabilities_obj = ProtectionInformationCapabilities()
+        self.assertNotEqual(protection_information_capabilities_obj, None)

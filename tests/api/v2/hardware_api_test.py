@@ -20,209 +20,212 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.hardware_api import HardwareApi
 
+from netapp.santricity.api.v2.hardware_api import HardwareApi
+from netapp.santricity.rest import ApiException
 
 
 class HardwareApiTest(unittest.TestCase):
-
-    
     def test_cancel_hardware_identification(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.cancel_hardware_identification(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_get_all_controllers(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.get_all_controllers(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_get_all_drives(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.get_all_drives(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_get_controller(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.get_controller(system_id="test", controller_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_get_drive(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.get_drive(system_id="test", id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_get_drive_connection_info(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.get_drive_connection_info(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_get_hardware_information(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.get_hardware_information(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_get_iscsi_data(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.get_iscsi_data(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_get_iscsi_target(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.get_iscsi_target(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_get_unreadable_sectors_list(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
+        api = HardwareApi()
+        hardware_api = None
+        try:
             hardware_api = api.get_unreadable_sectors_list(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_select_drives(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
-            hardware_api = api.select_drives(system_id="test", )
+        api = HardwareApi()
+        hardware_api = None
+        try:
+            hardware_api = api.select_drives(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_start_hardware_identification(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
-            hardware_api = api.start_hardware_identification(system_id="test", )
+        api = HardwareApi()
+        hardware_api = None
+        try:
+            hardware_api = api.start_hardware_identification(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_update_iscsi_data(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
-            hardware_api = api.update_iscsi_data(system_id="test", )
+        api = HardwareApi()
+        hardware_api = None
+        try:
+            hardware_api = api.update_iscsi_data(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
+        self.assertNotEqual(hardware_api, None)
+
     def test_update_iscsi_target(self):
-       api = HardwareApi()
-       hardware_api = None
-       try:
-            hardware_api = api.update_iscsi_target(system_id="test", )
+        api = HardwareApi()
+        hardware_api = None
+        try:
+            hardware_api = api.update_iscsi_target(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if hardware_api is None:
                 hardware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             hardware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            hardware_api = 1
 
-       self.assertNotEqual(hardware_api, None)
-    
-
-
+        self.assertNotEqual(hardware_api, None)

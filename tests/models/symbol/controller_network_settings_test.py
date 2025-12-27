@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_network_settings import ControllerNetworkSettings
+
+from netapp.santricity.models.symbol.controller_network_settings import \
+    ControllerNetworkSettings
+
 
 class ControllerNetworkSettingsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ControllerNetworkSettingsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_network_settings(self):
-          controller_network_settings_obj = ControllerNetworkSettings()
-          self.assertNotEqual(controller_network_settings_obj, None)
-
-
+        controller_network_settings_obj = ControllerNetworkSettings()
+        self.assertNotEqual(controller_network_settings_obj, None)

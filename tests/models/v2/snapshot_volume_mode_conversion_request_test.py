@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.snapshot_volume_mode_conversion_request import SnapshotVolumeModeConversionRequest
+
+from netapp.santricity.models.v2.snapshot_volume_mode_conversion_request import \
+    SnapshotVolumeModeConversionRequest
+
 
 class SnapshotVolumeModeConversionRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class SnapshotVolumeModeConversionRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_volume_mode_conversion_request(self):
-          snapshot_volume_mode_conversion_request_obj = SnapshotVolumeModeConversionRequest()
-          self.assertNotEqual(snapshot_volume_mode_conversion_request_obj, None)
-
-
+        snapshot_volume_mode_conversion_request_obj = (
+            SnapshotVolumeModeConversionRequest()
+        )
+        self.assertNotEqual(snapshot_volume_mode_conversion_request_obj, None)

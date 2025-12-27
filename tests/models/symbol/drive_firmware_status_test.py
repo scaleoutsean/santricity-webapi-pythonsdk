@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_firmware_status import DriveFirmwareStatus
+
+from netapp.santricity.models.symbol.drive_firmware_status import \
+    DriveFirmwareStatus
+
 
 class DriveFirmwareStatusTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveFirmwareStatusTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_firmware_status(self):
-          drive_firmware_status_obj = DriveFirmwareStatus()
-          self.assertNotEqual(drive_firmware_status_obj, None)
-
-
+        drive_firmware_status_obj = DriveFirmwareStatus()
+        self.assertNotEqual(drive_firmware_status_obj, None)

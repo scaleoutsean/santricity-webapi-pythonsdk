@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.battery_ex import BatteryEx
+
 
 class BatteryExTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class BatteryExTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_battery_ex(self):
-          battery_ex_obj = BatteryEx()
-          self.assertNotEqual(battery_ex_obj, None)
-
-
+        battery_ex_obj = BatteryEx()
+        self.assertNotEqual(battery_ex_obj, None)

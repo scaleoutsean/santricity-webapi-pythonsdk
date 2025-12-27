@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.localized_log_message import LocalizedLogMessage
+
+from netapp.santricity.models.v2.localized_log_message import \
+    LocalizedLogMessage
+
 
 class LocalizedLogMessageTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class LocalizedLogMessageTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_localized_log_message(self):
-          localized_log_message_obj = LocalizedLogMessage()
-          self.assertNotEqual(localized_log_message_obj, None)
-
-
+        localized_log_message_obj = LocalizedLogMessage()
+        self.assertNotEqual(localized_log_message_obj, None)

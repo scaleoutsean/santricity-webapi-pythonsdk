@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.async_mirror_group_role_update_request import AsyncMirrorGroupRoleUpdateRequest
+
+from netapp.santricity.models.v2.async_mirror_group_role_update_request import \
+    AsyncMirrorGroupRoleUpdateRequest
+
 
 class AsyncMirrorGroupRoleUpdateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorGroupRoleUpdateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_role_update_request(self):
-          async_mirror_group_role_update_request_obj = AsyncMirrorGroupRoleUpdateRequest()
-          self.assertNotEqual(async_mirror_group_role_update_request_obj, None)
-
-
+        async_mirror_group_role_update_request_obj = AsyncMirrorGroupRoleUpdateRequest()
+        self.assertNotEqual(async_mirror_group_role_update_request_obj, None)

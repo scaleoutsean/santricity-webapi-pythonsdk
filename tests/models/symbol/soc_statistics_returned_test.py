@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.soc_statistics_returned import SocStatisticsReturned
+
+from netapp.santricity.models.symbol.soc_statistics_returned import \
+    SocStatisticsReturned
+
 
 class SocStatisticsReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SocStatisticsReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_soc_statistics_returned(self):
-          soc_statistics_returned_obj = SocStatisticsReturned()
-          self.assertNotEqual(soc_statistics_returned_obj, None)
-
-
+        soc_statistics_returned_obj = SocStatisticsReturned()
+        self.assertNotEqual(soc_statistics_returned_obj, None)

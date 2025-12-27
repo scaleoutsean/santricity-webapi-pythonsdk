@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.enclosure_state_capture_retrieve_chunk_details import EnclosureStateCaptureRetrieveChunkDetails
+
+from netapp.santricity.models.symbol.enclosure_state_capture_retrieve_chunk_details import \
+    EnclosureStateCaptureRetrieveChunkDetails
+
 
 class EnclosureStateCaptureRetrieveChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class EnclosureStateCaptureRetrieveChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_enclosure_state_capture_retrieve_chunk_details(self):
-          enclosure_state_capture_retrieve_chunk_details_obj = EnclosureStateCaptureRetrieveChunkDetails()
-          self.assertNotEqual(enclosure_state_capture_retrieve_chunk_details_obj, None)
-
-
+        enclosure_state_capture_retrieve_chunk_details_obj = (
+            EnclosureStateCaptureRetrieveChunkDetails()
+        )
+        self.assertNotEqual(enclosure_state_capture_retrieve_chunk_details_obj, None)

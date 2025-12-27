@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.lockdown_status_response import LockdownStatusResponse
+
+from netapp.santricity.models.v2.lockdown_status_response import \
+    LockdownStatusResponse
+
 
 class LockdownStatusResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class LockdownStatusResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_lockdown_status_response(self):
-          lockdown_status_response_obj = LockdownStatusResponse()
-          self.assertNotEqual(lockdown_status_response_obj, None)
-
-
+        lockdown_status_response_obj = LockdownStatusResponse()
+        self.assertNotEqual(lockdown_status_response_obj, None)

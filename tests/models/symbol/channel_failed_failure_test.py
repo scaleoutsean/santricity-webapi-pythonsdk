@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.channel_failed_failure import ChannelFailedFailure
+
+from netapp.santricity.models.symbol.channel_failed_failure import \
+    ChannelFailedFailure
+
 
 class ChannelFailedFailureTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ChannelFailedFailureTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_channel_failed_failure(self):
-          channel_failed_failure_obj = ChannelFailedFailure()
-          self.assertNotEqual(channel_failed_failure_obj, None)
-
-
+        channel_failed_failure_obj = ChannelFailedFailure()
+        self.assertNotEqual(channel_failed_failure_obj, None)

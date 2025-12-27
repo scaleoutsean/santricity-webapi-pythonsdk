@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.initiator_target_properties_update_descriptor import InitiatorTargetPropertiesUpdateDescriptor
+
+from netapp.santricity.models.symbol.initiator_target_properties_update_descriptor import \
+    InitiatorTargetPropertiesUpdateDescriptor
+
 
 class InitiatorTargetPropertiesUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class InitiatorTargetPropertiesUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_initiator_target_properties_update_descriptor(self):
-          initiator_target_properties_update_descriptor_obj = InitiatorTargetPropertiesUpdateDescriptor()
-          self.assertNotEqual(initiator_target_properties_update_descriptor_obj, None)
-
-
+        initiator_target_properties_update_descriptor_obj = (
+            InitiatorTargetPropertiesUpdateDescriptor()
+        )
+        self.assertNotEqual(initiator_target_properties_update_descriptor_obj, None)

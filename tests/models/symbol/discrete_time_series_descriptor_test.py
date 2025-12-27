@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.discrete_time_series_descriptor import DiscreteTimeSeriesDescriptor
+
+from netapp.santricity.models.symbol.discrete_time_series_descriptor import \
+    DiscreteTimeSeriesDescriptor
+
 
 class DiscreteTimeSeriesDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiscreteTimeSeriesDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_discrete_time_series_descriptor(self):
-          discrete_time_series_descriptor_obj = DiscreteTimeSeriesDescriptor()
-          self.assertNotEqual(discrete_time_series_descriptor_obj, None)
-
-
+        discrete_time_series_descriptor_obj = DiscreteTimeSeriesDescriptor()
+        self.assertNotEqual(discrete_time_series_descriptor_obj, None)

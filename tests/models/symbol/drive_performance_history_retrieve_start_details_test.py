@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_performance_history_retrieve_start_details import DrivePerformanceHistoryRetrieveStartDetails
+
+from netapp.santricity.models.symbol.drive_performance_history_retrieve_start_details import \
+    DrivePerformanceHistoryRetrieveStartDetails
+
 
 class DrivePerformanceHistoryRetrieveStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class DrivePerformanceHistoryRetrieveStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_performance_history_retrieve_start_details(self):
-          drive_performance_history_retrieve_start_details_obj = DrivePerformanceHistoryRetrieveStartDetails()
-          self.assertNotEqual(drive_performance_history_retrieve_start_details_obj, None)
-
-
+        drive_performance_history_retrieve_start_details_obj = (
+            DrivePerformanceHistoryRetrieveStartDetails()
+        )
+        self.assertNotEqual(drive_performance_history_retrieve_start_details_obj, None)

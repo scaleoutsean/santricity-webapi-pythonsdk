@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.storage_pool_create_request import StoragePoolCreateRequest
+
+from netapp.santricity.models.v2.storage_pool_create_request import \
+    StoragePoolCreateRequest
+
 
 class StoragePoolCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class StoragePoolCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_storage_pool_create_request(self):
-          storage_pool_create_request_obj = StoragePoolCreateRequest()
-          self.assertNotEqual(storage_pool_create_request_obj, None)
-
-
+        storage_pool_create_request_obj = StoragePoolCreateRequest()
+        self.assertNotEqual(storage_pool_create_request_obj, None)

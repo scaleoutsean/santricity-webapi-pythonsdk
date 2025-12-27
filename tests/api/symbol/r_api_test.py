@@ -20,671 +20,800 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.r_api import RApi
 
+from netapp.santricity.api.symbol.r_api import RApi
+from netapp.santricity.rest import ApiException
 
 
 class RApiTest(unittest.TestCase):
-
-    
     def test_symbol_read_mgmt_client_records(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_read_mgmt_client_records(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_read_mgmt_client_records(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_read_unreadable_sector_database(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_read_unreadable_sector_database(system_id="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_read_unreadable_sector_database(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_recover_async_mirror_group_member(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_recover_async_mirror_group_member(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_recover_async_mirror_group_member(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_recover_async_mirror_group_member_delete_recovery_point(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_recover_async_mirror_group_member_delete_recovery_point(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_recover_async_mirror_group_member_delete_recovery_point(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_recover_from_miswire(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_recover_from_miswire(system_id="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_recover_from_miswire(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_recover_volume(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_recover_volume(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_recover_volume(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_recreate_snapshot(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_recreate_snapshot(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_recreate_snapshot(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_recreate_snapshot_collection(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_recreate_snapshot_collection(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_recreate_snapshot_collection(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_refresh_iscsi_dhcp_parameters(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_refresh_iscsi_dhcp_parameters(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_refresh_iscsi_dhcp_parameters(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_refresh_isns_server_location(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_refresh_isns_server_location(system_id="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_refresh_isns_server_location(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reinitialize_thin_volume(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reinitialize_thin_volume(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reinitialize_thin_volume(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_release_support_data(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_release_support_data(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_release_support_data(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_remove_async_mirror_group_member(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_remove_async_mirror_group_member(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_remove_async_mirror_group_member(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_remove_bundle_keys(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_remove_bundle_keys(system_id="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_remove_bundle_keys(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_remove_drives_from_flash_cache(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_remove_drives_from_flash_cache(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_remove_drives_from_flash_cache(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_remove_mirror(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_remove_mirror(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_remove_mirror(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_remove_pit_consistency_group_member(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_remove_pit_consistency_group_member(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_remove_pit_consistency_group_member(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_remove_snmp_community(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_remove_snmp_community(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_remove_snmp_community(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_remove_snmp_trap_destination(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_remove_snmp_trap_destination(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_remove_snmp_trap_destination(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_remove_volume_copy(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_remove_volume_copy(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_remove_volume_copy(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_rename_cluster(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_rename_cluster(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_rename_cluster(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_rename_host(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_rename_host(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_rename_host(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_rename_host_port(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_rename_host_port(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_rename_host_port(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_replace_drive(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_replace_drive(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_replace_drive(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reprovision_drive(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reprovision_drive(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reprovision_drive(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_request_removal(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_request_removal(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_request_removal(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_request_to_remove(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_request_to_remove(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_request_to_remove(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reserve_support_data(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reserve_support_data(system_id="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reserve_support_data(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reset_async_mirror_sync_statistics(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reset_async_mirror_sync_statistics(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reset_async_mirror_sync_statistics(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reset_controller(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reset_controller(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reset_controller(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reset_cumulative_statistics(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reset_cumulative_statistics(system_id="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reset_cumulative_statistics(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reset_discrete_time_series(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reset_discrete_time_series(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reset_discrete_time_series(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reset_histogram(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reset_histogram(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reset_histogram(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reset_mel(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reset_mel(system_id="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reset_mel(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_reset_sa_configuration(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_reset_sa_configuration(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_reset_sa_configuration(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_restart_pit_consistency_group_view(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_restart_pit_consistency_group_view(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_restart_pit_consistency_group_view(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_restart_pit_view(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_restart_pit_view(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_restart_pit_view(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_resume_async_mirror_group(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_resume_async_mirror_group(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_resume_async_mirror_group(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_resume_consistency_group(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_resume_consistency_group(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_resume_consistency_group(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_resume_flash_cache(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_resume_flash_cache(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_resume_flash_cache(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_resume_mirror(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_resume_mirror(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_resume_mirror(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_resume_mirror_list(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_resume_mirror_list(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_resume_mirror_list(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_resume_pit_rollback(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_resume_pit_rollback(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_resume_pit_rollback(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_resume_snapshot_rollback(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_resume_snapshot_rollback(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_resume_snapshot_rollback(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_revive_pit_group(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_revive_pit_group(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_revive_pit_group(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_revive_pit_view(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_revive_pit_view(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_revive_pit_view(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
+        self.assertNotEqual(r_api, None)
+
     def test_symbol_role_change(self):
-       api = RApi()
-       r_api = None
-       try:
-            r_api = api.symbol_role_change(system_id="test", body="test", )
+        api = RApi()
+        r_api = None
+        try:
+            r_api = api.symbol_role_change(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if r_api is None:
                 r_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             r_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            r_api = 1
 
-       self.assertNotEqual(r_api, None)
-    
-
-
+        self.assertNotEqual(r_api, None)

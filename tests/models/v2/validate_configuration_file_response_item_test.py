@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.validate_configuration_file_response_item import ValidateConfigurationFileResponseItem
+
+from netapp.santricity.models.v2.validate_configuration_file_response_item import \
+    ValidateConfigurationFileResponseItem
+
 
 class ValidateConfigurationFileResponseItemTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class ValidateConfigurationFileResponseItemTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_validate_configuration_file_response_item(self):
-          validate_configuration_file_response_item_obj = ValidateConfigurationFileResponseItem()
-          self.assertNotEqual(validate_configuration_file_response_item_obj, None)
-
-
+        validate_configuration_file_response_item_obj = (
+            ValidateConfigurationFileResponseItem()
+        )
+        self.assertNotEqual(validate_configuration_file_response_item_obj, None)

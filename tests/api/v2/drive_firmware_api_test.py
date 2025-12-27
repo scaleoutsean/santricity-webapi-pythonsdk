@@ -20,125 +20,126 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.drive_firmware_api import DriveFirmwareApi
 
+from netapp.santricity.api.v2.drive_firmware_api import DriveFirmwareApi
+from netapp.santricity.rest import ApiException
 
 
 class DriveFirmwareApiTest(unittest.TestCase):
-
-    
     def test_cancel_drive_firmware_update(self):
-       api = DriveFirmwareApi()
-       drive_firmware_api = None
-       try:
+        api = DriveFirmwareApi()
+        drive_firmware_api = None
+        try:
             drive_firmware_api = api.cancel_drive_firmware_update(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if drive_firmware_api is None:
                 drive_firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             drive_firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            drive_firmware_api = 1
 
-       self.assertNotEqual(drive_firmware_api, None)
-    
+        self.assertNotEqual(drive_firmware_api, None)
+
     def test_get_all_drive_firmware_files(self):
-       api = DriveFirmwareApi()
-       drive_firmware_api = None
-       try:
+        api = DriveFirmwareApi()
+        drive_firmware_api = None
+        try:
             drive_firmware_api = api.get_all_drive_firmware_files()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if drive_firmware_api is None:
                 drive_firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             drive_firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            drive_firmware_api = 1
 
-       self.assertNotEqual(drive_firmware_api, None)
-    
+        self.assertNotEqual(drive_firmware_api, None)
+
     def test_get_drive_firmware_compatability_check(self):
-       api = DriveFirmwareApi()
-       drive_firmware_api = None
-       try:
-            drive_firmware_api = api.get_drive_firmware_compatability_check(system_id="test")
+        api = DriveFirmwareApi()
+        drive_firmware_api = None
+        try:
+            drive_firmware_api = api.get_drive_firmware_compatability_check(
+                system_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if drive_firmware_api is None:
                 drive_firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             drive_firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            drive_firmware_api = 1
 
-       self.assertNotEqual(drive_firmware_api, None)
-    
+        self.assertNotEqual(drive_firmware_api, None)
+
     def test_get_drive_firmware_file(self):
-       api = DriveFirmwareApi()
-       drive_firmware_api = None
-       try:
-            drive_firmware_api = api.get_drive_firmware_file(filename="test", )
+        api = DriveFirmwareApi()
+        drive_firmware_api = None
+        try:
+            drive_firmware_api = api.get_drive_firmware_file(
+                filename="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if drive_firmware_api is None:
                 drive_firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             drive_firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            drive_firmware_api = 1
 
-       self.assertNotEqual(drive_firmware_api, None)
-    
+        self.assertNotEqual(drive_firmware_api, None)
+
     def test_get_drive_firmware_update_status(self):
-       api = DriveFirmwareApi()
-       drive_firmware_api = None
-       try:
+        api = DriveFirmwareApi()
+        drive_firmware_api = None
+        try:
             drive_firmware_api = api.get_drive_firmware_update_status(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if drive_firmware_api is None:
                 drive_firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             drive_firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            drive_firmware_api = 1
 
-       self.assertNotEqual(drive_firmware_api, None)
-    
+        self.assertNotEqual(drive_firmware_api, None)
+
     def test_remove_drive_firmware_file(self):
-       api = DriveFirmwareApi()
-       drive_firmware_api = None
-       try:
+        api = DriveFirmwareApi()
+        drive_firmware_api = None
+        try:
             drive_firmware_api = api.remove_drive_firmware_file(filename="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if drive_firmware_api is None:
                 drive_firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             drive_firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            drive_firmware_api = 1
 
-       self.assertNotEqual(drive_firmware_api, None)
-    
+        self.assertNotEqual(drive_firmware_api, None)
+
     def test_start_drive_firmware_update(self):
-       api = DriveFirmwareApi()
-       drive_firmware_api = None
-       try:
-            drive_firmware_api = api.start_drive_firmware_update(system_id="test", body="test", online_update="test")
+        api = DriveFirmwareApi()
+        drive_firmware_api = None
+        try:
+            drive_firmware_api = api.start_drive_firmware_update(
+                system_id="test", body="test", online_update="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if drive_firmware_api is None:
                 drive_firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             drive_firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            drive_firmware_api = 1
 
-       self.assertNotEqual(drive_firmware_api, None)
-    
+        self.assertNotEqual(drive_firmware_api, None)
+
     def test_upload_drive_firmware_file(self):
-       api = DriveFirmwareApi()
-       drive_firmware_api = None
-       try:
+        api = DriveFirmwareApi()
+        drive_firmware_api = None
+        try:
             drive_firmware_api = api.upload_drive_firmware_file()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if drive_firmware_api is None:
                 drive_firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             drive_firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            drive_firmware_api = 1
 
-       self.assertNotEqual(drive_firmware_api, None)
-    
-
-
+        self.assertNotEqual(drive_firmware_api, None)

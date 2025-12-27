@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.thin_volume_update_request import ThinVolumeUpdateRequest
+
+from netapp.santricity.models.v2.thin_volume_update_request import \
+    ThinVolumeUpdateRequest
+
 
 class ThinVolumeUpdateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ThinVolumeUpdateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_update_request(self):
-          thin_volume_update_request_obj = ThinVolumeUpdateRequest()
-          self.assertNotEqual(thin_volume_update_request_obj, None)
-
-
+        thin_volume_update_request_obj = ThinVolumeUpdateRequest()
+        self.assertNotEqual(thin_volume_update_request_obj, None)

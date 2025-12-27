@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.embedded_compatibility_check_response import EmbeddedCompatibilityCheckResponse
+
+from netapp.santricity.models.v2.embedded_compatibility_check_response import \
+    EmbeddedCompatibilityCheckResponse
+
 
 class EmbeddedCompatibilityCheckResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EmbeddedCompatibilityCheckResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_embedded_compatibility_check_response(self):
-          embedded_compatibility_check_response_obj = EmbeddedCompatibilityCheckResponse()
-          self.assertNotEqual(embedded_compatibility_check_response_obj, None)
-
-
+        embedded_compatibility_check_response_obj = EmbeddedCompatibilityCheckResponse()
+        self.assertNotEqual(embedded_compatibility_check_response_obj, None)

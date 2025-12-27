@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sa_port_get_descriptor import SAPortGetDescriptor
+
+from netapp.santricity.models.symbol.sa_port_get_descriptor import \
+    SAPortGetDescriptor
+
 
 class SAPortGetDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SAPortGetDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sa_port_get_descriptor(self):
-          sa_port_get_descriptor_obj = SAPortGetDescriptor()
-          self.assertNotEqual(sa_port_get_descriptor_obj, None)
-
-
+        sa_port_get_descriptor_obj = SAPortGetDescriptor()
+        self.assertNotEqual(sa_port_get_descriptor_obj, None)

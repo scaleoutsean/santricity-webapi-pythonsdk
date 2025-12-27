@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.link_speed_detection_error import LinkSpeedDetectionError
+
+from netapp.santricity.models.symbol.link_speed_detection_error import \
+    LinkSpeedDetectionError
+
 
 class LinkSpeedDetectionErrorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class LinkSpeedDetectionErrorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_link_speed_detection_error(self):
-          link_speed_detection_error_obj = LinkSpeedDetectionError()
-          self.assertNotEqual(link_speed_detection_error_obj, None)
-
-
+        link_speed_detection_error_obj = LinkSpeedDetectionError()
+        self.assertNotEqual(link_speed_detection_error_obj, None)

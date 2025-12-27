@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_entity_changeable_properties import IscsiEntityChangeableProperties
+
+from netapp.santricity.models.symbol.iscsi_entity_changeable_properties import \
+    IscsiEntityChangeableProperties
+
 
 class IscsiEntityChangeablePropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiEntityChangeablePropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_entity_changeable_properties(self):
-          iscsi_entity_changeable_properties_obj = IscsiEntityChangeableProperties()
-          self.assertNotEqual(iscsi_entity_changeable_properties_obj, None)
-
-
+        iscsi_entity_changeable_properties_obj = IscsiEntityChangeableProperties()
+        self.assertNotEqual(iscsi_entity_changeable_properties_obj, None)

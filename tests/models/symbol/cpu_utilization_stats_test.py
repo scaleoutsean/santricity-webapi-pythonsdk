@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.cpu_utilization_stats import CpuUtilizationStats
+
+from netapp.santricity.models.symbol.cpu_utilization_stats import \
+    CpuUtilizationStats
+
 
 class CpuUtilizationStatsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CpuUtilizationStatsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cpu_utilization_stats(self):
-          cpu_utilization_stats_obj = CpuUtilizationStats()
-          self.assertNotEqual(cpu_utilization_stats_obj, None)
-
-
+        cpu_utilization_stats_obj = CpuUtilizationStats()
+        self.assertNotEqual(cpu_utilization_stats_obj, None)

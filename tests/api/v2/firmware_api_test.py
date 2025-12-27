@@ -20,377 +20,384 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.firmware_api import FirmwareApi
 
+from netapp.santricity.api.v2.firmware_api import FirmwareApi
+from netapp.santricity.rest import ApiException
 
 
 class FirmwareApiTest(unittest.TestCase):
-
-    
     def test_activate_staged_controller_firmware(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
-            firmware_api = api.activate_staged_controller_firmware(system_id="test", )
+        api = FirmwareApi()
+        firmware_api = None
+        try:
+            firmware_api = api.activate_staged_controller_firmware(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_activate_staged_firmware(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.activate_staged_firmware()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_begin_compatibility_check(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.begin_compatibility_check()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_cancel_compatibility_check(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.cancel_compatibility_check()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_cancel_health_check(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.cancel_health_check()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_check_embedded_firmware_bundle_compatibility(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
-            firmware_api = api.check_embedded_firmware_bundle_compatibility(system_id="test", )
+        api = FirmwareApi()
+        firmware_api = None
+        try:
+            firmware_api = api.check_embedded_firmware_bundle_compatibility(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_check_embedded_nvsram_compatibility(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
-            firmware_api = api.check_embedded_nvsram_compatibility(system_id="test", )
+        api = FirmwareApi()
+        firmware_api = None
+        try:
+            firmware_api = api.check_embedded_nvsram_compatibility(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_clear_staged_firmware(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.clear_staged_firmware(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_all_firmware_files(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_all_firmware_files()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_compatibility_check_results(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_compatibility_check_results()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_controller_firmware_upgrade_status(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_controller_firmware_upgrade_status(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_embedded_firmware_information(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_embedded_firmware_information()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_firmware_details(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_firmware_details(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_firmware_file(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_firmware_file(filename="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_health_check_status(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_health_check_status()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_iom_service_information(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_iom_service_information()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_staged_controller_firmware_details(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_staged_controller_firmware_details(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_get_staged_firmware_details(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.get_staged_firmware_details(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_remove_firmware_file(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.remove_firmware_file(filename="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_remove_staged_firmware(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.remove_staged_firmware(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_start_controller_firmware_upgrade(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
-            firmware_api = api.start_controller_firmware_upgrade(system_id="test", )
+        api = FirmwareApi()
+        firmware_api = None
+        try:
+            firmware_api = api.start_controller_firmware_upgrade(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_start_health_check(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.start_health_check()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_update_iom_service_information(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.update_iom_service_information()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_upload_embedded_firmware_file(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
+        api = FirmwareApi()
+        firmware_api = None
+        try:
             firmware_api = api.upload_embedded_firmware_file()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_upload_firmware_file(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
-            firmware_api = api.upload_firmware_file(firmware_file="test", )
+        api = FirmwareApi()
+        firmware_api = None
+        try:
+            firmware_api = api.upload_firmware_file(
+                firmware_file="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
+        self.assertNotEqual(firmware_api, None)
+
     def test_upload_nvsram_file(self):
-       api = FirmwareApi()
-       firmware_api = None
-       try:
-            firmware_api = api.upload_nvsram_file(system_id="test", )
+        api = FirmwareApi()
+        firmware_api = None
+        try:
+            firmware_api = api.upload_nvsram_file(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if firmware_api is None:
                 firmware_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             firmware_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            firmware_api = 1
 
-       self.assertNotEqual(firmware_api, None)
-    
-
-
+        self.assertNotEqual(firmware_api, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.controller_time import ControllerTime
+
 
 class ControllerTimeTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ControllerTimeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_time(self):
-          controller_time_obj = ControllerTime()
-          self.assertNotEqual(controller_time_obj, None)
-
-
+        controller_time_obj = ControllerTime()
+        self.assertNotEqual(controller_time_obj, None)

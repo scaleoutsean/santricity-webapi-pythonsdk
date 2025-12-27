@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.scsi_initiator_port_id import SCSIInitiatorPortId
+
+from netapp.santricity.models.symbol.scsi_initiator_port_id import \
+    SCSIInitiatorPortId
+
 
 class SCSIInitiatorPortIdTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SCSIInitiatorPortIdTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_scsi_initiator_port_id(self):
-          scsi_initiator_port_id_obj = SCSIInitiatorPortId()
-          self.assertNotEqual(scsi_initiator_port_id_obj, None)
-
-
+        scsi_initiator_port_id_obj = SCSIInitiatorPortId()
+        self.assertNotEqual(scsi_initiator_port_id_obj, None)

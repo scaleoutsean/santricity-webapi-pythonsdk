@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ddc_extent import DdcExtent
+
 
 class DdcExtentTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DdcExtentTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ddc_extent(self):
-          ddc_extent_obj = DdcExtent()
-          self.assertNotEqual(ddc_extent_obj, None)
-
-
+        ddc_extent_obj = DdcExtent()
+        self.assertNotEqual(ddc_extent_obj, None)

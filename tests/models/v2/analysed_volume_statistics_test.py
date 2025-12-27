@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.analysed_volume_statistics import AnalysedVolumeStatistics
+
+from netapp.santricity.models.v2.analysed_volume_statistics import \
+    AnalysedVolumeStatistics
+
 
 class AnalysedVolumeStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AnalysedVolumeStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_analysed_volume_statistics(self):
-          analysed_volume_statistics_obj = AnalysedVolumeStatistics()
-          self.assertNotEqual(analysed_volume_statistics_obj, None)
-
-
+        analysed_volume_statistics_obj = AnalysedVolumeStatistics()
+        self.assertNotEqual(analysed_volume_statistics_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.wlc_analytics_start_details import WlcAnalyticsStartDetails
+
+from netapp.santricity.models.symbol.wlc_analytics_start_details import \
+    WlcAnalyticsStartDetails
+
 
 class WlcAnalyticsStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class WlcAnalyticsStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_wlc_analytics_start_details(self):
-          wlc_analytics_start_details_obj = WlcAnalyticsStartDetails()
-          self.assertNotEqual(wlc_analytics_start_details_obj, None)
-
-
+        wlc_analytics_start_details_obj = WlcAnalyticsStartDetails()
+        self.assertNotEqual(wlc_analytics_start_details_obj, None)

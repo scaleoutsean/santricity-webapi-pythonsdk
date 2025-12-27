@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.snapshot_params_update_descriptor import SnapshotParamsUpdateDescriptor
+
+from netapp.santricity.models.symbol.snapshot_params_update_descriptor import \
+    SnapshotParamsUpdateDescriptor
+
 
 class SnapshotParamsUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SnapshotParamsUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_params_update_descriptor(self):
-          snapshot_params_update_descriptor_obj = SnapshotParamsUpdateDescriptor()
-          self.assertNotEqual(snapshot_params_update_descriptor_obj, None)
-
-
+        snapshot_params_update_descriptor_obj = SnapshotParamsUpdateDescriptor()
+        self.assertNotEqual(snapshot_params_update_descriptor_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dpl_core_dump_fw_location import DPLCoreDumpFWLocation
+
+from netapp.santricity.models.symbol.dpl_core_dump_fw_location import \
+    DPLCoreDumpFWLocation
+
 
 class DPLCoreDumpFWLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DPLCoreDumpFWLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dpl_core_dump_fw_location(self):
-          dpl_core_dump_fw_location_obj = DPLCoreDumpFWLocation()
-          self.assertNotEqual(dpl_core_dump_fw_location_obj, None)
-
-
+        dpl_core_dump_fw_location_obj = DPLCoreDumpFWLocation()
+        self.assertNotEqual(dpl_core_dump_fw_location_obj, None)

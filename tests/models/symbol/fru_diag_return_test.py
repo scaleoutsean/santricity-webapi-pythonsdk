@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.fru_diag_return import FruDiagReturn
+
 
 class FruDiagReturnTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FruDiagReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fru_diag_return(self):
-          fru_diag_return_obj = FruDiagReturn()
-          self.assertNotEqual(fru_diag_return_obj, None)
-
-
+        fru_diag_return_obj = FruDiagReturn()
+        self.assertNotEqual(fru_diag_return_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.host import Host
+
 
 class HostTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class HostTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host(self):
-          host_obj = Host()
-          self.assertNotEqual(host_obj, None)
-
-
+        host_obj = Host()
+        self.assertNotEqual(host_obj, None)

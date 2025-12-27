@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.alert_syslog_response import AlertSyslogResponse
+
+from netapp.santricity.models.v2.alert_syslog_response import \
+    AlertSyslogResponse
+
 
 class AlertSyslogResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AlertSyslogResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_alert_syslog_response(self):
-          alert_syslog_response_obj = AlertSyslogResponse()
-          self.assertNotEqual(alert_syslog_response_obj, None)
-
-
+        alert_syslog_response_obj = AlertSyslogResponse()
+        self.assertNotEqual(alert_syslog_response_obj, None)

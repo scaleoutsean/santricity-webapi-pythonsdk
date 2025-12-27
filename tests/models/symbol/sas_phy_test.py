@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sas_phy import SasPhy
+
 
 class SasPhyTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SasPhyTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_phy(self):
-          sas_phy_obj = SasPhy()
-          self.assertNotEqual(sas_phy_obj, None)
-
-
+        sas_phy_obj = SasPhy()
+        self.assertNotEqual(sas_phy_obj, None)

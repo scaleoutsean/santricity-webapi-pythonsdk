@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.staged_firmware import StagedFirmware
+
 
 class StagedFirmwareTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class StagedFirmwareTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_staged_firmware(self):
-          staged_firmware_obj = StagedFirmware()
-          self.assertNotEqual(staged_firmware_obj, None)
-
-
+        staged_firmware_obj = StagedFirmware()
+        self.assertNotEqual(staged_firmware_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.battery_params_update_descriptor import BatteryParamsUpdateDescriptor
+
+from netapp.santricity.models.symbol.battery_params_update_descriptor import \
+    BatteryParamsUpdateDescriptor
+
 
 class BatteryParamsUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class BatteryParamsUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_battery_params_update_descriptor(self):
-          battery_params_update_descriptor_obj = BatteryParamsUpdateDescriptor()
-          self.assertNotEqual(battery_params_update_descriptor_obj, None)
-
-
+        battery_params_update_descriptor_obj = BatteryParamsUpdateDescriptor()
+        self.assertNotEqual(battery_params_update_descriptor_obj, None)

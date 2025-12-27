@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.access_volume_ex import AccessVolumeEx
+
 
 class AccessVolumeExTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class AccessVolumeExTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_access_volume_ex(self):
-          access_volume_ex_obj = AccessVolumeEx()
-          self.assertNotEqual(access_volume_ex_obj, None)
-
-
+        access_volume_ex_obj = AccessVolumeEx()
+        self.assertNotEqual(access_volume_ex_obj, None)

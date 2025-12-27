@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_incomplete_member import AsyncMirrorGroupIncompleteMember
+
+from netapp.santricity.models.symbol.async_mirror_group_incomplete_member import \
+    AsyncMirrorGroupIncompleteMember
+
 
 class AsyncMirrorGroupIncompleteMemberTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorGroupIncompleteMemberTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_incomplete_member(self):
-          async_mirror_group_incomplete_member_obj = AsyncMirrorGroupIncompleteMember()
-          self.assertNotEqual(async_mirror_group_incomplete_member_obj, None)
-
-
+        async_mirror_group_incomplete_member_obj = AsyncMirrorGroupIncompleteMember()
+        self.assertNotEqual(async_mirror_group_incomplete_member_obj, None)

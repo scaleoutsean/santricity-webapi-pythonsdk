@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ethernet_interface import EthernetInterface
+
+from netapp.santricity.models.symbol.ethernet_interface import \
+    EthernetInterface
+
 
 class EthernetInterfaceTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EthernetInterfaceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ethernet_interface(self):
-          ethernet_interface_obj = EthernetInterface()
-          self.assertNotEqual(ethernet_interface_obj, None)
-
-
+        ethernet_interface_obj = EthernetInterface()
+        self.assertNotEqual(ethernet_interface_obj, None)

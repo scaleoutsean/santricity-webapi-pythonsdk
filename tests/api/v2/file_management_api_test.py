@@ -20,111 +20,108 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.file_management_api import FileManagementApi
 
+from netapp.santricity.api.v2.file_management_api import FileManagementApi
+from netapp.santricity.rest import ApiException
 
 
 class FileManagementApiTest(unittest.TestCase):
-
-    
     def test_get_all_support_artifacts(self):
-       api = FileManagementApi()
-       file_management_api = None
-       try:
+        api = FileManagementApi()
+        file_management_api = None
+        try:
             file_management_api = api.get_all_support_artifacts()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if file_management_api is None:
                 file_management_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             file_management_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            file_management_api = 1
 
-       self.assertNotEqual(file_management_api, None)
-    
+        self.assertNotEqual(file_management_api, None)
+
     def test_get_file_from_scratch_dir(self):
-       api = FileManagementApi()
-       file_management_api = None
-       try:
-            file_management_api = api.get_file_from_scratch_dir(filename="test", )
+        api = FileManagementApi()
+        file_management_api = None
+        try:
+            file_management_api = api.get_file_from_scratch_dir(
+                filename="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if file_management_api is None:
                 file_management_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             file_management_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            file_management_api = 1
 
-       self.assertNotEqual(file_management_api, None)
-    
+        self.assertNotEqual(file_management_api, None)
+
     def test_get_scratch_file(self):
-       api = FileManagementApi()
-       file_management_api = None
-       try:
+        api = FileManagementApi()
+        file_management_api = None
+        try:
             file_management_api = api.get_scratch_file()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if file_management_api is None:
                 file_management_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             file_management_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            file_management_api = 1
 
-       self.assertNotEqual(file_management_api, None)
-    
+        self.assertNotEqual(file_management_api, None)
+
     def test_get_support_artifacts(self):
-       api = FileManagementApi()
-       file_management_api = None
-       try:
+        api = FileManagementApi()
+        file_management_api = None
+        try:
             file_management_api = api.get_support_artifacts(identifier="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if file_management_api is None:
                 file_management_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             file_management_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            file_management_api = 1
 
-       self.assertNotEqual(file_management_api, None)
-    
+        self.assertNotEqual(file_management_api, None)
+
     def test_remove_scratch_file(self):
-       api = FileManagementApi()
-       file_management_api = None
-       try:
+        api = FileManagementApi()
+        file_management_api = None
+        try:
             file_management_api = api.remove_scratch_file(filename="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if file_management_api is None:
                 file_management_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             file_management_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            file_management_api = 1
 
-       self.assertNotEqual(file_management_api, None)
-    
+        self.assertNotEqual(file_management_api, None)
+
     def test_remove_support_artifact(self):
-       api = FileManagementApi()
-       file_management_api = None
-       try:
+        api = FileManagementApi()
+        file_management_api = None
+        try:
             file_management_api = api.remove_support_artifact(identifier="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if file_management_api is None:
                 file_management_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             file_management_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            file_management_api = 1
 
-       self.assertNotEqual(file_management_api, None)
-    
+        self.assertNotEqual(file_management_api, None)
+
     def test_upload_file(self):
-       api = FileManagementApi()
-       file_management_api = None
-       try:
+        api = FileManagementApi()
+        file_management_api = None
+        try:
             file_management_api = api.upload_file()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if file_management_api is None:
                 file_management_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             file_management_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            file_management_api = 1
 
-       self.assertNotEqual(file_management_api, None)
-    
-
-
+        self.assertNotEqual(file_management_api, None)

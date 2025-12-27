@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.volume_metadata_item import VolumeMetadataItem
+
 
 class VolumeMetadataItemTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VolumeMetadataItemTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_metadata_item(self):
-          volume_metadata_item_obj = VolumeMetadataItem()
-          self.assertNotEqual(volume_metadata_item_obj, None)
-
-
+        volume_metadata_item_obj = VolumeMetadataItem()
+        self.assertNotEqual(volume_metadata_item_obj, None)

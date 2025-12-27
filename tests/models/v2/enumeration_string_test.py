@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.enumeration_string import EnumerationString
+
 
 class EnumerationStringTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class EnumerationStringTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_enumeration_string(self):
-          enumeration_string_obj = EnumerationString()
-          self.assertNotEqual(enumeration_string_obj, None)
-
-
+        enumeration_string_obj = EnumerationString()
+        self.assertNotEqual(enumeration_string_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.support_data_response import SupportDataResponse
+
+from netapp.santricity.models.v2.support_data_response import \
+    SupportDataResponse
+
 
 class SupportDataResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SupportDataResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_support_data_response(self):
-          support_data_response_obj = SupportDataResponse()
-          self.assertNotEqual(support_data_response_obj, None)
-
-
+        support_data_response_obj = SupportDataResponse()
+        self.assertNotEqual(support_data_response_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_statistics_returned import IscsiStatisticsReturned
+
+from netapp.santricity.models.symbol.iscsi_statistics_returned import \
+    IscsiStatisticsReturned
+
 
 class IscsiStatisticsReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiStatisticsReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_statistics_returned(self):
-          iscsi_statistics_returned_obj = IscsiStatisticsReturned()
-          self.assertNotEqual(iscsi_statistics_returned_obj, None)
-
-
+        iscsi_statistics_returned_obj = IscsiStatisticsReturned()
+        self.assertNotEqual(iscsi_statistics_returned_obj, None)

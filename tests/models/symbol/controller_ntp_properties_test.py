@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_ntp_properties import ControllerNTPProperties
+
+from netapp.santricity.models.symbol.controller_ntp_properties import \
+    ControllerNTPProperties
+
 
 class ControllerNTPPropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ControllerNTPPropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_ntp_properties(self):
-          controller_ntp_properties_obj = ControllerNTPProperties()
-          self.assertNotEqual(controller_ntp_properties_obj, None)
-
-
+        controller_ntp_properties_obj = ControllerNTPProperties()
+        self.assertNotEqual(controller_ntp_properties_obj, None)

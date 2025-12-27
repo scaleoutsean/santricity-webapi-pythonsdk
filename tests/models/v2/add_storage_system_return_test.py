@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.add_storage_system_return import AddStorageSystemReturn
+
+from netapp.santricity.models.v2.add_storage_system_return import \
+    AddStorageSystemReturn
+
 
 class AddStorageSystemReturnTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AddStorageSystemReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_add_storage_system_return(self):
-          add_storage_system_return_obj = AddStorageSystemReturn()
-          self.assertNotEqual(add_storage_system_return_obj, None)
-
-
+        add_storage_system_return_obj = AddStorageSystemReturn()
+        self.assertNotEqual(add_storage_system_return_obj, None)

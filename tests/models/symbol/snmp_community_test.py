@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.snmp_community import SNMPCommunity
+
 
 class SNMPCommunityTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SNMPCommunityTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snmp_community(self):
-          snmp_community_obj = SNMPCommunity()
-          self.assertNotEqual(snmp_community_obj, None)
-
-
+        snmp_community_obj = SNMPCommunity()
+        self.assertNotEqual(snmp_community_obj, None)

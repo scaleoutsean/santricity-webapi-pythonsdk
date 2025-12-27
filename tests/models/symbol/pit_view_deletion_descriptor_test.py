@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_view_deletion_descriptor import PITViewDeletionDescriptor
+
+from netapp.santricity.models.symbol.pit_view_deletion_descriptor import \
+    PITViewDeletionDescriptor
+
 
 class PITViewDeletionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITViewDeletionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_view_deletion_descriptor(self):
-          pit_view_deletion_descriptor_obj = PITViewDeletionDescriptor()
-          self.assertNotEqual(pit_view_deletion_descriptor_obj, None)
-
-
+        pit_view_deletion_descriptor_obj = PITViewDeletionDescriptor()
+        self.assertNotEqual(pit_view_deletion_descriptor_obj, None)

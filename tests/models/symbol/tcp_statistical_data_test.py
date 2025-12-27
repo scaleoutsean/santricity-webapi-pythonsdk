@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.tcp_statistical_data import TcpStatisticalData
+
+from netapp.santricity.models.symbol.tcp_statistical_data import \
+    TcpStatisticalData
+
 
 class TcpStatisticalDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class TcpStatisticalDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_tcp_statistical_data(self):
-          tcp_statistical_data_obj = TcpStatisticalData()
-          self.assertNotEqual(tcp_statistical_data_obj, None)
-
-
+        tcp_statistical_data_obj = TcpStatisticalData()
+        self.assertNotEqual(tcp_statistical_data_obj, None)

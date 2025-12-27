@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.performance_ring_start_details import PerformanceRingStartDetails
+
+from netapp.santricity.models.symbol.performance_ring_start_details import \
+    PerformanceRingStartDetails
+
 
 class PerformanceRingStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PerformanceRingStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_performance_ring_start_details(self):
-          performance_ring_start_details_obj = PerformanceRingStartDetails()
-          self.assertNotEqual(performance_ring_start_details_obj, None)
-
-
+        performance_ring_start_details_obj = PerformanceRingStartDetails()
+        self.assertNotEqual(performance_ring_start_details_obj, None)

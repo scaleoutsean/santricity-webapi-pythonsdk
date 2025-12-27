@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_type_parameters import VolumeTypeParameters
+
+from netapp.santricity.models.symbol.volume_type_parameters import \
+    VolumeTypeParameters
+
 
 class VolumeTypeParametersTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeTypeParametersTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_type_parameters(self):
-          volume_type_parameters_obj = VolumeTypeParameters()
-          self.assertNotEqual(volume_type_parameters_obj, None)
-
-
+        volume_type_parameters_obj = VolumeTypeParameters()
+        self.assertNotEqual(volume_type_parameters_obj, None)

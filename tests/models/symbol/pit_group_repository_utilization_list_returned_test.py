@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_group_repository_utilization_list_returned import PITGroupRepositoryUtilizationListReturned
+
+from netapp.santricity.models.symbol.pit_group_repository_utilization_list_returned import \
+    PITGroupRepositoryUtilizationListReturned
+
 
 class PITGroupRepositoryUtilizationListReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class PITGroupRepositoryUtilizationListReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_group_repository_utilization_list_returned(self):
-          pit_group_repository_utilization_list_returned_obj = PITGroupRepositoryUtilizationListReturned()
-          self.assertNotEqual(pit_group_repository_utilization_list_returned_obj, None)
-
-
+        pit_group_repository_utilization_list_returned_obj = (
+            PITGroupRepositoryUtilizationListReturned()
+        )
+        self.assertNotEqual(pit_group_repository_utilization_list_returned_obj, None)

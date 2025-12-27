@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sas_port_data import SasPortData
+
 
 class SasPortDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SasPortDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_port_data(self):
-          sas_port_data_obj = SasPortData()
-          self.assertNotEqual(sas_port_data_obj, None)
-
-
+        sas_port_data_obj = SasPortData()
+        self.assertNotEqual(sas_port_data_obj, None)

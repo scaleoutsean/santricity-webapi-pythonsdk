@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.analyzed_pool_statistics import AnalyzedPoolStatistics
+
+from netapp.santricity.models.v2.analyzed_pool_statistics import \
+    AnalyzedPoolStatistics
+
 
 class AnalyzedPoolStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AnalyzedPoolStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_analyzed_pool_statistics(self):
-          analyzed_pool_statistics_obj = AnalyzedPoolStatistics()
-          self.assertNotEqual(analyzed_pool_statistics_obj, None)
-
-
+        analyzed_pool_statistics_obj = AnalyzedPoolStatistics()
+        self.assertNotEqual(analyzed_pool_statistics_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.i_scsi_interface_port import IScsiInterfacePort
+
+from netapp.santricity.models.v2.i_scsi_interface_port import \
+    IScsiInterfacePort
+
 
 class IScsiInterfacePortTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IScsiInterfacePortTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_i_scsi_interface_port(self):
-          i_scsi_interface_port_obj = IScsiInterfacePort()
-          self.assertNotEqual(i_scsi_interface_port_obj, None)
-
-
+        i_scsi_interface_port_obj = IScsiInterfacePort()
+        self.assertNotEqual(i_scsi_interface_port_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ioc_dump_info_return import IOCDumpInfoReturn
+
+from netapp.santricity.models.symbol.ioc_dump_info_return import \
+    IOCDumpInfoReturn
+
 
 class IOCDumpInfoReturnTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IOCDumpInfoReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ioc_dump_info_return(self):
-          ioc_dump_info_return_obj = IOCDumpInfoReturn()
-          self.assertNotEqual(ioc_dump_info_return_obj, None)
-
-
+        ioc_dump_info_return_obj = IOCDumpInfoReturn()
+        self.assertNotEqual(ioc_dump_info_return_obj, None)

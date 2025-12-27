@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.raw_stats_response import RawStatsResponse
+
 
 class RawStatsResponseTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RawStatsResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_raw_stats_response(self):
-          raw_stats_response_obj = RawStatsResponse()
-          self.assertNotEqual(raw_stats_response_obj, None)
-
-
+        raw_stats_response_obj = RawStatsResponse()
+        self.assertNotEqual(raw_stats_response_obj, None)

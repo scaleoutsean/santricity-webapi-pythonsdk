@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.function_state_returned import FunctionStateReturned
+
+from netapp.santricity.models.symbol.function_state_returned import \
+    FunctionStateReturned
+
 
 class FunctionStateReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FunctionStateReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_function_state_returned(self):
-          function_state_returned_obj = FunctionStateReturned()
-          self.assertNotEqual(function_state_returned_obj, None)
-
-
+        function_state_returned_obj = FunctionStateReturned()
+        self.assertNotEqual(function_state_returned_obj, None)

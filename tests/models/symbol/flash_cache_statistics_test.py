@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.flash_cache_statistics import FlashCacheStatistics
+
+from netapp.santricity.models.symbol.flash_cache_statistics import \
+    FlashCacheStatistics
+
 
 class FlashCacheStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FlashCacheStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_flash_cache_statistics(self):
-          flash_cache_statistics_obj = FlashCacheStatistics()
-          self.assertNotEqual(flash_cache_statistics_obj, None)
-
-
+        flash_cache_statistics_obj = FlashCacheStatistics()
+        self.assertNotEqual(flash_cache_statistics_obj, None)

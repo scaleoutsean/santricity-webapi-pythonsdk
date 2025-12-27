@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_view_repository_creation_descriptor import PITViewRepositoryCreationDescriptor
+
+from netapp.santricity.models.symbol.pit_view_repository_creation_descriptor import \
+    PITViewRepositoryCreationDescriptor
+
 
 class PITViewRepositoryCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class PITViewRepositoryCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_view_repository_creation_descriptor(self):
-          pit_view_repository_creation_descriptor_obj = PITViewRepositoryCreationDescriptor()
-          self.assertNotEqual(pit_view_repository_creation_descriptor_obj, None)
-
-
+        pit_view_repository_creation_descriptor_obj = (
+            PITViewRepositoryCreationDescriptor()
+        )
+        self.assertNotEqual(pit_view_repository_creation_descriptor_obj, None)

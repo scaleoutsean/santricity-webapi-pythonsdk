@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.pvg_recovery_data import PvgRecoveryData
+
 
 class PvgRecoveryDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PvgRecoveryDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pvg_recovery_data(self):
-          pvg_recovery_data_obj = PvgRecoveryData()
-          self.assertNotEqual(pvg_recovery_data_obj, None)
-
-
+        pvg_recovery_data_obj = PvgRecoveryData()
+        self.assertNotEqual(pvg_recovery_data_obj, None)

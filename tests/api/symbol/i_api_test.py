@@ -20,125 +20,142 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.i_api import IApi
 
+from netapp.santricity.api.symbol.i_api import IApi
+from netapp.santricity.rest import ApiException
 
 
 class IApiTest(unittest.TestCase):
-
-    
     def test_symbol_import_lock_key(self):
-       api = IApi()
-       i_api = None
-       try:
-            i_api = api.symbol_import_lock_key(system_id="test", body="test", )
+        api = IApi()
+        i_api = None
+        try:
+            i_api = api.symbol_import_lock_key(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             i_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            i_api = 1
 
-       self.assertNotEqual(i_api, None)
-    
+        self.assertNotEqual(i_api, None)
+
     def test_symbol_import_volume_group(self):
-       api = IApi()
-       i_api = None
-       try:
-            i_api = api.symbol_import_volume_group(system_id="test", body="test", )
+        api = IApi()
+        i_api = None
+        try:
+            i_api = api.symbol_import_volume_group(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             i_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            i_api = 1
 
-       self.assertNotEqual(i_api, None)
-    
+        self.assertNotEqual(i_api, None)
+
     def test_symbol_initialize_drive(self):
-       api = IApi()
-       i_api = None
-       try:
-            i_api = api.symbol_initialize_drive(system_id="test", body="test", )
+        api = IApi()
+        i_api = None
+        try:
+            i_api = api.symbol_initialize_drive(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             i_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            i_api = 1
 
-       self.assertNotEqual(i_api, None)
-    
+        self.assertNotEqual(i_api, None)
+
     def test_symbol_install_lock_key(self):
-       api = IApi()
-       i_api = None
-       try:
-            i_api = api.symbol_install_lock_key(system_id="test", body="test", )
+        api = IApi()
+        i_api = None
+        try:
+            i_api = api.symbol_install_lock_key(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             i_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            i_api = 1
 
-       self.assertNotEqual(i_api, None)
-    
+        self.assertNotEqual(i_api, None)
+
     def test_symbol_install_new_lock_key(self):
-       api = IApi()
-       i_api = None
-       try:
-            i_api = api.symbol_install_new_lock_key(system_id="test", body="test", )
+        api = IApi()
+        i_api = None
+        try:
+            i_api = api.symbol_install_new_lock_key(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             i_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            i_api = 1
 
-       self.assertNotEqual(i_api, None)
-    
+        self.assertNotEqual(i_api, None)
+
     def test_symbol_invalidate_staged_controller_firmware(self):
-       api = IApi()
-       i_api = None
-       try:
-            i_api = api.symbol_invalidate_staged_controller_firmware(system_id="test", )
+        api = IApi()
+        i_api = None
+        try:
+            i_api = api.symbol_invalidate_staged_controller_firmware(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             i_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            i_api = 1
 
-       self.assertNotEqual(i_api, None)
-    
+        self.assertNotEqual(i_api, None)
+
     def test_symbol_issue_discrete_lines_test(self):
-       api = IApi()
-       i_api = None
-       try:
-            i_api = api.symbol_issue_discrete_lines_test(system_id="test", )
+        api = IApi()
+        i_api = None
+        try:
+            i_api = api.symbol_issue_discrete_lines_test(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             i_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            i_api = 1
 
-       self.assertNotEqual(i_api, None)
-    
+        self.assertNotEqual(i_api, None)
+
     def test_symbol_issue_runtime_diagnostics(self):
-       api = IApi()
-       i_api = None
-       try:
-            i_api = api.symbol_issue_runtime_diagnostics(system_id="test", body="test", )
+        api = IApi()
+        i_api = None
+        try:
+            i_api = api.symbol_issue_runtime_diagnostics(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             i_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            i_api = 1
 
-       self.assertNotEqual(i_api, None)
-    
-
-
+        self.assertNotEqual(i_api, None)

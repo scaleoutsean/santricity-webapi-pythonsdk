@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_group_role_change_descriptor import AsyncMirrorGroupRoleChangeDescriptor
+
+from netapp.santricity.models.symbol.async_mirror_group_role_change_descriptor import \
+    AsyncMirrorGroupRoleChangeDescriptor
+
 
 class AsyncMirrorGroupRoleChangeDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class AsyncMirrorGroupRoleChangeDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_role_change_descriptor(self):
-          async_mirror_group_role_change_descriptor_obj = AsyncMirrorGroupRoleChangeDescriptor()
-          self.assertNotEqual(async_mirror_group_role_change_descriptor_obj, None)
-
-
+        async_mirror_group_role_change_descriptor_obj = (
+            AsyncMirrorGroupRoleChangeDescriptor()
+        )
+        self.assertNotEqual(async_mirror_group_role_change_descriptor_obj, None)

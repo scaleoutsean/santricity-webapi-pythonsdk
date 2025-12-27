@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.discover_response import DiscoverResponse
+
 
 class DiscoverResponseTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DiscoverResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_discover_response(self):
-          discover_response_obj = DiscoverResponse()
-          self.assertNotEqual(discover_response_obj, None)
-
-
+        discover_response_obj = DiscoverResponse()
+        self.assertNotEqual(discover_response_obj, None)

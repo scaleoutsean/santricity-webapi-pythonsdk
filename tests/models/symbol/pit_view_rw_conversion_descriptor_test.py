@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_view_rw_conversion_descriptor import PITViewRWConversionDescriptor
+
+from netapp.santricity.models.symbol.pit_view_rw_conversion_descriptor import \
+    PITViewRWConversionDescriptor
+
 
 class PITViewRWConversionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITViewRWConversionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_view_rw_conversion_descriptor(self):
-          pit_view_rw_conversion_descriptor_obj = PITViewRWConversionDescriptor()
-          self.assertNotEqual(pit_view_rw_conversion_descriptor_obj, None)
-
-
+        pit_view_rw_conversion_descriptor_obj = PITViewRWConversionDescriptor()
+        self.assertNotEqual(pit_view_rw_conversion_descriptor_obj, None)

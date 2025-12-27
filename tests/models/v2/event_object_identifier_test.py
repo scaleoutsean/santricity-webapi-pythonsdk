@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.event_object_identifier import EventObjectIdentifier
+
+from netapp.santricity.models.v2.event_object_identifier import \
+    EventObjectIdentifier
+
 
 class EventObjectIdentifierTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EventObjectIdentifierTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_event_object_identifier(self):
-          event_object_identifier_obj = EventObjectIdentifier()
-          self.assertNotEqual(event_object_identifier_obj, None)
-
-
+        event_object_identifier_obj = EventObjectIdentifier()
+        self.assertNotEqual(event_object_identifier_obj, None)

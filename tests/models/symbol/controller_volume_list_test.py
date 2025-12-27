@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_volume_list import ControllerVolumeList
+
+from netapp.santricity.models.symbol.controller_volume_list import \
+    ControllerVolumeList
+
 
 class ControllerVolumeListTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ControllerVolumeListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_volume_list(self):
-          controller_volume_list_obj = ControllerVolumeList()
-          self.assertNotEqual(controller_volume_list_obj, None)
-
-
+        controller_volume_list_obj = ControllerVolumeList()
+        self.assertNotEqual(controller_volume_list_obj, None)

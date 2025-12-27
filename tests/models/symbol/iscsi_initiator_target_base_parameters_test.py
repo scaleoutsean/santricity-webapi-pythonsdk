@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_initiator_target_base_parameters import IscsiInitiatorTargetBaseParameters
+
+from netapp.santricity.models.symbol.iscsi_initiator_target_base_parameters import \
+    IscsiInitiatorTargetBaseParameters
+
 
 class IscsiInitiatorTargetBaseParametersTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class IscsiInitiatorTargetBaseParametersTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_initiator_target_base_parameters(self):
-          iscsi_initiator_target_base_parameters_obj = IscsiInitiatorTargetBaseParameters()
-          self.assertNotEqual(iscsi_initiator_target_base_parameters_obj, None)
-
-
+        iscsi_initiator_target_base_parameters_obj = (
+            IscsiInitiatorTargetBaseParameters()
+        )
+        self.assertNotEqual(iscsi_initiator_target_base_parameters_obj, None)

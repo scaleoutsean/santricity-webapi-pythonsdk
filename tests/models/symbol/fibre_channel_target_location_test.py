@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.fibre_channel_target_location import FibreChannelTargetLocation
+
+from netapp.santricity.models.symbol.fibre_channel_target_location import \
+    FibreChannelTargetLocation
+
 
 class FibreChannelTargetLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FibreChannelTargetLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fibre_channel_target_location(self):
-          fibre_channel_target_location_obj = FibreChannelTargetLocation()
-          self.assertNotEqual(fibre_channel_target_location_obj, None)
-
-
+        fibre_channel_target_location_obj = FibreChannelTargetLocation()
+        self.assertNotEqual(fibre_channel_target_location_obj, None)

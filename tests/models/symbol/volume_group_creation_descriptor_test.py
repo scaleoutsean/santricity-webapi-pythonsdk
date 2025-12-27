@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_group_creation_descriptor import VolumeGroupCreationDescriptor
+
+from netapp.santricity.models.symbol.volume_group_creation_descriptor import \
+    VolumeGroupCreationDescriptor
+
 
 class VolumeGroupCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeGroupCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_group_creation_descriptor(self):
-          volume_group_creation_descriptor_obj = VolumeGroupCreationDescriptor()
-          self.assertNotEqual(volume_group_creation_descriptor_obj, None)
-
-
+        volume_group_creation_descriptor_obj = VolumeGroupCreationDescriptor()
+        self.assertNotEqual(volume_group_creation_descriptor_obj, None)

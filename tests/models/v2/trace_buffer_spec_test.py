@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.trace_buffer_spec import TraceBufferSpec
+
 
 class TraceBufferSpecTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class TraceBufferSpecTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_trace_buffer_spec(self):
-          trace_buffer_spec_obj = TraceBufferSpec()
-          self.assertNotEqual(trace_buffer_spec_obj, None)
-
-
+        trace_buffer_spec_obj = TraceBufferSpec()
+        self.assertNotEqual(trace_buffer_spec_obj, None)

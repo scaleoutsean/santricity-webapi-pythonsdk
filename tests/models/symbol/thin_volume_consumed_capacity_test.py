@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thin_volume_consumed_capacity import ThinVolumeConsumedCapacity
+
+from netapp.santricity.models.symbol.thin_volume_consumed_capacity import \
+    ThinVolumeConsumedCapacity
+
 
 class ThinVolumeConsumedCapacityTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ThinVolumeConsumedCapacityTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_consumed_capacity(self):
-          thin_volume_consumed_capacity_obj = ThinVolumeConsumedCapacity()
-          self.assertNotEqual(thin_volume_consumed_capacity_obj, None)
-
-
+        thin_volume_consumed_capacity_obj = ThinVolumeConsumedCapacity()
+        self.assertNotEqual(thin_volume_consumed_capacity_obj, None)

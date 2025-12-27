@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.ib_interface_port import IBInterfacePort
+
 
 class IBInterfacePortTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class IBInterfacePortTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_interface_port(self):
-          ib_interface_port_obj = IBInterfacePort()
-          self.assertNotEqual(ib_interface_port_obj, None)
-
-
+        ib_interface_port_obj = IBInterfacePort()
+        self.assertNotEqual(ib_interface_port_obj, None)

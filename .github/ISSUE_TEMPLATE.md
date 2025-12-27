@@ -23,9 +23,9 @@ Versions:
 
 ##### Reproduction
 <!---
-Bugs: 
+Bugs:
 - Document the steps to reproduce the error.
-Docs: 
+Docs:
 - Document how the documentation is incorrect.
 -->
 

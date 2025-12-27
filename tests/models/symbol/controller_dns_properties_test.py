@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_dns_properties import ControllerDNSProperties
+
+from netapp.santricity.models.symbol.controller_dns_properties import \
+    ControllerDNSProperties
+
 
 class ControllerDNSPropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ControllerDNSPropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_dns_properties(self):
-          controller_dns_properties_obj = ControllerDNSProperties()
-          self.assertNotEqual(controller_dns_properties_obj, None)
-
-
+        controller_dns_properties_obj = ControllerDNSProperties()
+        self.assertNotEqual(controller_dns_properties_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.nvsram_region import NVSRAMRegion
+
 
 class NVSRAMRegionTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class NVSRAMRegionTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_nvsram_region(self):
-          nvsram_region_obj = NVSRAMRegion()
-          self.assertNotEqual(nvsram_region_obj, None)
-
-
+        nvsram_region_obj = NVSRAMRegion()
+        self.assertNotEqual(nvsram_region_obj, None)

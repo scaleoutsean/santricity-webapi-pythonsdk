@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.snmp_community_add_descriptor import SNMPCommunityAddDescriptor
+
+from netapp.santricity.models.symbol.snmp_community_add_descriptor import \
+    SNMPCommunityAddDescriptor
+
 
 class SNMPCommunityAddDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SNMPCommunityAddDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snmp_community_add_descriptor(self):
-          snmp_community_add_descriptor_obj = SNMPCommunityAddDescriptor()
-          self.assertNotEqual(snmp_community_add_descriptor_obj, None)
-
-
+        snmp_community_add_descriptor_obj = SNMPCommunityAddDescriptor()
+        self.assertNotEqual(snmp_community_add_descriptor_obj, None)

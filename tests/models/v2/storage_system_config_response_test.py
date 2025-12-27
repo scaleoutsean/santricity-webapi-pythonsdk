@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.storage_system_config_response import StorageSystemConfigResponse
+
+from netapp.santricity.models.v2.storage_system_config_response import \
+    StorageSystemConfigResponse
+
 
 class StorageSystemConfigResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class StorageSystemConfigResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_storage_system_config_response(self):
-          storage_system_config_response_obj = StorageSystemConfigResponse()
-          self.assertNotEqual(storage_system_config_response_obj, None)
-
-
+        storage_system_config_response_obj = StorageSystemConfigResponse()
+        self.assertNotEqual(storage_system_config_response_obj, None)

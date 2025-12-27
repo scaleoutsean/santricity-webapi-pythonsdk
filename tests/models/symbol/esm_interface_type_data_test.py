@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.esm_interface_type_data import ESMInterfaceTypeData
+
+from netapp.santricity.models.symbol.esm_interface_type_data import \
+    ESMInterfaceTypeData
+
 
 class ESMInterfaceTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ESMInterfaceTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_esm_interface_type_data(self):
-          esm_interface_type_data_obj = ESMInterfaceTypeData()
-          self.assertNotEqual(esm_interface_type_data_obj, None)
-
-
+        esm_interface_type_data_obj = ESMInterfaceTypeData()
+        self.assertNotEqual(esm_interface_type_data_obj, None)

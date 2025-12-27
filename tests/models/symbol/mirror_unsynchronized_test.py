@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mirror_unsynchronized import MirrorUnsynchronized
+
+from netapp.santricity.models.symbol.mirror_unsynchronized import \
+    MirrorUnsynchronized
+
 
 class MirrorUnsynchronizedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MirrorUnsynchronizedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mirror_unsynchronized(self):
-          mirror_unsynchronized_obj = MirrorUnsynchronized()
-          self.assertNotEqual(mirror_unsynchronized_obj, None)
-
-
+        mirror_unsynchronized_obj = MirrorUnsynchronized()
+        self.assertNotEqual(mirror_unsynchronized_obj, None)

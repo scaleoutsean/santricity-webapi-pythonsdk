@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.snmp_trap_destination_add_descriptor import SNMPTrapDestinationAddDescriptor
+
+from netapp.santricity.models.symbol.snmp_trap_destination_add_descriptor import \
+    SNMPTrapDestinationAddDescriptor
+
 
 class SNMPTrapDestinationAddDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SNMPTrapDestinationAddDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snmp_trap_destination_add_descriptor(self):
-          snmp_trap_destination_add_descriptor_obj = SNMPTrapDestinationAddDescriptor()
-          self.assertNotEqual(snmp_trap_destination_add_descriptor_obj, None)
-
-
+        snmp_trap_destination_add_descriptor_obj = SNMPTrapDestinationAddDescriptor()
+        self.assertNotEqual(snmp_trap_destination_add_descriptor_obj, None)

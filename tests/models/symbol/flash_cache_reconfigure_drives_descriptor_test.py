@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.flash_cache_reconfigure_drives_descriptor import FlashCacheReconfigureDrivesDescriptor
+
+from netapp.santricity.models.symbol.flash_cache_reconfigure_drives_descriptor import \
+    FlashCacheReconfigureDrivesDescriptor
+
 
 class FlashCacheReconfigureDrivesDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class FlashCacheReconfigureDrivesDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_flash_cache_reconfigure_drives_descriptor(self):
-          flash_cache_reconfigure_drives_descriptor_obj = FlashCacheReconfigureDrivesDescriptor()
-          self.assertNotEqual(flash_cache_reconfigure_drives_descriptor_obj, None)
-
-
+        flash_cache_reconfigure_drives_descriptor_obj = (
+            FlashCacheReconfigureDrivesDescriptor()
+        )
+        self.assertNotEqual(flash_cache_reconfigure_drives_descriptor_obj, None)

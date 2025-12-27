@@ -20,97 +20,92 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.device_asup_api import DeviceASUPApi
 
+from netapp.santricity.api.v2.device_asup_api import DeviceASUPApi
+from netapp.santricity.rest import ApiException
 
 
 class DeviceASUPApiTest(unittest.TestCase):
-
-    
     def test_get_all_asup_transmission_log_files(self):
-       api = DeviceASUPApi()
-       device_asup_api = None
-       try:
+        api = DeviceASUPApi()
+        device_asup_api = None
+        try:
             device_asup_api = api.get_all_asup_transmission_log_files()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if device_asup_api is None:
                 device_asup_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             device_asup_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            device_asup_api = 1
 
-       self.assertNotEqual(device_asup_api, None)
-    
+        self.assertNotEqual(device_asup_api, None)
+
     def test_get_asup_configuration(self):
-       api = DeviceASUPApi()
-       device_asup_api = None
-       try:
+        api = DeviceASUPApi()
+        device_asup_api = None
+        try:
             device_asup_api = api.get_asup_configuration()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if device_asup_api is None:
                 device_asup_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             device_asup_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            device_asup_api = 1
 
-       self.assertNotEqual(device_asup_api, None)
-    
+        self.assertNotEqual(device_asup_api, None)
+
     def test_get_asup_information(self):
-       api = DeviceASUPApi()
-       device_asup_api = None
-       try:
+        api = DeviceASUPApi()
+        device_asup_api = None
+        try:
             device_asup_api = api.get_asup_information()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if device_asup_api is None:
                 device_asup_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             device_asup_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            device_asup_api = 1
 
-       self.assertNotEqual(device_asup_api, None)
-    
+        self.assertNotEqual(device_asup_api, None)
+
     def test_get_asup_transmission_log_file(self):
-       api = DeviceASUPApi()
-       device_asup_api = None
-       try:
+        api = DeviceASUPApi()
+        device_asup_api = None
+        try:
             device_asup_api = api.get_asup_transmission_log_file(filename="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if device_asup_api is None:
                 device_asup_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             device_asup_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            device_asup_api = 1
 
-       self.assertNotEqual(device_asup_api, None)
-    
+        self.assertNotEqual(device_asup_api, None)
+
     def test_update_asup_configuration(self):
-       api = DeviceASUPApi()
-       device_asup_api = None
-       try:
+        api = DeviceASUPApi()
+        device_asup_api = None
+        try:
             device_asup_api = api.update_asup_configuration()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if device_asup_api is None:
                 device_asup_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             device_asup_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            device_asup_api = 1
 
-       self.assertNotEqual(device_asup_api, None)
-    
+        self.assertNotEqual(device_asup_api, None)
+
     def test_verify_asup_configuration(self):
-       api = DeviceASUPApi()
-       device_asup_api = None
-       try:
+        api = DeviceASUPApi()
+        device_asup_api = None
+        try:
             device_asup_api = api.verify_asup_configuration()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if device_asup_api is None:
                 device_asup_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             device_asup_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            device_asup_api = 1
 
-       self.assertNotEqual(device_asup_api, None)
-    
-
-
+        self.assertNotEqual(device_asup_api, None)

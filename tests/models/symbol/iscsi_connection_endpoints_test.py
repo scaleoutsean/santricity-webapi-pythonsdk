@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_connection_endpoints import IscsiConnectionEndpoints
+
+from netapp.santricity.models.symbol.iscsi_connection_endpoints import \
+    IscsiConnectionEndpoints
+
 
 class IscsiConnectionEndpointsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiConnectionEndpointsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_connection_endpoints(self):
-          iscsi_connection_endpoints_obj = IscsiConnectionEndpoints()
-          self.assertNotEqual(iscsi_connection_endpoints_obj, None)
-
-
+        iscsi_connection_endpoints_obj = IscsiConnectionEndpoints()
+        self.assertNotEqual(iscsi_connection_endpoints_obj, None)

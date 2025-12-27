@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.host_board import HostBoard
+
 
 class HostBoardTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class HostBoardTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_board(self):
-          host_board_obj = HostBoard()
-          self.assertNotEqual(host_board_obj, None)
-
-
+        host_board_obj = HostBoard()
+        self.assertNotEqual(host_board_obj, None)

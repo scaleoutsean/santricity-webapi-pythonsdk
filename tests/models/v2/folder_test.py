@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.folder import Folder
+
 
 class FolderTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FolderTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_folder(self):
-          folder_obj = Folder()
-          self.assertNotEqual(folder_obj, None)
-
-
+        folder_obj = Folder()
+        self.assertNotEqual(folder_obj, None)

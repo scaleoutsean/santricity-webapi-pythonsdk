@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.key_id_info import KeyIDInfo
+
 
 class KeyIDInfoTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class KeyIDInfoTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_key_id_info(self):
-          key_id_info_obj = KeyIDInfo()
-          self.assertNotEqual(key_id_info_obj, None)
-
-
+        key_id_info_obj = KeyIDInfo()
+        self.assertNotEqual(key_id_info_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.embedded_snmp_agent_default_attributes import EmbeddedSNMPAgentDefaultAttributes
+
+from netapp.santricity.models.symbol.embedded_snmp_agent_default_attributes import \
+    EmbeddedSNMPAgentDefaultAttributes
+
 
 class EmbeddedSNMPAgentDefaultAttributesTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class EmbeddedSNMPAgentDefaultAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_embedded_snmp_agent_default_attributes(self):
-          embedded_snmp_agent_default_attributes_obj = EmbeddedSNMPAgentDefaultAttributes()
-          self.assertNotEqual(embedded_snmp_agent_default_attributes_obj, None)
-
-
+        embedded_snmp_agent_default_attributes_obj = (
+            EmbeddedSNMPAgentDefaultAttributes()
+        )
+        self.assertNotEqual(embedded_snmp_agent_default_attributes_obj, None)

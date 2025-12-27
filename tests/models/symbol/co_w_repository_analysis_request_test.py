@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.co_w_repository_analysis_request import CoWRepositoryAnalysisRequest
+
+from netapp.santricity.models.symbol.co_w_repository_analysis_request import \
+    CoWRepositoryAnalysisRequest
+
 
 class CoWRepositoryAnalysisRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CoWRepositoryAnalysisRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_co_w_repository_analysis_request(self):
-          co_w_repository_analysis_request_obj = CoWRepositoryAnalysisRequest()
-          self.assertNotEqual(co_w_repository_analysis_request_obj, None)
-
-
+        co_w_repository_analysis_request_obj = CoWRepositoryAnalysisRequest()
+        self.assertNotEqual(co_w_repository_analysis_request_obj, None)

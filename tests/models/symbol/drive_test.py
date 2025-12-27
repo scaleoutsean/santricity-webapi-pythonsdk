@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.drive import Drive
+
 
 class DriveTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DriveTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive(self):
-          drive_obj = Drive()
-          self.assertNotEqual(drive_obj, None)
-
-
+        drive_obj = Drive()
+        self.assertNotEqual(drive_obj, None)

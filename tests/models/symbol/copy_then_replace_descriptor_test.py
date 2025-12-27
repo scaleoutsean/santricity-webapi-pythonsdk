@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.copy_then_replace_descriptor import CopyThenReplaceDescriptor
+
+from netapp.santricity.models.symbol.copy_then_replace_descriptor import \
+    CopyThenReplaceDescriptor
+
 
 class CopyThenReplaceDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CopyThenReplaceDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_copy_then_replace_descriptor(self):
-          copy_then_replace_descriptor_obj = CopyThenReplaceDescriptor()
-          self.assertNotEqual(copy_then_replace_descriptor_obj, None)
-
-
+        copy_then_replace_descriptor_obj = CopyThenReplaceDescriptor()
+        self.assertNotEqual(copy_then_replace_descriptor_obj, None)

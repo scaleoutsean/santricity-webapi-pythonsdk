@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.configuration_result import ConfigurationResult
+
+from netapp.santricity.models.v2.configuration_result import \
+    ConfigurationResult
+
 
 class ConfigurationResultTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ConfigurationResultTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_configuration_result(self):
-          configuration_result_obj = ConfigurationResult()
-          self.assertNotEqual(configuration_result_obj, None)
-
-
+        configuration_result_obj = ConfigurationResult()
+        self.assertNotEqual(configuration_result_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.cv_candidate_selection_request import CVCandidateSelectionRequest
+
+from netapp.santricity.models.v2.cv_candidate_selection_request import \
+    CVCandidateSelectionRequest
+
 
 class CVCandidateSelectionRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CVCandidateSelectionRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cv_candidate_selection_request(self):
-          cv_candidate_selection_request_obj = CVCandidateSelectionRequest()
-          self.assertNotEqual(cv_candidate_selection_request_obj, None)
-
-
+        cv_candidate_selection_request_obj = CVCandidateSelectionRequest()
+        self.assertNotEqual(cv_candidate_selection_request_obj, None)

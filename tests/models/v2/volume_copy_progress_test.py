@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.volume_copy_progress import VolumeCopyProgress
+
 
 class VolumeCopyProgressTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VolumeCopyProgressTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_copy_progress(self):
-          volume_copy_progress_obj = VolumeCopyProgress()
-          self.assertNotEqual(volume_copy_progress_obj, None)
-
-
+        volume_copy_progress_obj = VolumeCopyProgress()
+        self.assertNotEqual(volume_copy_progress_obj, None)

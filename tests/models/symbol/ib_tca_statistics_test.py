@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ib_tca_statistics import IbTcaStatistics
+
 
 class IbTcaStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class IbTcaStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_tca_statistics(self):
-          ib_tca_statistics_obj = IbTcaStatistics()
-          self.assertNotEqual(ib_tca_statistics_obj, None)
-
-
+        ib_tca_statistics_obj = IbTcaStatistics()
+        self.assertNotEqual(ib_tca_statistics_obj, None)

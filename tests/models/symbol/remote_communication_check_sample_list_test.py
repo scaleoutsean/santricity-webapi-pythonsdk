@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.remote_communication_check_sample_list import RemoteCommunicationCheckSampleList
+
+from netapp.santricity.models.symbol.remote_communication_check_sample_list import \
+    RemoteCommunicationCheckSampleList
+
 
 class RemoteCommunicationCheckSampleListTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class RemoteCommunicationCheckSampleListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_communication_check_sample_list(self):
-          remote_communication_check_sample_list_obj = RemoteCommunicationCheckSampleList()
-          self.assertNotEqual(remote_communication_check_sample_list_obj, None)
-
-
+        remote_communication_check_sample_list_obj = (
+            RemoteCommunicationCheckSampleList()
+        )
+        self.assertNotEqual(remote_communication_check_sample_list_obj, None)

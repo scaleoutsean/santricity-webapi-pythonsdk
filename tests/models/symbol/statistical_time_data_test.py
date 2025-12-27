@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.statistical_time_data import StatisticalTimeData
+
+from netapp.santricity.models.symbol.statistical_time_data import \
+    StatisticalTimeData
+
 
 class StatisticalTimeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class StatisticalTimeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_statistical_time_data(self):
-          statistical_time_data_obj = StatisticalTimeData()
-          self.assertNotEqual(statistical_time_data_obj, None)
-
-
+        statistical_time_data_obj = StatisticalTimeData()
+        self.assertNotEqual(statistical_time_data_obj, None)

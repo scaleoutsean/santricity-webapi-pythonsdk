@@ -18,2172 +18,2142 @@ MappingApi.py
   NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-import sys
 import os
+import sys
+
+from ....santricity.api_client import ApiClient
+from ....santricity.configuration import Configuration
 
 # python 2 and python 3 compatibility library
 
-from ....santricity.configuration import Configuration
-from ....santricity.api_client import ApiClient
-
 
 class MappingApi:
-
     def __init__(self, api_client=None):
         config = Configuration()
         if api_client:
             self.api_client = api_client
         else:
             if not config.api_client:
-                config.api_client = ApiClient(context_path='/devmgr/v2')
+                config.api_client = ApiClient(context_path="/devmgr/v2")
             self.api_client = config.api_client
-    
-    
+
     def get_all_host_groups(self, system_id, **kwargs):
-            """
-            Get all HostGroups
-            Mode: Both Embedded and Proxy. 
+        """
+        Get all HostGroups
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_host_groups(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[HostGroup]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_host_groups(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_host_groups" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_host_groups`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-groups'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[HostGroup]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_host_groups" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_host_groups`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/storage-systems/{system-id}/host-groups".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[HostGroup]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[HostGroup]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_host_port_types(self, system_id, **kwargs):
-            """
-            Get all HostTypes
-            Mode: Both Embedded and Proxy. DEPRECATED: See /host-types
+        """
+        Get all HostTypes
+        Mode: Both Embedded and Proxy. DEPRECATED: See /host-types
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_host_port_types(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[HostType]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_host_port_types(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_host_port_types" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_host_port_types`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-port-types'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[HostType]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_host_port_types" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_host_port_types`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/storage-systems/{system-id}/host-port-types".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[HostType]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[HostType]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_host_type_values(self, system_id, **kwargs):
-            """
-            Get the list of HostTypes
-            Mode: Both Embedded and Proxy. 
+        """
+        Get the list of HostTypes
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_host_type_values(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[HostTypeValues]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_host_type_values(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_host_type_values" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_host_type_values`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-type-values'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[HostTypeValues]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_host_type_values" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_host_type_values`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/storage-systems/{system-id}/host-type-values".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[HostTypeValues]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[HostTypeValues]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_host_types(self, system_id, **kwargs):
-            """
-            Get all HostTypes
-            Mode: Both Embedded and Proxy. 
+        """
+        Get all HostTypes
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_host_types(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[HostType]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_host_types(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_host_types" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_host_types`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-types'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[HostType]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_host_types" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_host_types`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/storage-systems/{system-id}/host-types".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[HostType]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[HostType]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_hosts(self, system_id, **kwargs):
-            """
-            Get all Hosts
-            Mode: Both Embedded and Proxy. 
+        """
+        Get all Hosts
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_hosts(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[HostEx]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_hosts(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_hosts" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_hosts`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/hosts'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[HostEx]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_hosts" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_hosts`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/storage-systems/{system-id}/hosts".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[HostEx]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[HostEx]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_host(self, system_id, id, **kwargs):
-            """
-            Get a Host
-            Mode: Both Embedded and Proxy. 
+        """
+        Get a Host
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_host(system_id, id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str id: Get a Host (required)
-    
-            :return: HostEx
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_host(system_id, id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_host" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_host`")
-    
-    
-    
-            # verify the required parameter 'id' is set
-            if ('id' not in params) or (params['id'] is None):
-                raise ValueError("Missing the required parameter `id` when calling `get_host`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/hosts/{id}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'id' in params:
-                path_params['id'] = params['id']
-    
+        :param str id: Get a Host (required)
 
-            query_params = {}
-    
+        :return: HostEx
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "id"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_host" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_host`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'id' is set
+        if ("id" not in params) or (params["id"] is None):
+            raise ValueError(
+                "Missing the required parameter `id` when calling `get_host`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/hosts/{id}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostEx',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "id" in params:
+            path_params["id"] = params["id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostEx",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_host_group(self, system_id, id, **kwargs):
-            """
-            Get a HostGroup
-            Mode: Both Embedded and Proxy. 
+        """
+        Get a HostGroup
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_host_group(system_id, id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str id: Get a HostGroup (required)
-    
-            :return: HostGroup
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_host_group(system_id, id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_host_group" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_host_group`")
-    
-    
-    
-            # verify the required parameter 'id' is set
-            if ('id' not in params) or (params['id'] is None):
-                raise ValueError("Missing the required parameter `id` when calling `get_host_group`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-groups/{id}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'id' in params:
-                path_params['id'] = params['id']
-    
+        :param str id: Get a HostGroup (required)
 
-            query_params = {}
-    
+        :return: HostGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "id"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_host_group" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_host_group`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'id' is set
+        if ("id" not in params) or (params["id"] is None):
+            raise ValueError(
+                "Missing the required parameter `id` when calling `get_host_group`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/host-groups/{id}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostGroup',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "id" in params:
+            path_params["id"] = params["id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostGroup",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_host_port_type(self, system_id, id, **kwargs):
-            """
-            Get a HostType
-            Mode: Both Embedded and Proxy. DEPRECATED: See /host-types
+        """
+        Get a HostType
+        Mode: Both Embedded and Proxy. DEPRECATED: See /host-types
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_host_port_type(system_id, id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str id:  (required)
-    
-            :return: HostType
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_host_port_type(system_id, id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_host_port_type" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_host_port_type`")
-    
-    
-    
-            # verify the required parameter 'id' is set
-            if ('id' not in params) or (params['id'] is None):
-                raise ValueError("Missing the required parameter `id` when calling `get_host_port_type`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-port-types/{id}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'id' in params:
-                path_params['id'] = params['id']
-    
+        :param str id:  (required)
 
-            query_params = {}
-    
+        :return: HostType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "id"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_host_port_type" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_host_port_type`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'id' is set
+        if ("id" not in params) or (params["id"] is None):
+            raise ValueError(
+                "Missing the required parameter `id` when calling `get_host_port_type`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/host-port-types/{id}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostType',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "id" in params:
+            path_params["id"] = params["id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostType",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_host_type(self, system_id, id, **kwargs):
-            """
-            Get a HostType
-            Mode: Both Embedded and Proxy. 
+        """
+        Get a HostType
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_host_type(system_id, id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str id: Het a HostType (required)
-    
-            :return: HostType
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_host_type(system_id, id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_host_type" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_host_type`")
-    
-    
-    
-            # verify the required parameter 'id' is set
-            if ('id' not in params) or (params['id'] is None):
-                raise ValueError("Missing the required parameter `id` when calling `get_host_type`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-types/{id}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'id' in params:
-                path_params['id'] = params['id']
-    
+        :param str id: Het a HostType (required)
 
-            query_params = {}
-    
+        :return: HostType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "id"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_host_type" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_host_type`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'id' is set
+        if ("id" not in params) or (params["id"] is None):
+            raise ValueError(
+                "Missing the required parameter `id` when calling `get_host_type`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/host-types/{id}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostType',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "id" in params:
+            path_params["id"] = params["id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostType",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_host_type_values(self, system_id, index, **kwargs):
-            """
-            Get the list of HostTypes
-            Mode: Both Embedded and Proxy. 
+        """
+        Get the list of HostTypes
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_host_type_values(system_id, index, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param int index: \"The value of the index for the desired host type value. This value corresponds to the index attribute of the HostTypeValues model\" (required)
-    
-            :return: HostTypeValues
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_host_type_values(system_id, index, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'index']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_host_type_values" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_host_type_values`")
-    
-    
-    
-            # verify the required parameter 'index' is set
-            if ('index' not in params) or (params['index'] is None):
-                raise ValueError("Missing the required parameter `index` when calling `get_host_type_values`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-type-values/{index}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'index' in params:
-                path_params['index'] = params['index']
-    
+        :param int index: \"The value of the index for the desired host type value. This value corresponds to the index attribute of the HostTypeValues model\" (required)
 
-            query_params = {}
-    
+        :return: HostTypeValues
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "index"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_host_type_values" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_host_type_values`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'index' is set
+        if ("index" not in params) or (params["index"] is None):
+            raise ValueError(
+                "Missing the required parameter `index` when calling `get_host_type_values`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/host-type-values/{index}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostTypeValues',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "index" in params:
+            path_params["index"] = params["index"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostTypeValues",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_unassociated_host_ports(self, system_id, **kwargs):
-            """
-            Get the list of unassociated HostPorts
-            Mode: Both Embedded and Proxy. 
+        """
+        Get the list of unassociated HostPorts
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_unassociated_host_ports(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :return: list[UnassociatedHostPort]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_unassociated_host_ports(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_unassociated_host_ports" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_unassociated_host_ports`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/unassociated-host-ports'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :return: list[UnassociatedHostPort]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            query_params = {}
-    
+        """
 
-            header_params = {}
-    
+        all_params = ["system_id"]
+        all_params.append("callback")
 
-            form_params = []
-            local_var_files = {}
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_unassociated_host_ports" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            body_params = None
-    
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_unassociated_host_ports`"
+            )
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/storage-systems/{system-id}/unassociated-host-ports".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        query_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[UnassociatedHostPort]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[UnassociatedHostPort]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def move_host(self, system_id, host_id, **kwargs):
-            """
-            Move a Host under a different HostGroup
-            Mode: Both Embedded and Proxy. 
+        """
+        Move a Host under a different HostGroup
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.move_host(system_id, host_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str host_id: The id of an existing host entry configured on the specified array (required)
-    
-            :param HostMoveRequest body: 
-    
-            :return: HostEx
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.move_host(system_id, host_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'host_id', 'body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method move_host" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `move_host`")
-    
-    
-    
-            # verify the required parameter 'host_id' is set
-            if ('host_id' not in params) or (params['host_id'] is None):
-                raise ValueError("Missing the required parameter `host_id` when calling `move_host`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/hosts/{hostId}/move'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'host_id' in params:
-                path_params['hostId'] = params['host_id']
-    
+        :param str host_id: The id of an existing host entry configured on the specified array (required)
 
-            query_params = {}
-    
+        :param HostMoveRequest body:
 
-            header_params = {}
-    
+        :return: HostEx
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        all_params = ["system_id", "host_id", "body"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method move_host" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `move_host`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        # verify the required parameter 'host_id' is set
+        if ("host_id" not in params) or (params["host_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `host_id` when calling `move_host`"
+            )
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostEx',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        resource_path = "/storage-systems/{system-id}/hosts/{hostId}/move".replace(
+            "{format}", "json"
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "host_id" in params:
+            path_params["hostId"] = params["host_id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostEx",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def new_host(self, system_id, **kwargs):
-            """
-            Create a new Host
-            Mode: Both Embedded and Proxy. 
+        """
+        Create a new Host
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.new_host(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param HostCreateRequest body: 
-    
-            :return: Host
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.new_host(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method new_host" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `new_host`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/hosts'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param HostCreateRequest body:
 
-            query_params = {}
-    
+        :return: Host
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "body"]
+        all_params.append("callback")
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method new_host" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `new_host`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/hosts".replace("{format}", "json")
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='Host',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="Host",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def new_host_group(self, system_id, **kwargs):
-            """
-            Create a HostGroup
-            Mode: Both Embedded and Proxy. 
+        """
+        Create a HostGroup
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.new_host_group(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param HostGroupCreateRequest body: 
-    
-            :return: HostGroup
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.new_host_group(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method new_host_group" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `new_host_group`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-groups'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param HostGroupCreateRequest body:
 
-            query_params = {}
-    
+        :return: HostGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "body"]
+        all_params.append("callback")
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method new_host_group" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `new_host_group`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/host-groups".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostGroup',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostGroup",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def remove_host(self, system_id, id, **kwargs):
-            """
-            Delete a Host
-            Mode: Both Embedded and Proxy. 
+        """
+        Delete a Host
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.remove_host(system_id, id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str id: Delete a Host (required)
-    
-            :return: None
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.remove_host(system_id, id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method remove_host" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `remove_host`")
-    
-    
-    
-            # verify the required parameter 'id' is set
-            if ('id' not in params) or (params['id'] is None):
-                raise ValueError("Missing the required parameter `id` when calling `remove_host`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/hosts/{id}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'id' in params:
-                path_params['id'] = params['id']
-    
+        :param str id: Delete a Host (required)
 
-            query_params = {}
-    
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "id"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_host" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `remove_host`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'id' is set
+        if ("id" not in params) or (params["id"] is None):
+            raise ValueError(
+                "Missing the required parameter `id` when calling `remove_host`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/hosts/{id}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'DELETE',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type=None,
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "id" in params:
+            path_params["id"] = params["id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def remove_host_group(self, system_id, id, **kwargs):
-            """
-            Delete a HostGroup
-            Mode: Both Embedded and Proxy. 
+        """
+        Delete a HostGroup
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.remove_host_group(system_id, id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str id: Delete a HostGroup (required)
-    
-            :return: None
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.remove_host_group(system_id, id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'id']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method remove_host_group" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `remove_host_group`")
-    
-    
-    
-            # verify the required parameter 'id' is set
-            if ('id' not in params) or (params['id'] is None):
-                raise ValueError("Missing the required parameter `id` when calling `remove_host_group`")
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-groups/{id}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'id' in params:
-                path_params['id'] = params['id']
-    
+        :param str id: Delete a HostGroup (required)
 
-            query_params = {}
-    
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "id"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_host_group" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `remove_host_group`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'id' is set
+        if ("id" not in params) or (params["id"] is None):
+            raise ValueError(
+                "Missing the required parameter `id` when calling `remove_host_group`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/host-groups/{id}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'DELETE',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type=None,
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "id" in params:
+            path_params["id"] = params["id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def set_host_port_type_default(self, system_id, **kwargs):
-            """
-            Set default HostType
-            Mode: Both Embedded and Proxy. DEPRECATED: See /host-types
+        """
+        Set default HostType
+        Mode: Both Embedded and Proxy. DEPRECATED: See /host-types
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.set_host_port_type_default(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param SingleNumberValue body: 
-    
-            :return: HostType
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.set_host_port_type_default(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method set_host_port_type_default" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `set_host_port_type_default`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-port-types'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param SingleNumberValue body:
 
-            query_params = {}
-    
+        :return: HostType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "body"]
+        all_params.append("callback")
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_host_port_type_default" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `set_host_port_type_default`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/host-port-types".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostType',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostType",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def set_host_type_default(self, system_id, **kwargs):
-            """
-            Set default HostType
-            Mode: Both Embedded and Proxy. 
+        """
+        Set default HostType
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.set_host_type_default(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param SingleNumberValue body: 
-    
-            :return: HostType
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.set_host_type_default(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method set_host_type_default" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `set_host_type_default`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/host-types'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param SingleNumberValue body:
 
-            query_params = {}
-    
+        :return: HostType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "body"]
+        all_params.append("callback")
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_host_type_default" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `set_host_type_default`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/host-types".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostType',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostType",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def update_host(self, system_id, id, **kwargs):
-            """
-            Update the parameters of a Host
-            Mode: Both Embedded and Proxy. 
+        """
+        Update the parameters of a Host
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.update_host(system_id, id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str id: Update the parameters of a Host (required)
-    
-            :param HostUpdateRequest body: 
-    
-            :return: HostEx
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.update_host(system_id, id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'id', 'body']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method update_host" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `update_host`")
-    
-    
-    
-            # verify the required parameter 'id' is set
-            if ('id' not in params) or (params['id'] is None):
-                raise ValueError("Missing the required parameter `id` when calling `update_host`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/hosts/{id}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'id' in params:
-                path_params['id'] = params['id']
-    
+        :param str id: Update the parameters of a Host (required)
 
-            query_params = {}
-    
+        :param HostUpdateRequest body:
 
-            header_params = {}
-    
+        :return: HostEx
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
+        all_params = ["system_id", "id", "body"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_host" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `update_host`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        # verify the required parameter 'id' is set
+        if ("id" not in params) or (params["id"] is None):
+            raise ValueError(
+                "Missing the required parameter `id` when calling `update_host`"
+            )
 
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostEx',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        resource_path = "/storage-systems/{system-id}/hosts/{id}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "id" in params:
+            path_params["id"] = params["id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostEx",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def update_host_group(self, system_id, id, **kwargs):
-            """
-            Update a HostGroup
-            Mode: Both Embedded and Proxy. 
+        """
+        Update a HostGroup
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.update_host_group(system_id, id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str id: Update a HostGroup (required)
-    
-            :param HostGroupUpdateRequest body: 
-    
-            :return: HostGroup
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
-
-            """
-
-            all_params = ['system_id', 'id', 'body']
-            all_params.append('callback')
-
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method update_host_group" % key
-                    )
-                params[key] = val
-            del params['kwargs']
-
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `update_host_group`")
-    
-    
-    
-            # verify the required parameter 'id' is set
-            if ('id' not in params) or (params['id'] is None):
-                raise ValueError("Missing the required parameter `id` when calling `update_host_group`")
-    
-    
-    
-    
-
-            resource_path = '/storage-systems/{system-id}/host-groups/{id}'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-            if 'id' in params:
-                path_params['id'] = params['id']
-    
-
-            query_params = {}
-    
-
-            header_params = {}
-    
-
-            form_params = []
-            local_var_files = {}
-    
-
-            body_params = None
-    
-            if 'body' in params:
-                body_params = params['body']
-    
-
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
-
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
-
-            # Authentication setting
-            auth_settings = ['basicAuth']
-
-            response = self.api_client.call_api(resource_path, 'POST',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='HostGroup',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        >>> thread = api.update_host_group(system_id, id, callback=callback_function)
 
 
 
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
+        :param str system_id: The id of the storage-system (required)
 
+        :param str id: Update a HostGroup (required)
 
+        :param HostGroupUpdateRequest body:
 
+        :return: HostGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
+        """
 
+        all_params = ["system_id", "id", "body"]
+        all_params.append("callback")
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_host_group" % key
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `update_host_group`"
+            )
+
+        # verify the required parameter 'id' is set
+        if ("id" not in params) or (params["id"] is None):
+            raise ValueError(
+                "Missing the required parameter `id` when calling `update_host_group`"
+            )
+
+        resource_path = "/storage-systems/{system-id}/host-groups/{id}".replace(
+            "{format}", "json"
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        if "id" in params:
+            path_params["id"] = params["id"]
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        if "body" in params:
+            body_params = params["body"]
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="HostGroup",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dpl_core_dump_detail import DPLCoreDumpDetail
+
+from netapp.santricity.models.symbol.dpl_core_dump_detail import \
+    DPLCoreDumpDetail
+
 
 class DPLCoreDumpDetailTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DPLCoreDumpDetailTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dpl_core_dump_detail(self):
-          dpl_core_dump_detail_obj = DPLCoreDumpDetail()
-          self.assertNotEqual(dpl_core_dump_detail_obj, None)
-
-
+        dpl_core_dump_detail_obj = DPLCoreDumpDetail()
+        self.assertNotEqual(dpl_core_dump_detail_obj, None)

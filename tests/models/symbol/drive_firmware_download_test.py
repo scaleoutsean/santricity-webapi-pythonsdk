@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_firmware_download import DriveFirmwareDownload
+
+from netapp.santricity.models.symbol.drive_firmware_download import \
+    DriveFirmwareDownload
+
 
 class DriveFirmwareDownloadTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveFirmwareDownloadTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_firmware_download(self):
-          drive_firmware_download_obj = DriveFirmwareDownload()
-          self.assertNotEqual(drive_firmware_download_obj, None)
-
-
+        drive_firmware_download_obj = DriveFirmwareDownload()
+        self.assertNotEqual(drive_firmware_download_obj, None)

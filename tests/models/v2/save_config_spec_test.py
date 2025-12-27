@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.save_config_spec import SaveConfigSpec
+
 
 class SaveConfigSpecTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SaveConfigSpecTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_save_config_spec(self):
-          save_config_spec_obj = SaveConfigSpec()
-          self.assertNotEqual(save_config_spec_obj, None)
-
-
+        save_config_spec_obj = SaveConfigSpec()
+        self.assertNotEqual(save_config_spec_obj, None)

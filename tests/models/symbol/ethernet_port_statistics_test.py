@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ethernet_port_statistics import EthernetPortStatistics
+
+from netapp.santricity.models.symbol.ethernet_port_statistics import \
+    EthernetPortStatistics
+
 
 class EthernetPortStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EthernetPortStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ethernet_port_statistics(self):
-          ethernet_port_statistics_obj = EthernetPortStatistics()
-          self.assertNotEqual(ethernet_port_statistics_obj, None)
-
-
+        ethernet_port_statistics_obj = EthernetPortStatistics()
+        self.assertNotEqual(ethernet_port_statistics_obj, None)

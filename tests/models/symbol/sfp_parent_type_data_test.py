@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sfp_parent_type_data import SFPParentTypeData
+
+from netapp.santricity.models.symbol.sfp_parent_type_data import \
+    SFPParentTypeData
+
 
 class SFPParentTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SFPParentTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sfp_parent_type_data(self):
-          sfp_parent_type_data_obj = SFPParentTypeData()
-          self.assertNotEqual(sfp_parent_type_data_obj, None)
-
-
+        sfp_parent_type_data_obj = SFPParentTypeData()
+        self.assertNotEqual(sfp_parent_type_data_obj, None)

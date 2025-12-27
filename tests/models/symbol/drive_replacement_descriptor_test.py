@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_replacement_descriptor import DriveReplacementDescriptor
+
+from netapp.santricity.models.symbol.drive_replacement_descriptor import \
+    DriveReplacementDescriptor
+
 
 class DriveReplacementDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveReplacementDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_replacement_descriptor(self):
-          drive_replacement_descriptor_obj = DriveReplacementDescriptor()
-          self.assertNotEqual(drive_replacement_descriptor_obj, None)
-
-
+        drive_replacement_descriptor_obj = DriveReplacementDescriptor()
+        self.assertNotEqual(drive_replacement_descriptor_obj, None)

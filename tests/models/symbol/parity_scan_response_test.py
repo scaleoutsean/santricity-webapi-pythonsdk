@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.parity_scan_response import ParityScanResponse
+
+from netapp.santricity.models.symbol.parity_scan_response import \
+    ParityScanResponse
+
 
 class ParityScanResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ParityScanResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_parity_scan_response(self):
-          parity_scan_response_obj = ParityScanResponse()
-          self.assertNotEqual(parity_scan_response_obj, None)
-
-
+        parity_scan_response_obj = ParityScanResponse()
+        self.assertNotEqual(parity_scan_response_obj, None)

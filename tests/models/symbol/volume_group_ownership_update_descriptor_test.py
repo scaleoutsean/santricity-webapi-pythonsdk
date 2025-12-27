@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_group_ownership_update_descriptor import VolumeGroupOwnershipUpdateDescriptor
+
+from netapp.santricity.models.symbol.volume_group_ownership_update_descriptor import \
+    VolumeGroupOwnershipUpdateDescriptor
+
 
 class VolumeGroupOwnershipUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class VolumeGroupOwnershipUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_group_ownership_update_descriptor(self):
-          volume_group_ownership_update_descriptor_obj = VolumeGroupOwnershipUpdateDescriptor()
-          self.assertNotEqual(volume_group_ownership_update_descriptor_obj, None)
-
-
+        volume_group_ownership_update_descriptor_obj = (
+            VolumeGroupOwnershipUpdateDescriptor()
+        )
+        self.assertNotEqual(volume_group_ownership_update_descriptor_obj, None)

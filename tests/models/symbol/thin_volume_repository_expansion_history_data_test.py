@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thin_volume_repository_expansion_history_data import ThinVolumeRepositoryExpansionHistoryData
+
+from netapp.santricity.models.symbol.thin_volume_repository_expansion_history_data import \
+    ThinVolumeRepositoryExpansionHistoryData
+
 
 class ThinVolumeRepositoryExpansionHistoryDataTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class ThinVolumeRepositoryExpansionHistoryDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_repository_expansion_history_data(self):
-          thin_volume_repository_expansion_history_data_obj = ThinVolumeRepositoryExpansionHistoryData()
-          self.assertNotEqual(thin_volume_repository_expansion_history_data_obj, None)
-
-
+        thin_volume_repository_expansion_history_data_obj = (
+            ThinVolumeRepositoryExpansionHistoryData()
+        )
+        self.assertNotEqual(thin_volume_repository_expansion_history_data_obj, None)

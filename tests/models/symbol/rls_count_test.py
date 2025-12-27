@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.rls_count import RLSCount
+
 
 class RLSCountTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RLSCountTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_rls_count(self):
-          rls_count_obj = RLSCount()
-          self.assertNotEqual(rls_count_obj, None)
-
-
+        rls_count_obj = RLSCount()
+        self.assertNotEqual(rls_count_obj, None)

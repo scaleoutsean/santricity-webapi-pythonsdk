@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ib_rdma_channel_statistics import IbRdmaChannelStatistics
+
+from netapp.santricity.models.symbol.ib_rdma_channel_statistics import \
+    IbRdmaChannelStatistics
+
 
 class IbRdmaChannelStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IbRdmaChannelStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_rdma_channel_statistics(self):
-          ib_rdma_channel_statistics_obj = IbRdmaChannelStatistics()
-          self.assertNotEqual(ib_rdma_channel_statistics_obj, None)
-
-
+        ib_rdma_channel_statistics_obj = IbRdmaChannelStatistics()
+        self.assertNotEqual(ib_rdma_channel_statistics_obj, None)

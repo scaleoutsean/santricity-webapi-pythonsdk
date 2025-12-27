@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.alarm_update_descriptor import AlarmUpdateDescriptor
+
+from netapp.santricity.models.symbol.alarm_update_descriptor import \
+    AlarmUpdateDescriptor
+
 
 class AlarmUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AlarmUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_alarm_update_descriptor(self):
-          alarm_update_descriptor_obj = AlarmUpdateDescriptor()
-          self.assertNotEqual(alarm_update_descriptor_obj, None)
-
-
+        alarm_update_descriptor_obj = AlarmUpdateDescriptor()
+        self.assertNotEqual(alarm_update_descriptor_obj, None)

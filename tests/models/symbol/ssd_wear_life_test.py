@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ssd_wear_life import SSDWearLife
+
 
 class SSDWearLifeTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SSDWearLifeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ssd_wear_life(self):
-          ssd_wear_life_obj = SSDWearLife()
-          self.assertNotEqual(ssd_wear_life_obj, None)
-
-
+        ssd_wear_life_obj = SSDWearLife()
+        self.assertNotEqual(ssd_wear_life_obj, None)

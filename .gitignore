@@ -12,6 +12,7 @@ __pycache__/
 *.pyo
 *.bak
 *.bkp
+.travis.yml
 .DS_Store
 .env
 .venv

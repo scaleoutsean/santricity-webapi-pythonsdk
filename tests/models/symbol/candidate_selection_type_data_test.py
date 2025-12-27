@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.candidate_selection_type_data import CandidateSelectionTypeData
+
+from netapp.santricity.models.symbol.candidate_selection_type_data import \
+    CandidateSelectionTypeData
+
 
 class CandidateSelectionTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CandidateSelectionTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_candidate_selection_type_data(self):
-          candidate_selection_type_data_obj = CandidateSelectionTypeData()
-          self.assertNotEqual(candidate_selection_type_data_obj, None)
-
-
+        candidate_selection_type_data_obj = CandidateSelectionTypeData()
+        self.assertNotEqual(candidate_selection_type_data_obj, None)

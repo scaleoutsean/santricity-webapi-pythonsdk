@@ -13,17 +13,16 @@ Redistribution and use in source and binary forms, with or without modification,
 
 NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
-#This is a sample code that illustrates SDK usage for creating & collecting volumes based on application tagging
+# This is a sample code that illustrates SDK usage for creating & collecting volumes based on application tagging
 
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api_client import ApiClient
-from netapp.santricity.api_client import Configuration
-from netapp.santricity.api.v2.workloads_api import WorkloadsApi
-from netapp.santricity.models.v2.workload_create_request import WorkloadCreateRequest
-
-import sys
 import os
+import sys
 
+from netapp.santricity.api.v2.workloads_api import WorkloadsApi
+from netapp.santricity.api_client import ApiClient, Configuration
+from netapp.santricity.models.v2.workload_create_request import \
+    WorkloadCreateRequest
+from netapp.santricity.rest import ApiException
 
 config = Configuration()
 # Environment-driven configuration (direct SANtricity by default)
@@ -39,35 +38,30 @@ config.username = os.getenv("SANTRICITY_USER", "rw")
 config.password = os.getenv("SANTRICITY_PASS", "rw")
 
 
-#Create a client object to use with the above defined configuration.
+# Create a client object to use with the above defined configuration.
 api_client = ApiClient()
 config.api_client = api_client
 
-wld_api=WorkloadsApi(api_client)
+wld_api = WorkloadsApi(api_client)
 
-#Create a new workload and retrieve all defined work-loads
+# Create a new workload and retrieve all defined work-loads
 
-wrk_load_cr_req=WorkloadCreateRequest()
+wrk_load_cr_req = WorkloadCreateRequest()
 
-wrk_load_cr_req.name="NoSQL"
+wrk_load_cr_req.name = "NoSQL"
 
 try:
-    #Create a work load
-    wrk_load_model= wld_api.new_workload(sys_id,data=wrk_load_cr_req)
-    print("Created workload. Name: %s , ID : %s" %(wrk_load_model.name,wrk_load_model.id))
+    # Create a work load
+    wrk_load_model = wld_api.new_workload(sys_id, data=wrk_load_cr_req)
+    print(
+        "Created workload. Name: %s , ID : %s"
+        % (wrk_load_model.name, wrk_load_model.id)
+    )
 
-    #Get the list of all defiend work-loads
+    # Get the list of all defiend work-loads
     wrk_load_model_list = wld_api.get_all_defined_workloads(sys_id)
     print("Defined Workloads :", wrk_load_model_list)
 
 except ApiException as ae:
     print("There was an exception: {}.".format(ae.reason))
     sys.exit()
-
-
-
-
-
-
-
-

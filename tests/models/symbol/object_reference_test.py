@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.object_reference import ObjectReference
+
 
 class ObjectReferenceTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ObjectReferenceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_object_reference(self):
-          object_reference_obj = ObjectReference()
-          self.assertNotEqual(object_reference_obj, None)
-
-
+        object_reference_obj = ObjectReference()
+        self.assertNotEqual(object_reference_obj, None)

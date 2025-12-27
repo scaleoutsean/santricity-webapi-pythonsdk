@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.snapshot_creation_descriptor import SnapshotCreationDescriptor
+
+from netapp.santricity.models.symbol.snapshot_creation_descriptor import \
+    SnapshotCreationDescriptor
+
 
 class SnapshotCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SnapshotCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_creation_descriptor(self):
-          snapshot_creation_descriptor_obj = SnapshotCreationDescriptor()
-          self.assertNotEqual(snapshot_creation_descriptor_obj, None)
-
-
+        snapshot_creation_descriptor_obj = SnapshotCreationDescriptor()
+        self.assertNotEqual(snapshot_creation_descriptor_obj, None)

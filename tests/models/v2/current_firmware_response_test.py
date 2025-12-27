@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.current_firmware_response import CurrentFirmwareResponse
+
+from netapp.santricity.models.v2.current_firmware_response import \
+    CurrentFirmwareResponse
+
 
 class CurrentFirmwareResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CurrentFirmwareResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_current_firmware_response(self):
-          current_firmware_response_obj = CurrentFirmwareResponse()
-          self.assertNotEqual(current_firmware_response_obj, None)
-
-
+        current_firmware_response_obj = CurrentFirmwareResponse()
+        self.assertNotEqual(current_firmware_response_obj, None)

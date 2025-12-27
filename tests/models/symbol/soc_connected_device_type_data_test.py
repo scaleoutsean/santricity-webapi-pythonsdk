@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.soc_connected_device_type_data import SocConnectedDeviceTypeData
+
+from netapp.santricity.models.symbol.soc_connected_device_type_data import \
+    SocConnectedDeviceTypeData
+
 
 class SocConnectedDeviceTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SocConnectedDeviceTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_soc_connected_device_type_data(self):
-          soc_connected_device_type_data_obj = SocConnectedDeviceTypeData()
-          self.assertNotEqual(soc_connected_device_type_data_obj, None)
-
-
+        soc_connected_device_type_data_obj = SocConnectedDeviceTypeData()
+        self.assertNotEqual(soc_connected_device_type_data_obj, None)

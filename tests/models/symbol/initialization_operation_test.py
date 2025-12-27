@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.initialization_operation import InitializationOperation
+
+from netapp.santricity.models.symbol.initialization_operation import \
+    InitializationOperation
+
 
 class InitializationOperationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class InitializationOperationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_initialization_operation(self):
-          initialization_operation_obj = InitializationOperation()
-          self.assertNotEqual(initialization_operation_obj, None)
-
-
+        initialization_operation_obj = InitializationOperation()
+        self.assertNotEqual(initialization_operation_obj, None)

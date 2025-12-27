@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dom0_support_data_journal_start_details import Dom0SupportDataJournalStartDetails
+
+from netapp.santricity.models.symbol.dom0_support_data_journal_start_details import \
+    Dom0SupportDataJournalStartDetails
+
 
 class Dom0SupportDataJournalStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class Dom0SupportDataJournalStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dom0_support_data_journal_start_details(self):
-          dom0_support_data_journal_start_details_obj = Dom0SupportDataJournalStartDetails()
-          self.assertNotEqual(dom0_support_data_journal_start_details_obj, None)
-
-
+        dom0_support_data_journal_start_details_obj = (
+            Dom0SupportDataJournalStartDetails()
+        )
+        self.assertNotEqual(dom0_support_data_journal_start_details_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.remote_candidate import RemoteCandidate
+
 
 class RemoteCandidateTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RemoteCandidateTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_candidate(self):
-          remote_candidate_obj = RemoteCandidate()
-          self.assertNotEqual(remote_candidate_obj, None)
-
-
+        remote_candidate_obj = RemoteCandidate()
+        self.assertNotEqual(remote_candidate_obj, None)

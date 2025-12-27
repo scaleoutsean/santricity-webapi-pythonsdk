@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.dcbx_summary_data import DCBXSummaryData
+
 
 class DCBXSummaryDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DCBXSummaryDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dcbx_summary_data(self):
-          dcbx_summary_data_obj = DCBXSummaryData()
-          self.assertNotEqual(dcbx_summary_data_obj, None)
-
-
+        dcbx_summary_data_obj = DCBXSummaryData()
+        self.assertNotEqual(dcbx_summary_data_obj, None)

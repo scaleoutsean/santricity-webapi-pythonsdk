@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.nvsram_update_descriptor import NVSRAMUpdateDescriptor
+
+from netapp.santricity.models.symbol.nvsram_update_descriptor import \
+    NVSRAMUpdateDescriptor
+
 
 class NVSRAMUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class NVSRAMUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_nvsram_update_descriptor(self):
-          nvsram_update_descriptor_obj = NVSRAMUpdateDescriptor()
-          self.assertNotEqual(nvsram_update_descriptor_obj, None)
-
-
+        nvsram_update_descriptor_obj = NVSRAMUpdateDescriptor()
+        self.assertNotEqual(nvsram_update_descriptor_obj, None)

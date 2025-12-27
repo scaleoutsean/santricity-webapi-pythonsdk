@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.hot_spare_candidate import HotSpareCandidate
+
+from netapp.santricity.models.symbol.hot_spare_candidate import \
+    HotSpareCandidate
+
 
 class HotSpareCandidateTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HotSpareCandidateTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_hot_spare_candidate(self):
-          hot_spare_candidate_obj = HotSpareCandidate()
-          self.assertNotEqual(hot_spare_candidate_obj, None)
-
-
+        hot_spare_candidate_obj = HotSpareCandidate()
+        self.assertNotEqual(hot_spare_candidate_obj, None)

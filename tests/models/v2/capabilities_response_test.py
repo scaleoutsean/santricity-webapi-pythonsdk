@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.capabilities_response import CapabilitiesResponse
+
+from netapp.santricity.models.v2.capabilities_response import \
+    CapabilitiesResponse
+
 
 class CapabilitiesResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CapabilitiesResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_capabilities_response(self):
-          capabilities_response_obj = CapabilitiesResponse()
-          self.assertNotEqual(capabilities_response_obj, None)
-
-
+        capabilities_response_obj = CapabilitiesResponse()
+        self.assertNotEqual(capabilities_response_obj, None)

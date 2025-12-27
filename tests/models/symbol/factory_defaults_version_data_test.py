@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.factory_defaults_version_data import FactoryDefaultsVersionData
+
+from netapp.santricity.models.symbol.factory_defaults_version_data import \
+    FactoryDefaultsVersionData
+
 
 class FactoryDefaultsVersionDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FactoryDefaultsVersionDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_factory_defaults_version_data(self):
-          factory_defaults_version_data_obj = FactoryDefaultsVersionData()
-          self.assertNotEqual(factory_defaults_version_data_obj, None)
-
-
+        factory_defaults_version_data_obj = FactoryDefaultsVersionData()
+        self.assertNotEqual(factory_defaults_version_data_obj, None)

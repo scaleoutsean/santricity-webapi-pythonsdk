@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.remote_communication_check_descriptor import RemoteCommunicationCheckDescriptor
+
+from netapp.santricity.models.symbol.remote_communication_check_descriptor import \
+    RemoteCommunicationCheckDescriptor
+
 
 class RemoteCommunicationCheckDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemoteCommunicationCheckDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_communication_check_descriptor(self):
-          remote_communication_check_descriptor_obj = RemoteCommunicationCheckDescriptor()
-          self.assertNotEqual(remote_communication_check_descriptor_obj, None)
-
-
+        remote_communication_check_descriptor_obj = RemoteCommunicationCheckDescriptor()
+        self.assertNotEqual(remote_communication_check_descriptor_obj, None)

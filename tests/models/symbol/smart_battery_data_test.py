@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.smart_battery_data import SmartBatteryData
+
 
 class SmartBatteryDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SmartBatteryDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_smart_battery_data(self):
-          smart_battery_data_obj = SmartBatteryData()
-          self.assertNotEqual(smart_battery_data_obj, None)
-
-
+        smart_battery_data_obj = SmartBatteryData()
+        self.assertNotEqual(smart_battery_data_obj, None)

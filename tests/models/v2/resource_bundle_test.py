@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.resource_bundle import ResourceBundle
+
 
 class ResourceBundleTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ResourceBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_resource_bundle(self):
-          resource_bundle_obj = ResourceBundle()
-          self.assertNotEqual(resource_bundle_obj, None)
-
-
+        resource_bundle_obj = ResourceBundle()
+        self.assertNotEqual(resource_bundle_obj, None)

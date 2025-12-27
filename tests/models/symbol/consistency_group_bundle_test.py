@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.consistency_group_bundle import ConsistencyGroupBundle
+
+from netapp.santricity.models.symbol.consistency_group_bundle import \
+    ConsistencyGroupBundle
+
 
 class ConsistencyGroupBundleTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ConsistencyGroupBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_consistency_group_bundle(self):
-          consistency_group_bundle_obj = ConsistencyGroupBundle()
-          self.assertNotEqual(consistency_group_bundle_obj, None)
-
-
+        consistency_group_bundle_obj = ConsistencyGroupBundle()
+        self.assertNotEqual(consistency_group_bundle_obj, None)

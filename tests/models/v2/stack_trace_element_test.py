@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.stack_trace_element import StackTraceElement
+
 
 class StackTraceElementTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class StackTraceElementTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_stack_trace_element(self):
-          stack_trace_element_obj = StackTraceElement()
-          self.assertNotEqual(stack_trace_element_obj, None)
-
-
+        stack_trace_element_obj = StackTraceElement()
+        self.assertNotEqual(stack_trace_element_obj, None)

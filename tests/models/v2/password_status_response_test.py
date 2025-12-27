@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.password_status_response import PasswordStatusResponse
+
+from netapp.santricity.models.v2.password_status_response import \
+    PasswordStatusResponse
+
 
 class PasswordStatusResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PasswordStatusResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_password_status_response(self):
-          password_status_response_obj = PasswordStatusResponse()
-          self.assertNotEqual(password_status_response_obj, None)
-
-
+        password_status_response_obj = PasswordStatusResponse()
+        self.assertNotEqual(password_status_response_obj, None)

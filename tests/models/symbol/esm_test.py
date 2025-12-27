@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.esm import Esm
+
 
 class EsmTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class EsmTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_esm(self):
-          esm_obj = Esm()
-          self.assertNotEqual(esm_obj, None)
-
-
+        esm_obj = Esm()
+        self.assertNotEqual(esm_obj, None)

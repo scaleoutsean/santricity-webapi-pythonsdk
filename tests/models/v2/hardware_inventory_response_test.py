@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.hardware_inventory_response import HardwareInventoryResponse
+
+from netapp.santricity.models.v2.hardware_inventory_response import \
+    HardwareInventoryResponse
+
 
 class HardwareInventoryResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HardwareInventoryResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_hardware_inventory_response(self):
-          hardware_inventory_response_obj = HardwareInventoryResponse()
-          self.assertNotEqual(hardware_inventory_response_obj, None)
-
-
+        hardware_inventory_response_obj = HardwareInventoryResponse()
+        self.assertNotEqual(hardware_inventory_response_obj, None)

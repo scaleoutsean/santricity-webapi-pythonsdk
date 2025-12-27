@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.remote_volume import RemoteVolume
+
 
 class RemoteVolumeTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RemoteVolumeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_volume(self):
-          remote_volume_obj = RemoteVolume()
-          self.assertNotEqual(remote_volume_obj, None)
-
-
+        remote_volume_obj = RemoteVolume()
+        self.assertNotEqual(remote_volume_obj, None)

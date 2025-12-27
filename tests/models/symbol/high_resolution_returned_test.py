@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.high_resolution_returned import HighResolutionReturned
+
+from netapp.santricity.models.symbol.high_resolution_returned import \
+    HighResolutionReturned
+
 
 class HighResolutionReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HighResolutionReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_high_resolution_returned(self):
-          high_resolution_returned_obj = HighResolutionReturned()
-          self.assertNotEqual(high_resolution_returned_obj, None)
-
-
+        high_resolution_returned_obj = HighResolutionReturned()
+        self.assertNotEqual(high_resolution_returned_obj, None)

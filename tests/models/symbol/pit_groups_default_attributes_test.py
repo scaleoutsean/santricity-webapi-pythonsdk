@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_groups_default_attributes import PITGroupsDefaultAttributes
+
+from netapp.santricity.models.symbol.pit_groups_default_attributes import \
+    PITGroupsDefaultAttributes
+
 
 class PITGroupsDefaultAttributesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITGroupsDefaultAttributesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_groups_default_attributes(self):
-          pit_groups_default_attributes_obj = PITGroupsDefaultAttributes()
-          self.assertNotEqual(pit_groups_default_attributes_obj, None)
-
-
+        pit_groups_default_attributes_obj = PITGroupsDefaultAttributes()
+        self.assertNotEqual(pit_groups_default_attributes_obj, None)

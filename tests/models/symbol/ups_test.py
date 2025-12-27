@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ups import Ups
+
 
 class UpsTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class UpsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ups(self):
-          ups_obj = Ups()
-          self.assertNotEqual(ups_obj, None)
-
-
+        ups_obj = Ups()
+        self.assertNotEqual(ups_obj, None)

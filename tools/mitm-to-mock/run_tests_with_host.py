@@ -15,7 +15,7 @@ import nose
 
 argv = ["nosetests", "-q"]
 # allow passing additional args via env (rare)
-extra = os.environ.get('NOSE_ARGS')
+extra = os.environ.get("NOSE_ARGS")
 if extra:
     argv.extend(extra.split())
 

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.tray_update_descriptor import TrayUpdateDescriptor
+
+from netapp.santricity.models.symbol.tray_update_descriptor import \
+    TrayUpdateDescriptor
+
 
 class TrayUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class TrayUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_tray_update_descriptor(self):
-          tray_update_descriptor_obj = TrayUpdateDescriptor()
-          self.assertNotEqual(tray_update_descriptor_obj, None)
-
-
+        tray_update_descriptor_obj = TrayUpdateDescriptor()
+        self.assertNotEqual(tray_update_descriptor_obj, None)

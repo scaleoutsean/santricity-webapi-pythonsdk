@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.soc_port_data import SocPortData
+
 
 class SocPortDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SocPortDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_soc_port_data(self):
-          soc_port_data_obj = SocPortData()
-          self.assertNotEqual(soc_port_data_obj, None)
-
-
+        soc_port_data_obj = SocPortData()
+        self.assertNotEqual(soc_port_data_obj, None)

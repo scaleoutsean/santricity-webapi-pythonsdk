@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.pit_group_ref_list import PITGroupRefList
+
 
 class PITGroupRefListTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PITGroupRefListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_group_ref_list(self):
-          pit_group_ref_list_obj = PITGroupRefList()
-          self.assertNotEqual(pit_group_ref_list_obj, None)
-
-
+        pit_group_ref_list_obj = PITGroupRefList()
+        self.assertNotEqual(pit_group_ref_list_obj, None)

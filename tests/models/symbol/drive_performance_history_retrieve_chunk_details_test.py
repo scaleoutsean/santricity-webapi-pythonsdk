@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_performance_history_retrieve_chunk_details import DrivePerformanceHistoryRetrieveChunkDetails
+
+from netapp.santricity.models.symbol.drive_performance_history_retrieve_chunk_details import \
+    DrivePerformanceHistoryRetrieveChunkDetails
+
 
 class DrivePerformanceHistoryRetrieveChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class DrivePerformanceHistoryRetrieveChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_performance_history_retrieve_chunk_details(self):
-          drive_performance_history_retrieve_chunk_details_obj = DrivePerformanceHistoryRetrieveChunkDetails()
-          self.assertNotEqual(drive_performance_history_retrieve_chunk_details_obj, None)
-
-
+        drive_performance_history_retrieve_chunk_details_obj = (
+            DrivePerformanceHistoryRetrieveChunkDetails()
+        )
+        self.assertNotEqual(drive_performance_history_retrieve_chunk_details_obj, None)

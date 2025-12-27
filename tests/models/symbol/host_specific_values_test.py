@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_specific_values import HostSpecificValues
+
+from netapp.santricity.models.symbol.host_specific_values import \
+    HostSpecificValues
+
 
 class HostSpecificValuesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostSpecificValuesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_specific_values(self):
-          host_specific_values_obj = HostSpecificValues()
-          self.assertNotEqual(host_specific_values_obj, None)
-
-
+        host_specific_values_obj = HostSpecificValues()
+        self.assertNotEqual(host_specific_values_obj, None)

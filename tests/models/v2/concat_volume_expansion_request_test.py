@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.concat_volume_expansion_request import ConcatVolumeExpansionRequest
+
+from netapp.santricity.models.v2.concat_volume_expansion_request import \
+    ConcatVolumeExpansionRequest
+
 
 class ConcatVolumeExpansionRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ConcatVolumeExpansionRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_concat_volume_expansion_request(self):
-          concat_volume_expansion_request_obj = ConcatVolumeExpansionRequest()
-          self.assertNotEqual(concat_volume_expansion_request_obj, None)
-
-
+        concat_volume_expansion_request_obj = ConcatVolumeExpansionRequest()
+        self.assertNotEqual(concat_volume_expansion_request_obj, None)

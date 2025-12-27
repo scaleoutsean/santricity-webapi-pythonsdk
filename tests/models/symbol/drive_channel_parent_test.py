@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_channel_parent import DriveChannelParent
+
+from netapp.santricity.models.symbol.drive_channel_parent import \
+    DriveChannelParent
+
 
 class DriveChannelParentTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveChannelParentTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_channel_parent(self):
-          drive_channel_parent_obj = DriveChannelParent()
-          self.assertNotEqual(drive_channel_parent_obj, None)
-
-
+        drive_channel_parent_obj = DriveChannelParent()
+        self.assertNotEqual(drive_channel_parent_obj, None)

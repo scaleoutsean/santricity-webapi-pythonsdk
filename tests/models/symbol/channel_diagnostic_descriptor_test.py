@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.channel_diagnostic_descriptor import ChannelDiagnosticDescriptor
+
+from netapp.santricity.models.symbol.channel_diagnostic_descriptor import \
+    ChannelDiagnosticDescriptor
+
 
 class ChannelDiagnosticDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ChannelDiagnosticDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_channel_diagnostic_descriptor(self):
-          channel_diagnostic_descriptor_obj = ChannelDiagnosticDescriptor()
-          self.assertNotEqual(channel_diagnostic_descriptor_obj, None)
-
-
+        channel_diagnostic_descriptor_obj = ChannelDiagnosticDescriptor()
+        self.assertNotEqual(channel_diagnostic_descriptor_obj, None)

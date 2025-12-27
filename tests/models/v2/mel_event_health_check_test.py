@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.mel_event_health_check import MelEventHealthCheck
+
+from netapp.santricity.models.v2.mel_event_health_check import \
+    MelEventHealthCheck
+
 
 class MelEventHealthCheckTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MelEventHealthCheckTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mel_event_health_check(self):
-          mel_event_health_check_obj = MelEventHealthCheck()
-          self.assertNotEqual(mel_event_health_check_obj, None)
-
-
+        mel_event_health_check_obj = MelEventHealthCheck()
+        self.assertNotEqual(mel_event_health_check_obj, None)

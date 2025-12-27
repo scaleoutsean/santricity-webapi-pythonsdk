@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.snapshot_conversion_descriptor import SnapshotConversionDescriptor
+
+from netapp.santricity.models.symbol.snapshot_conversion_descriptor import \
+    SnapshotConversionDescriptor
+
 
 class SnapshotConversionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SnapshotConversionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_conversion_descriptor(self):
-          snapshot_conversion_descriptor_obj = SnapshotConversionDescriptor()
-          self.assertNotEqual(snapshot_conversion_descriptor_obj, None)
-
-
+        snapshot_conversion_descriptor_obj = SnapshotConversionDescriptor()
+        self.assertNotEqual(snapshot_conversion_descriptor_obj, None)

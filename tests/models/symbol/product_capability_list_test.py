@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.product_capability_list import ProductCapabilityList
+
+from netapp.santricity.models.symbol.product_capability_list import \
+    ProductCapabilityList
+
 
 class ProductCapabilityListTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ProductCapabilityListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_product_capability_list(self):
-          product_capability_list_obj = ProductCapabilityList()
-          self.assertNotEqual(product_capability_list_obj, None)
-
-
+        product_capability_list_obj = ProductCapabilityList()
+        self.assertNotEqual(product_capability_list_obj, None)

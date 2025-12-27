@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.pitcg_member import PITCGMember
+
 
 class PITCGMemberTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PITCGMemberTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pitcg_member(self):
-          pitcg_member_obj = PITCGMember()
-          self.assertNotEqual(pitcg_member_obj, None)
-
-
+        pitcg_member_obj = PITCGMember()
+        self.assertNotEqual(pitcg_member_obj, None)

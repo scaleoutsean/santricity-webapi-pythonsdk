@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.tcp_protocol_endpoint import TcpProtocolEndpoint
+
+from netapp.santricity.models.symbol.tcp_protocol_endpoint import \
+    TcpProtocolEndpoint
+
 
 class TcpProtocolEndpointTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class TcpProtocolEndpointTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_tcp_protocol_endpoint(self):
-          tcp_protocol_endpoint_obj = TcpProtocolEndpoint()
-          self.assertNotEqual(tcp_protocol_endpoint_obj, None)
-
-
+        tcp_protocol_endpoint_obj = TcpProtocolEndpoint()
+        self.assertNotEqual(tcp_protocol_endpoint_obj, None)

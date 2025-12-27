@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_copy_operation import VolumeCopyOperation
+
+from netapp.santricity.models.symbol.volume_copy_operation import \
+    VolumeCopyOperation
+
 
 class VolumeCopyOperationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeCopyOperationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_copy_operation(self):
-          volume_copy_operation_obj = VolumeCopyOperation()
-          self.assertNotEqual(volume_copy_operation_obj, None)
-
-
+        volume_copy_operation_obj = VolumeCopyOperation()
+        self.assertNotEqual(volume_copy_operation_obj, None)

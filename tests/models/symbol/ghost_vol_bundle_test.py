@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ghost_vol_bundle import GhostVolBundle
+
 
 class GhostVolBundleTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class GhostVolBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ghost_vol_bundle(self):
-          ghost_vol_bundle_obj = GhostVolBundle()
-          self.assertNotEqual(ghost_vol_bundle_obj, None)
-
-
+        ghost_vol_bundle_obj = GhostVolBundle()
+        self.assertNotEqual(ghost_vol_bundle_obj, None)

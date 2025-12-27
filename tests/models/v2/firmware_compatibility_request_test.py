@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.firmware_compatibility_request import FirmwareCompatibilityRequest
+
+from netapp.santricity.models.v2.firmware_compatibility_request import \
+    FirmwareCompatibilityRequest
+
 
 class FirmwareCompatibilityRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FirmwareCompatibilityRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_firmware_compatibility_request(self):
-          firmware_compatibility_request_obj = FirmwareCompatibilityRequest()
-          self.assertNotEqual(firmware_compatibility_request_obj, None)
-
-
+        firmware_compatibility_request_obj = FirmwareCompatibilityRequest()
+        self.assertNotEqual(firmware_compatibility_request_obj, None)

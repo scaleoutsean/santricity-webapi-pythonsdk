@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.iscsi_target_response import IscsiTargetResponse
+
+from netapp.santricity.models.v2.iscsi_target_response import \
+    IscsiTargetResponse
+
 
 class IscsiTargetResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiTargetResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_target_response(self):
-          iscsi_target_response_obj = IscsiTargetResponse()
-          self.assertNotEqual(iscsi_target_response_obj, None)
-
-
+        iscsi_target_response_obj = IscsiTargetResponse()
+        self.assertNotEqual(iscsi_target_response_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.raid_migration_request import RaidMigrationRequest
+
+from netapp.santricity.models.v2.raid_migration_request import \
+    RaidMigrationRequest
+
 
 class RaidMigrationRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RaidMigrationRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_raid_migration_request(self):
-          raid_migration_request_obj = RaidMigrationRequest()
-          self.assertNotEqual(raid_migration_request_obj, None)
-
-
+        raid_migration_request_obj = RaidMigrationRequest()
+        self.assertNotEqual(raid_migration_request_obj, None)

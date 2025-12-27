@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mirror_role_change_descriptor import MirrorRoleChangeDescriptor
+
+from netapp.santricity.models.symbol.mirror_role_change_descriptor import \
+    MirrorRoleChangeDescriptor
+
 
 class MirrorRoleChangeDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MirrorRoleChangeDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mirror_role_change_descriptor(self):
-          mirror_role_change_descriptor_obj = MirrorRoleChangeDescriptor()
-          self.assertNotEqual(mirror_role_change_descriptor_obj, None)
-
-
+        mirror_role_change_descriptor_obj = MirrorRoleChangeDescriptor()
+        self.assertNotEqual(mirror_role_change_descriptor_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.lun_mapping import LUNMapping
+
 
 class LUNMappingTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class LUNMappingTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_lun_mapping(self):
-          lun_mapping_obj = LUNMapping()
-          self.assertNotEqual(lun_mapping_obj, None)
-
-
+        lun_mapping_obj = LUNMapping()
+        self.assertNotEqual(lun_mapping_obj, None)

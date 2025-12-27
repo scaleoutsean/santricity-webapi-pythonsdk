@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.recurrence import Recurrence
+
 
 class RecurrenceTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RecurrenceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_recurrence(self):
-          recurrence_obj = Recurrence()
-          self.assertNotEqual(recurrence_obj, None)
-
-
+        recurrence_obj = Recurrence()
+        self.assertNotEqual(recurrence_obj, None)

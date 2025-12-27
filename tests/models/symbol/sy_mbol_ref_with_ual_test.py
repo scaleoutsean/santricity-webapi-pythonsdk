@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sy_mbol_ref_with_ual import SYMbolRefWithUAL
+
+from netapp.santricity.models.symbol.sy_mbol_ref_with_ual import \
+    SYMbolRefWithUAL
+
 
 class SYMbolRefWithUALTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SYMbolRefWithUALTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sy_mbol_ref_with_ual(self):
-          sy_mbol_ref_with_ual_obj = SYMbolRefWithUAL()
-          self.assertNotEqual(sy_mbol_ref_with_ual_obj, None)
-
-
+        sy_mbol_ref_with_ual_obj = SYMbolRefWithUAL()
+        self.assertNotEqual(sy_mbol_ref_with_ual_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.runtime_diag_results import RuntimeDiagResults
+
+from netapp.santricity.models.symbol.runtime_diag_results import \
+    RuntimeDiagResults
+
 
 class RuntimeDiagResultsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RuntimeDiagResultsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_runtime_diag_results(self):
-          runtime_diag_results_obj = RuntimeDiagResults()
-          self.assertNotEqual(runtime_diag_results_obj, None)
-
-
+        runtime_diag_results_obj = RuntimeDiagResults()
+        self.assertNotEqual(runtime_diag_results_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.hot_spare_coverage import HotSpareCoverage
+
 
 class HotSpareCoverageTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class HotSpareCoverageTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_hot_spare_coverage(self):
-          hot_spare_coverage_obj = HotSpareCoverage()
-          self.assertNotEqual(hot_spare_coverage_obj, None)
-
-
+        hot_spare_coverage_obj = HotSpareCoverage()
+        self.assertNotEqual(hot_spare_coverage_obj, None)

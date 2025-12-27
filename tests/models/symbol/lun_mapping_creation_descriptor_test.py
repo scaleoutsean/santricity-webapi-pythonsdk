@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.lun_mapping_creation_descriptor import LUNMappingCreationDescriptor
+
+from netapp.santricity.models.symbol.lun_mapping_creation_descriptor import \
+    LUNMappingCreationDescriptor
+
 
 class LUNMappingCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class LUNMappingCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_lun_mapping_creation_descriptor(self):
-          lun_mapping_creation_descriptor_obj = LUNMappingCreationDescriptor()
-          self.assertNotEqual(lun_mapping_creation_descriptor_obj, None)
-
-
+        lun_mapping_creation_descriptor_obj = LUNMappingCreationDescriptor()
+        self.assertNotEqual(lun_mapping_creation_descriptor_obj, None)

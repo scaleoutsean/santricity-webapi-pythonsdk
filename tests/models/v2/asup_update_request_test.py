@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.asup_update_request import AsupUpdateRequest
+
 
 class AsupUpdateRequestTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class AsupUpdateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_asup_update_request(self):
-          asup_update_request_obj = AsupUpdateRequest()
-          self.assertNotEqual(asup_update_request_obj, None)
-
-
+        asup_update_request_obj = AsupUpdateRequest()
+        self.assertNotEqual(asup_update_request_obj, None)

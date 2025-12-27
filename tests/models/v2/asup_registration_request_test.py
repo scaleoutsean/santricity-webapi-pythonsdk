@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.asup_registration_request import AsupRegistrationRequest
+
+from netapp.santricity.models.v2.asup_registration_request import \
+    AsupRegistrationRequest
+
 
 class AsupRegistrationRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsupRegistrationRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_asup_registration_request(self):
-          asup_registration_request_obj = AsupRegistrationRequest()
-          self.assertNotEqual(asup_registration_request_obj, None)
-
-
+        asup_registration_request_obj = AsupRegistrationRequest()
+        self.assertNotEqual(asup_registration_request_obj, None)

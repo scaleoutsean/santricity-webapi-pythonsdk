@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.dve_volume import DVEVolume
+
 
 class DVEVolumeTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DVEVolumeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dve_volume(self):
-          dve_volume_obj = DVEVolume()
-          self.assertNotEqual(dve_volume_obj, None)
-
-
+        dve_volume_obj = DVEVolume()
+        self.assertNotEqual(dve_volume_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_deletion_descriptor import VolumeDeletionDescriptor
+
+from netapp.santricity.models.symbol.volume_deletion_descriptor import \
+    VolumeDeletionDescriptor
+
 
 class VolumeDeletionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeDeletionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_deletion_descriptor(self):
-          volume_deletion_descriptor_obj = VolumeDeletionDescriptor()
-          self.assertNotEqual(volume_deletion_descriptor_obj, None)
-
-
+        volume_deletion_descriptor_obj = VolumeDeletionDescriptor()
+        self.assertNotEqual(volume_deletion_descriptor_obj, None)

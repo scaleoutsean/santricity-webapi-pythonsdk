@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mirror_auto_resync_descriptor import MirrorAutoResyncDescriptor
+
+from netapp.santricity.models.symbol.mirror_auto_resync_descriptor import \
+    MirrorAutoResyncDescriptor
+
 
 class MirrorAutoResyncDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MirrorAutoResyncDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mirror_auto_resync_descriptor(self):
-          mirror_auto_resync_descriptor_obj = MirrorAutoResyncDescriptor()
-          self.assertNotEqual(mirror_auto_resync_descriptor_obj, None)
-
-
+        mirror_auto_resync_descriptor_obj = MirrorAutoResyncDescriptor()
+        self.assertNotEqual(mirror_auto_resync_descriptor_obj, None)

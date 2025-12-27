@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.degraded_path import DegradedPath
+
 
 class DegradedPathTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DegradedPathTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_degraded_path(self):
-          degraded_path_obj = DegradedPath()
-          self.assertNotEqual(degraded_path_obj, None)
-
-
+        degraded_path_obj = DegradedPath()
+        self.assertNotEqual(degraded_path_obj, None)

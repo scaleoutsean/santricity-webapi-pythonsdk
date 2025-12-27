@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.workload_model import WorkloadModel
+
 
 class WorkloadModelTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class WorkloadModelTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_workload_model(self):
-          workload_model_obj = WorkloadModel()
-          self.assertNotEqual(workload_model_obj, None)
-
-
+        workload_model_obj = WorkloadModel()
+        self.assertNotEqual(workload_model_obj, None)

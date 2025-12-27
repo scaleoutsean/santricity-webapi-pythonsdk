@@ -15,11 +15,12 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import base64
+import http.client as httplib
+import logging
+import sys
+
 import urllib3
 
-import http.client as httplib
-import sys
-import logging
 
 def singleton(cls, *args, **kw):
     instances = {}
@@ -28,6 +29,7 @@ def singleton(cls, *args, **kw):
         if cls not in instances:
             instances[cls] = cls(*args, **kw)
         return instances[cls]
+
     return _singleton
 
 
@@ -60,13 +62,12 @@ class Configuration:
         # Password for HTTP basic authentication
         self.password = "rw"
 
-
         # Logging Settings
         self.logger = {}
         self.logger["package_logger"] = logging.getLogger("")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         # Log format
-        self.logger_format = '%(asctime)s %(levelname)s %(message)s'
+        self.logger_format = "%(asctime)s %(levelname)s %(message)s"
         # Log stream handler
         self.logger_stream_handler = None
         # Log file handler
@@ -182,7 +183,7 @@ class Configuration:
         :return: The token for api key authentication.
         """
         if self.api_key.get(identifier) and self.api_key_prefix.get(identifier):
-            return self.api_key_prefix[identifier] + ' ' + self.api_key[identifier]
+            return self.api_key_prefix[identifier] + " " + self.api_key[identifier]
         elif self.api_key.get(identifier):
             return self.api_key[identifier]
 
@@ -192,8 +193,9 @@ class Configuration:
 
         :return: The token for basic HTTP authentication.
         """
-        return urllib3.util.make_headers(basic_auth=self.username + ':' + self.password)\
-                           .get('authorization')
+        return urllib3.util.make_headers(
+            basic_auth=self.username + ":" + self.password
+        ).get("authorization")
 
     def auth_settings(self):
         """
@@ -202,14 +204,12 @@ class Configuration:
         :return: The Auth Settings information dict.
         """
         return {
-            'basicAuth':
-                {
-                    'type': 'basic',
-                    'in': 'header',
-                    'key': 'Authorization',
-                    'value': self.get_basic_auth_token()
-                },
-
+            "basicAuth": {
+                "type": "basic",
+                "in": "header",
+                "key": "Authorization",
+                "value": self.get_basic_auth_token(),
+            },
         }
 
     def to_debug_report(self):
@@ -218,9 +218,10 @@ class Configuration:
 
         :return: The report for debugging.
         """
-        return "Python SDK Debug Report:\n"\
-               "OS: {env}\n"\
-               "Python Version: {pyversion}\n"\
-               "Version of the API: \n"\
-               "SDK Package Version: ".\
-               format(env=sys.platform, pyversion=sys.version)
+        return (
+            "Python SDK Debug Report:\n"
+            "OS: {env}\n"
+            "Python Version: {pyversion}\n"
+            "Version of the API: \n"
+            "SDK Package Version: ".format(env=sys.platform, pyversion=sys.version)
+        )

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.target_changeable_properties import TargetChangeableProperties
+
+from netapp.santricity.models.symbol.target_changeable_properties import \
+    TargetChangeableProperties
+
 
 class TargetChangeablePropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class TargetChangeablePropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_target_changeable_properties(self):
-          target_changeable_properties_obj = TargetChangeableProperties()
-          self.assertNotEqual(target_changeable_properties_obj, None)
-
-
+        target_changeable_properties_obj = TargetChangeableProperties()
+        self.assertNotEqual(target_changeable_properties_obj, None)

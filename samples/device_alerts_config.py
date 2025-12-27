@@ -14,42 +14,42 @@ Redistribution and use in source and binary forms, with or without modification,
 NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api_client import ApiClient
-from netapp.santricity.api_client import Configuration
-from netapp.santricity.api.v2.diagnostics_api import DiagnosticsApi
-from netapp.santricity.models.v2.device_alert_configuration import DeviceAlertConfiguration
-
 import sys
 
+from netapp.santricity.api.v2.diagnostics_api import DiagnosticsApi
+from netapp.santricity.api_client import ApiClient, Configuration
+from netapp.santricity.models.v2.device_alert_configuration import \
+    DeviceAlertConfiguration
+from netapp.santricity.rest import ApiException
 
-def process_alerts_settings(host,username,passwd):
+
+def process_alerts_settings(host, username, passwd):
     config = Configuration()
     # accept either a full URL (http(s)://...) or a bare host
-    if host.startswith('http://') or host.startswith('https://'):
+    if host.startswith("http://") or host.startswith("https://"):
         config.host = host
     else:
         config.host = "https://" + host
     config.username = username
     config.password = passwd
-    config.verify_ssl=False
+    config.verify_ssl = False
 
-    #If verify_ssl is true then the certificate file should me made available.
-    #This avoids insecure request warnings. Make the certificate available as illustrated below
+    # If verify_ssl is true then the certificate file should me made available.
+    # This avoids insecure request warnings. Make the certificate available as illustrated below
 
-    #config.ssl_ca_cert = "C:/prox-cert-export.pem"
+    # config.ssl_ca_cert = "C:/prox-cert-export.pem"
 
-
-    #Create a client object to use with the above defined configuration.
+    # Create a client object to use with the above defined configuration.
     api_client = ApiClient()
     config.api_client = api_client
 
-
-    diag_api=DiagnosticsApi(api_client)
+    diag_api = DiagnosticsApi(api_client)
 
     try:
-        #Get the config info
-        dev_alert_cfg = diag_api.get_alert_configuration("1") # system_id=1 for embedded
+        # Get the config info
+        dev_alert_cfg = diag_api.get_alert_configuration(
+            "1"
+        )  # system_id=1 for embedded
     except ApiException as ae:
         print("There was an exception: {}.".format(ae.reason))
         sys.exit()
@@ -57,41 +57,45 @@ def process_alerts_settings(host,username,passwd):
     print(dev_alert_cfg)
     print("---------------------")
 
-    #Now Update config info
-    #Populate the required fileds as necessary and then call update_asup_configuration()
-    #The below example is for illustration only. change/populate updt_req fileds as necessary.
+    # Now Update config info
+    # Populate the required fileds as necessary and then call update_asup_configuration()
+    # The below example is for illustration only. change/populate updt_req fileds as necessary.
 
-    updt_req= DeviceAlertConfiguration()
+    updt_req = DeviceAlertConfiguration()
 
-    updt_req.alerting_enabled=False
-    updt_req.email_sender_address=""
-    updt_req.email_server_address=""
-    updt_req.send_additional_contact_information=False
-    updt_req.additional_contact_information=""
-    updt_req.recipient_email_addresses=[]
+    updt_req.alerting_enabled = False
+    updt_req.email_sender_address = ""
+    updt_req.email_server_address = ""
+    updt_req.send_additional_contact_information = False
+    updt_req.additional_contact_information = ""
+    updt_req.recipient_email_addresses = []
 
     try:
-        #Update config info
-        config_resp = diag_api.update_alert_configuration("1",updt_req)
+        # Update config info
+        config_resp = diag_api.update_alert_configuration("1", updt_req)
 
     except ApiException as ae:
         print("There was an exception: {}.".format(ae.reason))
         sys.exit()
 
-#Reads the array info from a config file and processes alerts config info as necessary.
-#It's assumed that the array and login details are as per this (alerts_cfg.txt) sample file contents.
 
-fp= open("alerts_cfg.txt")
+# Reads the array info from a config file and processes alerts config info as necessary.
+# It's assumed that the array and login details are as per this (alerts_cfg.txt) sample file contents.
 
-lines=fp.readlines()
+fp = open("alerts_cfg.txt")
+
+lines = fp.readlines()
 for line in lines:
     if not line.startswith("#"):
-        fields=line.split()
-        process_alerts_settings(fields[0],fields[1],fields[2])
+        fields = line.split()
+        process_alerts_settings(fields[0], fields[1], fields[2])
 
 # If environment variables are set, allow running directly without a config file
 import os
-if os.getenv('SANTRICITY_HOST'):
-    process_alerts_settings(os.getenv('SANTRICITY_HOST'), os.getenv('SANTRICITY_USER','rw'), os.getenv('SANTRICITY_PASS','rw'))
 
-
+if os.getenv("SANTRICITY_HOST"):
+    process_alerts_settings(
+        os.getenv("SANTRICITY_HOST"),
+        os.getenv("SANTRICITY_USER", "rw"),
+        os.getenv("SANTRICITY_PASS", "rw"),
+    )

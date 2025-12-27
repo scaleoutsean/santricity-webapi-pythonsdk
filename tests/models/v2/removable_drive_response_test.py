@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.removable_drive_response import RemovableDriveResponse
+
+from netapp.santricity.models.v2.removable_drive_response import \
+    RemovableDriveResponse
+
 
 class RemovableDriveResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemovableDriveResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_removable_drive_response(self):
-          removable_drive_response_obj = RemovableDriveResponse()
-          self.assertNotEqual(removable_drive_response_obj, None)
-
-
+        removable_drive_response_obj = RemovableDriveResponse()
+        self.assertNotEqual(removable_drive_response_obj, None)

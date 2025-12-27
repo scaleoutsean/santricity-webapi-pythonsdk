@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.syslog_configuration import SyslogConfiguration
+
+from netapp.santricity.models.symbol.syslog_configuration import \
+    SyslogConfiguration
+
 
 class SyslogConfigurationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SyslogConfigurationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_syslog_configuration(self):
-          syslog_configuration_obj = SyslogConfiguration()
-          self.assertNotEqual(syslog_configuration_obj, None)
-
-
+        syslog_configuration_obj = SyslogConfiguration()
+        self.assertNotEqual(syslog_configuration_obj, None)

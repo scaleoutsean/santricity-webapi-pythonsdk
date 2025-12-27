@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.scsi_interface import SCSIInterface
+
 
 class SCSIInterfaceTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SCSIInterfaceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_scsi_interface(self):
-          scsi_interface_obj = SCSIInterface()
-          self.assertNotEqual(scsi_interface_obj, None)
-
-
+        scsi_interface_obj = SCSIInterface()
+        self.assertNotEqual(scsi_interface_obj, None)

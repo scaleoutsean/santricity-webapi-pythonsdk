@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sfp_type import SFPType
+
 
 class SFPTypeTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SFPTypeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sfp_type(self):
-          sfp_type_obj = SFPType()
-          self.assertNotEqual(sfp_type_obj, None)
-
-
+        sfp_type_obj = SFPType()
+        self.assertNotEqual(sfp_type_obj, None)

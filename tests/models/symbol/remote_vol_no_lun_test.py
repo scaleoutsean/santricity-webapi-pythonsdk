@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.remote_vol_no_lun import RemoteVolNoLUN
+
 
 class RemoteVolNoLUNTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RemoteVolNoLUNTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_vol_no_lun(self):
-          remote_vol_no_lun_obj = RemoteVolNoLUN()
-          self.assertNotEqual(remote_vol_no_lun_obj, None)
-
-
+        remote_vol_no_lun_obj = RemoteVolNoLUN()
+        self.assertNotEqual(remote_vol_no_lun_obj, None)

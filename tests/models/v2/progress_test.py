@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.progress import Progress
+
 
 class ProgressTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ProgressTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_progress(self):
-          progress_obj = Progress()
-          self.assertNotEqual(progress_obj, None)
-
-
+        progress_obj = Progress()
+        self.assertNotEqual(progress_obj, None)

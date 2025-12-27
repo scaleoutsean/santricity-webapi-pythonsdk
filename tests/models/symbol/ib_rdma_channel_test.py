@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ib_rdma_channel import IbRdmaChannel
+
 
 class IbRdmaChannelTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class IbRdmaChannelTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_rdma_channel(self):
-          ib_rdma_channel_obj = IbRdmaChannel()
-          self.assertNotEqual(ib_rdma_channel_obj, None)
-
-
+        ib_rdma_channel_obj = IbRdmaChannel()
+        self.assertNotEqual(ib_rdma_channel_obj, None)

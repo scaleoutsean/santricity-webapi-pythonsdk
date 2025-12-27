@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.schedule_create_request import ScheduleCreateRequest
+
+from netapp.santricity.models.v2.schedule_create_request import \
+    ScheduleCreateRequest
+
 
 class ScheduleCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ScheduleCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_schedule_create_request(self):
-          schedule_create_request_obj = ScheduleCreateRequest()
-          self.assertNotEqual(schedule_create_request_obj, None)
-
-
+        schedule_create_request_obj = ScheduleCreateRequest()
+        self.assertNotEqual(schedule_create_request_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.volume_copy_create_request import VolumeCopyCreateRequest
+
+from netapp.santricity.models.v2.volume_copy_create_request import \
+    VolumeCopyCreateRequest
+
 
 class VolumeCopyCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeCopyCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_copy_create_request(self):
-          volume_copy_create_request_obj = VolumeCopyCreateRequest()
-          self.assertNotEqual(volume_copy_create_request_obj, None)
-
-
+        volume_copy_create_request_obj = VolumeCopyCreateRequest()
+        self.assertNotEqual(volume_copy_create_request_obj, None)

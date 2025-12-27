@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.subject_alternate_name import SubjectAlternateName
+
+from netapp.santricity.models.v2.subject_alternate_name import \
+    SubjectAlternateName
+
 
 class SubjectAlternateNameTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SubjectAlternateNameTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_subject_alternate_name(self):
-          subject_alternate_name_obj = SubjectAlternateName()
-          self.assertNotEqual(subject_alternate_name_obj, None)
-
-
+        subject_alternate_name_obj = SubjectAlternateName()
+        self.assertNotEqual(subject_alternate_name_obj, None)

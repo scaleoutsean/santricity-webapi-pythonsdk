@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_consistency_group_view_restart_descriptor import PITConsistencyGroupViewRestartDescriptor
+
+from netapp.santricity.models.symbol.pit_consistency_group_view_restart_descriptor import \
+    PITConsistencyGroupViewRestartDescriptor
+
 
 class PITConsistencyGroupViewRestartDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class PITConsistencyGroupViewRestartDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_consistency_group_view_restart_descriptor(self):
-          pit_consistency_group_view_restart_descriptor_obj = PITConsistencyGroupViewRestartDescriptor()
-          self.assertNotEqual(pit_consistency_group_view_restart_descriptor_obj, None)
-
-
+        pit_consistency_group_view_restart_descriptor_obj = (
+            PITConsistencyGroupViewRestartDescriptor()
+        )
+        self.assertNotEqual(pit_consistency_group_view_restart_descriptor_obj, None)

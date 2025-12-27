@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.rtr_type_ref import RTRTypeRef
+
 
 class RTRTypeRefTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class RTRTypeRefTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_rtr_type_ref(self):
-          rtr_type_ref_obj = RTRTypeRef()
-          self.assertNotEqual(rtr_type_ref_obj, None)
-
-
+        rtr_type_ref_obj = RTRTypeRef()
+        self.assertNotEqual(rtr_type_ref_obj, None)

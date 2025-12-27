@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_negotiable_connection_settings import IscsiNegotiableConnectionSettings
+
+from netapp.santricity.models.symbol.iscsi_negotiable_connection_settings import \
+    IscsiNegotiableConnectionSettings
+
 
 class IscsiNegotiableConnectionSettingsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiNegotiableConnectionSettingsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_negotiable_connection_settings(self):
-          iscsi_negotiable_connection_settings_obj = IscsiNegotiableConnectionSettings()
-          self.assertNotEqual(iscsi_negotiable_connection_settings_obj, None)
-
-
+        iscsi_negotiable_connection_settings_obj = IscsiNegotiableConnectionSettings()
+        self.assertNotEqual(iscsi_negotiable_connection_settings_obj, None)

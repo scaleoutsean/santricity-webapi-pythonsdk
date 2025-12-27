@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.component_bundle import ComponentBundle
+
 
 class ComponentBundleTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ComponentBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_component_bundle(self):
-          component_bundle_obj = ComponentBundle()
-          self.assertNotEqual(component_bundle_obj, None)
-
-
+        component_bundle_obj = ComponentBundle()
+        self.assertNotEqual(component_bundle_obj, None)

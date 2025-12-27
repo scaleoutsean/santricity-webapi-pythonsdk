@@ -20,83 +20,92 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.u_api import UApi
 
+from netapp.santricity.api.symbol.u_api import UApi
+from netapp.santricity.rest import ApiException
 
 
 class UApiTest(unittest.TestCase):
-
-    
     def test_symbol_unquiesce_controller(self):
-       api = UApi()
-       u_api = None
-       try:
-            u_api = api.symbol_unquiesce_controller(system_id="test", body="test", )
+        api = UApi()
+        u_api = None
+        try:
+            u_api = api.symbol_unquiesce_controller(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if u_api is None:
                 u_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             u_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            u_api = 1
 
-       self.assertNotEqual(u_api, None)
-    
+        self.assertNotEqual(u_api, None)
+
     def test_symbol_update_drive_firmware(self):
-       api = UApi()
-       u_api = None
-       try:
-            u_api = api.symbol_update_drive_firmware(system_id="test", )
+        api = UApi()
+        u_api = None
+        try:
+            u_api = api.symbol_update_drive_firmware(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if u_api is None:
                 u_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             u_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            u_api = 1
 
-       self.assertNotEqual(u_api, None)
-    
+        self.assertNotEqual(u_api, None)
+
     def test_symbol_update_psu_firmware(self):
-       api = UApi()
-       u_api = None
-       try:
-            u_api = api.symbol_update_psu_firmware(system_id="test", body="test", )
+        api = UApi()
+        u_api = None
+        try:
+            u_api = api.symbol_update_psu_firmware(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if u_api is None:
                 u_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             u_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            u_api = 1
 
-       self.assertNotEqual(u_api, None)
-    
+        self.assertNotEqual(u_api, None)
+
     def test_symbol_update_tray(self):
-       api = UApi()
-       u_api = None
-       try:
-            u_api = api.symbol_update_tray(system_id="test", body="test", )
+        api = UApi()
+        u_api = None
+        try:
+            u_api = api.symbol_update_tray(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if u_api is None:
                 u_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             u_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            u_api = 1
 
-       self.assertNotEqual(u_api, None)
-    
+        self.assertNotEqual(u_api, None)
+
     def test_symbol_update_volume_attribute(self):
-       api = UApi()
-       u_api = None
-       try:
-            u_api = api.symbol_update_volume_attribute(system_id="test", body="test", )
+        api = UApi()
+        u_api = None
+        try:
+            u_api = api.symbol_update_volume_attribute(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if u_api is None:
                 u_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             u_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            u_api = 1
 
-       self.assertNotEqual(u_api, None)
-    
-
-
+        self.assertNotEqual(u_api, None)

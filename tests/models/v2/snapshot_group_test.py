@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.snapshot_group import SnapshotGroup
+
 
 class SnapshotGroupTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SnapshotGroupTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_group(self):
-          snapshot_group_obj = SnapshotGroup()
-          self.assertNotEqual(snapshot_group_obj, None)
-
-
+        snapshot_group_obj = SnapshotGroup()
+        self.assertNotEqual(snapshot_group_obj, None)

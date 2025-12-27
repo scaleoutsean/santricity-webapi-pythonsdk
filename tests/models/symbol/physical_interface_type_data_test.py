@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.physical_interface_type_data import PhysicalInterfaceTypeData
+
+from netapp.santricity.models.symbol.physical_interface_type_data import \
+    PhysicalInterfaceTypeData
+
 
 class PhysicalInterfaceTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PhysicalInterfaceTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_physical_interface_type_data(self):
-          physical_interface_type_data_obj = PhysicalInterfaceTypeData()
-          self.assertNotEqual(physical_interface_type_data_obj, None)
-
-
+        physical_interface_type_data_obj = PhysicalInterfaceTypeData()
+        self.assertNotEqual(physical_interface_type_data_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.inventory_item import InventoryItem
+
 
 class InventoryItemTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class InventoryItemTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_inventory_item(self):
-          inventory_item_obj = InventoryItem()
-          self.assertNotEqual(inventory_item_obj, None)
-
-
+        inventory_item_obj = InventoryItem()
+        self.assertNotEqual(inventory_item_obj, None)

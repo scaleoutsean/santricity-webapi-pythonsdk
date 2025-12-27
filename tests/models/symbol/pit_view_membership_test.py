@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_view_membership import PITViewMembership
+
+from netapp.santricity.models.symbol.pit_view_membership import \
+    PITViewMembership
+
 
 class PITViewMembershipTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITViewMembershipTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_view_membership(self):
-          pit_view_membership_obj = PITViewMembership()
-          self.assertNotEqual(pit_view_membership_obj, None)
-
-
+        pit_view_membership_obj = PITViewMembership()
+        self.assertNotEqual(pit_view_membership_obj, None)

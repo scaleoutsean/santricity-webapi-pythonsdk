@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.discovery_start_request import DiscoveryStartRequest
+
+from netapp.santricity.models.v2.discovery_start_request import \
+    DiscoveryStartRequest
+
 
 class DiscoveryStartRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiscoveryStartRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_discovery_start_request(self):
-          discovery_start_request_obj = DiscoveryStartRequest()
-          self.assertNotEqual(discovery_start_request_obj, None)
-
-
+        discovery_start_request_obj = DiscoveryStartRequest()
+        self.assertNotEqual(discovery_start_request_obj, None)

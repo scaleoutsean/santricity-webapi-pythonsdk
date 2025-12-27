@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.lock_down_info import LockDownInfo
+
 
 class LockDownInfoTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class LockDownInfoTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_lock_down_info(self):
-          lock_down_info_obj = LockDownInfo()
-          self.assertNotEqual(lock_down_info_obj, None)
-
-
+        lock_down_info_obj = LockDownInfo()
+        self.assertNotEqual(lock_down_info_obj, None)

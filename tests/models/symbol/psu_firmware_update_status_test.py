@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.psu_firmware_update_status import PSUFirmwareUpdateStatus
+
+from netapp.santricity.models.symbol.psu_firmware_update_status import \
+    PSUFirmwareUpdateStatus
+
 
 class PSUFirmwareUpdateStatusTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PSUFirmwareUpdateStatusTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_psu_firmware_update_status(self):
-          psu_firmware_update_status_obj = PSUFirmwareUpdateStatus()
-          self.assertNotEqual(psu_firmware_update_status_obj, None)
-
-
+        psu_firmware_update_status_obj = PSUFirmwareUpdateStatus()
+        self.assertNotEqual(psu_firmware_update_status_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.ssl_cert_configuration import SSLCertConfiguration
+
+from netapp.santricity.models.v2.ssl_cert_configuration import \
+    SSLCertConfiguration
+
 
 class SSLCertConfigurationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SSLCertConfigurationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ssl_cert_configuration(self):
-          ssl_cert_configuration_obj = SSLCertConfiguration()
-          self.assertNotEqual(ssl_cert_configuration_obj, None)
-
-
+        ssl_cert_configuration_obj = SSLCertConfiguration()
+        self.assertNotEqual(ssl_cert_configuration_obj, None)

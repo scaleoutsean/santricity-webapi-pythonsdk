@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_group_type_data import VolumeGroupTypeData
+
+from netapp.santricity.models.symbol.volume_group_type_data import \
+    VolumeGroupTypeData
+
 
 class VolumeGroupTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeGroupTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_group_type_data(self):
-          volume_group_type_data_obj = VolumeGroupTypeData()
-          self.assertNotEqual(volume_group_type_data_obj, None)
-
-
+        volume_group_type_data_obj = VolumeGroupTypeData()
+        self.assertNotEqual(volume_group_type_data_obj, None)

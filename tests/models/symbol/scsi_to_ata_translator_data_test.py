@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.scsi_to_ata_translator_data import ScsiToAtaTranslatorData
+
+from netapp.santricity.models.symbol.scsi_to_ata_translator_data import \
+    ScsiToAtaTranslatorData
+
 
 class ScsiToAtaTranslatorDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ScsiToAtaTranslatorDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_scsi_to_ata_translator_data(self):
-          scsi_to_ata_translator_data_obj = ScsiToAtaTranslatorData()
-          self.assertNotEqual(scsi_to_ata_translator_data_obj, None)
-
-
+        scsi_to_ata_translator_data_obj = ScsiToAtaTranslatorData()
+        self.assertNotEqual(scsi_to_ata_translator_data_obj, None)

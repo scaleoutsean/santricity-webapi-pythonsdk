@@ -20,41 +20,41 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.v_api import VApi
 
+from netapp.santricity.api.symbol.v_api import VApi
+from netapp.santricity.rest import ApiException
 
 
 class VApiTest(unittest.TestCase):
-
-    
     def test_symbol_validate_lock_key(self):
-       api = VApi()
-       v_api = None
-       try:
-            v_api = api.symbol_validate_lock_key(system_id="test", body="test", )
+        api = VApi()
+        v_api = None
+        try:
+            v_api = api.symbol_validate_lock_key(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if v_api is None:
                 v_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             v_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            v_api = 1
 
-       self.assertNotEqual(v_api, None)
-    
+        self.assertNotEqual(v_api, None)
+
     def test_symbol_validate_password(self):
-       api = VApi()
-       v_api = None
-       try:
-            v_api = api.symbol_validate_password(system_id="test", )
+        api = VApi()
+        v_api = None
+        try:
+            v_api = api.symbol_validate_password(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if v_api is None:
                 v_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             v_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            v_api = 1
 
-       self.assertNotEqual(v_api, None)
-    
-
-
+        self.assertNotEqual(v_api, None)

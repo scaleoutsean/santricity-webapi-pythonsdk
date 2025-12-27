@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.enclosure_state_capture_retrieve_start_details import EnclosureStateCaptureRetrieveStartDetails
+
+from netapp.santricity.models.symbol.enclosure_state_capture_retrieve_start_details import \
+    EnclosureStateCaptureRetrieveStartDetails
+
 
 class EnclosureStateCaptureRetrieveStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class EnclosureStateCaptureRetrieveStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_enclosure_state_capture_retrieve_start_details(self):
-          enclosure_state_capture_retrieve_start_details_obj = EnclosureStateCaptureRetrieveStartDetails()
-          self.assertNotEqual(enclosure_state_capture_retrieve_start_details_obj, None)
-
-
+        enclosure_state_capture_retrieve_start_details_obj = (
+            EnclosureStateCaptureRetrieveStartDetails()
+        )
+        self.assertNotEqual(enclosure_state_capture_retrieve_start_details_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.accessible_controller import AccessibleController
+
+from netapp.santricity.models.symbol.accessible_controller import \
+    AccessibleController
+
 
 class AccessibleControllerTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AccessibleControllerTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_accessible_controller(self):
-          accessible_controller_obj = AccessibleController()
-          self.assertNotEqual(accessible_controller_obj, None)
-
-
+        accessible_controller_obj = AccessibleController()
+        self.assertNotEqual(accessible_controller_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.mel_extent import MelExtent
+
 
 class MelExtentTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class MelExtentTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mel_extent(self):
-          mel_extent_obj = MelExtent()
-          self.assertNotEqual(mel_extent_obj, None)
-
-
+        mel_extent_obj = MelExtent()
+        self.assertNotEqual(mel_extent_obj, None)

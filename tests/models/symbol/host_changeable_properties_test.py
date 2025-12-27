@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_changeable_properties import HostChangeableProperties
+
+from netapp.santricity.models.symbol.host_changeable_properties import \
+    HostChangeableProperties
+
 
 class HostChangeablePropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostChangeablePropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_changeable_properties(self):
-          host_changeable_properties_obj = HostChangeableProperties()
-          self.assertNotEqual(host_changeable_properties_obj, None)
-
-
+        host_changeable_properties_obj = HostChangeableProperties()
+        self.assertNotEqual(host_changeable_properties_obj, None)

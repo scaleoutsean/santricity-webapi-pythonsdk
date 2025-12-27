@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.fibre_trunk_miswire import FibreTrunkMiswire
+
+from netapp.santricity.models.symbol.fibre_trunk_miswire import \
+    FibreTrunkMiswire
+
 
 class FibreTrunkMiswireTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FibreTrunkMiswireTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fibre_trunk_miswire(self):
-          fibre_trunk_miswire_obj = FibreTrunkMiswire()
-          self.assertNotEqual(fibre_trunk_miswire_obj, None)
-
-
+        fibre_trunk_miswire_obj = FibreTrunkMiswire()
+        self.assertNotEqual(fibre_trunk_miswire_obj, None)

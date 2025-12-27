@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.single_number_value import SingleNumberValue
+
 
 class SingleNumberValueTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SingleNumberValueTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_single_number_value(self):
-          single_number_value_obj = SingleNumberValue()
-          self.assertNotEqual(single_number_value_obj, None)
-
-
+        single_number_value_obj = SingleNumberValue()
+        self.assertNotEqual(single_number_value_obj, None)

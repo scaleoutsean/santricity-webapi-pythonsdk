@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.setting_control import SettingControl
+
 
 class SettingControlTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SettingControlTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_setting_control(self):
-          setting_control_obj = SettingControl()
-          self.assertNotEqual(setting_control_obj, None)
-
-
+        setting_control_obj = SettingControl()
+        self.assertNotEqual(setting_control_obj, None)

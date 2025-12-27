@@ -18,714 +18,678 @@ MonitoringApi.py
   NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-import sys
 import os
+import sys
+
+from ....santricity.api_client import ApiClient
+from ....santricity.configuration import Configuration
 
 # python 2 and python 3 compatibility library
 
-from ....santricity.configuration import Configuration
-from ....santricity.api_client import ApiClient
-
 
 class MonitoringApi:
-
     def __init__(self, api_client=None):
         config = Configuration()
         if api_client:
             self.api_client = api_client
         else:
             if not config.api_client:
-                config.api_client = ApiClient(context_path='/devmgr/v2')
+                config.api_client = ApiClient(context_path="/devmgr/v2")
             self.api_client = config.api_client
-    
-    
+
     def clear_mel_events(self, system_id, **kwargs):
-            """
-            Clear MelEvents
-            Mode: Both Embedded and Proxy. Gives the user the ability to clear the event cache and the EventLog directly on the StorageDevice.
+        """
+        Clear MelEvents
+        Mode: Both Embedded and Proxy. Gives the user the ability to clear the event cache and the EventLog directly on the StorageDevice.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.clear_mel_events(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param bool clear_cache: 
-    
-            :param bool reset_mel: Reset the EventLog on the StorageDevice
-    
-            :return: None
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.clear_mel_events(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'clear_cache', 'reset_mel']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method clear_mel_events" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `clear_mel_events`")
-    
-    
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/mel-events'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param bool clear_cache:
 
-            query_params = {}
-    
-            if 'clear_cache' in params:
-                query_params['clearCache'] = params['clear_cache']
-    
-            if 'reset_mel' in params:
-                query_params['resetMel'] = params['reset_mel']
-    
+        :param bool reset_mel: Reset the EventLog on the StorageDevice
 
-            header_params = {}
-    
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
+        all_params = ["system_id", "clear_cache", "reset_mel"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method clear_mel_events" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `clear_mel_events`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/mel-events".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'DELETE',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type=None,
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        query_params = {}
+
+        if "clear_cache" in params:
+            query_params["clearCache"] = params["clear_cache"]
+
+        if "reset_mel" in params:
+            query_params["resetMel"] = params["reset_mel"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_global_status_events(self, **kwargs):
-            """
-            Get all global status events
-            Mode: Both Embedded and Proxy. 
+        """
+        Get all global status events
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_global_status_events(callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param int last_known: The sequence number of the last event you have received
-    
-            :param int wait: seconds to wait for a new event
-    
-            :return: list[Event]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_global_status_events(callback=callback_function)
 
-            """
 
-            all_params = ['last_known', 'wait']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_global_status_events" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-    
-    
-    
+        :param int last_known: The sequence number of the last event you have received
 
-            resource_path = '/events'.replace('{format}', 'json')
-            path_params = {}
-    
+        :param int wait: seconds to wait for a new event
 
-            query_params = {}
-    
-            if 'last_known' in params:
-                query_params['lastKnown'] = params['last_known']
-    
-            if 'wait' in params:
-                query_params['wait'] = params['wait']
-    
+        :return: list[Event]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["last_known", "wait"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_global_status_events" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        resource_path = "/events".replace("{format}", "json")
+        path_params = {}
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        query_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "last_known" in params:
+            query_params["lastKnown"] = params["last_known"]
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[Event]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "wait" in params:
+            query_params["wait"] = params["wait"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[Event]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_all_storage_device_status_events(self, system_id, **kwargs):
-            """
-            Get the list of status Events for the StorageDevice
-            Mode: Both Embedded and Proxy. 
+        """
+        Get the list of status Events for the StorageDevice
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_all_storage_device_status_events(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param int last_known: 
-    
-            :param int wait: Amount of time to wait for a new event
-    
-            :return: list[Event]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_all_storage_device_status_events(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'last_known', 'wait']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_all_storage_device_status_events" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_all_storage_device_status_events`")
-    
-    
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/events'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param int last_known:
 
-            query_params = {}
-    
-            if 'last_known' in params:
-                query_params['lastKnown'] = params['last_known']
-    
-            if 'wait' in params:
-                query_params['wait'] = params['wait']
-    
+        :param int wait: Amount of time to wait for a new event
 
-            header_params = {}
-    
+        :return: list[Event]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            form_params = []
-            local_var_files = {}
-    
+        """
 
-            body_params = None
-    
+        all_params = ["system_id", "last_known", "wait"]
+        all_params.append("callback")
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_storage_device_status_events" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_all_storage_device_status_events`"
+            )
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        resource_path = "/storage-systems/{system-id}/events".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[Event]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        query_params = {}
+
+        if "last_known" in params:
+            query_params["lastKnown"] = params["last_known"]
+
+        if "wait" in params:
+            query_params["wait"] = params["wait"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[Event]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_event_availability(self, system_id, **kwargs):
-            """
-            Check the oldest and newest available events
-            Mode: Both Embedded and Proxy. 
+        """
+        Check the oldest and newest available events
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_event_availability(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param bool cache_only: Only retrieve events currently in the cache
-    
-            :return: MelExtent
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_event_availability(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'cache_only']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_event_availability" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_event_availability`")
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/mel-events/available'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param bool cache_only: Only retrieve events currently in the cache
 
-            query_params = {}
-    
-            if 'cache_only' in params:
-                query_params['cacheOnly'] = params['cache_only']
-    
+        :return: MelExtent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            header_params = {}
-    
+        """
 
-            form_params = []
-            local_var_files = {}
-    
+        all_params = ["system_id", "cache_only"]
+        all_params.append("callback")
 
-            body_params = None
-    
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_event_availability" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_event_availability`"
+            )
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        resource_path = "/storage-systems/{system-id}/mel-events/available".replace(
+            "{format}", "json"
+        )
+        path_params = {}
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='MelExtent',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        query_params = {}
+
+        if "cache_only" in params:
+            query_params["cacheOnly"] = params["cache_only"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="MelExtent",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_log_messages(self, system_id, **kwargs):
-            """
-            Get a list of log messages for based on input values.
-            Mode: Embedded only. 
+        """
+        Get a list of log messages for based on input values.
+        Mode: Embedded only.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_log_messages(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param str logger_type: LoggerType to retrieve records for
-    
-            :param int start_record: Starting record number
-    
-            :param int ending_record: Ending record number
-    
-            :return: LoggerRecordResponse
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
+        >>> thread = api.get_log_messages(system_id, callback=callback_function)
 
-            """
 
-            all_params = ['system_id', 'logger_type', 'start_record', 'ending_record']
-            all_params.append('callback')
 
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_log_messages" % key
-                    )
-                params[key] = val
-            del params['kwargs']
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_log_messages`")
-    
-    
-    
-    
-    
-    
-    
-    
+        :param str system_id: The id of the storage-system (required)
 
-            resource_path = '/storage-systems/{system-id}/service-logs'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
+        :param str logger_type: LoggerType to retrieve records for
 
-            query_params = {}
-    
-            if 'logger_type' in params:
-                query_params['LoggerType'] = params['logger_type']
-    
-            if 'start_record' in params:
-                query_params['startRecord'] = params['start_record']
-    
-            if 'ending_record' in params:
-                query_params['endingRecord'] = params['ending_record']
-    
+        :param int start_record: Starting record number
 
-            header_params = {}
-    
+        :param int ending_record: Ending record number
 
-            form_params = []
-            local_var_files = {}
-    
+        :return: LoggerRecordResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
 
-            body_params = None
-    
+        """
 
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
+        all_params = ["system_id", "logger_type", "start_record", "ending_record"]
+        all_params.append("callback")
 
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_log_messages" % key
+                )
+            params[key] = val
+        del params["kwargs"]
 
-            # Authentication setting
-            auth_settings = ['basicAuth']
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_log_messages`"
+            )
 
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='LoggerRecordResponse',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        resource_path = "/storage-systems/{system-id}/service-logs".replace(
+            "{format}", "json"
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        query_params = {}
+
+        if "logger_type" in params:
+            query_params["LoggerType"] = params["logger_type"]
+
+        if "start_record" in params:
+            query_params["startRecord"] = params["start_record"]
+
+        if "ending_record" in params:
+            query_params["endingRecord"] = params["ending_record"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="LoggerRecordResponse",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response
+
     def get_mel_events(self, system_id, **kwargs):
-            """
-            Retrieve MelEvents
-            Mode: Both Embedded and Proxy. 
+        """
+        Retrieve MelEvents
+        Mode: Both Embedded and Proxy.
 
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please define a `callback` function
-            to be invoked when receiving the response.
-            >>> def callback_function(response):
-            >>>     pprint(response)
-            >>>
-    
-            >>> thread = api.get_mel_events(system_id, callback=callback_function)
-    
-    
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
 
-            :param callback function: The callback function
-                for asynchronous request. (optional)
-    
-            :param str system_id: The id of the storage-system (required)
-    
-            :param int start_sequence_number: 
-    
-            :param int count: Maximum number to retrieve
-    
-            :param bool critical: Only retrieve events classified as critical
-    
-            :param bool include_debug: Whether or not to retrieve debug entries
-    
-            :return: list[MelEntryEx]
-                     If the method is called asynchronously,
-                     returns the request thread.
-            :raises: ValueError
-                       If the required params are not provided or if the response data format is unknown.
-                     TypeError:
-                        When the data type of response data is different from what we are expecting
-                     ApiException:
-                        Occurs when we get a HTTP error code (422 and above).
-
-            """
-
-            all_params = ['system_id', 'start_sequence_number', 'count', 'critical', 'include_debug']
-            all_params.append('callback')
-
-            params = locals()
-            for key, val in params['kwargs'].items():
-                if key not in all_params:
-                    raise TypeError(
-                        "Got an unexpected keyword argument '%s'"
-                        " to method get_mel_events" % key
-                    )
-                params[key] = val
-            del params['kwargs']
-
-    
-    
-            # verify the required parameter 'system_id' is set
-            if ('system_id' not in params) or (params['system_id'] is None):
-                raise ValueError("Missing the required parameter `system_id` when calling `get_mel_events`")
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-            resource_path = '/storage-systems/{system-id}/mel-events'.replace('{format}', 'json')
-            path_params = {}
-    
-            if 'system_id' in params:
-                path_params['system-id'] = params['system_id']
-    
-
-            query_params = {}
-    
-            if 'start_sequence_number' in params:
-                query_params['startSequenceNumber'] = params['start_sequence_number']
-    
-            if 'count' in params:
-                query_params['count'] = params['count']
-    
-            if 'critical' in params:
-                query_params['critical'] = params['critical']
-    
-            if 'include_debug' in params:
-                query_params['includeDebug'] = params['include_debug']
-    
-
-            header_params = {}
-    
-
-            form_params = []
-            local_var_files = {}
-    
-
-            body_params = None
-    
-
-            # HTTP header `Accept`
-            header_params['Accept'] = self.api_client.\
-                select_header_accept(['application/json'])
-            if not header_params['Accept']:
-                del header_params['Accept']
-
-            # HTTP header `Content-Type`
-            header_params['Content-Type'] = self.api_client.\
-                select_header_content_type(['application/json'])
-
-            # Authentication setting
-            auth_settings = ['basicAuth']
-
-            response = self.api_client.call_api(resource_path, 'GET',
-                                                path_params,
-                                                query_params,
-                                                header_params,
-                                                body=body_params,
-                                                post_params=form_params,
-                                                files=local_var_files,
-                                                response_type='list[MelEntryEx]',
-                                                auth_settings=auth_settings,
-                                                callback=params.get('callback'))
-            return response
-    
+        >>> thread = api.get_mel_events(system_id, callback=callback_function)
 
 
 
+        :param callback function: The callback function
+            for asynchronous request. (optional)
 
+        :param str system_id: The id of the storage-system (required)
 
+        :param int start_sequence_number:
 
+        :param int count: Maximum number to retrieve
 
+        :param bool critical: Only retrieve events classified as critical
 
+        :param bool include_debug: Whether or not to retrieve debug entries
 
+        :return: list[MelEntryEx]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :raises: ValueError
+                   If the required params are not provided or if the response data format is unknown.
+                 TypeError:
+                    When the data type of response data is different from what we are expecting
+                 ApiException:
+                    Occurs when we get a HTTP error code (422 and above).
+
+        """
+
+        all_params = [
+            "system_id",
+            "start_sequence_number",
+            "count",
+            "critical",
+            "include_debug",
+        ]
+        all_params.append("callback")
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_mel_events" % key
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        # verify the required parameter 'system_id' is set
+        if ("system_id" not in params) or (params["system_id"] is None):
+            raise ValueError(
+                "Missing the required parameter `system_id` when calling `get_mel_events`"
+            )
+
+        resource_path = "/storage-systems/{system-id}/mel-events".replace(
+            "{format}", "json"
+        )
+        path_params = {}
+
+        if "system_id" in params:
+            path_params["system-id"] = params["system_id"]
+
+        query_params = {}
+
+        if "start_sequence_number" in params:
+            query_params["startSequenceNumber"] = params["start_sequence_number"]
+
+        if "count" in params:
+            query_params["count"] = params["count"]
+
+        if "critical" in params:
+            query_params["critical"] = params["critical"]
+
+        if "include_debug" in params:
+            query_params["includeDebug"] = params["include_debug"]
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+        if not header_params["Accept"]:
+            del header_params["Accept"]
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["basicAuth"]
+
+        response = self.api_client.call_api(
+            resource_path,
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type="list[MelEntryEx]",
+            auth_settings=auth_settings,
+            callback=params.get("callback"),
+        )
+        return response

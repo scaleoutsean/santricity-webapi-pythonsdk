@@ -20,83 +20,92 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.t_api import TApi
 
+from netapp.santricity.api.symbol.t_api import TApi
+from netapp.santricity.rest import ApiException
 
 
 class TApiTest(unittest.TestCase):
-
-    
     def test_symbol_test_async_mirror_group_connectivity(self):
-       api = TApi()
-       t_api = None
-       try:
-            t_api = api.symbol_test_async_mirror_group_connectivity(system_id="test", body="test", )
+        api = TApi()
+        t_api = None
+        try:
+            t_api = api.symbol_test_async_mirror_group_connectivity(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if t_api is None:
                 t_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             t_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            t_api = 1
 
-       self.assertNotEqual(t_api, None)
-    
+        self.assertNotEqual(t_api, None)
+
     def test_symbol_test_snmp_trap_destination(self):
-       api = TApi()
-       t_api = None
-       try:
-            t_api = api.symbol_test_snmp_trap_destination(system_id="test", body="test", )
+        api = TApi()
+        t_api = None
+        try:
+            t_api = api.symbol_test_snmp_trap_destination(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if t_api is None:
                 t_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             t_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            t_api = 1
 
-       self.assertNotEqual(t_api, None)
-    
+        self.assertNotEqual(t_api, None)
+
     def test_symbol_trigger_dpl_core_dump_on_demand(self):
-       api = TApi()
-       t_api = None
-       try:
-            t_api = api.symbol_trigger_dpl_core_dump_on_demand(system_id="test", )
+        api = TApi()
+        t_api = None
+        try:
+            t_api = api.symbol_trigger_dpl_core_dump_on_demand(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if t_api is None:
                 t_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             t_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            t_api = 1
 
-       self.assertNotEqual(t_api, None)
-    
+        self.assertNotEqual(t_api, None)
+
     def test_symbol_trigger_ioc_dump_on_demand(self):
-       api = TApi()
-       t_api = None
-       try:
-            t_api = api.symbol_trigger_ioc_dump_on_demand(system_id="test", body="test", )
+        api = TApi()
+        t_api = None
+        try:
+            t_api = api.symbol_trigger_ioc_dump_on_demand(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if t_api is None:
                 t_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             t_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            t_api = 1
 
-       self.assertNotEqual(t_api, None)
-    
+        self.assertNotEqual(t_api, None)
+
     def test_symbol_trim_concat_volume(self):
-       api = TApi()
-       t_api = None
-       try:
-            t_api = api.symbol_trim_concat_volume(system_id="test", body="test", )
+        api = TApi()
+        t_api = None
+        try:
+            t_api = api.symbol_trim_concat_volume(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if t_api is None:
                 t_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             t_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            t_api = 1
 
-       self.assertNotEqual(t_api, None)
-    
-
-
+        self.assertNotEqual(t_api, None)

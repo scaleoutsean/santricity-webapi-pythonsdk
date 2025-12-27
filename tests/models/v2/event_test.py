@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.event import Event
+
 
 class EventTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class EventTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_event(self):
-          event_obj = Event()
-          self.assertNotEqual(event_obj, None)
-
-
+        event_obj = Event()
+        self.assertNotEqual(event_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.x509_cert_info import X509CertInfo
+
 
 class X509CertInfoTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class X509CertInfoTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_x509_cert_info(self):
-          x509_cert_info_obj = X509CertInfo()
-          self.assertNotEqual(x509_cert_info_obj, None)
-
-
+        x509_cert_info_obj = X509CertInfo()
+        self.assertNotEqual(x509_cert_info_obj, None)

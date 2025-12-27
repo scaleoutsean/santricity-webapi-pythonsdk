@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.management_interface import ManagementInterface
+
+from netapp.santricity.models.v2.management_interface import \
+    ManagementInterface
+
 
 class ManagementInterfaceTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ManagementInterfaceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_management_interface(self):
-          management_interface_obj = ManagementInterface()
-          self.assertNotEqual(management_interface_obj, None)
-
-
+        management_interface_obj = ManagementInterface()
+        self.assertNotEqual(management_interface_obj, None)

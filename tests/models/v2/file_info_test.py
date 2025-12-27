@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.file_info import FileInfo
+
 
 class FileInfoTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FileInfoTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_file_info(self):
-          file_info_obj = FileInfo()
-          self.assertNotEqual(file_info_obj, None)
-
-
+        file_info_obj = FileInfo()
+        self.assertNotEqual(file_info_obj, None)

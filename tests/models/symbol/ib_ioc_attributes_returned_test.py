@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ib_ioc_attributes_returned import IbIocAttributesReturned
+
+from netapp.santricity.models.symbol.ib_ioc_attributes_returned import \
+    IbIocAttributesReturned
+
 
 class IbIocAttributesReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IbIocAttributesReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_ioc_attributes_returned(self):
-          ib_ioc_attributes_returned_obj = IbIocAttributesReturned()
-          self.assertNotEqual(ib_ioc_attributes_returned_obj, None)
-
-
+        ib_ioc_attributes_returned_obj = IbIocAttributesReturned()
+        self.assertNotEqual(ib_ioc_attributes_returned_obj, None)

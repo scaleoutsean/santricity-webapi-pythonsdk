@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sa_port_group import SAPortGroup
+
 
 class SAPortGroupTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SAPortGroupTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sa_port_group(self):
-          sa_port_group_obj = SAPortGroup()
-          self.assertNotEqual(sa_port_group_obj, None)
-
-
+        sa_port_group_obj = SAPortGroup()
+        self.assertNotEqual(sa_port_group_obj, None)

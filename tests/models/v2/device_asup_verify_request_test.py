@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.device_asup_verify_request import DeviceAsupVerifyRequest
+
+from netapp.santricity.models.v2.device_asup_verify_request import \
+    DeviceAsupVerifyRequest
+
 
 class DeviceAsupVerifyRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DeviceAsupVerifyRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_device_asup_verify_request(self):
-          device_asup_verify_request_obj = DeviceAsupVerifyRequest()
-          self.assertNotEqual(device_asup_verify_request_obj, None)
-
-
+        device_asup_verify_request_obj = DeviceAsupVerifyRequest()
+        self.assertNotEqual(device_asup_verify_request_obj, None)

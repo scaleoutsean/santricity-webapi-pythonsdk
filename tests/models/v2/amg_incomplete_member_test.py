@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.amg_incomplete_member import AmgIncompleteMember
+
+from netapp.santricity.models.v2.amg_incomplete_member import \
+    AmgIncompleteMember
+
 
 class AmgIncompleteMemberTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AmgIncompleteMemberTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_amg_incomplete_member(self):
-          amg_incomplete_member_obj = AmgIncompleteMember()
-          self.assertNotEqual(amg_incomplete_member_obj, None)
-
-
+        amg_incomplete_member_obj = AmgIncompleteMember()
+        self.assertNotEqual(amg_incomplete_member_obj, None)

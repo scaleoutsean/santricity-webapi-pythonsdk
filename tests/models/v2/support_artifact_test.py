@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.support_artifact import SupportArtifact
+
 
 class SupportArtifactTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SupportArtifactTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_support_artifact(self):
-          support_artifact_obj = SupportArtifact()
-          self.assertNotEqual(support_artifact_obj, None)
-
-
+        support_artifact_obj = SupportArtifact()
+        self.assertNotEqual(support_artifact_obj, None)

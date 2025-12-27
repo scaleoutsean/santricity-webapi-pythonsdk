@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_sync_statistics import AsyncMirrorSyncStatistics
+
+from netapp.santricity.models.symbol.async_mirror_sync_statistics import \
+    AsyncMirrorSyncStatistics
+
 
 class AsyncMirrorSyncStatisticsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorSyncStatisticsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_sync_statistics(self):
-          async_mirror_sync_statistics_obj = AsyncMirrorSyncStatistics()
-          self.assertNotEqual(async_mirror_sync_statistics_obj, None)
-
-
+        async_mirror_sync_statistics_obj = AsyncMirrorSyncStatistics()
+        self.assertNotEqual(async_mirror_sync_statistics_obj, None)

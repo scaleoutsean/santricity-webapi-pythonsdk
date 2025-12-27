@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_descriptor import ControllerDescriptor
+
+from netapp.santricity.models.symbol.controller_descriptor import \
+    ControllerDescriptor
+
 
 class ControllerDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ControllerDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_descriptor(self):
-          controller_descriptor_obj = ControllerDescriptor()
-          self.assertNotEqual(controller_descriptor_obj, None)
-
-
+        controller_descriptor_obj = ControllerDescriptor()
+        self.assertNotEqual(controller_descriptor_obj, None)

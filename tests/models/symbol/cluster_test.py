@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.cluster import Cluster
+
 
 class ClusterTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ClusterTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cluster(self):
-          cluster_obj = Cluster()
-          self.assertNotEqual(cluster_obj, None)
-
-
+        cluster_obj = Cluster()
+        self.assertNotEqual(cluster_obj, None)

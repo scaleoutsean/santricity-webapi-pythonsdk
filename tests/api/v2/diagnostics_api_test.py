@@ -20,167 +20,174 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.diagnostics_api import DiagnosticsApi
 
+from netapp.santricity.api.v2.diagnostics_api import DiagnosticsApi
+from netapp.santricity.rest import ApiException
 
 
 class DiagnosticsApiTest(unittest.TestCase):
-
-    
     def test_get_alert_configuration(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
             diagnostics_api = api.get_alert_configuration(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_get_core_dump_information(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
             diagnostics_api = api.get_core_dump_information(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_get_device_diagnostic_data(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
-            diagnostics_api = api.get_device_diagnostic_data(system_id="test", data_request="test")
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
+            diagnostics_api = api.get_device_diagnostic_data(
+                system_id="test", data_request="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_get_failures(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
-            diagnostics_api = api.get_failures(system_id="test", )
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
+            diagnostics_api = api.get_failures(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_get_support_data_retrieval_request_status(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
-            diagnostics_api = api.get_support_data_retrieval_request_status(system_id="test", request_id="test")
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
+            diagnostics_api = api.get_support_data_retrieval_request_status(
+                system_id="test", request_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_get_syslog_configuration(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
             diagnostics_api = api.get_syslog_configuration(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_set_syslog_configuration(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
-            diagnostics_api = api.set_syslog_configuration(system_id="test", )
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
+            diagnostics_api = api.set_syslog_configuration(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_start_support_data_retrieval_request(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
-            diagnostics_api = api.start_support_data_retrieval_request(system_id="test", )
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
+            diagnostics_api = api.start_support_data_retrieval_request(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_test_alert_email(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
             diagnostics_api = api.test_alert_email(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_test_syslog_send(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
             diagnostics_api = api.test_syslog_send(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
+        self.assertNotEqual(diagnostics_api, None)
+
     def test_update_alert_configuration(self):
-       api = DiagnosticsApi()
-       diagnostics_api = None
-       try:
-            diagnostics_api = api.update_alert_configuration(system_id="test", update_request="test")
+        api = DiagnosticsApi()
+        diagnostics_api = None
+        try:
+            diagnostics_api = api.update_alert_configuration(
+                system_id="test", update_request="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if diagnostics_api is None:
                 diagnostics_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             diagnostics_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            diagnostics_api = 1
 
-       self.assertNotEqual(diagnostics_api, None)
-    
-
-
+        self.assertNotEqual(diagnostics_api, None)

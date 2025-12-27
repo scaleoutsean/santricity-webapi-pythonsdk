@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.workload_copy_request import WorkloadCopyRequest
+
+from netapp.santricity.models.v2.workload_copy_request import \
+    WorkloadCopyRequest
+
 
 class WorkloadCopyRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class WorkloadCopyRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_workload_copy_request(self):
-          workload_copy_request_obj = WorkloadCopyRequest()
-          self.assertNotEqual(workload_copy_request_obj, None)
-
-
+        workload_copy_request_obj = WorkloadCopyRequest()
+        self.assertNotEqual(workload_copy_request_obj, None)

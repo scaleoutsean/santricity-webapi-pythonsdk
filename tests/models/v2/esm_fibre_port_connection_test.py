@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.esm_fibre_port_connection import EsmFibrePortConnection
+
+from netapp.santricity.models.v2.esm_fibre_port_connection import \
+    EsmFibrePortConnection
+
 
 class EsmFibrePortConnectionTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EsmFibrePortConnectionTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_esm_fibre_port_connection(self):
-          esm_fibre_port_connection_obj = EsmFibrePortConnection()
-          self.assertNotEqual(esm_fibre_port_connection_obj, None)
-
-
+        esm_fibre_port_connection_obj = EsmFibrePortConnection()
+        self.assertNotEqual(esm_fibre_port_connection_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.fibre_port_login import FibrePortLogin
+
 
 class FibrePortLoginTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FibrePortLoginTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fibre_port_login(self):
-          fibre_port_login_obj = FibrePortLogin()
-          self.assertNotEqual(fibre_port_login_obj, None)
-
-
+        fibre_port_login_obj = FibrePortLogin()
+        self.assertNotEqual(fibre_port_login_obj, None)

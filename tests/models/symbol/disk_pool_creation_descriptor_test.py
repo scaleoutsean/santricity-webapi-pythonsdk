@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.disk_pool_creation_descriptor import DiskPoolCreationDescriptor
+
+from netapp.santricity.models.symbol.disk_pool_creation_descriptor import \
+    DiskPoolCreationDescriptor
+
 
 class DiskPoolCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiskPoolCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_creation_descriptor(self):
-          disk_pool_creation_descriptor_obj = DiskPoolCreationDescriptor()
-          self.assertNotEqual(disk_pool_creation_descriptor_obj, None)
-
-
+        disk_pool_creation_descriptor_obj = DiskPoolCreationDescriptor()
+        self.assertNotEqual(disk_pool_creation_descriptor_obj, None)

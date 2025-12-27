@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.hl_volume_bundle import HLVolumeBundle
+
 
 class HLVolumeBundleTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class HLVolumeBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_hl_volume_bundle(self):
-          hl_volume_bundle_obj = HLVolumeBundle()
-          self.assertNotEqual(hl_volume_bundle_obj, None)
-
-
+        hl_volume_bundle_obj = HLVolumeBundle()
+        self.assertNotEqual(hl_volume_bundle_obj, None)

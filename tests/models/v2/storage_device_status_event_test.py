@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.storage_device_status_event import StorageDeviceStatusEvent
+
+from netapp.santricity.models.v2.storage_device_status_event import \
+    StorageDeviceStatusEvent
+
 
 class StorageDeviceStatusEventTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class StorageDeviceStatusEventTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_storage_device_status_event(self):
-          storage_device_status_event_obj = StorageDeviceStatusEvent()
-          self.assertNotEqual(storage_device_status_event_obj, None)
-
-
+        storage_device_status_event_obj = StorageDeviceStatusEvent()
+        self.assertNotEqual(storage_device_status_event_obj, None)

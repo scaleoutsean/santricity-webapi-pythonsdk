@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.fibre_drive_address import FibreDriveAddress
+
+from netapp.santricity.models.symbol.fibre_drive_address import \
+    FibreDriveAddress
+
 
 class FibreDriveAddressTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FibreDriveAddressTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fibre_drive_address(self):
-          fibre_drive_address_obj = FibreDriveAddress()
-          self.assertNotEqual(fibre_drive_address_obj, None)
-
-
+        fibre_drive_address_obj = FibreDriveAddress()
+        self.assertNotEqual(fibre_drive_address_obj, None)

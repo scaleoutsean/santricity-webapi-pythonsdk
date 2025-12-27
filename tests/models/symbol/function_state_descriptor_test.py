@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.function_state_descriptor import FunctionStateDescriptor
+
+from netapp.santricity.models.symbol.function_state_descriptor import \
+    FunctionStateDescriptor
+
 
 class FunctionStateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FunctionStateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_function_state_descriptor(self):
-          function_state_descriptor_obj = FunctionStateDescriptor()
-          self.assertNotEqual(function_state_descriptor_obj, None)
-
-
+        function_state_descriptor_obj = FunctionStateDescriptor()
+        self.assertNotEqual(function_state_descriptor_obj, None)

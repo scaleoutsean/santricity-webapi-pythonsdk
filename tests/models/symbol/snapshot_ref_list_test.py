@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.snapshot_ref_list import SnapshotRefList
+
 
 class SnapshotRefListTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SnapshotRefListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_ref_list(self):
-          snapshot_ref_list_obj = SnapshotRefList()
-          self.assertNotEqual(snapshot_ref_list_obj, None)
-
-
+        snapshot_ref_list_obj = SnapshotRefList()
+        self.assertNotEqual(snapshot_ref_list_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_io_card_location import HostIoCardLocation
+
+from netapp.santricity.models.symbol.host_io_card_location import \
+    HostIoCardLocation
+
 
 class HostIoCardLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostIoCardLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_io_card_location(self):
-          host_io_card_location_obj = HostIoCardLocation()
-          self.assertNotEqual(host_io_card_location_obj, None)
-
-
+        host_io_card_location_obj = HostIoCardLocation()
+        self.assertNotEqual(host_io_card_location_obj, None)

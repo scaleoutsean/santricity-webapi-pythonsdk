@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_firmware_update_descriptor import DriveFirmwareUpdateDescriptor
+
+from netapp.santricity.models.symbol.drive_firmware_update_descriptor import \
+    DriveFirmwareUpdateDescriptor
+
 
 class DriveFirmwareUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveFirmwareUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_firmware_update_descriptor(self):
-          drive_firmware_update_descriptor_obj = DriveFirmwareUpdateDescriptor()
-          self.assertNotEqual(drive_firmware_update_descriptor_obj, None)
-
-
+        drive_firmware_update_descriptor_obj = DriveFirmwareUpdateDescriptor()
+        self.assertNotEqual(drive_firmware_update_descriptor_obj, None)

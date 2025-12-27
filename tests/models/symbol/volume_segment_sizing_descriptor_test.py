@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_segment_sizing_descriptor import VolumeSegmentSizingDescriptor
+
+from netapp.santricity.models.symbol.volume_segment_sizing_descriptor import \
+    VolumeSegmentSizingDescriptor
+
 
 class VolumeSegmentSizingDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeSegmentSizingDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_segment_sizing_descriptor(self):
-          volume_segment_sizing_descriptor_obj = VolumeSegmentSizingDescriptor()
-          self.assertNotEqual(volume_segment_sizing_descriptor_obj, None)
-
-
+        volume_segment_sizing_descriptor_obj = VolumeSegmentSizingDescriptor()
+        self.assertNotEqual(volume_segment_sizing_descriptor_obj, None)

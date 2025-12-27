@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.initiator_target_initial_properties import InitiatorTargetInitialProperties
+
+from netapp.santricity.models.symbol.initiator_target_initial_properties import \
+    InitiatorTargetInitialProperties
+
 
 class InitiatorTargetInitialPropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class InitiatorTargetInitialPropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_initiator_target_initial_properties(self):
-          initiator_target_initial_properties_obj = InitiatorTargetInitialProperties()
-          self.assertNotEqual(initiator_target_initial_properties_obj, None)
-
-
+        initiator_target_initial_properties_obj = InitiatorTargetInitialProperties()
+        self.assertNotEqual(initiator_target_initial_properties_obj, None)

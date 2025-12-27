@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.network_address import NetworkAddress
+
 
 class NetworkAddressTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class NetworkAddressTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_network_address(self):
-          network_address_obj = NetworkAddress()
-          self.assertNotEqual(network_address_obj, None)
-
-
+        network_address_obj = NetworkAddress()
+        self.assertNotEqual(network_address_obj, None)

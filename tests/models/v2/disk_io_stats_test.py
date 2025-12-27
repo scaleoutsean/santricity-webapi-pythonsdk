@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.disk_io_stats import DiskIOStats
+
 
 class DiskIOStatsTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DiskIOStatsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_io_stats(self):
-          disk_io_stats_obj = DiskIOStats()
-          self.assertNotEqual(disk_io_stats_obj, None)
-
-
+        disk_io_stats_obj = DiskIOStats()
+        self.assertNotEqual(disk_io_stats_obj, None)

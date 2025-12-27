@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.key_value_tag_mapping_set_descriptor_list import KeyValueTagMappingSetDescriptorList
+
+from netapp.santricity.models.symbol.key_value_tag_mapping_set_descriptor_list import \
+    KeyValueTagMappingSetDescriptorList
+
 
 class KeyValueTagMappingSetDescriptorListTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class KeyValueTagMappingSetDescriptorListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_key_value_tag_mapping_set_descriptor_list(self):
-          key_value_tag_mapping_set_descriptor_list_obj = KeyValueTagMappingSetDescriptorList()
-          self.assertNotEqual(key_value_tag_mapping_set_descriptor_list_obj, None)
-
-
+        key_value_tag_mapping_set_descriptor_list_obj = (
+            KeyValueTagMappingSetDescriptorList()
+        )
+        self.assertNotEqual(key_value_tag_mapping_set_descriptor_list_obj, None)

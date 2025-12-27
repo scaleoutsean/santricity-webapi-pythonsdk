@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.opcode_counter import OpcodeCounter
+
 
 class OpcodeCounterTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class OpcodeCounterTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_opcode_counter(self):
-          opcode_counter_obj = OpcodeCounter()
-          self.assertNotEqual(opcode_counter_obj, None)
-
-
+        opcode_counter_obj = OpcodeCounter()
+        self.assertNotEqual(opcode_counter_obj, None)

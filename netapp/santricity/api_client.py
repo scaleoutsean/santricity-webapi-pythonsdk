@@ -14,25 +14,20 @@ Redistribution and use in source and binary forms, with or without modification,
 NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-from . import models
-from .rest import RESTClientObject
-from .rest import ApiException
-
-import os
-import re
-import sys
 import json
 import mimetypes
+import os
 import random
+import re
+import sys
 import tempfile
 import threading
-
-from datetime import datetime
-from datetime import date
-
+from datetime import date, datetime
 from urllib.parse import quote
 
+from . import models
 from .configuration import Configuration
+from .rest import ApiException, RESTClientObject
 
 
 class ApiClient:
@@ -52,7 +47,15 @@ class ApiClient:
     :param header_name: a header to pass when making calls to the API.
     :param header_value: a header value to pass when making calls to the API.
     """
-    def __init__(self, host=None, header_name=None, header_value=None, cookie=None, context_path='/devmgr/v2'):
+
+    def __init__(
+        self,
+        host=None,
+        header_name=None,
+        header_value=None,
+        cookie=None,
+        context_path="/devmgr/v2",
+    ):
 
         """
         Constructor of the class.
@@ -67,35 +70,45 @@ class ApiClient:
             self.host = host
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'Python-Swagger/'
+        self.user_agent = "Python-Swagger/"
 
     @property
     def user_agent(self):
         """
         Gets user agent.
         """
-        return self.default_headers['User-Agent']
+        return self.default_headers["User-Agent"]
 
     @user_agent.setter
     def user_agent(self, value):
         """
         Sets user agent.
         """
-        self.default_headers['User-Agent'] = value
+        self.default_headers["User-Agent"] = value
 
     def set_default_header(self, header_name, header_value):
         self.default_headers[header_name] = header_value
 
-    def __call_api(self, resource_path, method,
-                   path_params=None, query_params=None, header_params=None,
-                   body=None, post_params=None, files=None,
-                   response_type=None, auth_settings=None, callback=None):
+    def __call_api(
+        self,
+        resource_path,
+        method,
+        path_params=None,
+        query_params=None,
+        header_params=None,
+        body=None,
+        post_params=None,
+        files=None,
+        response_type=None,
+        auth_settings=None,
+        callback=None,
+    ):
 
         # headers parameters
         header_params = header_params or {}
         header_params.update(self.default_headers)
         if self.cookie:
-            header_params['Cookie'] = self.cookie
+            header_params["Cookie"] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
 
@@ -104,14 +117,12 @@ class ApiClient:
             path_params = self.sanitize_for_serialization(path_params)
             for k, v in path_params.items():
                 replacement = quote(str(self.to_path_value(v)))
-                resource_path = resource_path.\
-                    replace('{' + k + '}', replacement)
+                resource_path = resource_path.replace("{" + k + "}", replacement)
 
         # query parameters
         if query_params:
             query_params = self.sanitize_for_serialization(query_params)
-            query_params = {k: self.to_path_value(v)
-                            for k, v in query_params.items()}
+            query_params = {k: self.to_path_value(v) for k, v in query_params.items()}
 
         # post parameters
         if post_params or files:
@@ -129,10 +140,14 @@ class ApiClient:
         url = self.host + resource_path
 
         # perform request and return response
-        response_data = self.request(method, url,
-                                     query_params=query_params,
-                                     headers=header_params,
-                                     post_params=post_params, body=body)
+        response_data = self.request(
+            method,
+            url,
+            query_params=query_params,
+            headers=header_params,
+            post_params=post_params,
+            body=body,
+        )
 
         self.last_response = response_data
 
@@ -157,7 +172,7 @@ class ApiClient:
         :return string: quoted value.
         """
         if type(obj) == list:
-            return ','.join(obj)
+            return ",".join(obj)
         else:
             return str(obj)
 
@@ -182,8 +197,7 @@ class ApiClient:
         elif isinstance(obj, types):
             return obj
         elif isinstance(obj, list):
-            return [self.sanitize_for_serialization(sub_obj)
-                    for sub_obj in obj]
+            return [self.sanitize_for_serialization(sub_obj) for sub_obj in obj]
         elif isinstance(obj, (datetime, date)):
             return obj.isoformat()
         else:
@@ -195,12 +209,16 @@ class ApiClient:
                 # and attributes which value is not None.
                 # Convert attribute name to json key in
                 # model definition for request.
-                obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
-                            for attr, _ in obj.swagger_types.items()
-                            if getattr(obj, attr) is not None}
+                obj_dict = {
+                    obj.attribute_map[attr]: getattr(obj, attr)
+                    for attr, _ in obj.swagger_types.items()
+                    if getattr(obj, attr) is not None
+                }
 
-            return {key: self.sanitize_for_serialization(val)
-                    for key, val in obj_dict.items()}
+            return {
+                key: self.sanitize_for_serialization(val)
+                for key, val in obj_dict.items()
+            }
 
     def deserialize(self, response, response_type):
         """
@@ -238,24 +256,21 @@ class ApiClient:
             return None
 
         if type(klass) == str:
-            if klass.startswith('list['):
-                sub_kls = re.match(r'list\[(.*)\]', klass).group(1)
-                return [self.__deserialize(sub_data, sub_kls)
-                        for sub_data in data]
+            if klass.startswith("list["):
+                sub_kls = re.match(r"list\[(.*)\]", klass).group(1)
+                return [self.__deserialize(sub_data, sub_kls) for sub_data in data]
 
-            if klass.startswith('dict('):
-                sub_kls = re.match(r'dict\(([^,]*), (.*)\)', klass).group(2)
-                return {k: self.__deserialize(v, sub_kls)
-                        for k, v in data.items()}
+            if klass.startswith("dict("):
+                sub_kls = re.match(r"dict\(([^,]*), (.*)\)", klass).group(2)
+                return {k: self.__deserialize(v, sub_kls) for k, v in data.items()}
 
             # convert str to class
             # for native types
-            if klass in ['int', 'float', 'str', 'bool',
-                         "date", 'datetime', "object"]:
+            if klass in ["int", "float", "str", "bool", "date", "datetime", "object"]:
                 klass = eval(klass)
             # for model types
             else:
-                klass = eval('models.' + klass)
+                klass = eval("models." + klass)
 
         if klass in [int, float, str, bool]:
             return self.__deserialize_primitive(data, klass)
@@ -268,10 +283,20 @@ class ApiClient:
         else:
             return self.__deserialize_model(data, klass)
 
-    def call_api(self, resource_path, method,
-                 path_params=None, query_params=None, header_params=None,
-                 body=None, post_params=None, files=None,
-                 response_type=None, auth_settings=None, callback=None):
+    def call_api(
+        self,
+        resource_path,
+        method,
+        path_params=None,
+        query_params=None,
+        header_params=None,
+        body=None,
+        post_params=None,
+        files=None,
+        response_type=None,
+        auth_settings=None,
+        callback=None,
+    ):
         """
         Makes the HTTP request (synchronous) and return the deserialized data.
         To make an async request, define a function for callback.
@@ -300,62 +325,87 @@ class ApiClient:
             then the method will return the response directly.
         """
         if callback is None:
-            return self.__call_api(resource_path, method,
-                                   path_params, query_params, header_params,
-                                   body, post_params, files,
-                                   response_type, auth_settings, callback)
+            return self.__call_api(
+                resource_path,
+                method,
+                path_params,
+                query_params,
+                header_params,
+                body,
+                post_params,
+                files,
+                response_type,
+                auth_settings,
+                callback,
+            )
         else:
-            thread = threading.Thread(target=self.__call_api,
-                                      args=(resource_path, method,
-                                            path_params, query_params,
-                                            header_params, body,
-                                            post_params, files,
-                                            response_type, auth_settings,
-                                            callback))
+            thread = threading.Thread(
+                target=self.__call_api,
+                args=(
+                    resource_path,
+                    method,
+                    path_params,
+                    query_params,
+                    header_params,
+                    body,
+                    post_params,
+                    files,
+                    response_type,
+                    auth_settings,
+                    callback,
+                ),
+            )
         thread.start()
         return thread
 
-    def request(self, method, url, query_params=None, headers=None,
-                post_params=None, body=None):
+    def request(
+        self, method, url, query_params=None, headers=None, post_params=None, body=None
+    ):
         """
         Makes the HTTP request using RESTClient.
         """
         if method == "GET":
-            return self.rest_client.GET(url,
-                                        query_params=query_params,
-                                        headers=headers)
+            return self.rest_client.GET(url, query_params=query_params, headers=headers)
         elif method == "HEAD":
-            return self.rest_client.HEAD(url,
-                                         query_params=query_params,
-                                         headers=headers)
+            return self.rest_client.HEAD(
+                url, query_params=query_params, headers=headers
+            )
         elif method == "OPTIONS":
-            return self.rest_client.OPTIONS(url,
-                                            query_params=query_params,
-                                            headers=headers,
-                                            post_params=post_params,
-                                            body=body)
+            return self.rest_client.OPTIONS(
+                url,
+                query_params=query_params,
+                headers=headers,
+                post_params=post_params,
+                body=body,
+            )
         elif method == "POST":
-            return self.rest_client.POST(url,
-                                         query_params=query_params,
-                                         headers=headers,
-                                         post_params=post_params,
-                                         body=body)
+            return self.rest_client.POST(
+                url,
+                query_params=query_params,
+                headers=headers,
+                post_params=post_params,
+                body=body,
+            )
         elif method == "PUT":
-            return self.rest_client.PUT(url,
-                                        query_params=query_params,
-                                        headers=headers,
-                                        post_params=post_params,
-                                        body=body)
+            return self.rest_client.PUT(
+                url,
+                query_params=query_params,
+                headers=headers,
+                post_params=post_params,
+                body=body,
+            )
         elif method == "PATCH":
-            return self.rest_client.PATCH(url,
-                                          query_params=query_params,
-                                          headers=headers,
-                                          post_params=post_params,
-                                          body=body)
+            return self.rest_client.PATCH(
+                url,
+                query_params=query_params,
+                headers=headers,
+                post_params=post_params,
+                body=body,
+            )
         elif method == "DELETE":
-            return self.rest_client.DELETE(url,
-                                           query_params=query_params,
-                                           headers=headers)
+            return self.rest_client.DELETE(
+                url, query_params=query_params, headers=headers
+            )
         else:
             raise ValueError(
                 "http method must be `GET`, `HEAD`,"
@@ -381,11 +431,13 @@ class ApiClient:
                     continue
                 file_names = v if type(v) is list else [v]
                 for n in file_names:
-                    with open(n, 'rb') as f:
+                    with open(n, "rb") as f:
                         filename = os.path.basename(f.name)
                         filedata = f.read()
-                        mimetype = mimetypes.\
-                            guess_type(filename)[0] or 'application/octet-stream'
+                        mimetype = (
+                            mimetypes.guess_type(filename)[0]
+                            or "application/octet-stream"
+                        )
                         params.append(tuple([k, tuple([filename, filedata, mimetype])]))
 
         return params
@@ -402,10 +454,10 @@ class ApiClient:
 
         accepts = list([x.lower() for x in accepts])
 
-        if 'application/json' in accepts:
-            return 'application/json'
+        if "application/json" in accepts:
+            return "application/json"
         else:
-            return ', '.join(accepts)
+            return ", ".join(accepts)
 
     def select_header_content_type(self, content_types):
         """
@@ -415,12 +467,12 @@ class ApiClient:
         :return: Content-Type (e.g. application/json).
         """
         if not content_types:
-            return 'application/json'
+            return "application/json"
 
         content_types = list([x.lower() for x in content_types])
 
-        if 'application/json' in content_types:
-            return 'application/json'
+        if "application/json" in content_types:
+            return "application/json"
         else:
             return content_types[0]
 
@@ -440,15 +492,15 @@ class ApiClient:
         for auth in auth_settings:
             auth_setting = config.auth_settings().get(auth)
             if auth_setting:
-                if not auth_setting['value']:
+                if not auth_setting["value"]:
                     continue
-                elif auth_setting['in'] == 'header':
-                    headers[auth_setting['key']] = auth_setting['value']
-                elif auth_setting['in'] == 'query':
-                    querys[auth_setting['key']] = auth_setting['value']
+                elif auth_setting["in"] == "header":
+                    headers[auth_setting["key"]] = auth_setting["value"]
+                elif auth_setting["in"] == "query":
+                    querys[auth_setting["key"]] = auth_setting["value"]
                 else:
                     raise ValueError(
-                        'Authentication token must be in `query` or `header`'
+                        "Authentication token must be in `query` or `header`"
                     )
 
     def __deserialize_file(self, response):
@@ -467,9 +519,9 @@ class ApiClient:
 
         content_disposition = response.getheader("Content-Disposition")
         if content_disposition:
-            filename = re.\
-                search(r'filename=[\'"]?([^\'"\s]+)[\'"]?', content_disposition).\
-                group(1)
+            filename = re.search(
+                r'filename=[\'"]?([^\'"\s]+)[\'"]?', content_disposition
+            ).group(1)
             path = os.path.join(os.path.dirname(path), filename)
 
         with open(path, "w") as f:
@@ -511,14 +563,14 @@ class ApiClient:
         """
         try:
             from dateutil.parser import parse
+
             return parse(string).date()
         except ImportError:
             return string
         except ValueError:
             raise ApiException(
                 status=0,
-                reason="Failed to parse `{}` into a date object"
-                .format(string)
+                reason="Failed to parse `{}` into a date object".format(string),
             )
 
     def __deserialize_datatime(self, string):
@@ -532,14 +584,14 @@ class ApiClient:
         """
         try:
             from dateutil.parser import parse
+
             return parse(string)
         except ImportError:
             return string
         except ValueError:
             raise ApiException(
                 status=0,
-                reason="Failed to parse `{0}` into a datetime object".
-                format(string)
+                reason="Failed to parse `{0}` into a datetime object".format(string),
             )
 
     def __deserialize_model(self, data, klass):
@@ -553,9 +605,11 @@ class ApiClient:
         instance = klass()
 
         for attr, attr_type in instance.swagger_types.items():
-            if data is not None \
-               and instance.attribute_map[attr] in data\
-               and isinstance(data, (list, dict)):
+            if (
+                data is not None
+                and instance.attribute_map[attr] in data
+                and isinstance(data, (list, dict))
+            ):
                 value = data[instance.attribute_map[attr]]
                 setattr(instance, attr, self.__deserialize(value, attr_type))
 

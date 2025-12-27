@@ -1,0 +1,8 @@
+[flake8]
+max-line-length = 88
+per-file-ignores =
+    tests/*: E501,F401,F841
+    netapp/santricity/models/*: E501
+    samples/*: E501,F401,F841,E402,B007
+    tools/*: E501,E402
+exclude = .git,__pycache__,docs,build,dist

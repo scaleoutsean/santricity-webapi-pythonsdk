@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.sas_attached_device_type_data import SasAttachedDeviceTypeData
+
+from netapp.santricity.models.symbol.sas_attached_device_type_data import \
+    SasAttachedDeviceTypeData
+
 
 class SasAttachedDeviceTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SasAttachedDeviceTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_attached_device_type_data(self):
-          sas_attached_device_type_data_obj = SasAttachedDeviceTypeData()
-          self.assertNotEqual(sas_attached_device_type_data_obj, None)
-
-
+        sas_attached_device_type_data_obj = SasAttachedDeviceTypeData()
+        self.assertNotEqual(sas_attached_device_type_data_obj, None)

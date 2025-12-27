@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.mappable_object import MappableObject
+
 
 class MappableObjectTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class MappableObjectTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mappable_object(self):
-          mappable_object_obj = MappableObject()
-          self.assertNotEqual(mappable_object_obj, None)
-
-
+        mappable_object_obj = MappableObject()
+        self.assertNotEqual(mappable_object_obj, None)

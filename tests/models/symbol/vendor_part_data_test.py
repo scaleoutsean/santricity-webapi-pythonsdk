@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.vendor_part_data import VendorPartData
+
 
 class VendorPartDataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VendorPartDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_vendor_part_data(self):
-          vendor_part_data_obj = VendorPartData()
-          self.assertNotEqual(vendor_part_data_obj, None)
-
-
+        vendor_part_data_obj = VendorPartData()
+        self.assertNotEqual(vendor_part_data_obj, None)

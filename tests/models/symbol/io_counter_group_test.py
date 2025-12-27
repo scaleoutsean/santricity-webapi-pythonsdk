@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.io_counter_group import IoCounterGroup
+
 
 class IoCounterGroupTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class IoCounterGroupTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_io_counter_group(self):
-          io_counter_group_obj = IoCounterGroup()
-          self.assertNotEqual(io_counter_group_obj, None)
-
-
+        io_counter_group_obj = IoCounterGroup()
+        self.assertNotEqual(io_counter_group_obj, None)

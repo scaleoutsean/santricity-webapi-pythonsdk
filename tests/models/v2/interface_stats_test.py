@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.interface_stats import InterfaceStats
+
 
 class InterfaceStatsTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class InterfaceStatsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_interface_stats(self):
-          interface_stats_obj = InterfaceStats()
-          self.assertNotEqual(interface_stats_obj, None)
-
-
+        interface_stats_obj = InterfaceStats()
+        self.assertNotEqual(interface_stats_obj, None)

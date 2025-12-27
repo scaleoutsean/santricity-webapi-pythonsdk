@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_with_dirty_cache_details import ControllerWithDirtyCacheDetails
+
+from netapp.santricity.models.symbol.controller_with_dirty_cache_details import \
+    ControllerWithDirtyCacheDetails
+
 
 class ControllerWithDirtyCacheDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ControllerWithDirtyCacheDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_with_dirty_cache_details(self):
-          controller_with_dirty_cache_details_obj = ControllerWithDirtyCacheDetails()
-          self.assertNotEqual(controller_with_dirty_cache_details_obj, None)
-
-
+        controller_with_dirty_cache_details_obj = ControllerWithDirtyCacheDetails()
+        self.assertNotEqual(controller_with_dirty_cache_details_obj, None)

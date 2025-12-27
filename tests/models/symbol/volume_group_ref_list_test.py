@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_group_ref_list import VolumeGroupRefList
+
+from netapp.santricity.models.symbol.volume_group_ref_list import \
+    VolumeGroupRefList
+
 
 class VolumeGroupRefListTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeGroupRefListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_group_ref_list(self):
-          volume_group_ref_list_obj = VolumeGroupRefList()
-          self.assertNotEqual(volume_group_ref_list_obj, None)
-
-
+        volume_group_ref_list_obj = VolumeGroupRefList()
+        self.assertNotEqual(volume_group_ref_list_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.esm_firmware_update_descriptor import ESMFirmwareUpdateDescriptor
+
+from netapp.santricity.models.symbol.esm_firmware_update_descriptor import \
+    ESMFirmwareUpdateDescriptor
+
 
 class ESMFirmwareUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ESMFirmwareUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_esm_firmware_update_descriptor(self):
-          esm_firmware_update_descriptor_obj = ESMFirmwareUpdateDescriptor()
-          self.assertNotEqual(esm_firmware_update_descriptor_obj, None)
-
-
+        esm_firmware_update_descriptor_obj = ESMFirmwareUpdateDescriptor()
+        self.assertNotEqual(esm_firmware_update_descriptor_obj, None)

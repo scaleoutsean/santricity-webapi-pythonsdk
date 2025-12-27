@@ -20,125 +20,120 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.administration_api import AdministrationApi
 
+from netapp.santricity.api.v2.administration_api import AdministrationApi
+from netapp.santricity.rest import ApiException
 
 
 class AdministrationApiTest(unittest.TestCase):
-
-    
     def test_get_certificate_signing_request(self):
-       api = AdministrationApi()
-       administration_api = None
-       try:
+        api = AdministrationApi()
+        administration_api = None
+        try:
             administration_api = api.get_certificate_signing_request()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if administration_api is None:
                 administration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             administration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            administration_api = 1
 
-       self.assertNotEqual(administration_api, None)
-    
+        self.assertNotEqual(administration_api, None)
+
     def test_get_ssl_configuration(self):
-       api = AdministrationApi()
-       administration_api = None
-       try:
+        api = AdministrationApi()
+        administration_api = None
+        try:
             administration_api = api.get_ssl_configuration()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if administration_api is None:
                 administration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             administration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            administration_api = 1
 
-       self.assertNotEqual(administration_api, None)
-    
+        self.assertNotEqual(administration_api, None)
+
     def test_get_trusted_certificate_authorities(self):
-       api = AdministrationApi()
-       administration_api = None
-       try:
+        api = AdministrationApi()
+        administration_api = None
+        try:
             administration_api = api.get_trusted_certificate_authorities()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if administration_api is None:
                 administration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             administration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            administration_api = 1
 
-       self.assertNotEqual(administration_api, None)
-    
+        self.assertNotEqual(administration_api, None)
+
     def test_reload_ssl_configuration(self):
-       api = AdministrationApi()
-       administration_api = None
-       try:
+        api = AdministrationApi()
+        administration_api = None
+        try:
             administration_api = api.reload_ssl_configuration()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if administration_api is None:
                 administration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             administration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            administration_api = 1
 
-       self.assertNotEqual(administration_api, None)
-    
+        self.assertNotEqual(administration_api, None)
+
     def test_remove_ca(self):
-       api = AdministrationApi()
-       administration_api = None
-       try:
+        api = AdministrationApi()
+        administration_api = None
+        try:
             administration_api = api.remove_ca(alias="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if administration_api is None:
                 administration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             administration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            administration_api = 1
 
-       self.assertNotEqual(administration_api, None)
-    
+        self.assertNotEqual(administration_api, None)
+
     def test_set_ssl_configuration(self):
-       api = AdministrationApi()
-       administration_api = None
-       try:
+        api = AdministrationApi()
+        administration_api = None
+        try:
             administration_api = api.set_ssl_configuration()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if administration_api is None:
                 administration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             administration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            administration_api = 1
 
-       self.assertNotEqual(administration_api, None)
-    
+        self.assertNotEqual(administration_api, None)
+
     def test_upload_ca_certificate(self):
-       api = AdministrationApi()
-       administration_api = None
-       try:
+        api = AdministrationApi()
+        administration_api = None
+        try:
             administration_api = api.upload_ca_certificate()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if administration_api is None:
                 administration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             administration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            administration_api = 1
 
-       self.assertNotEqual(administration_api, None)
-    
+        self.assertNotEqual(administration_api, None)
+
     def test_upload_certificate_signing_request(self):
-       api = AdministrationApi()
-       administration_api = None
-       try:
+        api = AdministrationApi()
+        administration_api = None
+        try:
             administration_api = api.upload_certificate_signing_request()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if administration_api is None:
                 administration_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             administration_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            administration_api = 1
 
-       self.assertNotEqual(administration_api, None)
-    
-
-
+        self.assertNotEqual(administration_api, None)

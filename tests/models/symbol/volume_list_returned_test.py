@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_list_returned import VolumeListReturned
+
+from netapp.santricity.models.symbol.volume_list_returned import \
+    VolumeListReturned
+
 
 class VolumeListReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeListReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_list_returned(self):
-          volume_list_returned_obj = VolumeListReturned()
-          self.assertNotEqual(volume_list_returned_obj, None)
-
-
+        volume_list_returned_obj = VolumeListReturned()
+        self.assertNotEqual(volume_list_returned_obj, None)

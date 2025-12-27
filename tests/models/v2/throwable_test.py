@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.throwable import Throwable
+
 
 class ThrowableTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ThrowableTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_throwable(self):
-          throwable_obj = Throwable()
-          self.assertNotEqual(throwable_obj, None)
-
-
+        throwable_obj = Throwable()
+        self.assertNotEqual(throwable_obj, None)

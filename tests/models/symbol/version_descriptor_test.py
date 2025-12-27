@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.version_descriptor import VersionDescriptor
+
+from netapp.santricity.models.symbol.version_descriptor import \
+    VersionDescriptor
+
 
 class VersionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VersionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_version_descriptor(self):
-          version_descriptor_obj = VersionDescriptor()
-          self.assertNotEqual(version_descriptor_obj, None)
-
-
+        version_descriptor_obj = VersionDescriptor()
+        self.assertNotEqual(version_descriptor_obj, None)

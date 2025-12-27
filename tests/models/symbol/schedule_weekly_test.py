@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.schedule_weekly import ScheduleWeekly
+
 
 class ScheduleWeeklyTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ScheduleWeeklyTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_schedule_weekly(self):
-          schedule_weekly_obj = ScheduleWeekly()
-          self.assertNotEqual(schedule_weekly_obj, None)
-
-
+        schedule_weekly_obj = ScheduleWeekly()
+        self.assertNotEqual(schedule_weekly_obj, None)

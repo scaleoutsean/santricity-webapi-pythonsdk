@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.lockdown_ctrl_fw_version import LockdownCtrlFwVersion
+
+from netapp.santricity.models.symbol.lockdown_ctrl_fw_version import \
+    LockdownCtrlFwVersion
+
 
 class LockdownCtrlFwVersionTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class LockdownCtrlFwVersionTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_lockdown_ctrl_fw_version(self):
-          lockdown_ctrl_fw_version_obj = LockdownCtrlFwVersion()
-          self.assertNotEqual(lockdown_ctrl_fw_version_obj, None)
-
-
+        lockdown_ctrl_fw_version_obj = LockdownCtrlFwVersion()
+        self.assertNotEqual(lockdown_ctrl_fw_version_obj, None)

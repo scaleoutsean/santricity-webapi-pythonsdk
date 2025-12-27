@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.secure_volume_key_response import SecureVolumeKeyResponse
+
+from netapp.santricity.models.v2.secure_volume_key_response import \
+    SecureVolumeKeyResponse
+
 
 class SecureVolumeKeyResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SecureVolumeKeyResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_secure_volume_key_response(self):
-          secure_volume_key_response_obj = SecureVolumeKeyResponse()
-          self.assertNotEqual(secure_volume_key_response_obj, None)
-
-
+        secure_volume_key_response_obj = SecureVolumeKeyResponse()
+        self.assertNotEqual(secure_volume_key_response_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.folder_update_request import FolderUpdateRequest
+
+from netapp.santricity.models.v2.folder_update_request import \
+    FolderUpdateRequest
+
 
 class FolderUpdateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FolderUpdateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_folder_update_request(self):
-          folder_update_request_obj = FolderUpdateRequest()
-          self.assertNotEqual(folder_update_request_obj, None)
-
-
+        folder_update_request_obj = FolderUpdateRequest()
+        self.assertNotEqual(folder_update_request_obj, None)

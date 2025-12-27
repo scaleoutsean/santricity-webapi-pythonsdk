@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.concat_repository_volume import ConcatRepositoryVolume
+
+from netapp.santricity.models.v2.concat_repository_volume import \
+    ConcatRepositoryVolume
+
 
 class ConcatRepositoryVolumeTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ConcatRepositoryVolumeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_concat_repository_volume(self):
-          concat_repository_volume_obj = ConcatRepositoryVolume()
-          self.assertNotEqual(concat_repository_volume_obj, None)
-
-
+        concat_repository_volume_obj = ConcatRepositoryVolume()
+        self.assertNotEqual(concat_repository_volume_obj, None)

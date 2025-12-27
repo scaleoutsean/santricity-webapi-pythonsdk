@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.firmware_update_descriptor import FirmwareUpdateDescriptor
+
+from netapp.santricity.models.symbol.firmware_update_descriptor import \
+    FirmwareUpdateDescriptor
+
 
 class FirmwareUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FirmwareUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_firmware_update_descriptor(self):
-          firmware_update_descriptor_obj = FirmwareUpdateDescriptor()
-          self.assertNotEqual(firmware_update_descriptor_obj, None)
-
-
+        firmware_update_descriptor_obj = FirmwareUpdateDescriptor()
+        self.assertNotEqual(firmware_update_descriptor_obj, None)

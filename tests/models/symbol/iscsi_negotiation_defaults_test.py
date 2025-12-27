@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_negotiation_defaults import IscsiNegotiationDefaults
+
+from netapp.santricity.models.symbol.iscsi_negotiation_defaults import \
+    IscsiNegotiationDefaults
+
 
 class IscsiNegotiationDefaultsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiNegotiationDefaultsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_negotiation_defaults(self):
-          iscsi_negotiation_defaults_obj = IscsiNegotiationDefaults()
-          self.assertNotEqual(iscsi_negotiation_defaults_obj, None)
-
-
+        iscsi_negotiation_defaults_obj = IscsiNegotiationDefaults()
+        self.assertNotEqual(iscsi_negotiation_defaults_obj, None)

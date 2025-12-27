@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.usm_error import UsmError
+
 
 class UsmErrorTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class UsmErrorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_usm_error(self):
-          usm_error_obj = UsmError()
-          self.assertNotEqual(usm_error_obj, None)
-
-
+        usm_error_obj = UsmError()
+        self.assertNotEqual(usm_error_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dpl_core_dump_on_demand_return import DPLCoreDumpOnDemandReturn
+
+from netapp.santricity.models.symbol.dpl_core_dump_on_demand_return import \
+    DPLCoreDumpOnDemandReturn
+
 
 class DPLCoreDumpOnDemandReturnTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DPLCoreDumpOnDemandReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dpl_core_dump_on_demand_return(self):
-          dpl_core_dump_on_demand_return_obj = DPLCoreDumpOnDemandReturn()
-          self.assertNotEqual(dpl_core_dump_on_demand_return_obj, None)
-
-
+        dpl_core_dump_on_demand_return_obj = DPLCoreDumpOnDemandReturn()
+        self.assertNotEqual(dpl_core_dump_on_demand_return_obj, None)

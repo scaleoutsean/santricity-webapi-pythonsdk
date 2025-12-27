@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.host_port_location import HostPortLocation
+
 
 class HostPortLocationTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class HostPortLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_port_location(self):
-          host_port_location_obj = HostPortLocation()
-          self.assertNotEqual(host_port_location_obj, None)
-
-
+        host_port_location_obj = HostPortLocation()
+        self.assertNotEqual(host_port_location_obj, None)

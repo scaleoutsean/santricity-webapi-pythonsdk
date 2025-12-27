@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.lock_key_id import LockKeyID
+
 
 class LockKeyIDTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class LockKeyIDTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_lock_key_id(self):
-          lock_key_id_obj = LockKeyID()
-          self.assertNotEqual(lock_key_id_obj, None)
-
-
+        lock_key_id_obj = LockKeyID()
+        self.assertNotEqual(lock_key_id_obj, None)

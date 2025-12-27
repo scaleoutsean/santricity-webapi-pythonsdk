@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_ntp_error_details import ControllerNtpErrorDetails
+
+from netapp.santricity.models.symbol.controller_ntp_error_details import \
+    ControllerNtpErrorDetails
+
 
 class ControllerNtpErrorDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ControllerNtpErrorDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_ntp_error_details(self):
-          controller_ntp_error_details_obj = ControllerNtpErrorDetails()
-          self.assertNotEqual(controller_ntp_error_details_obj, None)
-
-
+        controller_ntp_error_details_obj = ControllerNtpErrorDetails()
+        self.assertNotEqual(controller_ntp_error_details_obj, None)

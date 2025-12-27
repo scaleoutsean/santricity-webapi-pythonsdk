@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.mirror_candidate_descriptor import MirrorCandidateDescriptor
+
+from netapp.santricity.models.symbol.mirror_candidate_descriptor import \
+    MirrorCandidateDescriptor
+
 
 class MirrorCandidateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MirrorCandidateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_mirror_candidate_descriptor(self):
-          mirror_candidate_descriptor_obj = MirrorCandidateDescriptor()
-          self.assertNotEqual(mirror_candidate_descriptor_obj, None)
-
-
+        mirror_candidate_descriptor_obj = MirrorCandidateDescriptor()
+        self.assertNotEqual(mirror_candidate_descriptor_obj, None)

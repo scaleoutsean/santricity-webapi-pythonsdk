@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.speed_neg_error import SpeedNegError
+
 
 class SpeedNegErrorTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SpeedNegErrorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_speed_neg_error(self):
-          speed_neg_error_obj = SpeedNegError()
-          self.assertNotEqual(speed_neg_error_obj, None)
-
-
+        speed_neg_error_obj = SpeedNegError()
+        self.assertNotEqual(speed_neg_error_obj, None)

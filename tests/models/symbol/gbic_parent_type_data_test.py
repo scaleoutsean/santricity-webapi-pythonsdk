@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.gbic_parent_type_data import GBICParentTypeData
+
+from netapp.santricity.models.symbol.gbic_parent_type_data import \
+    GBICParentTypeData
+
 
 class GBICParentTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class GBICParentTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_gbic_parent_type_data(self):
-          gbic_parent_type_data_obj = GBICParentTypeData()
-          self.assertNotEqual(gbic_parent_type_data_obj, None)
-
-
+        gbic_parent_type_data_obj = GBICParentTypeData()
+        self.assertNotEqual(gbic_parent_type_data_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.premium_feature import PremiumFeature
+
 
 class PremiumFeatureTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PremiumFeatureTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_premium_feature(self):
-          premium_feature_obj = PremiumFeature()
-          self.assertNotEqual(premium_feature_obj, None)
-
-
+        premium_feature_obj = PremiumFeature()
+        self.assertNotEqual(premium_feature_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.thin_volume_creation_descriptor import ThinVolumeCreationDescriptor
+
+from netapp.santricity.models.symbol.thin_volume_creation_descriptor import \
+    ThinVolumeCreationDescriptor
+
 
 class ThinVolumeCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ThinVolumeCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_thin_volume_creation_descriptor(self):
-          thin_volume_creation_descriptor_obj = ThinVolumeCreationDescriptor()
-          self.assertNotEqual(thin_volume_creation_descriptor_obj, None)
-
-
+        thin_volume_creation_descriptor_obj = ThinVolumeCreationDescriptor()
+        self.assertNotEqual(thin_volume_creation_descriptor_obj, None)

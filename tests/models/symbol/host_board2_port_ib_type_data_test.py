@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_board2_port_ib_type_data import HostBoard2PortIbTypeData
+
+from netapp.santricity.models.symbol.host_board2_port_ib_type_data import \
+    HostBoard2PortIbTypeData
+
 
 class HostBoard2PortIbTypeDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostBoard2PortIbTypeDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_board2_port_ib_type_data(self):
-          host_board2_port_ib_type_data_obj = HostBoard2PortIbTypeData()
-          self.assertNotEqual(host_board2_port_ib_type_data_obj, None)
-
-
+        host_board2_port_ib_type_data_obj = HostBoard2PortIbTypeData()
+        self.assertNotEqual(host_board2_port_ib_type_data_obj, None)

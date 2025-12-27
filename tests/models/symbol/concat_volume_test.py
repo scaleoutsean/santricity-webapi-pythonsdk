@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.concat_volume import ConcatVolume
+
 
 class ConcatVolumeTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ConcatVolumeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_concat_volume(self):
-          concat_volume_obj = ConcatVolume()
-          self.assertNotEqual(concat_volume_obj, None)
-
-
+        concat_volume_obj = ConcatVolume()
+        self.assertNotEqual(concat_volume_obj, None)

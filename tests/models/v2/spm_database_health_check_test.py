@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.spm_database_health_check import SpmDatabaseHealthCheck
+
+from netapp.santricity.models.v2.spm_database_health_check import \
+    SpmDatabaseHealthCheck
+
 
 class SpmDatabaseHealthCheckTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SpmDatabaseHealthCheckTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_spm_database_health_check(self):
-          spm_database_health_check_obj = SpmDatabaseHealthCheck()
-          self.assertNotEqual(spm_database_health_check_obj, None)
-
-
+        spm_database_health_check_obj = SpmDatabaseHealthCheck()
+        self.assertNotEqual(spm_database_health_check_obj, None)

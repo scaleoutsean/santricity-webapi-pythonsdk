@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.miswired_drive_channel_list import MiswiredDriveChannelList
+
+from netapp.santricity.models.symbol.miswired_drive_channel_list import \
+    MiswiredDriveChannelList
+
 
 class MiswiredDriveChannelListTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MiswiredDriveChannelListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_miswired_drive_channel_list(self):
-          miswired_drive_channel_list_obj = MiswiredDriveChannelList()
-          self.assertNotEqual(miswired_drive_channel_list_obj, None)
-
-
+        miswired_drive_channel_list_obj = MiswiredDriveChannelList()
+        self.assertNotEqual(miswired_drive_channel_list_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ib_port_partition_table import IbPortPartitionTable
+
+from netapp.santricity.models.symbol.ib_port_partition_table import \
+    IbPortPartitionTable
+
 
 class IbPortPartitionTableTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IbPortPartitionTableTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_port_partition_table(self):
-          ib_port_partition_table_obj = IbPortPartitionTable()
-          self.assertNotEqual(ib_port_partition_table_obj, None)
-
-
+        ib_port_partition_table_obj = IbPortPartitionTable()
+        self.assertNotEqual(ib_port_partition_table_obj, None)

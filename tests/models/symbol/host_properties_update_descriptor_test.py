@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_properties_update_descriptor import HostPropertiesUpdateDescriptor
+
+from netapp.santricity.models.symbol.host_properties_update_descriptor import \
+    HostPropertiesUpdateDescriptor
+
 
 class HostPropertiesUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostPropertiesUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_properties_update_descriptor(self):
-          host_properties_update_descriptor_obj = HostPropertiesUpdateDescriptor()
-          self.assertNotEqual(host_properties_update_descriptor_obj, None)
-
-
+        host_properties_update_descriptor_obj = HostPropertiesUpdateDescriptor()
+        self.assertNotEqual(host_properties_update_descriptor_obj, None)

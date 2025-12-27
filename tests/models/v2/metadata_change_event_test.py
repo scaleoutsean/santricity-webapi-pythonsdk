@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.metadata_change_event import MetadataChangeEvent
+
+from netapp.santricity.models.v2.metadata_change_event import \
+    MetadataChangeEvent
+
 
 class MetadataChangeEventTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MetadataChangeEventTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_metadata_change_event(self):
-          metadata_change_event_obj = MetadataChangeEvent()
-          self.assertNotEqual(metadata_change_event_obj, None)
-
-
+        metadata_change_event_obj = MetadataChangeEvent()
+        self.assertNotEqual(metadata_change_event_obj, None)

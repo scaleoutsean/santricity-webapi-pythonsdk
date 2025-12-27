@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.factory_defaults_descriptor import FactoryDefaultsDescriptor
+
+from netapp.santricity.models.symbol.factory_defaults_descriptor import \
+    FactoryDefaultsDescriptor
+
 
 class FactoryDefaultsDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FactoryDefaultsDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_factory_defaults_descriptor(self):
-          factory_defaults_descriptor_obj = FactoryDefaultsDescriptor()
-          self.assertNotEqual(factory_defaults_descriptor_obj, None)
-
-
+        factory_defaults_descriptor_obj = FactoryDefaultsDescriptor()
+        self.assertNotEqual(factory_defaults_descriptor_obj, None)

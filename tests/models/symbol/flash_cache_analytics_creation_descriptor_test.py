@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.flash_cache_analytics_creation_descriptor import FlashCacheAnalyticsCreationDescriptor
+
+from netapp.santricity.models.symbol.flash_cache_analytics_creation_descriptor import \
+    FlashCacheAnalyticsCreationDescriptor
+
 
 class FlashCacheAnalyticsCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class FlashCacheAnalyticsCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_flash_cache_analytics_creation_descriptor(self):
-          flash_cache_analytics_creation_descriptor_obj = FlashCacheAnalyticsCreationDescriptor()
-          self.assertNotEqual(flash_cache_analytics_creation_descriptor_obj, None)
-
-
+        flash_cache_analytics_creation_descriptor_obj = (
+            FlashCacheAnalyticsCreationDescriptor()
+        )
+        self.assertNotEqual(flash_cache_analytics_creation_descriptor_obj, None)

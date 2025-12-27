@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.legacy_snapshot_create_request import LegacySnapshotCreateRequest
+
+from netapp.santricity.models.v2.legacy_snapshot_create_request import \
+    LegacySnapshotCreateRequest
+
 
 class LegacySnapshotCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class LegacySnapshotCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_legacy_snapshot_create_request(self):
-          legacy_snapshot_create_request_obj = LegacySnapshotCreateRequest()
-          self.assertNotEqual(legacy_snapshot_create_request_obj, None)
-
-
+        legacy_snapshot_create_request_obj = LegacySnapshotCreateRequest()
+        self.assertNotEqual(legacy_snapshot_create_request_obj, None)

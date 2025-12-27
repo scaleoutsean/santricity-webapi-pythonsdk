@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.rls_command_descriptor import RLSCommandDescriptor
+
+from netapp.santricity.models.symbol.rls_command_descriptor import \
+    RLSCommandDescriptor
+
 
 class RLSCommandDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RLSCommandDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_rls_command_descriptor(self):
-          rls_command_descriptor_obj = RLSCommandDescriptor()
-          self.assertNotEqual(rls_command_descriptor_obj, None)
-
-
+        rls_command_descriptor_obj = RLSCommandDescriptor()
+        self.assertNotEqual(rls_command_descriptor_obj, None)

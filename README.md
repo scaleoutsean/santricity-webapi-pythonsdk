@@ -14,7 +14,7 @@ This SDK isn't fully "suitable for production use" either but if we test what wo
 
 This repository aims to make at least the basic volume-related operations usable (create, edit, delete).
 
-Bugs are expected and can be fixed. Submit pull requests (with tests) or bug reports to contribute. 
+Bugs are expected and can be fixed. Submit pull requests (with tests) or bug reports to contribute.
 
 ## Requirements
 
@@ -114,7 +114,7 @@ Available formats are:
 * html
 * pickle
 * json
-* applehelp  
+* applehelp
 * epub
 * epub3
 * latex
@@ -140,4 +140,3 @@ make -f Makefile html
 * Python3 interpreter
 * urllib3
 * Sphinx (sudo apt install python3-sphinx -y)
-

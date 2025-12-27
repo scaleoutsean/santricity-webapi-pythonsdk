@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_view_params_update_descriptor import PITViewParamsUpdateDescriptor
+
+from netapp.santricity.models.symbol.pit_view_params_update_descriptor import \
+    PITViewParamsUpdateDescriptor
+
 
 class PITViewParamsUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITViewParamsUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_view_params_update_descriptor(self):
-          pit_view_params_update_descriptor_obj = PITViewParamsUpdateDescriptor()
-          self.assertNotEqual(pit_view_params_update_descriptor_obj, None)
-
-
+        pit_view_params_update_descriptor_obj = PITViewParamsUpdateDescriptor()
+        self.assertNotEqual(pit_view_params_update_descriptor_obj, None)

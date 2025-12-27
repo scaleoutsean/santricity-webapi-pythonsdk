@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.checked_pending_host_list_returned import CheckedPendingHostListReturned
+
+from netapp.santricity.models.symbol.checked_pending_host_list_returned import \
+    CheckedPendingHostListReturned
+
 
 class CheckedPendingHostListReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CheckedPendingHostListReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_checked_pending_host_list_returned(self):
-          checked_pending_host_list_returned_obj = CheckedPendingHostListReturned()
-          self.assertNotEqual(checked_pending_host_list_returned_obj, None)
-
-
+        checked_pending_host_list_returned_obj = CheckedPendingHostListReturned()
+        self.assertNotEqual(checked_pending_host_list_returned_obj, None)

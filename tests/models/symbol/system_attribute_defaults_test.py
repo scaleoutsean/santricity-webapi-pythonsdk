@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.system_attribute_defaults import SystemAttributeDefaults
+
+from netapp.santricity.models.symbol.system_attribute_defaults import \
+    SystemAttributeDefaults
+
 
 class SystemAttributeDefaultsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SystemAttributeDefaultsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_system_attribute_defaults(self):
-          system_attribute_defaults_obj = SystemAttributeDefaults()
-          self.assertNotEqual(system_attribute_defaults_obj, None)
-
-
+        system_attribute_defaults_obj = SystemAttributeDefaults()
+        self.assertNotEqual(system_attribute_defaults_obj, None)

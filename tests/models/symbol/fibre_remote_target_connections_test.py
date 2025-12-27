@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.fibre_remote_target_connections import FibreRemoteTargetConnections
+
+from netapp.santricity.models.symbol.fibre_remote_target_connections import \
+    FibreRemoteTargetConnections
+
 
 class FibreRemoteTargetConnectionsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FibreRemoteTargetConnectionsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fibre_remote_target_connections(self):
-          fibre_remote_target_connections_obj = FibreRemoteTargetConnections()
-          self.assertNotEqual(fibre_remote_target_connections_obj, None)
-
-
+        fibre_remote_target_connections_obj = FibreRemoteTargetConnections()
+        self.assertNotEqual(fibre_remote_target_connections_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.snmp_system_variable_value import SNMPSystemVariableValue
+
+from netapp.santricity.models.symbol.snmp_system_variable_value import \
+    SNMPSystemVariableValue
+
 
 class SNMPSystemVariableValueTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SNMPSystemVariableValueTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snmp_system_variable_value(self):
-          snmp_system_variable_value_obj = SNMPSystemVariableValue()
-          self.assertNotEqual(snmp_system_variable_value_obj, None)
-
-
+        snmp_system_variable_value_obj = SNMPSystemVariableValue()
+        self.assertNotEqual(snmp_system_variable_value_obj, None)

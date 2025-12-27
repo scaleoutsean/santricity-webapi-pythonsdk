@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.async_mirror_sync_completion_detail import AsyncMirrorSyncCompletionDetail
+
+from netapp.santricity.models.symbol.async_mirror_sync_completion_detail import \
+    AsyncMirrorSyncCompletionDetail
+
 
 class AsyncMirrorSyncCompletionDetailTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorSyncCompletionDetailTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_sync_completion_detail(self):
-          async_mirror_sync_completion_detail_obj = AsyncMirrorSyncCompletionDetail()
-          self.assertNotEqual(async_mirror_sync_completion_detail_obj, None)
-
-
+        async_mirror_sync_completion_detail_obj = AsyncMirrorSyncCompletionDetail()
+        self.assertNotEqual(async_mirror_sync_completion_detail_obj, None)

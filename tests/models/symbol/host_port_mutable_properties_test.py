@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_port_mutable_properties import HostPortMutableProperties
+
+from netapp.santricity.models.symbol.host_port_mutable_properties import \
+    HostPortMutableProperties
+
 
 class HostPortMutablePropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostPortMutablePropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_port_mutable_properties(self):
-          host_port_mutable_properties_obj = HostPortMutableProperties()
-          self.assertNotEqual(host_port_mutable_properties_obj, None)
-
-
+        host_port_mutable_properties_obj = HostPortMutableProperties()
+        self.assertNotEqual(host_port_mutable_properties_obj, None)

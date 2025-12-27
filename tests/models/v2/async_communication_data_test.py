@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.async_communication_data import AsyncCommunicationData
+
+from netapp.santricity.models.v2.async_communication_data import \
+    AsyncCommunicationData
+
 
 class AsyncCommunicationDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncCommunicationDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_communication_data(self):
-          async_communication_data_obj = AsyncCommunicationData()
-          self.assertNotEqual(async_communication_data_obj, None)
-
-
+        async_communication_data_obj = AsyncCommunicationData()
+        self.assertNotEqual(async_communication_data_obj, None)

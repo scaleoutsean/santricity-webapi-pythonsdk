@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.sas_interface import SasInterface
+
 
 class SasInterfaceTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SasInterfaceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_interface(self):
-          sas_interface_obj = SasInterface()
-          self.assertNotEqual(sas_interface_obj, None)
-
-
+        sas_interface_obj = SasInterface()
+        self.assertNotEqual(sas_interface_obj, None)

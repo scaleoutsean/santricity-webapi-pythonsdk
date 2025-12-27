@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_expansion_descriptor import VolumeExpansionDescriptor
+
+from netapp.santricity.models.symbol.volume_expansion_descriptor import \
+    VolumeExpansionDescriptor
+
 
 class VolumeExpansionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class VolumeExpansionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_expansion_descriptor(self):
-          volume_expansion_descriptor_obj = VolumeExpansionDescriptor()
-          self.assertNotEqual(volume_expansion_descriptor_obj, None)
-
-
+        volume_expansion_descriptor_obj = VolumeExpansionDescriptor()
+        self.assertNotEqual(volume_expansion_descriptor_obj, None)

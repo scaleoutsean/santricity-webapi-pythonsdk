@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.auto_config_template_list import AutoConfigTemplateList
+
+from netapp.santricity.models.symbol.auto_config_template_list import \
+    AutoConfigTemplateList
+
 
 class AutoConfigTemplateListTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AutoConfigTemplateListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_auto_config_template_list(self):
-          auto_config_template_list_obj = AutoConfigTemplateList()
-          self.assertNotEqual(auto_config_template_list_obj, None)
-
-
+        auto_config_template_list_obj = AutoConfigTemplateList()
+        self.assertNotEqual(auto_config_template_list_obj, None)

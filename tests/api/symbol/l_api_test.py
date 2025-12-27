@@ -20,139 +20,161 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.l_api import LApi
 
+from netapp.santricity.api.symbol.l_api import LApi
+from netapp.santricity.rest import ApiException
 
 
 class LApiTest(unittest.TestCase):
-
-    
     def test_symbol_load_controller_firmware(self):
-       api = LApi()
-       l_api = None
-       try:
-            l_api = api.symbol_load_controller_firmware(system_id="test", body="test", )
+        api = LApi()
+        l_api = None
+        try:
+            l_api = api.symbol_load_controller_firmware(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if l_api is None:
                 l_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             l_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            l_api = 1
 
-       self.assertNotEqual(l_api, None)
-    
+        self.assertNotEqual(l_api, None)
+
     def test_symbol_load_controller_firmware_no_password(self):
-       api = LApi()
-       l_api = None
-       try:
-            l_api = api.symbol_load_controller_firmware_no_password(system_id="test", body="test", )
+        api = LApi()
+        l_api = None
+        try:
+            l_api = api.symbol_load_controller_firmware_no_password(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if l_api is None:
                 l_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             l_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            l_api = 1
 
-       self.assertNotEqual(l_api, None)
-    
+        self.assertNotEqual(l_api, None)
+
     def test_symbol_load_controller_firmware_on_lockdown(self):
-       api = LApi()
-       l_api = None
-       try:
-            l_api = api.symbol_load_controller_firmware_on_lockdown(system_id="test", body="test", )
+        api = LApi()
+        l_api = None
+        try:
+            l_api = api.symbol_load_controller_firmware_on_lockdown(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if l_api is None:
                 l_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             l_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            l_api = 1
 
-       self.assertNotEqual(l_api, None)
-    
+        self.assertNotEqual(l_api, None)
+
     def test_symbol_load_controller_nvsram(self):
-       api = LApi()
-       l_api = None
-       try:
-            l_api = api.symbol_load_controller_nvsram(system_id="test", body="test", )
+        api = LApi()
+        l_api = None
+        try:
+            l_api = api.symbol_load_controller_nvsram(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if l_api is None:
                 l_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             l_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            l_api = 1
 
-       self.assertNotEqual(l_api, None)
-    
+        self.assertNotEqual(l_api, None)
+
     def test_symbol_load_controller_nvsram_no_password(self):
-       api = LApi()
-       l_api = None
-       try:
-            l_api = api.symbol_load_controller_nvsram_no_password(system_id="test", body="test", )
+        api = LApi()
+        l_api = None
+        try:
+            l_api = api.symbol_load_controller_nvsram_no_password(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if l_api is None:
                 l_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             l_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            l_api = 1
 
-       self.assertNotEqual(l_api, None)
-    
+        self.assertNotEqual(l_api, None)
+
     def test_symbol_load_drive_firmware(self):
-       api = LApi()
-       l_api = None
-       try:
-            l_api = api.symbol_load_drive_firmware(system_id="test", body="test", )
+        api = LApi()
+        l_api = None
+        try:
+            l_api = api.symbol_load_drive_firmware(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if l_api is None:
                 l_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             l_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            l_api = 1
 
-       self.assertNotEqual(l_api, None)
-    
+        self.assertNotEqual(l_api, None)
+
     def test_symbol_load_esm_firmware(self):
-       api = LApi()
-       l_api = None
-       try:
-            l_api = api.symbol_load_esm_firmware(system_id="test", body="test", )
+        api = LApi()
+        l_api = None
+        try:
+            l_api = api.symbol_load_esm_firmware(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if l_api is None:
                 l_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             l_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            l_api = 1
 
-       self.assertNotEqual(l_api, None)
-    
+        self.assertNotEqual(l_api, None)
+
     def test_symbol_load_esm_firmware_on_mismatch(self):
-       api = LApi()
-       l_api = None
-       try:
-            l_api = api.symbol_load_esm_firmware_on_mismatch(system_id="test", body="test", )
+        api = LApi()
+        l_api = None
+        try:
+            l_api = api.symbol_load_esm_firmware_on_mismatch(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if l_api is None:
                 l_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             l_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            l_api = 1
 
-       self.assertNotEqual(l_api, None)
-    
+        self.assertNotEqual(l_api, None)
+
     def test_symbol_load_factory_defaults(self):
-       api = LApi()
-       l_api = None
-       try:
-            l_api = api.symbol_load_factory_defaults(system_id="test", body="test", )
+        api = LApi()
+        l_api = None
+        try:
+            l_api = api.symbol_load_factory_defaults(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if l_api is None:
                 l_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             l_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            l_api = 1
 
-       self.assertNotEqual(l_api, None)
-    
-
-
+        self.assertNotEqual(l_api, None)

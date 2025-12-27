@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.cumulative_statistics_bundle_returned import CumulativeStatisticsBundleReturned
+
+from netapp.santricity.models.symbol.cumulative_statistics_bundle_returned import \
+    CumulativeStatisticsBundleReturned
+
 
 class CumulativeStatisticsBundleReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CumulativeStatisticsBundleReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cumulative_statistics_bundle_returned(self):
-          cumulative_statistics_bundle_returned_obj = CumulativeStatisticsBundleReturned()
-          self.assertNotEqual(cumulative_statistics_bundle_returned_obj, None)
-
-
+        cumulative_statistics_bundle_returned_obj = CumulativeStatisticsBundleReturned()
+        self.assertNotEqual(cumulative_statistics_bundle_returned_obj, None)

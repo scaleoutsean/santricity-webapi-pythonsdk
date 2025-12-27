@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_entity_properties_update_descriptor import IscsiEntityPropertiesUpdateDescriptor
+
+from netapp.santricity.models.symbol.iscsi_entity_properties_update_descriptor import \
+    IscsiEntityPropertiesUpdateDescriptor
+
 
 class IscsiEntityPropertiesUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class IscsiEntityPropertiesUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_entity_properties_update_descriptor(self):
-          iscsi_entity_properties_update_descriptor_obj = IscsiEntityPropertiesUpdateDescriptor()
-          self.assertNotEqual(iscsi_entity_properties_update_descriptor_obj, None)
-
-
+        iscsi_entity_properties_update_descriptor_obj = (
+            IscsiEntityPropertiesUpdateDescriptor()
+        )
+        self.assertNotEqual(iscsi_entity_properties_update_descriptor_obj, None)

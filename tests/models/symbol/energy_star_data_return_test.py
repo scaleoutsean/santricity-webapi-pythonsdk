@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.energy_star_data_return import EnergyStarDataReturn
+
+from netapp.santricity.models.symbol.energy_star_data_return import \
+    EnergyStarDataReturn
+
 
 class EnergyStarDataReturnTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EnergyStarDataReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_energy_star_data_return(self):
-          energy_star_data_return_obj = EnergyStarDataReturn()
-          self.assertNotEqual(energy_star_data_return_obj, None)
-
-
+        energy_star_data_return_obj = EnergyStarDataReturn()
+        self.assertNotEqual(energy_star_data_return_obj, None)

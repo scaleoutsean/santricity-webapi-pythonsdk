@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.async_mirror_remote_connection import AsyncMirrorRemoteConnection
+
+from netapp.santricity.models.v2.async_mirror_remote_connection import \
+    AsyncMirrorRemoteConnection
+
 
 class AsyncMirrorRemoteConnectionTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorRemoteConnectionTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_remote_connection(self):
-          async_mirror_remote_connection_obj = AsyncMirrorRemoteConnection()
-          self.assertNotEqual(async_mirror_remote_connection_obj, None)
-
-
+        async_mirror_remote_connection_obj = AsyncMirrorRemoteConnection()
+        self.assertNotEqual(async_mirror_remote_connection_obj, None)

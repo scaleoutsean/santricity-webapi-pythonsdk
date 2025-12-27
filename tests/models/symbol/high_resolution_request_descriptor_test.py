@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.high_resolution_request_descriptor import HighResolutionRequestDescriptor
+
+from netapp.santricity.models.symbol.high_resolution_request_descriptor import \
+    HighResolutionRequestDescriptor
+
 
 class HighResolutionRequestDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HighResolutionRequestDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_high_resolution_request_descriptor(self):
-          high_resolution_request_descriptor_obj = HighResolutionRequestDescriptor()
-          self.assertNotEqual(high_resolution_request_descriptor_obj, None)
-
-
+        high_resolution_request_descriptor_obj = HighResolutionRequestDescriptor()
+        self.assertNotEqual(high_resolution_request_descriptor_obj, None)

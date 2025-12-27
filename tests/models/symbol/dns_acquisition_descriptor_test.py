@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dns_acquisition_descriptor import DnsAcquisitionDescriptor
+
+from netapp.santricity.models.symbol.dns_acquisition_descriptor import \
+    DnsAcquisitionDescriptor
+
 
 class DnsAcquisitionDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DnsAcquisitionDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dns_acquisition_descriptor(self):
-          dns_acquisition_descriptor_obj = DnsAcquisitionDescriptor()
-          self.assertNotEqual(dns_acquisition_descriptor_obj, None)
-
-
+        dns_acquisition_descriptor_obj = DnsAcquisitionDescriptor()
+        self.assertNotEqual(dns_acquisition_descriptor_obj, None)

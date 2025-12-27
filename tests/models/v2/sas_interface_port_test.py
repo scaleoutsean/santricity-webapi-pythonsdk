@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.sas_interface_port import SasInterfacePort
+
 
 class SasInterfacePortTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SasInterfacePortTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_sas_interface_port(self):
-          sas_interface_port_obj = SasInterfacePort()
-          self.assertNotEqual(sas_interface_port_obj, None)
-
-
+        sas_interface_port_obj = SasInterfacePort()
+        self.assertNotEqual(sas_interface_port_obj, None)

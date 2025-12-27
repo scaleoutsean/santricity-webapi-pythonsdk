@@ -20,55 +20,50 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.utils.login_api import LoginApi
 
+from netapp.santricity.api.utils.login_api import LoginApi
+from netapp.santricity.rest import ApiException
 
 
 class LoginApiTest(unittest.TestCase):
-
-    
     def test_logout(self):
-       api = LoginApi()
-       login_api = None
-       try:
+        api = LoginApi()
+        login_api = None
+        try:
             login_api = api.logout()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if login_api is None:
                 login_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             login_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            login_api = 1
 
-       self.assertNotEqual(login_api, None)
-    
+        self.assertNotEqual(login_api, None)
+
     def test_perform_manual_login(self):
-       api = LoginApi()
-       login_api = None
-       try:
+        api = LoginApi()
+        login_api = None
+        try:
             login_api = api.perform_manual_login(login_request="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if login_api is None:
                 login_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             login_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            login_api = 1
 
-       self.assertNotEqual(login_api, None)
-    
+        self.assertNotEqual(login_api, None)
+
     def test_perform_manual_login_state_check(self):
-       api = LoginApi()
-       login_api = None
-       try:
+        api = LoginApi()
+        login_api = None
+        try:
             login_api = api.perform_manual_login_state_check()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if login_api is None:
                 login_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             login_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            login_api = 1
 
-       self.assertNotEqual(login_api, None)
-    
-
-
+        self.assertNotEqual(login_api, None)

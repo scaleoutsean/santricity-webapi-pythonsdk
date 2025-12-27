@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.database_metadata import DatabaseMetadata
+
 
 class DatabaseMetadataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DatabaseMetadataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_database_metadata(self):
-          database_metadata_obj = DatabaseMetadata()
-          self.assertNotEqual(database_metadata_obj, None)
-
-
+        database_metadata_obj = DatabaseMetadata()
+        self.assertNotEqual(database_metadata_obj, None)

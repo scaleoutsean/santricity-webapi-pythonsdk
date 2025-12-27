@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_interface_changeable_properties import IscsiInterfaceChangeableProperties
+
+from netapp.santricity.models.symbol.iscsi_interface_changeable_properties import \
+    IscsiInterfaceChangeableProperties
+
 
 class IscsiInterfaceChangeablePropertiesTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiInterfaceChangeablePropertiesTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_interface_changeable_properties(self):
-          iscsi_interface_changeable_properties_obj = IscsiInterfaceChangeableProperties()
-          self.assertNotEqual(iscsi_interface_changeable_properties_obj, None)
-
-
+        iscsi_interface_changeable_properties_obj = IscsiInterfaceChangeableProperties()
+        self.assertNotEqual(iscsi_interface_changeable_properties_obj, None)

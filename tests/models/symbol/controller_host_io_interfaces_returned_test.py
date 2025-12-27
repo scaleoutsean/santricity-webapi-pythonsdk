@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.controller_host_io_interfaces_returned import ControllerHostIoInterfacesReturned
+
+from netapp.santricity.models.symbol.controller_host_io_interfaces_returned import \
+    ControllerHostIoInterfacesReturned
+
 
 class ControllerHostIoInterfacesReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class ControllerHostIoInterfacesReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_controller_host_io_interfaces_returned(self):
-          controller_host_io_interfaces_returned_obj = ControllerHostIoInterfacesReturned()
-          self.assertNotEqual(controller_host_io_interfaces_returned_obj, None)
-
-
+        controller_host_io_interfaces_returned_obj = (
+            ControllerHostIoInterfacesReturned()
+        )
+        self.assertNotEqual(controller_host_io_interfaces_returned_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.remote_mirror_authenticator import RemoteMirrorAuthenticator
+
+from netapp.santricity.models.symbol.remote_mirror_authenticator import \
+    RemoteMirrorAuthenticator
+
 
 class RemoteMirrorAuthenticatorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemoteMirrorAuthenticatorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_mirror_authenticator(self):
-          remote_mirror_authenticator_obj = RemoteMirrorAuthenticator()
-          self.assertNotEqual(remote_mirror_authenticator_obj, None)
-
-
+        remote_mirror_authenticator_obj = RemoteMirrorAuthenticator()
+        self.assertNotEqual(remote_mirror_authenticator_obj, None)

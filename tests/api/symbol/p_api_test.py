@@ -20,55 +20,57 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.p_api import PApi
 
+from netapp.santricity.api.symbol.p_api import PApi
+from netapp.santricity.rest import ApiException
 
 
 class PApiTest(unittest.TestCase):
-
-    
     def test_symbol_ping_controller(self):
-       api = PApi()
-       p_api = None
-       try:
-            p_api = api.symbol_ping_controller(system_id="test", )
+        api = PApi()
+        p_api = None
+        try:
+            p_api = api.symbol_ping_controller(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if p_api is None:
                 p_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             p_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            p_api = 1
 
-       self.assertNotEqual(p_api, None)
-    
+        self.assertNotEqual(p_api, None)
+
     def test_symbol_power_cycle_physical_drive(self):
-       api = PApi()
-       p_api = None
-       try:
-            p_api = api.symbol_power_cycle_physical_drive(system_id="test", body="test", )
+        api = PApi()
+        p_api = None
+        try:
+            p_api = api.symbol_power_cycle_physical_drive(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if p_api is None:
                 p_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             p_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            p_api = 1
 
-       self.assertNotEqual(p_api, None)
-    
+        self.assertNotEqual(p_api, None)
+
     def test_symbol_power_down_array(self):
-       api = PApi()
-       p_api = None
-       try:
-            p_api = api.symbol_power_down_array(system_id="test", )
+        api = PApi()
+        p_api = None
+        try:
+            p_api = api.symbol_power_down_array(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if p_api is None:
                 p_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             p_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            p_api = 1
 
-       self.assertNotEqual(p_api, None)
-    
-
-
+        self.assertNotEqual(p_api, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.psu_update_status import PSUUpdateStatus
+
 
 class PSUUpdateStatusTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class PSUUpdateStatusTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_psu_update_status(self):
-          psu_update_status_obj = PSUUpdateStatus()
-          self.assertNotEqual(psu_update_status_obj, None)
-
-
+        psu_update_status_obj = PSUUpdateStatus()
+        self.assertNotEqual(psu_update_status_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_temperature_returned import DriveTemperatureReturned
+
+from netapp.santricity.models.symbol.drive_temperature_returned import \
+    DriveTemperatureReturned
+
 
 class DriveTemperatureReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DriveTemperatureReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_temperature_returned(self):
-          drive_temperature_returned_obj = DriveTemperatureReturned()
-          self.assertNotEqual(drive_temperature_returned_obj, None)
-
-
+        drive_temperature_returned_obj = DriveTemperatureReturned()
+        self.assertNotEqual(drive_temperature_returned_obj, None)

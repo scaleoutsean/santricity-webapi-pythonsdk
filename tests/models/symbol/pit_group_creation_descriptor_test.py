@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_group_creation_descriptor import PITGroupCreationDescriptor
+
+from netapp.santricity.models.symbol.pit_group_creation_descriptor import \
+    PITGroupCreationDescriptor
+
 
 class PITGroupCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITGroupCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_group_creation_descriptor(self):
-          pit_group_creation_descriptor_obj = PITGroupCreationDescriptor()
-          self.assertNotEqual(pit_group_creation_descriptor_obj, None)
-
-
+        pit_group_creation_descriptor_obj = PITGroupCreationDescriptor()
+        self.assertNotEqual(pit_group_creation_descriptor_obj, None)

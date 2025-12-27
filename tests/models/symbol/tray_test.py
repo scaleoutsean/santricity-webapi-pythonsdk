@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.tray import Tray
+
 
 class TrayTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class TrayTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_tray(self):
-          tray_obj = Tray()
-          self.assertNotEqual(tray_obj, None)
-
-
+        tray_obj = Tray()
+        self.assertNotEqual(tray_obj, None)

@@ -20,181 +20,211 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.symbol.e_api import EApi
 
+from netapp.santricity.api.symbol.e_api import EApi
+from netapp.santricity.rest import ApiException
 
 
 class EApiTest(unittest.TestCase):
-
-    
     def test_symbol_enable_asup(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_enable_asup(system_id="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_enable_asup(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_enable_external_kms(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_enable_external_kms(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_enable_external_kms(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_enable_feature(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_enable_feature(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_enable_feature(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_enable_feature_evaluation(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_enable_feature_evaluation(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_enable_feature_evaluation(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_enable_flash_cache_volume(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_enable_flash_cache_volume(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_enable_flash_cache_volume(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_establish_volume_copy(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_establish_volume_copy(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_establish_volume_copy(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_estimate_pit_rollback_repository_utilization(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_estimate_pit_rollback_repository_utilization(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_estimate_pit_rollback_repository_utilization(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_expand_concat_volume(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_expand_concat_volume(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_expand_concat_volume(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_expand_thin_volume_virtual_capacity(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_expand_thin_volume_virtual_capacity(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_expand_thin_volume_virtual_capacity(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_export_lock_key(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_export_lock_key(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_export_lock_key(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_export_volume_group(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_export_volume_group(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_export_volume_group(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
+        self.assertNotEqual(e_api, None)
+
     def test_symbol_external_kms_re_key(self):
-       api = EApi()
-       e_api = None
-       try:
-            e_api = api.symbol_external_kms_re_key(system_id="test", body="test", )
+        api = EApi()
+        e_api = None
+        try:
+            e_api = api.symbol_external_kms_re_key(
+                system_id="test",
+                body="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if e_api is None:
                 e_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             e_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            e_api = 1
 
-       self.assertNotEqual(e_api, None)
-    
-
-
+        self.assertNotEqual(e_api, None)

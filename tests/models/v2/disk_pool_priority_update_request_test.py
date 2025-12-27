@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.disk_pool_priority_update_request import DiskPoolPriorityUpdateRequest
+
+from netapp.santricity.models.v2.disk_pool_priority_update_request import \
+    DiskPoolPriorityUpdateRequest
+
 
 class DiskPoolPriorityUpdateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiskPoolPriorityUpdateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_priority_update_request(self):
-          disk_pool_priority_update_request_obj = DiskPoolPriorityUpdateRequest()
-          self.assertNotEqual(disk_pool_priority_update_request_obj, None)
-
-
+        disk_pool_priority_update_request_obj = DiskPoolPriorityUpdateRequest()
+        self.assertNotEqual(disk_pool_priority_update_request_obj, None)

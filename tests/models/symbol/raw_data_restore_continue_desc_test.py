@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.raw_data_restore_continue_desc import RawDataRestoreContinueDesc
+
+from netapp.santricity.models.symbol.raw_data_restore_continue_desc import \
+    RawDataRestoreContinueDesc
+
 
 class RawDataRestoreContinueDescTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RawDataRestoreContinueDescTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_raw_data_restore_continue_desc(self):
-          raw_data_restore_continue_desc_obj = RawDataRestoreContinueDesc()
-          self.assertNotEqual(raw_data_restore_continue_desc_obj, None)
-
-
+        raw_data_restore_continue_desc_obj = RawDataRestoreContinueDesc()
+        self.assertNotEqual(raw_data_restore_continue_desc_obj, None)

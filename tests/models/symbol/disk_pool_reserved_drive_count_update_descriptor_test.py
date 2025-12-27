@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.disk_pool_reserved_drive_count_update_descriptor import DiskPoolReservedDriveCountUpdateDescriptor
+
+from netapp.santricity.models.symbol.disk_pool_reserved_drive_count_update_descriptor import \
+    DiskPoolReservedDriveCountUpdateDescriptor
+
 
 class DiskPoolReservedDriveCountUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class DiskPoolReservedDriveCountUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_disk_pool_reserved_drive_count_update_descriptor(self):
-          disk_pool_reserved_drive_count_update_descriptor_obj = DiskPoolReservedDriveCountUpdateDescriptor()
-          self.assertNotEqual(disk_pool_reserved_drive_count_update_descriptor_obj, None)
-
-
+        disk_pool_reserved_drive_count_update_descriptor_obj = (
+            DiskPoolReservedDriveCountUpdateDescriptor()
+        )
+        self.assertNotEqual(disk_pool_reserved_drive_count_update_descriptor_obj, None)

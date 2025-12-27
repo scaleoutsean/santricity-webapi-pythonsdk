@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.ip_vx_address import IpVxAddress
+
 
 class IpVxAddressTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class IpVxAddressTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ip_vx_address(self):
-          ip_vx_address_obj = IpVxAddress()
-          self.assertNotEqual(ip_vx_address_obj, None)
-
-
+        ip_vx_address_obj = IpVxAddress()
+        self.assertNotEqual(ip_vx_address_obj, None)

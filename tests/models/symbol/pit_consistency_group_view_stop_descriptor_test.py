@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_consistency_group_view_stop_descriptor import PITConsistencyGroupViewStopDescriptor
+
+from netapp.santricity.models.symbol.pit_consistency_group_view_stop_descriptor import \
+    PITConsistencyGroupViewStopDescriptor
+
 
 class PITConsistencyGroupViewStopDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class PITConsistencyGroupViewStopDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_consistency_group_view_stop_descriptor(self):
-          pit_consistency_group_view_stop_descriptor_obj = PITConsistencyGroupViewStopDescriptor()
-          self.assertNotEqual(pit_consistency_group_view_stop_descriptor_obj, None)
-
-
+        pit_consistency_group_view_stop_descriptor_obj = (
+            PITConsistencyGroupViewStopDescriptor()
+        )
+        self.assertNotEqual(pit_consistency_group_view_stop_descriptor_obj, None)

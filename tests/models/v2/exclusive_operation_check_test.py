@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.exclusive_operation_check import ExclusiveOperationCheck
+
+from netapp.santricity.models.v2.exclusive_operation_check import \
+    ExclusiveOperationCheck
+
 
 class ExclusiveOperationCheckTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ExclusiveOperationCheckTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_exclusive_operation_check(self):
-          exclusive_operation_check_obj = ExclusiveOperationCheck()
-          self.assertNotEqual(exclusive_operation_check_obj, None)
-
-
+        exclusive_operation_check_obj = ExclusiveOperationCheck()
+        self.assertNotEqual(exclusive_operation_check_obj, None)

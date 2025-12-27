@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.file_based_configuration_request import FileBasedConfigurationRequest
+
+from netapp.santricity.models.v2.file_based_configuration_request import \
+    FileBasedConfigurationRequest
+
 
 class FileBasedConfigurationRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class FileBasedConfigurationRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_file_based_configuration_request(self):
-          file_based_configuration_request_obj = FileBasedConfigurationRequest()
-          self.assertNotEqual(file_based_configuration_request_obj, None)
-
-
+        file_based_configuration_request_obj = FileBasedConfigurationRequest()
+        self.assertNotEqual(file_based_configuration_request_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dom0_support_data_chunk_details import Dom0SupportDataChunkDetails
+
+from netapp.santricity.models.symbol.dom0_support_data_chunk_details import \
+    Dom0SupportDataChunkDetails
+
 
 class Dom0SupportDataChunkDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class Dom0SupportDataChunkDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dom0_support_data_chunk_details(self):
-          dom0_support_data_chunk_details_obj = Dom0SupportDataChunkDetails()
-          self.assertNotEqual(dom0_support_data_chunk_details_obj, None)
-
-
+        dom0_support_data_chunk_details_obj = Dom0SupportDataChunkDetails()
+        self.assertNotEqual(dom0_support_data_chunk_details_obj, None)

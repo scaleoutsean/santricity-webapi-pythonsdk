@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.iom_service_info_response import IomServiceInfoResponse
+
+from netapp.santricity.models.v2.iom_service_info_response import \
+    IomServiceInfoResponse
+
 
 class IomServiceInfoResponseTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IomServiceInfoResponseTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iom_service_info_response(self):
-          iom_service_info_response_obj = IomServiceInfoResponse()
-          self.assertNotEqual(iom_service_info_response_obj, None)
-
-
+        iom_service_info_response_obj = IomServiceInfoResponse()
+        self.assertNotEqual(iom_service_info_response_obj, None)

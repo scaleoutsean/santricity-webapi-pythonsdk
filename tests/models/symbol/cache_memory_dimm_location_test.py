@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.cache_memory_dimm_location import CacheMemoryDimmLocation
+
+from netapp.santricity.models.symbol.cache_memory_dimm_location import \
+    CacheMemoryDimmLocation
+
 
 class CacheMemoryDimmLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CacheMemoryDimmLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cache_memory_dimm_location(self):
-          cache_memory_dimm_location_obj = CacheMemoryDimmLocation()
-          self.assertNotEqual(cache_memory_dimm_location_obj, None)
-
-
+        cache_memory_dimm_location_obj = CacheMemoryDimmLocation()
+        self.assertNotEqual(cache_memory_dimm_location_obj, None)

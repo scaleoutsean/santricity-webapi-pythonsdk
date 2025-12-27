@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.locale import Locale
+
 
 class LocaleTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class LocaleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_locale(self):
-          locale_obj = Locale()
-          self.assertNotEqual(locale_obj, None)
-
-
+        locale_obj = Locale()
+        self.assertNotEqual(locale_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pkcs5_encryption_data import PKCS5EncryptionData
+
+from netapp.santricity.models.symbol.pkcs5_encryption_data import \
+    PKCS5EncryptionData
+
 
 class PKCS5EncryptionDataTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PKCS5EncryptionDataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pkcs5_encryption_data(self):
-          pkcs5_encryption_data_obj = PKCS5EncryptionData()
-          self.assertNotEqual(pkcs5_encryption_data_obj, None)
-
-
+        pkcs5_encryption_data_obj = PKCS5EncryptionData()
+        self.assertNotEqual(pkcs5_encryption_data_obj, None)

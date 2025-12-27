@@ -20,27 +20,22 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.utils.about_api import AboutApi
 
+from netapp.santricity.api.utils.about_api import AboutApi
+from netapp.santricity.rest import ApiException
 
 
 class AboutApiTest(unittest.TestCase):
-
-    
     def test_get_about_response(self):
-       api = AboutApi()
-       about_api = None
-       try:
+        api = AboutApi()
+        about_api = None
+        try:
             about_api = api.get_about_response()
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if about_api is None:
                 about_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             about_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            about_api = 1
 
-       self.assertNotEqual(about_api, None)
-    
-
-
+        self.assertNotEqual(about_api, None)

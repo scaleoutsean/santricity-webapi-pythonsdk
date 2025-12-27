@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.remote_target_creation_descriptor import RemoteTargetCreationDescriptor
+
+from netapp.santricity.models.symbol.remote_target_creation_descriptor import \
+    RemoteTargetCreationDescriptor
+
 
 class RemoteTargetCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemoteTargetCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_target_creation_descriptor(self):
-          remote_target_creation_descriptor_obj = RemoteTargetCreationDescriptor()
-          self.assertNotEqual(remote_target_creation_descriptor_obj, None)
-
-
+        remote_target_creation_descriptor_obj = RemoteTargetCreationDescriptor()
+        self.assertNotEqual(remote_target_creation_descriptor_obj, None)

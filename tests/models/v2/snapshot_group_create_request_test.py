@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.snapshot_group_create_request import SnapshotGroupCreateRequest
+
+from netapp.santricity.models.v2.snapshot_group_create_request import \
+    SnapshotGroupCreateRequest
+
 
 class SnapshotGroupCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class SnapshotGroupCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_snapshot_group_create_request(self):
-          snapshot_group_create_request_obj = SnapshotGroupCreateRequest()
-          self.assertNotEqual(snapshot_group_create_request_obj, None)
-
-
+        snapshot_group_create_request_obj = SnapshotGroupCreateRequest()
+        self.assertNotEqual(snapshot_group_create_request_obj, None)

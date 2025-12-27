@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.extended_sa_data import ExtendedSAData
+
 
 class ExtendedSADataTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ExtendedSADataTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_extended_sa_data(self):
-          extended_sa_data_obj = ExtendedSAData()
-          self.assertNotEqual(extended_sa_data_obj, None)
-
-
+        extended_sa_data_obj = ExtendedSAData()
+        self.assertNotEqual(extended_sa_data_obj, None)

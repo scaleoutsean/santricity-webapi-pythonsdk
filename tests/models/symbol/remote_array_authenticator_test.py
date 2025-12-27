@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.remote_array_authenticator import RemoteArrayAuthenticator
+
+from netapp.santricity.models.symbol.remote_array_authenticator import \
+    RemoteArrayAuthenticator
+
 
 class RemoteArrayAuthenticatorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class RemoteArrayAuthenticatorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_remote_array_authenticator(self):
-          remote_array_authenticator_obj = RemoteArrayAuthenticator()
-          self.assertNotEqual(remote_array_authenticator_obj, None)
-
-
+        remote_array_authenticator_obj = RemoteArrayAuthenticator()
+        self.assertNotEqual(remote_array_authenticator_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.cache_backup_device import CacheBackupDevice
+
+from netapp.santricity.models.symbol.cache_backup_device import \
+    CacheBackupDevice
+
 
 class CacheBackupDeviceTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class CacheBackupDeviceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_cache_backup_device(self):
-          cache_backup_device_obj = CacheBackupDevice()
-          self.assertNotEqual(cache_backup_device_obj, None)
-
-
+        cache_backup_device_obj = CacheBackupDevice()
+        self.assertNotEqual(cache_backup_device_obj, None)

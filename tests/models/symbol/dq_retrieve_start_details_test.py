@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.dq_retrieve_start_details import DqRetrieveStartDetails
+
+from netapp.santricity.models.symbol.dq_retrieve_start_details import \
+    DqRetrieveStartDetails
+
 
 class DqRetrieveStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DqRetrieveStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_dq_retrieve_start_details(self):
-          dq_retrieve_start_details_obj = DqRetrieveStartDetails()
-          self.assertNotEqual(dq_retrieve_start_details_obj, None)
-
-
+        dq_retrieve_start_details_obj = DqRetrieveStartDetails()
+        self.assertNotEqual(dq_retrieve_start_details_obj, None)

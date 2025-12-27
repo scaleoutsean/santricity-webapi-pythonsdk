@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.support_cru import SupportCRU
+
 
 class SupportCRUTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SupportCRUTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_support_cru(self):
-          support_cru_obj = SupportCRU()
-          self.assertNotEqual(support_cru_obj, None)
-
-
+        support_cru_obj = SupportCRU()
+        self.assertNotEqual(support_cru_obj, None)

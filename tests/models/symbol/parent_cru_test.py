@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.parent_cru import ParentCru
+
 
 class ParentCruTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ParentCruTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_parent_cru(self):
-          parent_cru_obj = ParentCru()
-          self.assertNotEqual(parent_cru_obj, None)
-
-
+        parent_cru_obj = ParentCru()
+        self.assertNotEqual(parent_cru_obj, None)

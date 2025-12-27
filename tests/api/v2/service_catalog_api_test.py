@@ -20,111 +20,113 @@ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS 
 """
 
 import unittest
-from netapp.santricity.rest import ApiException
-from netapp.santricity.api.v2.service_catalog_api import ServiceCatalogApi
 
+from netapp.santricity.api.v2.service_catalog_api import ServiceCatalogApi
+from netapp.santricity.rest import ApiException
 
 
 class ServiceCatalogApiTest(unittest.TestCase):
-
-    
     def test_get_all_pools(self):
-       api = ServiceCatalogApi()
-       service_catalog_api = None
-       try:
+        api = ServiceCatalogApi()
+        service_catalog_api = None
+        try:
             service_catalog_api = api.get_all_pools(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if service_catalog_api is None:
                 service_catalog_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             service_catalog_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            service_catalog_api = 1
 
-       self.assertNotEqual(service_catalog_api, None)
-    
+        self.assertNotEqual(service_catalog_api, None)
+
     def test_get_all_ssc_volumes(self):
-       api = ServiceCatalogApi()
-       service_catalog_api = None
-       try:
+        api = ServiceCatalogApi()
+        service_catalog_api = None
+        try:
             service_catalog_api = api.get_all_ssc_volumes(system_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if service_catalog_api is None:
                 service_catalog_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             service_catalog_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            service_catalog_api = 1
 
-       self.assertNotEqual(service_catalog_api, None)
-    
+        self.assertNotEqual(service_catalog_api, None)
+
     def test_get_pool(self):
-       api = ServiceCatalogApi()
-       service_catalog_api = None
-       try:
+        api = ServiceCatalogApi()
+        service_catalog_api = None
+        try:
             service_catalog_api = api.get_pool(system_id="test", pool_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if service_catalog_api is None:
                 service_catalog_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             service_catalog_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            service_catalog_api = 1
 
-       self.assertNotEqual(service_catalog_api, None)
-    
+        self.assertNotEqual(service_catalog_api, None)
+
     def test_get_ssc_volume(self):
-       api = ServiceCatalogApi()
-       service_catalog_api = None
-       try:
+        api = ServiceCatalogApi()
+        service_catalog_api = None
+        try:
             service_catalog_api = api.get_ssc_volume(system_id="test", volume_id="test")
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if service_catalog_api is None:
                 service_catalog_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             service_catalog_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            service_catalog_api = 1
 
-       self.assertNotEqual(service_catalog_api, None)
-    
+        self.assertNotEqual(service_catalog_api, None)
+
     def test_new_ssc_volume(self):
-       api = ServiceCatalogApi()
-       service_catalog_api = None
-       try:
-            service_catalog_api = api.new_ssc_volume(system_id="test", )
+        api = ServiceCatalogApi()
+        service_catalog_api = None
+        try:
+            service_catalog_api = api.new_ssc_volume(
+                system_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if service_catalog_api is None:
                 service_catalog_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             service_catalog_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            service_catalog_api = 1
 
-       self.assertNotEqual(service_catalog_api, None)
-    
+        self.assertNotEqual(service_catalog_api, None)
+
     def test_remove_ssc_volume(self):
-       api = ServiceCatalogApi()
-       service_catalog_api = None
-       try:
-            service_catalog_api = api.remove_ssc_volume(system_id="test", volume_id="test")
+        api = ServiceCatalogApi()
+        service_catalog_api = None
+        try:
+            service_catalog_api = api.remove_ssc_volume(
+                system_id="test", volume_id="test"
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if service_catalog_api is None:
                 service_catalog_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             service_catalog_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            service_catalog_api = 1
 
-       self.assertNotEqual(service_catalog_api, None)
-    
+        self.assertNotEqual(service_catalog_api, None)
+
     def test_update_ssc_volume(self):
-       api = ServiceCatalogApi()
-       service_catalog_api = None
-       try:
-            service_catalog_api = api.update_ssc_volume(system_id="test", volume_id="test", )
+        api = ServiceCatalogApi()
+        service_catalog_api = None
+        try:
+            service_catalog_api = api.update_ssc_volume(
+                system_id="test",
+                volume_id="test",
+            )
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if service_catalog_api is None:
                 service_catalog_api = 1
-       except (ApiException, OSError)  as exp:
-             # The API call went through but got a HTTP errorcode, which means the SDK works
-             service_catalog_api = 1
+        except (ApiException, OSError) as exp:
+            # The API call went through but got a HTTP errorcode, which means the SDK works
+            service_catalog_api = 1
 
-       self.assertNotEqual(service_catalog_api, None)
-    
-
-
+        self.assertNotEqual(service_catalog_api, None)

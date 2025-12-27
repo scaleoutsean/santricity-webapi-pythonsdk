@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.fibre_interface import FibreInterface
+
 
 class FibreInterfaceTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class FibreInterfaceTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_fibre_interface(self):
-          fibre_interface_obj = FibreInterface()
-          self.assertNotEqual(fibre_interface_obj, None)
-
-
+        fibre_interface_obj = FibreInterface()
+        self.assertNotEqual(fibre_interface_obj, None)

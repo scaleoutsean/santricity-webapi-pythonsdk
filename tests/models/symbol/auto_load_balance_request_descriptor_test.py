@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.auto_load_balance_request_descriptor import AutoLoadBalanceRequestDescriptor
+
+from netapp.santricity.models.symbol.auto_load_balance_request_descriptor import \
+    AutoLoadBalanceRequestDescriptor
+
 
 class AutoLoadBalanceRequestDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AutoLoadBalanceRequestDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_auto_load_balance_request_descriptor(self):
-          auto_load_balance_request_descriptor_obj = AutoLoadBalanceRequestDescriptor()
-          self.assertNotEqual(auto_load_balance_request_descriptor_obj, None)
-
-
+        auto_load_balance_request_descriptor_obj = AutoLoadBalanceRequestDescriptor()
+        self.assertNotEqual(auto_load_balance_request_descriptor_obj, None)

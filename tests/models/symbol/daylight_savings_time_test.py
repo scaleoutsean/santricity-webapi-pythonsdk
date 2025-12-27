@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.daylight_savings_time import DaylightSavingsTime
+
+from netapp.santricity.models.symbol.daylight_savings_time import \
+    DaylightSavingsTime
+
 
 class DaylightSavingsTimeTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DaylightSavingsTimeTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_daylight_savings_time(self):
-          daylight_savings_time_obj = DaylightSavingsTime()
-          self.assertNotEqual(daylight_savings_time_obj, None)
-
-
+        daylight_savings_time_obj = DaylightSavingsTime()
+        self.assertNotEqual(daylight_savings_time_obj, None)

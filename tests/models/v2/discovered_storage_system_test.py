@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.discovered_storage_system import DiscoveredStorageSystem
+
+from netapp.santricity.models.v2.discovered_storage_system import \
+    DiscoveredStorageSystem
+
 
 class DiscoveredStorageSystemTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DiscoveredStorageSystemTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_discovered_storage_system(self):
-          discovered_storage_system_obj = DiscoveredStorageSystem()
-          self.assertNotEqual(discovered_storage_system_obj, None)
-
-
+        discovered_storage_system_obj = DiscoveredStorageSystem()
+        self.assertNotEqual(discovered_storage_system_obj, None)

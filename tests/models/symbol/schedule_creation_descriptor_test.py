@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.schedule_creation_descriptor import ScheduleCreationDescriptor
+
+from netapp.santricity.models.symbol.schedule_creation_descriptor import \
+    ScheduleCreationDescriptor
+
 
 class ScheduleCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ScheduleCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_schedule_creation_descriptor(self):
-          schedule_creation_descriptor_obj = ScheduleCreationDescriptor()
-          self.assertNotEqual(schedule_creation_descriptor_obj, None)
-
-
+        schedule_creation_descriptor_obj = ScheduleCreationDescriptor()
+        self.assertNotEqual(schedule_creation_descriptor_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.volume_media_scan_params_update_descriptor import VolumeMediaScanParamsUpdateDescriptor
+
+from netapp.santricity.models.symbol.volume_media_scan_params_update_descriptor import \
+    VolumeMediaScanParamsUpdateDescriptor
+
 
 class VolumeMediaScanParamsUpdateDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class VolumeMediaScanParamsUpdateDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_media_scan_params_update_descriptor(self):
-          volume_media_scan_params_update_descriptor_obj = VolumeMediaScanParamsUpdateDescriptor()
-          self.assertNotEqual(volume_media_scan_params_update_descriptor_obj, None)
-
-
+        volume_media_scan_params_update_descriptor_obj = (
+            VolumeMediaScanParamsUpdateDescriptor()
+        )
+        self.assertNotEqual(volume_media_scan_params_update_descriptor_obj, None)

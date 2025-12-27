@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.serializable import Serializable
+
 
 class SerializableTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class SerializableTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_serializable(self):
-          serializable_obj = Serializable()
-          self.assertNotEqual(serializable_obj, None)
-
-
+        serializable_obj = Serializable()
+        self.assertNotEqual(serializable_obj, None)

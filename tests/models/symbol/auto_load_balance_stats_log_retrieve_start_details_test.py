@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.auto_load_balance_stats_log_retrieve_start_details import AutoLoadBalanceStatsLogRetrieveStartDetails
+
+from netapp.santricity.models.symbol.auto_load_balance_stats_log_retrieve_start_details import \
+    AutoLoadBalanceStatsLogRetrieveStartDetails
+
 
 class AutoLoadBalanceStatsLogRetrieveStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,9 @@ class AutoLoadBalanceStatsLogRetrieveStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_auto_load_balance_stats_log_retrieve_start_details(self):
-          auto_load_balance_stats_log_retrieve_start_details_obj = AutoLoadBalanceStatsLogRetrieveStartDetails()
-          self.assertNotEqual(auto_load_balance_stats_log_retrieve_start_details_obj, None)
-
-
+        auto_load_balance_stats_log_retrieve_start_details_obj = (
+            AutoLoadBalanceStatsLogRetrieveStartDetails()
+        )
+        self.assertNotEqual(
+            auto_load_balance_stats_log_retrieve_start_details_obj, None
+        )

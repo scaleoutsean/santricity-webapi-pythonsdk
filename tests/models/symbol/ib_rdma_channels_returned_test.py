@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ib_rdma_channels_returned import IbRdmaChannelsReturned
+
+from netapp.santricity.models.symbol.ib_rdma_channels_returned import \
+    IbRdmaChannelsReturned
+
 
 class IbRdmaChannelsReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IbRdmaChannelsReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ib_rdma_channels_returned(self):
-          ib_rdma_channels_returned_obj = IbRdmaChannelsReturned()
-          self.assertNotEqual(ib_rdma_channels_returned_obj, None)
-
-
+        ib_rdma_channels_returned_obj = IbRdmaChannelsReturned()
+        self.assertNotEqual(ib_rdma_channels_returned_obj, None)

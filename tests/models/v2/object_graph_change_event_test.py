@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.object_graph_change_event import ObjectGraphChangeEvent
+
+from netapp.santricity.models.v2.object_graph_change_event import \
+    ObjectGraphChangeEvent
+
 
 class ObjectGraphChangeEventTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ObjectGraphChangeEventTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_object_graph_change_event(self):
-          object_graph_change_event_obj = ObjectGraphChangeEvent()
-          self.assertNotEqual(object_graph_change_event_obj, None)
-
-
+        object_graph_change_event_obj = ObjectGraphChangeEvent()
+        self.assertNotEqual(object_graph_change_event_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.log_record import LogRecord
+
 
 class LogRecordTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class LogRecordTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_log_record(self):
-          log_record_obj = LogRecord()
-          self.assertNotEqual(log_record_obj, None)
-
-
+        log_record_obj = LogRecord()
+        self.assertNotEqual(log_record_obj, None)

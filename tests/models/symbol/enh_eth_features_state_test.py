@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.enh_eth_features_state import EnhEthFeaturesState
+
+from netapp.santricity.models.symbol.enh_eth_features_state import \
+    EnhEthFeaturesState
+
 
 class EnhEthFeaturesStateTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class EnhEthFeaturesStateTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_enh_eth_features_state(self):
-          enh_eth_features_state_obj = EnhEthFeaturesState()
-          self.assertNotEqual(enh_eth_features_state_obj, None)
-
-
+        enh_eth_features_state_obj = EnhEthFeaturesState()
+        self.assertNotEqual(enh_eth_features_state_obj, None)

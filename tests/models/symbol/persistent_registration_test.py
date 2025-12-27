@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.persistent_registration import PersistentRegistration
+
+from netapp.santricity.models.symbol.persistent_registration import \
+    PersistentRegistration
+
 
 class PersistentRegistrationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PersistentRegistrationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_persistent_registration(self):
-          persistent_registration_obj = PersistentRegistration()
-          self.assertNotEqual(persistent_registration_obj, None)
-
-
+        persistent_registration_obj = PersistentRegistration()
+        self.assertNotEqual(persistent_registration_obj, None)

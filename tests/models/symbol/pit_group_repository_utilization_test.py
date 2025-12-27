@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_group_repository_utilization import PITGroupRepositoryUtilization
+
+from netapp.santricity.models.symbol.pit_group_repository_utilization import \
+    PITGroupRepositoryUtilization
+
 
 class PITGroupRepositoryUtilizationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PITGroupRepositoryUtilizationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_group_repository_utilization(self):
-          pit_group_repository_utilization_obj = PITGroupRepositoryUtilization()
-          self.assertNotEqual(pit_group_repository_utilization_obj, None)
-
-
+        pit_group_repository_utilization_obj = PITGroupRepositoryUtilization()
+        self.assertNotEqual(pit_group_repository_utilization_obj, None)

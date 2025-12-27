@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.iscsi_cable_diagnostics_descriptor import IscsiCableDiagnosticsDescriptor
+
+from netapp.santricity.models.symbol.iscsi_cable_diagnostics_descriptor import \
+    IscsiCableDiagnosticsDescriptor
+
 
 class IscsiCableDiagnosticsDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IscsiCableDiagnosticsDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_iscsi_cable_diagnostics_descriptor(self):
-          iscsi_cable_diagnostics_descriptor_obj = IscsiCableDiagnosticsDescriptor()
-          self.assertNotEqual(iscsi_cable_diagnostics_descriptor_obj, None)
-
-
+        iscsi_cable_diagnostics_descriptor_obj = IscsiCableDiagnosticsDescriptor()
+        self.assertNotEqual(iscsi_cable_diagnostics_descriptor_obj, None)

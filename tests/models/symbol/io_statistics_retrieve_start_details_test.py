@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.io_statistics_retrieve_start_details import IoStatisticsRetrieveStartDetails
+
+from netapp.santricity.models.symbol.io_statistics_retrieve_start_details import \
+    IoStatisticsRetrieveStartDetails
+
 
 class IoStatisticsRetrieveStartDetailsTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IoStatisticsRetrieveStartDetailsTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_io_statistics_retrieve_start_details(self):
-          io_statistics_retrieve_start_details_obj = IoStatisticsRetrieveStartDetails()
-          self.assertNotEqual(io_statistics_retrieve_start_details_obj, None)
-
-
+        io_statistics_retrieve_start_details_obj = IoStatisticsRetrieveStartDetails()
+        self.assertNotEqual(io_statistics_retrieve_start_details_obj, None)

@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.host_create_request import HostCreateRequest
+
 
 class HostCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class HostCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_create_request(self):
-          host_create_request_obj = HostCreateRequest()
-          self.assertNotEqual(host_create_request_obj, None)
-
-
+        host_create_request_obj = HostCreateRequest()
+        self.assertNotEqual(host_create_request_obj, None)

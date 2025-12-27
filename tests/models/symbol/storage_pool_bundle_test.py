@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.storage_pool_bundle import StoragePoolBundle
+
+from netapp.santricity.models.symbol.storage_pool_bundle import \
+    StoragePoolBundle
+
 
 class StoragePoolBundleTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class StoragePoolBundleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_storage_pool_bundle(self):
-          storage_pool_bundle_obj = StoragePoolBundle()
-          self.assertNotEqual(storage_pool_bundle_obj, None)
-
-
+        storage_pool_bundle_obj = StoragePoolBundle()
+        self.assertNotEqual(storage_pool_bundle_obj, None)

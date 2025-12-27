@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.unconfigured_initiators_returned import UnconfiguredInitiatorsReturned
+
+from netapp.santricity.models.symbol.unconfigured_initiators_returned import \
+    UnconfiguredInitiatorsReturned
+
 
 class UnconfiguredInitiatorsReturnedTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class UnconfiguredInitiatorsReturnedTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_unconfigured_initiators_returned(self):
-          unconfigured_initiators_returned_obj = UnconfiguredInitiatorsReturned()
-          self.assertNotEqual(unconfigured_initiators_returned_obj, None)
-
-
+        unconfigured_initiators_returned_obj = UnconfiguredInitiatorsReturned()
+        self.assertNotEqual(unconfigured_initiators_returned_obj, None)

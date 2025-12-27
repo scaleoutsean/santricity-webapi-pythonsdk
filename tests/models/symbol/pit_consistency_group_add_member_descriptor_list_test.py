@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.pit_consistency_group_add_member_descriptor_list import PITConsistencyGroupAddMemberDescriptorList
+
+from netapp.santricity.models.symbol.pit_consistency_group_add_member_descriptor_list import \
+    PITConsistencyGroupAddMemberDescriptorList
+
 
 class PITConsistencyGroupAddMemberDescriptorListTest(unittest.TestCase):
     """
@@ -30,7 +31,7 @@ class PITConsistencyGroupAddMemberDescriptorListTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_pit_consistency_group_add_member_descriptor_list(self):
-          pit_consistency_group_add_member_descriptor_list_obj = PITConsistencyGroupAddMemberDescriptorList()
-          self.assertNotEqual(pit_consistency_group_add_member_descriptor_list_obj, None)
-
-
+        pit_consistency_group_add_member_descriptor_list_obj = (
+            PITConsistencyGroupAddMemberDescriptorList()
+        )
+        self.assertNotEqual(pit_consistency_group_add_member_descriptor_list_obj, None)

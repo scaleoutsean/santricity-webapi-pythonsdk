@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.matched_pending_host import MatchedPendingHost
+
+from netapp.santricity.models.symbol.matched_pending_host import \
+    MatchedPendingHost
+
 
 class MatchedPendingHostTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class MatchedPendingHostTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_matched_pending_host(self):
-          matched_pending_host_obj = MatchedPendingHost()
-          self.assertNotEqual(matched_pending_host_obj, None)
-
-
+        matched_pending_host_obj = MatchedPendingHost()
+        self.assertNotEqual(matched_pending_host_obj, None)

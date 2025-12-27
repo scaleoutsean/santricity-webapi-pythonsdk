@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.device_asup_schedule import DeviceAsupSchedule
+
 
 class DeviceAsupScheduleTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class DeviceAsupScheduleTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_device_asup_schedule(self):
-          device_asup_schedule_obj = DeviceAsupSchedule()
-          self.assertNotEqual(device_asup_schedule_obj, None)
-
-
+        device_asup_schedule_obj = DeviceAsupSchedule()
+        self.assertNotEqual(device_asup_schedule_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.parent_relative_location import ParentRelativeLocation
+
+from netapp.santricity.models.symbol.parent_relative_location import \
+    ParentRelativeLocation
+
 
 class ParentRelativeLocationTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class ParentRelativeLocationTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_parent_relative_location(self):
-          parent_relative_location_obj = ParentRelativeLocation()
-          self.assertNotEqual(parent_relative_location_obj, None)
-
-
+        parent_relative_location_obj = ParentRelativeLocation()
+        self.assertNotEqual(parent_relative_location_obj, None)

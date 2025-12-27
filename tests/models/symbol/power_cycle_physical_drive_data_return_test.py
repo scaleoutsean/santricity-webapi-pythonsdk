@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.power_cycle_physical_drive_data_return import PowerCyclePhysicalDriveDataReturn
+
+from netapp.santricity.models.symbol.power_cycle_physical_drive_data_return import \
+    PowerCyclePhysicalDriveDataReturn
+
 
 class PowerCyclePhysicalDriveDataReturnTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class PowerCyclePhysicalDriveDataReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_power_cycle_physical_drive_data_return(self):
-          power_cycle_physical_drive_data_return_obj = PowerCyclePhysicalDriveDataReturn()
-          self.assertNotEqual(power_cycle_physical_drive_data_return_obj, None)
-
-
+        power_cycle_physical_drive_data_return_obj = PowerCyclePhysicalDriveDataReturn()
+        self.assertNotEqual(power_cycle_physical_drive_data_return_obj, None)

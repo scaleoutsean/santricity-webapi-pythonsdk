@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.drive_physical_security_id_descriptor import DrivePhysicalSecurityIdDescriptor
+
+from netapp.santricity.models.symbol.drive_physical_security_id_descriptor import \
+    DrivePhysicalSecurityIdDescriptor
+
 
 class DrivePhysicalSecurityIdDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class DrivePhysicalSecurityIdDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_drive_physical_security_id_descriptor(self):
-          drive_physical_security_id_descriptor_obj = DrivePhysicalSecurityIdDescriptor()
-          self.assertNotEqual(drive_physical_security_id_descriptor_obj, None)
-
-
+        drive_physical_security_id_descriptor_obj = DrivePhysicalSecurityIdDescriptor()
+        self.assertNotEqual(drive_physical_security_id_descriptor_obj, None)

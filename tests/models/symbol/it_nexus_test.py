@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.it_nexus import ITNexus
+
 
 class ITNexusTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class ITNexusTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_it_nexus(self):
-          it_nexus_obj = ITNexus()
-          self.assertNotEqual(it_nexus_obj, None)
-
-
+        it_nexus_obj = ITNexus()
+        self.assertNotEqual(it_nexus_obj, None)

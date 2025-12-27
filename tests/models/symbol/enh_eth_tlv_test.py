@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.enh_eth_tlv import EnhEthTLV
+
 
 class EnhEthTLVTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class EnhEthTLVTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_enh_eth_tlv(self):
-          enh_eth_tlv_obj = EnhEthTLV()
-          self.assertNotEqual(enh_eth_tlv_obj, None)
-
-
+        enh_eth_tlv_obj = EnhEthTLV()
+        self.assertNotEqual(enh_eth_tlv_obj, None)

@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.host_port_creation_descriptor import HostPortCreationDescriptor
+
+from netapp.santricity.models.symbol.host_port_creation_descriptor import \
+    HostPortCreationDescriptor
+
 
 class HostPortCreationDescriptorTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class HostPortCreationDescriptorTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_host_port_creation_descriptor(self):
-          host_port_creation_descriptor_obj = HostPortCreationDescriptor()
-          self.assertNotEqual(host_port_creation_descriptor_obj, None)
-
-
+        host_port_creation_descriptor_obj = HostPortCreationDescriptor()
+        self.assertNotEqual(host_port_creation_descriptor_obj, None)

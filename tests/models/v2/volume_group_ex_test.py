@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.v2.volume_group_ex import VolumeGroupEx
+
 
 class VolumeGroupExTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class VolumeGroupExTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_volume_group_ex(self):
-          volume_group_ex_obj = VolumeGroupEx()
-          self.assertNotEqual(volume_group_ex_obj, None)
-
-
+        volume_group_ex_obj = VolumeGroupEx()
+        self.assertNotEqual(volume_group_ex_obj, None)

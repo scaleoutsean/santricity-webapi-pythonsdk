@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.symbol.ioc_dump_on_demand_return import IOCDumpOnDemandReturn
+
+from netapp.santricity.models.symbol.ioc_dump_on_demand_return import \
+    IOCDumpOnDemandReturn
+
 
 class IOCDumpOnDemandReturnTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class IOCDumpOnDemandReturnTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_ioc_dump_on_demand_return(self):
-          ioc_dump_on_demand_return_obj = IOCDumpOnDemandReturn()
-          self.assertNotEqual(ioc_dump_on_demand_return_obj, None)
-
-
+        ioc_dump_on_demand_return_obj = IOCDumpOnDemandReturn()
+        self.assertNotEqual(ioc_dump_on_demand_return_obj, None)

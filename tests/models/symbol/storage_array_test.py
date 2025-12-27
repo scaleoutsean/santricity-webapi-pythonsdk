@@ -17,10 +17,10 @@
 """
 
 
-
-
 import unittest
+
 from netapp.santricity.models.symbol.storage_array import StorageArray
+
 
 class StorageArrayTest(unittest.TestCase):
     """
@@ -30,7 +30,5 @@ class StorageArrayTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_storage_array(self):
-          storage_array_obj = StorageArray()
-          self.assertNotEqual(storage_array_obj, None)
-
-
+        storage_array_obj = StorageArray()
+        self.assertNotEqual(storage_array_obj, None)

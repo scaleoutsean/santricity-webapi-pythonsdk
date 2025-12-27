@@ -17,10 +17,11 @@
 """
 
 
-
-
 import unittest
-from netapp.santricity.models.v2.async_mirror_group_create_request import AsyncMirrorGroupCreateRequest
+
+from netapp.santricity.models.v2.async_mirror_group_create_request import \
+    AsyncMirrorGroupCreateRequest
+
 
 class AsyncMirrorGroupCreateRequestTest(unittest.TestCase):
     """
@@ -30,7 +31,5 @@ class AsyncMirrorGroupCreateRequestTest(unittest.TestCase):
 
     # Try instantiating the model
     def test_async_mirror_group_create_request(self):
-          async_mirror_group_create_request_obj = AsyncMirrorGroupCreateRequest()
-          self.assertNotEqual(async_mirror_group_create_request_obj, None)
-
-
+        async_mirror_group_create_request_obj = AsyncMirrorGroupCreateRequest()
+        self.assertNotEqual(async_mirror_group_create_request_obj, None)
