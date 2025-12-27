@@ -27,16 +27,25 @@ import os
 
 config = Configuration()
 
-#use URL of the proxy or embedded server/controller and appropriate credentials
-#NOTE:Modify the below variable to match your configuration.
+# Environment-driven configuration (direct SANtricity by default)
+WSP = os.getenv("WSP_MODE", "false").lower() in ("1", "true", "yes")
+if WSP:
+    config.host = os.getenv("WSP_HOST", "https://localhost:8443")
+else:
+    config.host = os.getenv("SANTRICITY_HOST", "https://localhost:8443")
 
-config.host = "https://localhost:8443"
-config.username = "admin"
-config.password = "admin"
-config.verify_ssl=True
-#If verify_ssl is true then the below exported certificate from the proxy web server is made available to the client
-#This avoids insecure request warnings.
-config.ssl_ca_cert = "C:/prox-cert-export.pem"
+config.username = os.getenv("SANTRICITY_USER", "admin")
+config.password = os.getenv("SANTRICITY_PASS", "admin")
+
+# SSL options
+verify = os.getenv("SANTRICITY_VERIFY_SSL")
+if verify is None:
+    config.verify_ssl = True
+else:
+    config.verify_ssl = verify.lower() in ("1", "true", "yes")
+ca = os.getenv("SANTRICITY_CA_BUNDLE")
+if ca:
+    config.ssl_ca_cert = ca
 
 
 #Create a client object to use with the above defined configuration.

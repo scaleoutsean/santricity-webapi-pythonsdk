@@ -25,7 +25,11 @@ import sys
 
 def process_asup_settings(host,username,passwd):
     config = Configuration()
-    config.host = "https://" + host
+    # accept either a full URL (http(s)://...) or a bare host
+    if host.startswith('http://') or host.startswith('https://'):
+        config.host = host
+    else:
+        config.host = "https://" + host
     config.username = username
     config.password = passwd
     config.verify_ssl=False
@@ -79,5 +83,10 @@ for line in lines:
     if not line.startswith("#"):
         fields=line.split()
         process_asup_settings(fields[0],fields[1],fields[2])
+    
+# If environment variables are set, allow running directly without a config file
+import os
+if os.getenv('SANTRICITY_HOST'):
+    process_asup_settings(os.getenv('SANTRICITY_HOST'), os.getenv('SANTRICITY_USER','rw'), os.getenv('SANTRICITY_PASS','rw'))
 
 

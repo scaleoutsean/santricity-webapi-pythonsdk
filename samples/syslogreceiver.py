@@ -27,20 +27,23 @@ from netapp.santricity.models.v2.alert_syslog_configuration import AlertSyslogCo
 import sys
 
 from pprint import pprint
+import os
 
 config = Configuration()
 
-#use URL of the embedded server/controller and appropriate credentials
-#NOTE:Modify the below variable to match your configuration.
+# Environment-driven configuration (direct SANtricity by default)
+WSP = os.getenv("WSP_MODE", "false").lower() in ("1", "true", "yes")
+if WSP:
+    config.host = os.getenv("WSP_HOST", "https://10.113.76.206:8443")
+else:
+    config.host = os.getenv("SANTRICITY_HOST", "https://10.113.76.206:8443")
 
-config.host = "https://10.113.76.206:8443"
-config.username = "rw"
-config.password = "I2finiti!"
-config.verify_ssl=False
+config.username = os.getenv("SANTRICITY_USER", "rw")
+config.password = os.getenv("SANTRICITY_PASS", "rw")
+config.verify_ssl = os.getenv("SANTRICITY_VERIFY_SSL", "false").lower() in ("1", "true", "yes")
 
-#For embedded, the array ID is 1.
-
-sys_id="1"
+# For embedded, the array ID is 1 by default
+sys_id = os.getenv("SANTRICITY_ID", "1")
 
 #Create a client object to use with the above defined configuration.
 api_client = ApiClient()

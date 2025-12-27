@@ -26,21 +26,21 @@ from netapp.santricity.api.v2.statistics_api import StatisticsApi
 
 
 import sys
+import os
 
 
 config = Configuration()
+# Environment-driven configuration: prefer direct SANtricity host by default.
+WSP = os.getenv("WSP_MODE", "false").lower() in ("1", "true", "yes")
+if WSP:
+    config.host = os.getenv("WSP_HOST", "http://localhost:8080")
+    sys_id = os.getenv("WSP_TARGET", "c5")
+else:
+    config.host = os.getenv("SANTRICITY_HOST", "http://localhost:8080")
+    sys_id = os.getenv("SANTRICITY_ID", "1")
 
-#use URL of the proxy or embedded server/controller and appropriate credentials
-#NOTE:Modify the below variable to match your configuration.
-
-config.host = "http:localhost:8080"
-config.username = "rw"
-config.password = "rw"
-
-#For a proxy it assumes that the array is already added and its ID is "c5". For embedded, the array ID is 1.
-#NOTE:Modify the below variable to match the array ID.
-
-sys_id="c5"
+config.username = os.getenv("SANTRICITY_USER", "rw")
+config.password = os.getenv("SANTRICITY_PASS", "rw")
 
 #Create a client object to use with the above defined configuration.
 api_client = ApiClient()
