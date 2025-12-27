@@ -17,7 +17,6 @@ IscsiInitiatorTargetBaseParameters.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IscsiInitiatorTargetBaseParameters:
@@ -114,4 +113,3 @@ class IscsiInitiatorTargetBaseParameters:
         Returns true if both objects are not equal
         """
         return not self == other
-

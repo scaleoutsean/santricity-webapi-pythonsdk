@@ -17,7 +17,6 @@ InitiatorLocation.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class InitiatorLocation:
@@ -114,4 +113,3 @@ class InitiatorLocation:
         Returns true if both objects are not equal
         """
         return not self == other
-

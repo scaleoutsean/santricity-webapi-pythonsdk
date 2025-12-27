@@ -17,7 +17,6 @@ AmgIncompleteMember.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AmgIncompleteMember:
@@ -502,4 +501,3 @@ class AmgIncompleteMember:
         Returns true if both objects are not equal
         """
         return not self == other
-

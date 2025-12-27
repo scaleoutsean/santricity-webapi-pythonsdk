@@ -17,7 +17,6 @@ DPLCoreDumpOnDemandReturn.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DPLCoreDumpOnDemandReturn:
@@ -146,4 +145,3 @@ class DPLCoreDumpOnDemandReturn:
         Returns true if both objects are not equal
         """
         return not self == other
-

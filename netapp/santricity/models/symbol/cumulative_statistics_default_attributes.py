@@ -17,7 +17,6 @@ CumulativeStatisticsDefaultAttributes.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class CumulativeStatisticsDefaultAttributes:
@@ -166,4 +165,3 @@ class CumulativeStatisticsDefaultAttributes:
         Returns true if both objects are not equal
         """
         return not self == other
-

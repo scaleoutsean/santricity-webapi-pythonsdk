@@ -17,7 +17,6 @@ PITGroupDeletionDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class PITGroupDeletionDescriptor:
@@ -140,4 +139,3 @@ class PITGroupDeletionDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

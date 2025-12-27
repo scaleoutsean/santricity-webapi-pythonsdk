@@ -17,7 +17,6 @@ EthernetInterface.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class EthernetInterface:
@@ -872,4 +871,3 @@ class EthernetInterface:
         Returns true if both objects are not equal
         """
         return not self == other
-

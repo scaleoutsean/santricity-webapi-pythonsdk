@@ -17,7 +17,6 @@ AsyncMirrorGroupSyncProgressList.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncMirrorGroupSyncProgressList:
@@ -114,4 +113,3 @@ class AsyncMirrorGroupSyncProgressList:
         Returns true if both objects are not equal
         """
         return not self == other
-

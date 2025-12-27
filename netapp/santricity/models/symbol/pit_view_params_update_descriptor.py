@@ -17,7 +17,6 @@ PITViewParamsUpdateDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class PITViewParamsUpdateDescriptor:
@@ -166,4 +165,3 @@ class PITViewParamsUpdateDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ RemoteVolume.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class RemoteVolume:
@@ -490,4 +489,3 @@ class RemoteVolume:
         Returns true if both objects are not equal
         """
         return not self == other
-

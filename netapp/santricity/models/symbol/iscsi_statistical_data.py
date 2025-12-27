@@ -17,7 +17,6 @@ IscsiStatisticalData.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IscsiStatisticalData:
@@ -218,4 +217,3 @@ class IscsiStatisticalData:
         Returns true if both objects are not equal
         """
         return not self == other
-

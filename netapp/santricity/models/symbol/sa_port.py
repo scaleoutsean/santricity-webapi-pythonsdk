@@ -17,7 +17,6 @@ SAPort.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class SAPort:
@@ -192,4 +191,3 @@ class SAPort:
         Returns true if both objects are not equal
         """
         return not self == other
-

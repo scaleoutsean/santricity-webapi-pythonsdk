@@ -17,7 +17,6 @@ CompatibleFirmware.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class CompatibleFirmware:
@@ -140,4 +139,3 @@ class CompatibleFirmware:
         Returns true if both objects are not equal
         """
         return not self == other
-

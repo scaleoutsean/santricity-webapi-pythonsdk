@@ -17,7 +17,6 @@ SSLCertConfiguration.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class SSLCertConfiguration:
@@ -140,4 +139,3 @@ class SSLCertConfiguration:
         Returns true if both objects are not equal
         """
         return not self == other
-

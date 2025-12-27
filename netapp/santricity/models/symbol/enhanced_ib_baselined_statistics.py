@@ -17,7 +17,6 @@ EnhancedIbBaselinedStatistics.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class EnhancedIbBaselinedStatistics:
@@ -166,4 +165,3 @@ class EnhancedIbBaselinedStatistics:
         Returns true if both objects are not equal
         """
         return not self == other
-

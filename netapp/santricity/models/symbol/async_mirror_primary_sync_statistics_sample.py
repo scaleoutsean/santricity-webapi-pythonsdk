@@ -17,7 +17,6 @@ AsyncMirrorPrimarySyncStatisticsSample.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncMirrorPrimarySyncStatisticsSample:
@@ -698,4 +697,3 @@ class AsyncMirrorPrimarySyncStatisticsSample:
         Returns true if both objects are not equal
         """
         return not self == other
-

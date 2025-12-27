@@ -17,7 +17,6 @@ HostPortPropertiesUpdateDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class HostPortPropertiesUpdateDescriptor:
@@ -140,4 +139,3 @@ class HostPortPropertiesUpdateDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

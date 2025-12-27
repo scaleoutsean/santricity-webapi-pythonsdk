@@ -17,7 +17,6 @@ HostPortCreateDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class HostPortCreateDescriptor:
@@ -114,4 +113,3 @@ class HostPortCreateDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

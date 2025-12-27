@@ -17,7 +17,6 @@ HostPortMutableProperties.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class HostPortMutableProperties:
@@ -166,4 +165,3 @@ class HostPortMutableProperties:
         Returns true if both objects are not equal
         """
         return not self == other
-

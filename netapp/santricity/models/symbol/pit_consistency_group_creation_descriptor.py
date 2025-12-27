@@ -17,7 +17,6 @@ PITConsistencyGroupCreationDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class PITConsistencyGroupCreationDescriptor:
@@ -256,4 +255,3 @@ class PITConsistencyGroupCreationDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ PendingHost.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class PendingHost:
@@ -166,4 +165,3 @@ class PendingHost:
         Returns true if both objects are not equal
         """
         return not self == other
-

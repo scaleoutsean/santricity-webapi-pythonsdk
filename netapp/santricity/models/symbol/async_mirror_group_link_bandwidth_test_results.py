@@ -17,7 +17,6 @@ AsyncMirrorGroupLinkBandwidthTestResults.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncMirrorGroupLinkBandwidthTestResults:
@@ -218,4 +217,3 @@ class AsyncMirrorGroupLinkBandwidthTestResults:
         Returns true if both objects are not equal
         """
         return not self == other
-

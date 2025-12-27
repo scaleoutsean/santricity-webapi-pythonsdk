@@ -17,7 +17,6 @@ IscsiCableDiagResults.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IscsiCableDiagResults:
@@ -198,4 +197,3 @@ class IscsiCableDiagResults:
         Returns true if both objects are not equal
         """
         return not self == other
-

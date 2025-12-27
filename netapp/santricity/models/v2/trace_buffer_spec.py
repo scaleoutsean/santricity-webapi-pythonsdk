@@ -17,7 +17,6 @@ TraceBufferSpec.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class TraceBufferSpec:
@@ -140,4 +139,3 @@ class TraceBufferSpec:
         Returns true if both objects are not equal
         """
         return not self == other
-

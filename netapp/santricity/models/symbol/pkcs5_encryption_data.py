@@ -17,7 +17,6 @@ PKCS5EncryptionData.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class PKCS5EncryptionData:
@@ -166,4 +165,3 @@ class PKCS5EncryptionData:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ DiskPoolReductionDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DiskPoolReductionDescriptor:
@@ -140,4 +139,3 @@ class DiskPoolReductionDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

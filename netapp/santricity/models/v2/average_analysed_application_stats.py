@@ -17,7 +17,6 @@ AverageAnalysedApplicationStats.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AverageAnalysedApplicationStats:
@@ -348,4 +347,3 @@ class AverageAnalysedApplicationStats:
         Returns true if both objects are not equal
         """
         return not self == other
-

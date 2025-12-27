@@ -17,7 +17,6 @@ HostBoard2PortIbTypeData.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class HostBoard2PortIbTypeData:
@@ -192,4 +191,3 @@ class HostBoard2PortIbTypeData:
         Returns true if both objects are not equal
         """
         return not self == other
-

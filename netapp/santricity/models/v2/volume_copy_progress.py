@@ -17,7 +17,6 @@ VolumeCopyProgress.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class VolumeCopyProgress:
@@ -166,4 +165,3 @@ class VolumeCopyProgress:
         Returns true if both objects are not equal
         """
         return not self == other
-

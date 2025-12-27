@@ -17,7 +17,6 @@ MetadataChangeEvent.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class MetadataChangeEvent:
@@ -276,4 +275,3 @@ class MetadataChangeEvent:
         Returns true if both objects are not equal
         """
         return not self == other
-

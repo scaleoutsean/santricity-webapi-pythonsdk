@@ -17,7 +17,6 @@ HighResolutionReturned.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class HighResolutionReturned:
@@ -146,4 +145,3 @@ class HighResolutionReturned:
         Returns true if both objects are not equal
         """
         return not self == other
-

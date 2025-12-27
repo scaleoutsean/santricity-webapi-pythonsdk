@@ -17,7 +17,6 @@ CumulativeStatisticsBundle.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class CumulativeStatisticsBundle:
@@ -244,4 +243,3 @@ class CumulativeStatisticsBundle:
         Returns true if both objects are not equal
         """
         return not self == other
-

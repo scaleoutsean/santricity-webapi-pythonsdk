@@ -17,7 +17,6 @@ FirmwareUpdateDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class FirmwareUpdateDescriptor:
@@ -270,4 +269,3 @@ class FirmwareUpdateDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

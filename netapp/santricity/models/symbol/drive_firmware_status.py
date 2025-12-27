@@ -17,7 +17,6 @@ DriveFirmwareStatus.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DriveFirmwareStatus:
@@ -146,4 +145,3 @@ class DriveFirmwareStatus:
         Returns true if both objects are not equal
         """
         return not self == other
-

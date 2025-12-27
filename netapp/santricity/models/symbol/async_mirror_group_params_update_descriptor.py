@@ -17,7 +17,6 @@ AsyncMirrorGroupParamsUpdateDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncMirrorGroupParamsUpdateDescriptor:
@@ -244,4 +243,3 @@ class AsyncMirrorGroupParamsUpdateDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

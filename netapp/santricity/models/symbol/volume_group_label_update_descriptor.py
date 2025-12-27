@@ -17,7 +17,6 @@ VolumeGroupLabelUpdateDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class VolumeGroupLabelUpdateDescriptor:
@@ -140,4 +139,3 @@ class VolumeGroupLabelUpdateDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

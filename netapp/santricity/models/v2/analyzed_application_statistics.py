@@ -17,7 +17,6 @@ AnalyzedApplicationStatistics.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AnalyzedApplicationStatistics:
@@ -582,4 +581,3 @@ class AnalyzedApplicationStatistics:
         Returns true if both objects are not equal
         """
         return not self == other
-

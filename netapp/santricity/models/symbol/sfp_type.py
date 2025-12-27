@@ -17,7 +17,6 @@ SFPType.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class SFPType:
@@ -476,4 +475,3 @@ class SFPType:
         Returns true if both objects are not equal
         """
         return not self == other
-

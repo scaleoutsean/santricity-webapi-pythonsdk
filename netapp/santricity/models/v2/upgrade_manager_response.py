@@ -17,7 +17,6 @@ UpgradeManagerResponse.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class UpgradeManagerResponse:
@@ -114,4 +113,3 @@ class UpgradeManagerResponse:
         Returns true if both objects are not equal
         """
         return not self == other
-

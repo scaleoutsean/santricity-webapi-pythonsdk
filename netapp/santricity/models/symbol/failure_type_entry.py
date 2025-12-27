@@ -17,7 +17,6 @@ FailureTypeEntry.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class FailureTypeEntry:
@@ -6984,4 +6983,3 @@ class FailureTypeEntry:
         Returns true if both objects are not equal
         """
         return not self == other
-

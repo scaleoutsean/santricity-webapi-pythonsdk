@@ -17,7 +17,6 @@ RemoteTargetCreationDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class RemoteTargetCreationDescriptor:
@@ -114,4 +113,3 @@ class RemoteTargetCreationDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ VolumeCreationDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class VolumeCreationDescriptor:
@@ -354,4 +353,3 @@ class VolumeCreationDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

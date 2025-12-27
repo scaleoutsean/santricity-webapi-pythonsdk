@@ -17,7 +17,6 @@ KeyValueTagMapping.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class KeyValueTagMapping:
@@ -166,4 +165,3 @@ class KeyValueTagMapping:
         Returns true if both objects are not equal
         """
         return not self == other
-

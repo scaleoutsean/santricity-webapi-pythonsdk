@@ -17,7 +17,6 @@ AsyncCommunicationData.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncCommunicationData:
@@ -308,4 +307,3 @@ class AsyncCommunicationData:
         Returns true if both objects are not equal
         """
         return not self == other
-

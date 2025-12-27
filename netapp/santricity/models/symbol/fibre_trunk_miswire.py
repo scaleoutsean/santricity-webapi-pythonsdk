@@ -17,7 +17,6 @@ FibreTrunkMiswire.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class FibreTrunkMiswire:
@@ -140,4 +139,3 @@ class FibreTrunkMiswire:
         Returns true if both objects are not equal
         """
         return not self == other
-

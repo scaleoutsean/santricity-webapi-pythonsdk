@@ -17,7 +17,6 @@ VolumeCacheSettings.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class VolumeCacheSettings:
@@ -250,4 +249,3 @@ class VolumeCacheSettings:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ VolumeMetadataItem.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class VolumeMetadataItem:
@@ -140,4 +139,3 @@ class VolumeMetadataItem:
         Returns true if both objects are not equal
         """
         return not self == other
-

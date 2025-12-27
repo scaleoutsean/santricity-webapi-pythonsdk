@@ -17,7 +17,6 @@ AsyncMirrorGroupMemberInitialSyncOperation.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncMirrorGroupMemberInitialSyncOperation:
@@ -192,4 +191,3 @@ class AsyncMirrorGroupMemberInitialSyncOperation:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ AsyncMirrorGroupMemberFaultIndicationClearDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncMirrorGroupMemberFaultIndicationClearDescriptor:
@@ -146,4 +145,3 @@ class AsyncMirrorGroupMemberFaultIndicationClearDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

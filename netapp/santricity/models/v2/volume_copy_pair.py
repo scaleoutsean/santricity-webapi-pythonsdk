@@ -17,7 +17,6 @@ VolumeCopyPair.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class VolumeCopyPair:
@@ -542,4 +541,3 @@ class VolumeCopyPair:
         Returns true if both objects are not equal
         """
         return not self == other
-

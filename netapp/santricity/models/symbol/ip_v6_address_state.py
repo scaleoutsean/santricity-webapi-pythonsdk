@@ -17,7 +17,6 @@ IpV6AddressState.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IpV6AddressState:
@@ -184,4 +183,3 @@ class IpV6AddressState:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ AutoLoadBalanceStatsLogRetrieveChunkDetails.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AutoLoadBalanceStatsLogRetrieveChunkDetails:
@@ -140,4 +139,3 @@ class AutoLoadBalanceStatsLogRetrieveChunkDetails:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ CacheBackupDevice.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class CacheBackupDevice:
@@ -360,4 +359,3 @@ class CacheBackupDevice:
         Returns true if both objects are not equal
         """
         return not self == other
-

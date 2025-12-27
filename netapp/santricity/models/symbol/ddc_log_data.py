@@ -17,7 +17,6 @@ DdcLogData.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DdcLogData:
@@ -140,4 +139,3 @@ class DdcLogData:
         Returns true if both objects are not equal
         """
         return not self == other
-

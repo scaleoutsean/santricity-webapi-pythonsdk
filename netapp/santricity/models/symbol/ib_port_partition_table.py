@@ -17,7 +17,6 @@ IbPortPartitionTable.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IbPortPartitionTable:
@@ -218,4 +217,3 @@ class IbPortPartitionTable:
         Returns true if both objects are not equal
         """
         return not self == other
-

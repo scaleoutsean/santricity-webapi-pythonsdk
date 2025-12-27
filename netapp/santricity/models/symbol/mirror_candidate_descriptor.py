@@ -17,7 +17,6 @@ MirrorCandidateDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class MirrorCandidateDescriptor:
@@ -166,4 +165,3 @@ class MirrorCandidateDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

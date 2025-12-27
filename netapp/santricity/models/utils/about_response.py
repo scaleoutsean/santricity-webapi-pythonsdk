@@ -17,7 +17,6 @@ AboutResponse.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AboutResponse:
@@ -192,4 +191,3 @@ class AboutResponse:
         Returns true if both objects are not equal
         """
         return not self == other
-

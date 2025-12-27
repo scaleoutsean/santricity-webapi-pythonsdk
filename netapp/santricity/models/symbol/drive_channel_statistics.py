@@ -17,7 +17,6 @@ DriveChannelStatistics.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DriveChannelStatistics:
@@ -250,4 +249,3 @@ class DriveChannelStatistics:
         Returns true if both objects are not equal
         """
         return not self == other
-

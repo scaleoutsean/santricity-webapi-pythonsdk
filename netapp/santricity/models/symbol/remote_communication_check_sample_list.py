@@ -17,7 +17,6 @@ RemoteCommunicationCheckSampleList.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class RemoteCommunicationCheckSampleList:
@@ -204,4 +203,3 @@ class RemoteCommunicationCheckSampleList:
         Returns true if both objects are not equal
         """
         return not self == other
-

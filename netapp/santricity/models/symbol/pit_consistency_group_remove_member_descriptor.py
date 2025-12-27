@@ -17,7 +17,6 @@ PITConsistencyGroupRemoveMemberDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class PITConsistencyGroupRemoveMemberDescriptor:
@@ -166,4 +165,3 @@ class PITConsistencyGroupRemoveMemberDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ AsyncMirrorSyncStatisticsRequestDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncMirrorSyncStatisticsRequestDescriptor:
@@ -172,4 +171,3 @@ class AsyncMirrorSyncStatisticsRequestDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

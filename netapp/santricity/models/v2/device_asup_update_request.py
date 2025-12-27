@@ -17,7 +17,6 @@ DeviceAsupUpdateRequest.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DeviceAsupUpdateRequest:
@@ -218,4 +217,3 @@ class DeviceAsupUpdateRequest:
         Returns true if both objects are not equal
         """
         return not self == other
-

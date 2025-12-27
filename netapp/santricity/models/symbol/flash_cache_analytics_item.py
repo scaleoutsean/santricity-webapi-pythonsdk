@@ -17,7 +17,6 @@ FlashCacheAnalyticsItem.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class FlashCacheAnalyticsItem:
@@ -296,4 +295,3 @@ class FlashCacheAnalyticsItem:
         Returns true if both objects are not equal
         """
         return not self == other
-

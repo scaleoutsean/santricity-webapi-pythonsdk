@@ -17,7 +17,6 @@ SnapshotViewUpdateRequest.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class SnapshotViewUpdateRequest:
@@ -140,4 +139,3 @@ class SnapshotViewUpdateRequest:
         Returns true if both objects are not equal
         """
         return not self == other
-

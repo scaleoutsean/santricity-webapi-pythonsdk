@@ -17,7 +17,6 @@ PITGroupRepositoryUtilizationList.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class PITGroupRepositoryUtilizationList:
@@ -114,4 +113,3 @@ class PITGroupRepositoryUtilizationList:
         Returns true if both objects are not equal
         """
         return not self == other
-

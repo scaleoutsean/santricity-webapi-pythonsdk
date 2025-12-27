@@ -17,7 +17,6 @@ ControllerMiswireError.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class ControllerMiswireError:
@@ -166,4 +165,3 @@ class ControllerMiswireError:
         Returns true if both objects are not equal
         """
         return not self == other
-

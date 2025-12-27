@@ -17,7 +17,6 @@ IoCounterGroup.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IoCounterGroup:
@@ -244,4 +243,3 @@ class IoCounterGroup:
         Returns true if both objects are not equal
         """
         return not self == other
-

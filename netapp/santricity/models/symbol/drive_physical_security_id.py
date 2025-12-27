@@ -17,7 +17,6 @@ DrivePhysicalSecurityId.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DrivePhysicalSecurityId:
@@ -140,4 +139,3 @@ class DrivePhysicalSecurityId:
         Returns true if both objects are not equal
         """
         return not self == other
-

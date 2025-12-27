@@ -17,7 +17,6 @@ DiskPoolPriorityUpdateRequest.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DiskPoolPriorityUpdateRequest:
@@ -152,4 +151,3 @@ class DiskPoolPriorityUpdateRequest:
         Returns true if both objects are not equal
         """
         return not self == other
-

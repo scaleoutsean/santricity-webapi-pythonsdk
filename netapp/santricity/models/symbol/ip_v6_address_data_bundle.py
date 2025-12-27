@@ -17,7 +17,6 @@ IpV6AddressDataBundle.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IpV6AddressDataBundle:
@@ -114,4 +113,3 @@ class IpV6AddressDataBundle:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ WorkloadVolumeDeleteMappingDescriptorList.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class WorkloadVolumeDeleteMappingDescriptorList:
@@ -114,4 +113,3 @@ class WorkloadVolumeDeleteMappingDescriptorList:
         Returns true if both objects are not equal
         """
         return not self == other
-

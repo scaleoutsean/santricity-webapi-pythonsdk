@@ -17,7 +17,6 @@ ScheduleCreateRequest.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class ScheduleCreateRequest:
@@ -360,4 +359,3 @@ class ScheduleCreateRequest:
         Returns true if both objects are not equal
         """
         return not self == other
-

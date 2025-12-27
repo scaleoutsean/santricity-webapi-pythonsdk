@@ -17,7 +17,6 @@ PhysicalInterfaceTypeData.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class PhysicalInterfaceTypeData:
@@ -172,4 +171,3 @@ class PhysicalInterfaceTypeData:
         Returns true if both objects are not equal
         """
         return not self == other
-

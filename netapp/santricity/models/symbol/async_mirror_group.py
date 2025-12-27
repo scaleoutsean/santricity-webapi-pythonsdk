@@ -17,7 +17,6 @@ AsyncMirrorGroup.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncMirrorGroup:
@@ -482,4 +481,3 @@ class AsyncMirrorGroup:
         Returns true if both objects are not equal
         """
         return not self == other
-

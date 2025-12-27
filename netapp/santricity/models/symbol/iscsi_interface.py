@@ -17,7 +17,6 @@ IscsiInterface.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IscsiInterface:
@@ -478,4 +477,3 @@ class IscsiInterface:
         Returns true if both objects are not equal
         """
         return not self == other
-

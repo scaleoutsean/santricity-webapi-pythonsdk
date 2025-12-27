@@ -17,7 +17,6 @@ HostPortLocation.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class HostPortLocation:
@@ -198,4 +197,3 @@ class HostPortLocation:
         Returns true if both objects are not equal
         """
         return not self == other
-

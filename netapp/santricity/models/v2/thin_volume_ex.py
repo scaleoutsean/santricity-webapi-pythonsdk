@@ -17,7 +17,6 @@ ThinVolumeEx.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class ThinVolumeEx:
@@ -1522,4 +1521,3 @@ class ThinVolumeEx:
         Returns true if both objects are not equal
         """
         return not self == other
-

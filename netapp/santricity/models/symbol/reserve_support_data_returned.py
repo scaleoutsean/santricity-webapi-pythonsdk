@@ -17,7 +17,6 @@ ReserveSupportDataReturned.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class ReserveSupportDataReturned:
@@ -172,4 +171,3 @@ class ReserveSupportDataReturned:
         Returns true if both objects are not equal
         """
         return not self == other
-

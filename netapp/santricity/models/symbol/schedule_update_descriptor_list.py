@@ -17,7 +17,6 @@ ScheduleUpdateDescriptorList.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class ScheduleUpdateDescriptorList:
@@ -114,4 +113,3 @@ class ScheduleUpdateDescriptorList:
         Returns true if both objects are not equal
         """
         return not self == other
-

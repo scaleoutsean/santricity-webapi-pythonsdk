@@ -17,7 +17,6 @@ ThinVolumeExpansionRequest.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class ThinVolumeExpansionRequest:
@@ -172,4 +171,3 @@ class ThinVolumeExpansionRequest:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ PITRollbackOperation.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class PITRollbackOperation:
@@ -218,4 +217,3 @@ class PITRollbackOperation:
         Returns true if both objects are not equal
         """
         return not self == other
-

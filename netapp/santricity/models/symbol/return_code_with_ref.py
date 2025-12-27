@@ -17,7 +17,6 @@ ReturnCodeWithRef.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class ReturnCodeWithRef:
@@ -146,4 +145,3 @@ class ReturnCodeWithRef:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ IbIocAttributesReturned.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IbIocAttributesReturned:
@@ -146,4 +145,3 @@ class IbIocAttributesReturned:
         Returns true if both objects are not equal
         """
         return not self == other
-

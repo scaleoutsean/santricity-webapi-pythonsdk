@@ -17,7 +17,6 @@ AsyncMirrorGroupMemberFaultIndication.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsyncMirrorGroupMemberFaultIndication:
@@ -166,4 +165,3 @@ class AsyncMirrorGroupMemberFaultIndication:
         Returns true if both objects are not equal
         """
         return not self == other
-

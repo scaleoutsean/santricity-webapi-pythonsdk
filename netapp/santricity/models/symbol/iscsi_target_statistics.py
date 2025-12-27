@@ -17,7 +17,6 @@ IscsiTargetStatistics.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IscsiTargetStatistics:
@@ -374,4 +373,3 @@ class IscsiTargetStatistics:
         Returns true if both objects are not equal
         """
         return not self == other
-

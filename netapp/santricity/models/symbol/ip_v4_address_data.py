@@ -17,7 +17,6 @@ IpV4AddressData.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class IpV4AddressData:
@@ -198,4 +197,3 @@ class IpV4AddressData:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ LinkSpeedDetectionError.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class LinkSpeedDetectionError:
@@ -328,4 +327,3 @@ class LinkSpeedDetectionError:
         Returns true if both objects are not equal
         """
         return not self == other
-

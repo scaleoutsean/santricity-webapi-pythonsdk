@@ -17,7 +17,6 @@ ESMInterfaceTypeData.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class ESMInterfaceTypeData:
@@ -146,4 +145,3 @@ class ESMInterfaceTypeData:
         Returns true if both objects are not equal
         """
         return not self == other
-

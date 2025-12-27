@@ -17,7 +17,6 @@ VolumeGroupEx.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class VolumeGroupEx:
@@ -1032,4 +1031,3 @@ class VolumeGroupEx:
         Returns true if both objects are not equal
         """
         return not self == other
-

@@ -17,7 +17,6 @@ AsupEntry.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class AsupEntry:
@@ -244,4 +243,3 @@ class AsupEntry:
         Returns true if both objects are not equal
         """
         return not self == other
-

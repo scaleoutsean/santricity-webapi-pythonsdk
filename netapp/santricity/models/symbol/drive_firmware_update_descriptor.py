@@ -17,7 +17,6 @@ DriveFirmwareUpdateDescriptor.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DriveFirmwareUpdateDescriptor:
@@ -166,4 +165,3 @@ class DriveFirmwareUpdateDescriptor:
         Returns true if both objects are not equal
         """
         return not self == other
-

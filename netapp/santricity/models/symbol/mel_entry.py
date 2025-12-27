@@ -17,7 +17,6 @@ MelEntry.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class MelEntry:
@@ -496,4 +495,3 @@ class MelEntry:
         Returns true if both objects are not equal
         """
         return not self == other
-

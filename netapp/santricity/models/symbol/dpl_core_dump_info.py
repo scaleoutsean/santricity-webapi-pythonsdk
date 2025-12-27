@@ -17,7 +17,6 @@ DPLCoreDumpInfo.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class DPLCoreDumpInfo:
@@ -504,4 +503,3 @@ class DPLCoreDumpInfo:
         Returns true if both objects are not equal
         """
         return not self == other
-

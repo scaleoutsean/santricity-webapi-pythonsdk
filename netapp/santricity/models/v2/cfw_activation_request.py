@@ -17,7 +17,6 @@ CfwActivationRequest.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class CfwActivationRequest:
@@ -114,4 +113,3 @@ class CfwActivationRequest:
         Returns true if both objects are not equal
         """
         return not self == other
-

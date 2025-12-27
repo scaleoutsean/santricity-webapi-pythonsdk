@@ -17,7 +17,6 @@ VolumeActionProgressResponse.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class VolumeActionProgressResponse:
@@ -172,4 +171,3 @@ class VolumeActionProgressResponse:
         Returns true if both objects are not equal
         """
         return not self == other
-

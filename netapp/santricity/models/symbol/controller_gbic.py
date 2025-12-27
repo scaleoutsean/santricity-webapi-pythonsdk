@@ -17,7 +17,6 @@ ControllerGBIC.py
 """
 
 from pprint import pformat
-from six import iteritems
 
 
 class ControllerGBIC:
@@ -224,4 +223,3 @@ class ControllerGBIC:
         Returns true if both objects are not equal
         """
         return not self == other
-
