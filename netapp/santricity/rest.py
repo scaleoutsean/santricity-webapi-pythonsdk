@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
  The Clear BSD License
 
@@ -16,7 +14,6 @@
  NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-from __future__ import absolute_import
 
 import sys
 import io
@@ -40,7 +37,7 @@ try:
     from urllib.parse import urlencode
 except ImportError:
     # for python2
-    from urllib import urlencode
+    from urllib.parse import urlencode
 
 
 logger = logging.getLogger(__name__)
@@ -67,7 +64,7 @@ class RESTResponse(io.IOBase):
         return self.urllib3_response.getheader(name, default)
 
 
-class RESTClientObject(object):
+class RESTClientObject:
 
     def __init__(self, pools_size=4):
         # urllib3.PoolManager will pass all kw parameters to connectionpool
@@ -160,20 +157,19 @@ class RESTClientObject(object):
                                               fields=query_params,
                                               headers=headers)
         except urllib3.exceptions.SSLError as e:
-            msg = "{0}\n{1}".format(type(e).__name__, str(e))
+            msg = "{}\n{}".format(type(e).__name__, str(e))
             raise ApiException(status=0, reason=msg)
 
         r = RESTResponse(r)
 
         # In the python 3, the response.data is bytes.
         # we need to decode it to string.
-        if sys.version_info > (3,):
-            r.data = r.data.decode('utf8')
+        r.data = r.data.decode('utf8')
 
         # log response body
         logger.debug("response body: %s" % r.data)
 
-        if r.status not in range(200, 206):
+        if r.status not in list(range(200, 206)):
             raise ApiException(http_resp=r)
 
         return r
@@ -240,12 +236,12 @@ class ApiException(Exception):
         """
         Custom error messages for exception
         """
-        error_message = "({0})\n"\
-                        "Reason: {1}\n".format(self.status, self.reason)
+        error_message = "({})\n"\
+                        "Reason: {}\n".format(self.status, self.reason)
         if self.headers:
-            error_message += "HTTP response headers: {0}\n".format(self.headers)
+            error_message += "HTTP response headers: {}\n".format(self.headers)
 
         if self.body:
-            error_message += "HTTP response body: {0}\n".format(self.body)
+            error_message += "HTTP response body: {}\n".format(self.body)
 
         return error_message

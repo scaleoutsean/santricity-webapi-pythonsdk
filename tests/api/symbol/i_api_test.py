@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
 
 """
 i_api_test.py
@@ -37,7 +36,7 @@ class IApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              i_api = 1
 
@@ -51,7 +50,7 @@ class IApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              i_api = 1
 
@@ -65,7 +64,7 @@ class IApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              i_api = 1
 
@@ -79,7 +78,7 @@ class IApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              i_api = 1
 
@@ -93,7 +92,7 @@ class IApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              i_api = 1
 
@@ -107,7 +106,7 @@ class IApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              i_api = 1
 
@@ -121,7 +120,7 @@ class IApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              i_api = 1
 
@@ -135,7 +134,7 @@ class IApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if i_api is None:
                 i_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              i_api = 1
 

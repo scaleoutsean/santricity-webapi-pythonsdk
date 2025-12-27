@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 # import models into sdk package
 from netapp.santricity.models.utils.about_response import AboutResponse
 from netapp.santricity.models.utils.build_info_component import BuildInfoComponent

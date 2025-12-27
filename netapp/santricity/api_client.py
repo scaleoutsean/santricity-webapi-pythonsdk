@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
 The Clear BSD License
 
@@ -16,7 +14,6 @@ Redistribution and use in source and binary forms, with or without modification,
 NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-from __future__ import absolute_import
 from . import models
 from .rest import RESTClientObject
 from .rest import ApiException
@@ -24,7 +21,7 @@ from .rest import ApiException
 import os
 import re
 import sys
-import urllib
+import six.moves.urllib.request, six.moves.urllib.parse, six.moves.urllib.error
 import json
 import mimetypes
 import random
@@ -36,18 +33,19 @@ from datetime import date
 
 # python 2 and python 3 compatibility library
 from six import iteritems
+import six
 
 try:
     # for python3
     from urllib.parse import quote
 except ImportError:
     # for python2
-    from urllib import quote
+    from urllib.parse import quote
 
 from .configuration import Configuration
 
 
-class ApiClient(object):
+class ApiClient:
     """
     Generic API client for Swagger client library builds.
 
@@ -114,7 +112,7 @@ class ApiClient(object):
         # path parameters
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
-            for k, v in iteritems(path_params):
+            for k, v in path_params.items():
                 replacement = quote(str(self.to_path_value(v)))
                 resource_path = resource_path.\
                     replace('{' + k + '}', replacement)
@@ -123,7 +121,7 @@ class ApiClient(object):
         if query_params:
             query_params = self.sanitize_for_serialization(query_params)
             query_params = {k: self.to_path_value(v)
-                            for k, v in iteritems(query_params)}
+                            for k, v in query_params.items()}
 
         # post parameters
         if post_params or files:
@@ -190,7 +188,7 @@ class ApiClient(object):
         """
         types = (str, int, float, bool, tuple)
         if sys.version_info < (3,0):
-            types = types + (unicode,)
+            types = types + (str,)
         if isinstance(obj, type(None)):
             return None
         elif isinstance(obj, types):
@@ -210,11 +208,11 @@ class ApiClient(object):
                 # Convert attribute name to json key in
                 # model definition for request.
                 obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
-                            for attr, _ in iteritems(obj.swagger_types)
+                            for attr, _ in obj.swagger_types.items()
                             if getattr(obj, attr) is not None}
 
             return {key: self.sanitize_for_serialization(val)
-                    for key, val in iteritems(obj_dict)}
+                    for key, val in obj_dict.items()}
 
     def deserialize(self, response, response_type):
         """
@@ -253,14 +251,14 @@ class ApiClient(object):
 
         if type(klass) == str:
             if klass.startswith('list['):
-                sub_kls = re.match('list\[(.*)\]', klass).group(1)
+                sub_kls = re.match(r'list\[(.*)\]', klass).group(1)
                 return [self.__deserialize(sub_data, sub_kls)
                         for sub_data in data]
 
             if klass.startswith('dict('):
-                sub_kls = re.match('dict\(([^,]*), (.*)\)', klass).group(2)
+                sub_kls = re.match(r'dict\(([^,]*), (.*)\)', klass).group(2)
                 return {k: self.__deserialize(v, sub_kls)
-                        for k, v in iteritems(data)}
+                        for k, v in data.items()}
 
             # convert str to class
             # for native types
@@ -390,7 +388,7 @@ class ApiClient(object):
             params = post_params
 
         if files:
-            for k, v in iteritems(files):
+            for k, v in files.items():
                 if not v:
                     continue
                 file_names = v if type(v) is list else [v]
@@ -414,7 +412,7 @@ class ApiClient(object):
         if not accepts:
             return
 
-        accepts = list(map(lambda x: x.lower(), accepts))
+        accepts = list([x.lower() for x in accepts])
 
         if 'application/json' in accepts:
             return 'application/json'
@@ -431,7 +429,7 @@ class ApiClient(object):
         if not content_types:
             return 'application/json'
 
-        content_types = list(map(lambda x: x.lower(), content_types))
+        content_types = list([x.lower() for x in content_types])
 
         if 'application/json' in content_types:
             return 'application/json'
@@ -503,7 +501,7 @@ class ApiClient(object):
         try:
             value = klass(data)
         except UnicodeEncodeError:
-            value = unicode(data)
+            value = str(data)
         except TypeError:
             value = data
         return value
@@ -531,7 +529,7 @@ class ApiClient(object):
         except ValueError:
             raise ApiException(
                 status=0,
-                reason="Failed to parse `{0}` into a date object"
+                reason="Failed to parse `{}` into a date object"
                 .format(string)
             )
 
@@ -566,7 +564,7 @@ class ApiClient(object):
         """
         instance = klass()
 
-        for attr, attr_type in iteritems(instance.swagger_types):
+        for attr, attr_type in instance.swagger_types.items():
             if data is not None \
                and instance.attribute_map[attr] in data\
                and isinstance(data, (list, dict)):

@@ -1,5 +1,3 @@
-from __future__ import absolute_import  
-
 # import models into model package
 from netapp.santricity.models.v2.access_volume_ex import AccessVolumeEx
 from netapp.santricity.models.v2.add_batch_cg_members_request import AddBatchCGMembersRequest

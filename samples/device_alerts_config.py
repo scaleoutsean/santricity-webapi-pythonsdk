@@ -50,8 +50,8 @@ def process_alerts_settings(host,username,passwd):
         print("There was an exception: {}.".format(ae.reason))
         sys.exit()
 
-    print dev_alert_cfg
-    print "---------------------"
+    print(dev_alert_cfg)
+    print("---------------------")
 
     #Now Update config info
     #Populate the required fileds as necessary and then call update_asup_configuration()
@@ -77,7 +77,7 @@ def process_alerts_settings(host,username,passwd):
 #Reads the array info from a config file and processes alerts config info as necessary.
 #It's assumed that the array and login details are as per this (alerts_cfg.txt) sample file contents.
 
-fp= open("alerts_cfg.txt","r")
+fp= open("alerts_cfg.txt")
 
 lines=fp.readlines()
 for line in lines:

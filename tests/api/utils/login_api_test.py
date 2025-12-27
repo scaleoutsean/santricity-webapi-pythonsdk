@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
 
 """
 login_api_test.py
@@ -37,7 +36,7 @@ class LoginApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if login_api is None:
                 login_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              login_api = 1
 
@@ -51,7 +50,7 @@ class LoginApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if login_api is None:
                 login_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              login_api = 1
 
@@ -65,7 +64,7 @@ class LoginApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if login_api is None:
                 login_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              login_api = 1
 

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
 
 """
 FlashCacheApi.py
@@ -18,7 +17,6 @@ FlashCacheApi.py
 
   NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
-from __future__ import absolute_import
 
 import sys
 import os
@@ -30,7 +28,7 @@ from ....santricity.configuration import Configuration
 from ....santricity.api_client import ApiClient
 
 
-class FlashCacheApi(object):
+class FlashCacheApi:
 
     def __init__(self, api_client=None):
         config = Configuration()
@@ -79,7 +77,7 @@ class FlashCacheApi(object):
             all_params.append('callback')
 
             params = locals()
-            for key, val in iteritems(params['kwargs']):
+            for key, val in params['kwargs'].items():
                 if key not in all_params:
                     raise TypeError(
                         "Got an unexpected keyword argument '%s'"
@@ -178,7 +176,7 @@ class FlashCacheApi(object):
             all_params.append('callback')
 
             params = locals()
-            for key, val in iteritems(params['kwargs']):
+            for key, val in params['kwargs'].items():
                 if key not in all_params:
                     raise TypeError(
                         "Got an unexpected keyword argument '%s'"
@@ -279,7 +277,7 @@ class FlashCacheApi(object):
             all_params.append('callback')
 
             params = locals()
-            for key, val in iteritems(params['kwargs']):
+            for key, val in params['kwargs'].items():
                 if key not in all_params:
                     raise TypeError(
                         "Got an unexpected keyword argument '%s'"
@@ -385,7 +383,7 @@ class FlashCacheApi(object):
             all_params.append('callback')
 
             params = locals()
-            for key, val in iteritems(params['kwargs']):
+            for key, val in params['kwargs'].items():
                 if key not in all_params:
                     raise TypeError(
                         "Got an unexpected keyword argument '%s'"
@@ -491,7 +489,7 @@ class FlashCacheApi(object):
             all_params.append('callback')
 
             params = locals()
-            for key, val in iteritems(params['kwargs']):
+            for key, val in params['kwargs'].items():
                 if key not in all_params:
                     raise TypeError(
                         "Got an unexpected keyword argument '%s'"
@@ -595,7 +593,7 @@ class FlashCacheApi(object):
             all_params.append('callback')
 
             params = locals()
-            for key, val in iteritems(params['kwargs']):
+            for key, val in params['kwargs'].items():
                 if key not in all_params:
                     raise TypeError(
                         "Got an unexpected keyword argument '%s'"
@@ -696,7 +694,7 @@ class FlashCacheApi(object):
             all_params.append('callback')
 
             params = locals()
-            for key, val in iteritems(params['kwargs']):
+            for key, val in params['kwargs'].items():
                 if key not in all_params:
                     raise TypeError(
                         "Got an unexpected keyword argument '%s'"
@@ -800,7 +798,7 @@ class FlashCacheApi(object):
             all_params.append('callback')
 
             params = locals()
-            for key, val in iteritems(params['kwargs']):
+            for key, val in params['kwargs'].items():
                 if key not in all_params:
                     raise TypeError(
                         "Got an unexpected keyword argument '%s'"
@@ -899,7 +897,7 @@ class FlashCacheApi(object):
             all_params.append('callback')
 
             params = locals()
-            for key, val in iteritems(params['kwargs']):
+            for key, val in params['kwargs'].items():
                 if key not in all_params:
                     raise TypeError(
                         "Got an unexpected keyword argument '%s'"

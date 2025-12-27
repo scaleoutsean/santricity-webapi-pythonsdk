@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
 
 """
 workloads_api_test.py
@@ -37,7 +36,7 @@ class WorkloadsApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              workloads_api = 1
 
@@ -51,7 +50,7 @@ class WorkloadsApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              workloads_api = 1
 
@@ -65,7 +64,7 @@ class WorkloadsApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              workloads_api = 1
 
@@ -79,7 +78,7 @@ class WorkloadsApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              workloads_api = 1
 
@@ -93,7 +92,7 @@ class WorkloadsApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              workloads_api = 1
 
@@ -107,7 +106,7 @@ class WorkloadsApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if workloads_api is None:
                 workloads_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              workloads_api = 1
 

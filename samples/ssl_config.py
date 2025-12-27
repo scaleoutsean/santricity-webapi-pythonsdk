@@ -53,9 +53,9 @@ except ApiException as ae:
     print("There was an exception: {}.".format(ae.reason))
     sys.exit()
 
-print ssl_config
-print "--------------------------------------------"
-print "--------------------------------------------"
+print(ssl_config)
+print("--------------------------------------------")
+print("--------------------------------------------")
 
 #Upload a signed certificate
 
@@ -76,10 +76,10 @@ except ApiException as ae:
     print("There was an exception: {}.".format(ae.reason))
     sys.exit()
 
-print "cert_list:"
+print("cert_list:")
 pprint(cert_list)
-print "--------------------------------------------"
-print "--------------------------------------------"
+print("--------------------------------------------")
+print("--------------------------------------------")
 
 #Remove a signed certificate
 #This is hard-coded for sample code usage.Populate the below filed with the correct alias

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
 
 """
 b_api_test.py
@@ -37,7 +36,7 @@ class BApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if b_api is None:
                 b_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              b_api = 1
 

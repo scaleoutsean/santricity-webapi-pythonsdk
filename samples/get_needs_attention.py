@@ -21,6 +21,7 @@ from netapp.santricity.api_client import Configuration
 from netapp.santricity.api.symbol.g_api import GApi
 from netapp.santricity.api.v2.hardware_api import HardwareApi
 from pprint import pprint
+import six
 
 config = Configuration()
 
@@ -49,19 +50,19 @@ sa_data=sym_api.symbol_get_sa_data(sys_id)
 # If Needs Attention is set then get the details.
 
 if sa_data.needs_attention:
-    print "Needs attention set for array:",sys_id
+    print("Needs attention set for array:",sys_id)
     fail_list=sym_api.symbol_get_recovery_failure_list(sys_id)
     f_dict=fail_list.to_dict()
 
     #Now process the returned data to get the need attention items.
-    for k,v in fail_list.to_dict().iteritems():
+    for k,v in fail_list.to_dict().items():
         v_list=v
         for i in v_list:
-            for k1, v1 in i.iteritems():
+            for k1, v1 in i.items():
                 if (k1 == "rec_failure_type"):
                     continue
                 if (v1):
-                    print k1,"--->",v1
+                    print(k1,"--->",v1)
 else:
-    print "Array ",sys_id," is optimal"
+    print("Array ",sys_id," is optimal")
 

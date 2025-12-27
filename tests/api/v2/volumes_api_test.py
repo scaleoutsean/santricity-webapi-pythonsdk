@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
 
 """
 volumes_api_test.py
@@ -37,7 +36,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -51,7 +50,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -65,7 +64,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -79,7 +78,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -93,7 +92,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -107,7 +106,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -121,7 +120,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -135,7 +134,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -149,7 +148,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -163,7 +162,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -177,7 +176,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -191,7 +190,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -205,7 +204,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -219,7 +218,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -233,7 +232,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -247,7 +246,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -261,7 +260,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -275,7 +274,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -289,7 +288,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -303,7 +302,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -317,7 +316,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -331,7 +330,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -345,7 +344,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -359,7 +358,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -373,7 +372,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -387,7 +386,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -401,7 +400,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -415,7 +414,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -429,7 +428,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -443,7 +442,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -457,7 +456,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -471,7 +470,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -485,7 +484,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -499,7 +498,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -513,7 +512,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -527,7 +526,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -541,7 +540,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -555,7 +554,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -569,7 +568,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -583,7 +582,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -597,7 +596,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -611,7 +610,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 
@@ -625,7 +624,7 @@ class VolumesApiTest(unittest.TestCase):
             # For the DELETE calls, there's no reponse returned and we want to set that as a valid sdk call.
             if volumes_api is None:
                 volumes_api = 1
-       except (ApiException, IOError)  as exp:
+       except (ApiException, OSError)  as exp:
              # The API call went through but got a HTTP errorcode, which means the SDK works
              volumes_api = 1
 

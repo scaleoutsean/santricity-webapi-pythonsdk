@@ -54,11 +54,11 @@ wrk_load_cr_req.name="NoSQL"
 try:
     #Create a work load
     wrk_load_model= wld_api.new_workload(sys_id,data=wrk_load_cr_req)
-    print "Created workload. Name: %s , ID : %s" %(wrk_load_model.name,wrk_load_model.id)
+    print("Created workload. Name: %s , ID : %s" %(wrk_load_model.name,wrk_load_model.id))
 
     #Get the list of all defiend work-loads
     wrk_load_model_list = wld_api.get_all_defined_workloads(sys_id)
-    print "Defined Workloads :", wrk_load_model_list
+    print("Defined Workloads :", wrk_load_model_list)
 
 except ApiException as ae:
     print("There was an exception: {}.".format(ae.reason))

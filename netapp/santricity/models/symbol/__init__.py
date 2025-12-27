@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 # import models into model package
 from netapp.santricity.models.symbol.arvm_default_attributes import ARVMDefaultAttributes
 from netapp.santricity.models.symbol.abstract_vol_ref_list import AbstractVolRefList

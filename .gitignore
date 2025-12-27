@@ -5,3 +5,10 @@
 build/
 dist/
 docs/_build
+.venv/
+.vscode/
+__pycache__/
+*.pyo
+*.bak
+.DS_Store
+.env

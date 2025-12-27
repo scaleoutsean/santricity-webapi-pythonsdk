@@ -58,7 +58,7 @@ except ApiException as ae:
     print("There was an exception: {}.".format(ae.reason))
     sys.exit()
 
-print stat_response
+print(stat_response)
 
 
 

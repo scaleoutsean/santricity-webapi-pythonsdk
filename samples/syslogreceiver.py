@@ -88,7 +88,7 @@ except ApiException as ae:
     print("There was an exception: {}.".format(ae.reason))
     sys.exit()
 
-print alert_config
+print(alert_config)
 
 
 #Send a test syslog message
