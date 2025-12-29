@@ -90,6 +90,22 @@ class RESTClientObject:
         # key file
         key_file = Configuration().key_file
 
+        # SSL context - handle Python 3.13+ urllib3 behavior
+        ssl_context = None
+        if not Configuration().verify_ssl:
+            # When SSL verification is disabled, create a custom context that
+            # also disables VERIFY_X509_PARTIAL_CHAIN and VERIFY_X509_STRICT
+            # which urllib3 enables by default in Python 3.13+
+            ssl_context = ssl.create_default_context()
+            ssl_context.check_hostname = False
+            ssl_context.verify_mode = ssl.CERT_NONE
+            # Clear the strict verification flags that can cause issues
+            # even when CERT_NONE is set
+            if hasattr(ssl, "VERIFY_X509_PARTIAL_CHAIN"):
+                ssl_context.verify_flags &= ~ssl.VERIFY_X509_PARTIAL_CHAIN
+            if hasattr(ssl, "VERIFY_X509_STRICT"):
+                ssl_context.verify_flags &= ~ssl.VERIFY_X509_STRICT
+
         # https pool manager
         self.pool_manager = urllib3.PoolManager(
             num_pools=pools_size,
@@ -97,6 +113,7 @@ class RESTClientObject:
             ca_certs=ca_certs,
             cert_file=cert_file,
             key_file=key_file,
+            ssl_context=ssl_context,
         )
 
     def request(

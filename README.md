@@ -126,6 +126,19 @@ config.ssl_ca_cert = 'controller-ca.pem'
 config.verify_ssl = True  # Now enable verification with the proper CA
 ```
 
+Or, for the updated samples that use environment-driven configuration (recommended):
+
+```bash
+# set controller and creds
+export SANTRICITY_HOST=https://controller_a:8443
+export SANTRICITY_USER=admin
+export SANTRICITY_PASS=YOURPASS
+# optional: disable verification in lab
+export SANTRICITY_VERIFY_SSL=false
+# run the support-bundle sample (or other samples)
+python samples/support_bundle_e2800.py --systemid 1
+```
+
 ### Generating Documentation
 
 API documentation can be generated in a format that suites you.

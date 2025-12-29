@@ -28,80 +28,79 @@ from netapp.santricity.models.v2.alert_syslog_configuration import \
 from netapp.santricity.models.v2.alert_syslog_server import AlertSyslogServer
 from netapp.santricity.rest import ApiException
 
-config = Configuration()
 
-# Environment-driven configuration (direct SANtricity by default)
-WSP = os.getenv("WSP_MODE", "false").lower() in ("1", "true", "yes")
-if WSP:
-    config.host = os.getenv("WSP_HOST", "https://10.113.76.206:8443")
-else:
-    config.host = os.getenv("SANTRICITY_HOST", "https://10.113.76.206:8443")
+def main():
+    config = Configuration()
+    # Environment-driven configuration (direct SANtricity by default)
+    config.host = os.getenv("SANTRICITY_HOST", "https://localhost:8443")
 
-config.username = os.getenv("SANTRICITY_USER", "rw")
-config.password = os.getenv("SANTRICITY_PASS", "rw")
-config.verify_ssl = os.getenv("SANTRICITY_VERIFY_SSL", "false").lower() in (
-    "1",
-    "true",
-    "yes",
-)
+    config.username = os.getenv("SANTRICITY_USER", "rw")
+    config.password = os.getenv("SANTRICITY_PASS", "rw")
+    verify = os.getenv("SANTRICITY_VERIFY_SSL")
+    if verify is None:
+        config.verify_ssl = True
+    else:
+        config.verify_ssl = verify.lower() in ("1", "true", "yes")
 
-# For embedded, the array ID is 1 by default
-sys_id = os.getenv("SANTRICITY_ID", "1")
+    # For embedded, the array ID is 1 by default
+    sys_id = os.getenv("SANTRICITY_ID", "1")
 
-# Create a client object to use with the above defined configuration.
-api_client = ApiClient()
-config.api_client = api_client
+    # Create a client object to use with the above defined configuration.
+    api_client = ApiClient()
+    config.api_client = api_client
 
-diag_api = DiagnosticsApi(api_client)
+    diag_api = DiagnosticsApi(api_client)
+
+    # Poupulate values for setting syslog configuration
+
+    alert_sys_log_server = AlertSyslogServer()
+
+    # Set the syslog server address and port number.
+    # Below values are for example only
+
+    alert_sys_log_server.port_number = "514"
+    alert_sys_log_server.server_name = "10.113.76.204"
+
+    alert_serv_list = []
+
+    alert_serv_list.append(alert_sys_log_server)
+
+    alert_sys_log_config = AlertSyslogConfiguration()
+
+    alert_sys_log_config.syslog_receivers = alert_serv_list
+
+    alert_sys_log_config.default_facility = 3
+    alert_sys_log_config.default_tag = "StorageArray"
+
+    try:
+        alert_config = diag_api.set_syslog_configuration(
+            sys_id, body=alert_sys_log_config
+        )
+
+    except ApiException as ae:
+        print("There was an exception: {}.".format(ae.reason))
+        sys.exit()
+
+    # Retreive syslog configuration and verify
+
+    try:
+        alert_config = diag_api.get_syslog_configuration(sys_id)
+
+    except ApiException as ae:
+        print("There was an exception: {}.".format(ae.reason))
+        sys.exit()
+
+    print(alert_config)
+
+    # Send a test syslog message
+
+    try:
+        alert_config = diag_api.test_syslog_send(sys_id)
+
+    except ApiException as ae:
+        print("There was an exception: {}.".format(ae.reason))
+        sys.exit()
 
 
-# Poupulate values for setting syslog configuration
-
-alert_sys_log_server = AlertSyslogServer()
-
-# Set the syslog server address and port number.
-# Below values are for example only
-
-alert_sys_log_server.port_number = "514"
-alert_sys_log_server.server_name = "10.113.76.204"
-
-alert_serv_list = []
-
-alert_serv_list.append(alert_sys_log_server)
-
-alert_sys_log_config = AlertSyslogConfiguration()
-
-alert_sys_log_config.syslog_receivers = alert_serv_list
-
-alert_sys_log_config.default_facility = 3
-alert_sys_log_config.default_tag = "StorageArray"
-
-
-try:
-    alert_config = diag_api.set_syslog_configuration(sys_id, body=alert_sys_log_config)
-
-except ApiException as ae:
-    print("There was an exception: {}.".format(ae.reason))
-    sys.exit()
-
-
-# Retreive syslog configuration and verify
-
-try:
-    alert_config = diag_api.get_syslog_configuration(sys_id)
-
-except ApiException as ae:
-    print("There was an exception: {}.".format(ae.reason))
-    sys.exit()
-
-print(alert_config)
-
-
-# Send a test syslog message
-
-try:
-    alert_config = diag_api.test_syslog_send(sys_id)
-
-except ApiException as ae:
-    print("There was an exception: {}.".format(ae.reason))
-    sys.exit()
+if __name__ == "__main__":
+    main()

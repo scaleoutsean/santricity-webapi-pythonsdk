@@ -63,7 +63,15 @@ class ApiClient:
         if header_name is not None:
             self.default_headers[header_name] = header_value
         if host is None:
-            self.host = Configuration().host + context_path
+            # If Configuration().host is unset, raise a clear error to
+            # prompt the caller to set the host explicitly. Previously this
+            # caused a TypeError when attempting to concatenate None + str.
+            cfg_host = Configuration().host
+            if not cfg_host:
+                raise ValueError(
+                    "Configuration().host is not set. Set Configuration().host or set the SANTRICITY_HOST environment variable."
+                )
+            self.host = str(cfg_host) + str(context_path)
         else:
             self.host = host
         self.cookie = cookie

@@ -26,33 +26,31 @@ from netapp.santricity.api.v2.statistics_api import StatisticsApi
 from netapp.santricity.api_client import ApiClient, Configuration
 from netapp.santricity.rest import ApiException
 
-config = Configuration()
-# Environment-driven configuration: prefer direct SANtricity host by default.
-WSP = os.getenv("WSP_MODE", "false").lower() in ("1", "true", "yes")
-if WSP:
-    config.host = os.getenv("WSP_HOST", "http://localhost:8080")
-    sys_id = os.getenv("WSP_TARGET", "c5")
-else:
-    config.host = os.getenv("SANTRICITY_HOST", "http://localhost:8080")
+
+def main():
+    config = Configuration()
+    # Environment-driven configuration: prefer direct SANtricity host by default.
+    config.host = os.getenv("SANTRICITY_HOST", "https://localhost:8443")
     sys_id = os.getenv("SANTRICITY_ID", "1")
 
-config.username = os.getenv("SANTRICITY_USER", "rw")
-config.password = os.getenv("SANTRICITY_PASS", "rw")
+    config.username = os.getenv("SANTRICITY_USER", "rw")
+    config.password = os.getenv("SANTRICITY_PASS", "rw")
 
-# Create a client object to use with the above defined configuration.
-api_client = ApiClient()
-config.api_client = api_client
+    # Create a client object to use with the above defined configuration.
+    api_client = ApiClient()
+    config.api_client = api_client
 
-stat_api = StatisticsApi(api_client)
+    stat_api = StatisticsApi(api_client)
 
-# Get All raw stats.
+    # Get All raw stats.
+    try:
+        stat_response = stat_api.get_all_historical_raw_performance_statistics(sys_id)
+    except ApiException as ae:
+        print("There was an exception: {}.".format(ae.reason))
+        sys.exit()
 
-try:
-    #
-    stat_response = stat_api.get_all_historical_raw_performance_statistics(sys_id)
+    print(stat_response)
 
-except ApiException as ae:
-    print("There was an exception: {}.".format(ae.reason))
-    sys.exit()
 
-print(stat_response)
+if __name__ == "__main__":
+    main()

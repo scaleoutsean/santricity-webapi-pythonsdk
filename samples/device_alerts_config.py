@@ -32,7 +32,12 @@ def process_alerts_settings(host, username, passwd):
         config.host = "https://" + host
     config.username = username
     config.password = passwd
-    config.verify_ssl = False
+    # Respect SANTRICITY_VERIFY_SSL environment variable
+    verify = __import__("os").getenv("SANTRICITY_VERIFY_SSL")
+    if verify is None:
+        config.verify_ssl = True
+    else:
+        config.verify_ssl = verify.lower() in ("1", "true", "yes")
 
     # If verify_ssl is true then the certificate file should me made available.
     # This avoids insecure request warnings. Make the certificate available as illustrated below
@@ -82,20 +87,25 @@ def process_alerts_settings(host, username, passwd):
 # Reads the array info from a config file and processes alerts config info as necessary.
 # It's assumed that the array and login details are as per this (alerts_cfg.txt) sample file contents.
 
-fp = open("alerts_cfg.txt")
 
-lines = fp.readlines()
-for line in lines:
-    if not line.startswith("#"):
-        fields = line.split()
-        process_alerts_settings(fields[0], fields[1], fields[2])
+def main():
+    try:
+        with open("alerts_cfg.txt") as fp:
+            lines = fp.readlines()
+            for line in lines:
+                if not line.startswith("#"):
+                    fields = line.split()
+                    process_alerts_settings(fields[0], fields[1], fields[2])
+    except FileNotFoundError:
+        import os
 
-# If environment variables are set, allow running directly without a config file
-import os
+        if os.getenv("SANTRICITY_HOST"):
+            process_alerts_settings(
+                os.getenv("SANTRICITY_HOST"),
+                os.getenv("SANTRICITY_USER", "rw"),
+                os.getenv("SANTRICITY_PASS", "rw"),
+            )
 
-if os.getenv("SANTRICITY_HOST"):
-    process_alerts_settings(
-        os.getenv("SANTRICITY_HOST"),
-        os.getenv("SANTRICITY_USER", "rw"),
-        os.getenv("SANTRICITY_PASS", "rw"),
-    )
+
+if __name__ == "__main__":
+    main()

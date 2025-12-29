@@ -24,44 +24,43 @@ from netapp.santricity.models.v2.workload_create_request import \
     WorkloadCreateRequest
 from netapp.santricity.rest import ApiException
 
-config = Configuration()
-# Environment-driven configuration (direct SANtricity by default)
-WSP = os.getenv("WSP_MODE", "false").lower() in ("1", "true", "yes")
-if WSP:
-    config.host = os.getenv("WSP_HOST", "http://localhost:8080")
-    sys_id = os.getenv("WSP_TARGET", "c5")
-else:
-    config.host = os.getenv("SANTRICITY_HOST", "http://localhost:8080")
+
+def main():
+    config = Configuration()
+    # Environment-driven configuration (direct SANtricity by default)
+    config.host = os.getenv("SANTRICITY_HOST", "https://localhost:8443")
     sys_id = os.getenv("SANTRICITY_ID", "1")
 
-config.username = os.getenv("SANTRICITY_USER", "rw")
-config.password = os.getenv("SANTRICITY_PASS", "rw")
+    config.username = os.getenv("SANTRICITY_USER", "rw")
+    config.password = os.getenv("SANTRICITY_PASS", "rw")
+
+    # Create a client object to use with the above defined configuration.
+    api_client = ApiClient()
+    config.api_client = api_client
+
+    wld_api = WorkloadsApi(api_client)
+    # Create a new workload and retrieve all defined work-loads
+
+    wrk_load_cr_req = WorkloadCreateRequest()
+
+    wrk_load_cr_req.name = "NoSQL"
+
+    try:
+        # Create a work load
+        wrk_load_model = wld_api.new_workload(sys_id, data=wrk_load_cr_req)
+        print(
+            "Created workload. Name: %s , ID : %s"
+            % (wrk_load_model.name, wrk_load_model.id)
+        )
+
+        # Get the list of all defiend work-loads
+        wrk_load_model_list = wld_api.get_all_defined_workloads(sys_id)
+        print("Defined Workloads :", wrk_load_model_list)
+
+    except ApiException as ae:
+        print("There was an exception: {}.".format(ae.reason))
+        sys.exit()
 
 
-# Create a client object to use with the above defined configuration.
-api_client = ApiClient()
-config.api_client = api_client
-
-wld_api = WorkloadsApi(api_client)
-
-# Create a new workload and retrieve all defined work-loads
-
-wrk_load_cr_req = WorkloadCreateRequest()
-
-wrk_load_cr_req.name = "NoSQL"
-
-try:
-    # Create a work load
-    wrk_load_model = wld_api.new_workload(sys_id, data=wrk_load_cr_req)
-    print(
-        "Created workload. Name: %s , ID : %s"
-        % (wrk_load_model.name, wrk_load_model.id)
-    )
-
-    # Get the list of all defiend work-loads
-    wrk_load_model_list = wld_api.get_all_defined_workloads(sys_id)
-    print("Defined Workloads :", wrk_load_model_list)
-
-except ApiException as ae:
-    print("There was an exception: {}.".format(ae.reason))
-    sys.exit()
+if __name__ == "__main__":
+    main()
