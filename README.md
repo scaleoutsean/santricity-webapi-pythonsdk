@@ -105,6 +105,26 @@ python samples/view_historic_stats.py
 
 Security note: WSP centralizes access to multiple arrays behind a single service. If WSP is unmaintained or vulnerable it greatly increases risk - do not enable WSP in production; prefer direct controller access and only use WSP in isolated test environments where you understand the security implications.
 
+**Dealing with TLS issues**
+
+Install TLS certificates that pass `urllib3`'s `VERIFY_X509_PARTIAL_CHAIN` and `VERIFY_X509_STRICT` checks.
+
+If you can't or won't, try disabling validation, or download and use a CA bundle. Some environment variables you can use:
+
+```sh
+export SANTRICITY_VERIFY_SSL=false
+export SANTRICITY_CA_BUNDLE=/path/to/ca-bundle.pem
+```
+
+Then:
+
+```python
+import requests
+
+# Download CA cert from controller and use it in your config
+config.ssl_ca_cert = 'controller-ca.pem'
+config.verify_ssl = True  # Now enable verification with the proper CA
+```
 
 ### Generating Documentation
 

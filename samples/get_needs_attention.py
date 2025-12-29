@@ -30,24 +30,29 @@ if WSP:
     config.host = os.getenv("WSP_HOST", "http://localhost:8080")
     sys_id = os.getenv("WSP_TARGET", "c5")
 else:
-    config.host = os.getenv("SANTRICITY_HOST", "http://localhost:8080")
+    # Standard SANtricity configuration, using controller A here
+    config.host = os.getenv("SANTRICITY_HOST", "https://controller_a:8443")
     sys_id = os.getenv("SANTRICITY_ID", "1")
 
-config.username = os.getenv("SANTRICITY_USER", "rw")
-config.password = os.getenv("SANTRICITY_PASS", "rw")
+config.username = os.getenv("SANTRICITY_USER", "admin")
+config.password = os.getenv("SANTRICITY_PASS", "admin123")
 
+verify = os.getenv("SANTRICITY_VERIFY_SSL")
+if verify is None:
+    config.verify_ssl = True
+else:
+    config.verify_ssl = verify.lower() in ("1", "true", "yes")
 
-# Create a client object to use with the above defined configuration.
+# Optionally specify a custom CA bundle (TLS certificate chain downloaded from controller A)
+ca = os.getenv("SANTRICITY_CA_BUNDLE")
+config.ssl_ca_cert = ca
 api_client = ApiClient()
 config.api_client = api_client
 
-
 sym_api = GApi(api_client)
-
 sa_data = sym_api.symbol_get_sa_data(sys_id)
 
-# If Needs Attention is set then get the details.
-
+# If Needs Attention is set then get the details
 if sa_data.needs_attention:
     print("Needs attention set for array:", sys_id)
     fail_list = sym_api.symbol_get_recovery_failure_list(sys_id)
