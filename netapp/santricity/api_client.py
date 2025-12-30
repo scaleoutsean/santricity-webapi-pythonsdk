@@ -492,6 +492,19 @@ class ApiClient:
         """
         config = Configuration()
 
+        # Convenience: if an access token is configured, prefer Bearer token
+        # and set the Authorization header so callers don't need to change
+        # generated auth_settings from "basicAuth" to "bearerToken".
+        token_hdr = None
+        try:
+            token_hdr = config.get_access_token_header()
+        except Exception:
+            token_hdr = None
+
+        if token_hdr:
+            headers["Authorization"] = token_hdr
+            return
+
         if not auth_settings:
             return
 

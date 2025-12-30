@@ -18,6 +18,7 @@ import http.client as httplib
 import logging
 import sys
 import urllib3
+import os
 
 
 def singleton(cls, *args, **kw):
@@ -59,6 +60,17 @@ class Configuration:
         self.username = "rw"
         # Password for HTTP basic authentication
         self.password = "rw"
+        # Access token for Bearer/JWT authentication
+        # Example: set Configuration().access_token = "eyJ..."
+        # Allow reading token from environment variable SANTRICITY_TOKEN
+        self.access_token = os.getenv("SANTRICITY_TOKEN")
+        # Optional token type (defaults to Bearer)
+        self.token_type = "Bearer"
+        # Optional callback to refresh/obtain a new access token. When set,
+        # `get_access_token_header()` will call this (with no args) if
+        # `access_token` is not present and will use the returned value.
+        # Example: config.token_refresh_callback = lambda: fetch_token()
+        self.token_refresh_callback = None
 
         # Logging Settings
         self.logger = {}
@@ -195,6 +207,29 @@ class Configuration:
             basic_auth=self.username + ":" + self.password
         ).get("authorization")
 
+    def get_access_token_header(self):
+        """
+        Returns Authorization header value for access token (Bearer).
+
+        :return: e.g. "Bearer <token>" or None
+        """
+        # If we don't have an access token, try the refresh callback if provided.
+        if not self.access_token and callable(getattr(self, "token_refresh_callback", None)):
+            try:
+                token = self.token_refresh_callback()
+                if token:
+                    self.access_token = token
+            except Exception:
+                # If refresh callback fails, behave as if no token available.
+                return None
+
+        if not self.access_token:
+            return None
+        # If user already provided the full header, return it as-is
+        if self.access_token.lower().startswith("bearer "):
+            return self.access_token
+        return (self.token_type + " " + str(self.access_token)).strip()
+
     def auth_settings(self):
         """
         Gets Auth Settings dict for api client.
@@ -207,6 +242,12 @@ class Configuration:
                 "in": "header",
                 "key": "Authorization",
                 "value": self.get_basic_auth_token(),
+            },
+            "bearerToken": {
+                "type": "apiKey",
+                "in": "header",
+                "key": "Authorization",
+                "value": self.get_access_token_header(),
             },
         }
 

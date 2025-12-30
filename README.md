@@ -139,6 +139,46 @@ export SANTRICITY_VERIFY_SSL=false
 python samples/support_bundle_e2800.py --systemid 1
 ```
 
+JWT / Bearer token usage
+
+If your controller supports JWT/Bearer tokens, set `SANTRICITY_TOKEN` and run the `jwt_get_volumes.py` sample which demonstrates token-based auth against the Volumes API:
+
+```bash
+export SANTRICITY_HOST=https://controller_a:8443
+export SANTRICITY_TOKEN="<your-jwt-or-bearer-token>"
+export SANTRICITY_ID=1
+python samples/jwt_get_volumes.py
+```
+
+Token refresh sample
+
+If you need the SDK to obtain tokens on-demand (for example using the
+client_credentials grant), use the `jwt_token_refresh.py` sample which
+demonstrates setting `Configuration.token_refresh_callback`.
+
+Environment variables used by the sample:
+
+- `SANTRICITY_TOKEN_URL`: token endpoint (e.g. `https://auth.example.com/oauth2/token`)
+- `SANTRICITY_CLIENT_ID`: OAuth client id
+- `SANTRICITY_CLIENT_SECRET`: OAuth client secret
+- `SANTRICITY_HOST`: SANtricity controller base URL
+- `SANTRICITY_VERIFY_SSL`: optional `false` to disable TLS verification in lab
+
+Example (bash):
+
+```bash
+export SANTRICITY_HOST=https://controller_a:8443
+export SANTRICITY_TOKEN_URL=https://auth.example.com/oauth2/token
+export SANTRICITY_CLIENT_ID=myclient
+export SANTRICITY_CLIENT_SECRET=mysecret
+export SANTRICITY_VERIFY_SSL=false
+python samples/jwt_token_refresh.py
+```
+
+The sample's `token_refresh_callback` will POST a `grant_type=client_credentials`
+request to `SANTRICITY_TOKEN_URL`, parse the `access_token` and return it to the
+SDK which will then use it as a Bearer token for API calls.
+
 ### Generating Documentation
 
 API documentation can be generated in a format that suites you.

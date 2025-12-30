@@ -30,7 +30,7 @@ from .configuration import Configuration
 try:
     import urllib3
 except ImportError:
-    raise ImportError("Swagger python client requires urllib3.")
+    raise ImportError("Swagger Python client requires urllib3.")
 
 try:
     # for python3
