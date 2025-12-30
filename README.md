@@ -79,6 +79,10 @@ Samples and the test-runner now prefer direct SANtricity access by default. Use 
 - `SANTRICITY_PASS`: password (default `YOURPASS`)
 - `SANTRICITY_ID`: system id for embedded mode (default `1`); we recommend to use `1` at most for initial authentication and the correct system_id (WWN) after that
 
+Note: `Configuration()` will read `SANTRICITY_VERIFY_SSL` and `SANTRICITY_CA_BUNDLE` from
+the environment on initialization, so you can control TLS verification and provide
+an alternate CA bundle by exporting those environment variables before running samples.
+
 Optional proxy mode with WSP (not recommended):
 
 - `WSP_MODE=true` to enable WSP/proxy flow (opt-in only)

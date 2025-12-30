@@ -89,9 +89,15 @@ class Configuration:
 
         # SSL/TLS verification
         # Set this to false to skip verifying SSL certificate when calling API from https server.
-        self.verify_ssl = True
-        # Set this to customize the certificate file to verify the peer.
-        self.ssl_ca_cert = None
+        # Allow overriding via environment variable SANTRICITY_VERIFY_SSL (1/true/yes to enable)
+        env_verify = os.getenv("SANTRICITY_VERIFY_SSL")
+        if env_verify is None:
+            self.verify_ssl = True
+        else:
+            self.verify_ssl = str(env_verify).lower() in ("1", "true", "yes")
+        # Set this to customize the certificate file to verify the peer. Can be provided
+        # via the SANTRICITY_CA_BUNDLE environment variable.
+        self.ssl_ca_cert = os.getenv("SANTRICITY_CA_BUNDLE") or None
         # client certificate file
         self.cert_file = None
         # client key file
