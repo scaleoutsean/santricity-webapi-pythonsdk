@@ -152,32 +152,38 @@ python samples/jwt_get_volumes.py
 
 Token refresh sample
 
-If you need the SDK to obtain tokens on-demand (for example using the
-client_credentials grant), use the `jwt_token_refresh.py` sample which
-demonstrates setting `Configuration.token_refresh_callback`.
+If you need the SDK to obtain tokens on-demand, use the `jwt_token_refresh.py`
+sample which demonstrates setting `Configuration.token_refresh_callback` and
+self-issuing a token from the controller.
+
+The controller exposes a built-in token endpoint under `/devmgr/v2/access-token`.
+The sample will use `SANTRICITY_TOKEN_URL` if provided, otherwise it will
+derive the endpoint from `SANTRICITY_HOST` + `/access-token`.
+
+The sample uses HTTP Basic auth (the same `SANTRICITY_USER`/`SANTRICITY_PASS`
+you use for API calls) and POSTs a small JSON body like `{ "duration": 100 }`.
+The controller returns JSON with `accessToken` and `duration` fields; the
+sample extracts `accessToken` and supplies it to the SDK as a Bearer token.
 
 Environment variables used by the sample:
 
-- `SANTRICITY_TOKEN_URL`: token endpoint (e.g. `https://auth.example.com/oauth2/token`)
-- `SANTRICITY_CLIENT_ID`: OAuth client id
-- `SANTRICITY_CLIENT_SECRET`: OAuth client secret
-- `SANTRICITY_HOST`: SANtricity controller base URL
+- `SANTRICITY_HOST`: SANtricity controller base URL (required if `SANTRICITY_TOKEN_URL` not set)
+- `SANTRICITY_TOKEN_URL`: optional token endpoint override (defaults to `<SANTRICITY_HOST>/devmgr/v2/access-token`)
+- `SANTRICITY_USER` / `SANTRICITY_PASS`: credentials used to self-issue a token via Basic auth
 - `SANTRICITY_VERIFY_SSL`: optional `false` to disable TLS verification in lab
 
 Example (bash):
 
 ```bash
-export SANTRICITY_HOST=https://controller_a:8443
-export SANTRICITY_TOKEN_URL=https://auth.example.com/oauth2/token
-export SANTRICITY_CLIENT_ID=myclient
-export SANTRICITY_CLIENT_SECRET=mysecret
+export SANTRICITY_HOST=https://10.113.1.158:8443
+export SANTRICITY_USER=admin
+export SANTRICITY_PASS=YOURPASS
 export SANTRICITY_VERIFY_SSL=false
 python samples/jwt_token_refresh.py
 ```
 
-The sample's `token_refresh_callback` will POST a `grant_type=client_credentials`
-request to `SANTRICITY_TOKEN_URL`, parse the `access_token` and return it to the
-SDK which will then use it as a Bearer token for API calls.
+The sample will POST `{ "duration": 100 }` to the token endpoint and use
+the returned `accessToken` as the Bearer token for API calls.
 
 ### Generating Documentation
 

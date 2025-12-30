@@ -14,7 +14,6 @@ SDK obtains an access token on demand.
 """
 import os
 import json
-from urllib.parse import urlencode
 import urllib3
 
 from netapp.santricity.configuration import Configuration
@@ -23,25 +22,26 @@ from netapp.santricity.api.v2.volumes_api import VolumesApi
 
 
 def token_refresh_callback():
-    token_url = os.environ.get("SANTRICITY_TOKEN_URL")
-    client_id = os.environ.get("SANTRICITY_CLIENT_ID")
-    client_secret = os.environ.get("SANTRICITY_CLIENT_SECRET")
-    if not token_url or not client_id or not client_secret:
-        raise RuntimeError(
-            "Missing SANTRICITY_TOKEN_URL, SANTRICITY_CLIENT_ID or SANTRICITY_CLIENT_SECRET"
-        )
+    # Prefer explicit token URL, otherwise use controller host + standard path
+    token_url = os.environ.get(
+        "SANTRICITY_TOKEN_URL",
+        os.environ.get("SANTRICITY_HOST", "http://localhost:8080/devmgr/v2").rstrip("/")
+        + "/access-token",
+    )
+
+    # Duration for the issued token (controller-specific unit). Default to 100.
+    duration = int(os.environ.get("SANTRICITY_TOKEN_DURATION", "100"))
+
+    cfg = Configuration()
+    basic = cfg.get_basic_auth_token()
 
     http = urllib3.PoolManager()
-    body = urlencode({
-        "grant_type": "client_credentials",
-        "client_id": client_id,
-        "client_secret": client_secret,
-    })
+    body = json.dumps({"duration": duration})
 
     resp = http.request(
         "POST",
         token_url,
-        headers={"Content-Type": "application/x-www-form-urlencoded"},
+        headers={"Content-Type": "application/json", "Authorization": basic},
         body=body,
     )
 
@@ -49,9 +49,10 @@ def token_refresh_callback():
         raise RuntimeError(f"Token endpoint returned {resp.status}: {resp.data.decode()}")
 
     data = json.loads(resp.data.decode("utf-8"))
-    token = data.get("access_token")
+    # Controller returns `accessToken` (camelCase)
+    token = data.get("accessToken")
     if not token:
-        raise RuntimeError("No access_token in token response")
+        raise RuntimeError("No accessToken in token response")
     return token
 
 
